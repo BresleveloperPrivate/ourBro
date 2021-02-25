@@ -1,0 +1,22 @@
+<div *ngIf="options" class="host-options-container" [class.invalid]="invalid">
+  <div class="icon-label">
+    <div *ngIf="iconUrl" class="input-icon" [style.background-image]="'url(' + iconUrl + ')'"></div>
+    <div class="input-label">
+      {{ label }}
+    </div>
+  </div>
+  <div class="options-container">
+    <ng-container *ngFor="let option of options">
+      <div
+        class="option"
+        (click)="optionSelected.emit(option.value)"
+        [class.current-option]="option.value === currentOption"
+      >
+        <div class="option-mark"></div>
+        <div class="option-text">
+          {{ option.text }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

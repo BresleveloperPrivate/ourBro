@@ -1,0 +1,39 @@
+.form {
+  max-width: 770px;
+  margin: auto;
+
+  .form-row {
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+      padding: 5px;
+    }
+
+    .col {
+      flex: 1;
+
+      margin: 0 5px;
+
+      @media only screen and (min-width: 768px) {
+        padding-top: 10px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        padding-top: 15px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        margin: 0;
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .sumbit-button {
+    margin-top: 40px;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="column-container" [class.empty]="!title" [class.sortable]="!!field">
+  <div class="title">
+    {{ title }}
+  </div>
+  <span
+    *ngIf="!!field"
+    class="sorting-indicator"
+    [ngClass]="{
+      'sorted-asc': sorted === 'asc',
+      'sorted-desc': sorted === 'desc'
+    }"
+  ></span>
+</div>

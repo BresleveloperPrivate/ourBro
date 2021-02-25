@@ -1,0 +1,41 @@
+<form [formGroup]="form" class="contact-form-fields">
+  <input
+    formControlName="name"
+    class="form-field"
+    placeholder="שם מלא*"
+    [class.invalid]="!name.valid && name.touched"
+  />
+  <input
+    formControlName="phoneNumber"
+    class="form-field"
+    placeholder="טלפון*"
+    [class.invalid]="!phoneNumber.valid && phoneNumber.touched"
+  />
+  <input
+    formControlName="email"
+    class="form-field"
+    placeholder="אימייל*"
+    [class.invalid]="!email.valid && email.touched"
+  />
+  <input
+    formControlName="subject"
+    class="form-field"
+    placeholder="נושא פנייה*"
+    [class.invalid]="!subject.valid && subject.touched"
+  />
+  <textarea formControlName="body" class="form-field body" placeholder="תוכן הודעה"></textarea>
+</form>
+<p class="form-invalid-message" *ngIf="formInvalid">
+  אחד או יותר מהשדות אינם תקינים
+</p>
+<button
+  class="site-button primary-button contact-send-button"
+  [class.disabled]="!form.valid || loading"
+  (click)="onSubmit()"
+>
+  שלח
+</button>
+<br />
+<!-- <p class="address">
+  כתובתנו: הכלנית 53, נופים. מיקוד: 4484100.
+</p> -->

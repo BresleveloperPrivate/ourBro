@@ -1,0 +1,885 @@
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable, throwError, from, combineLatest, interval } from 'rxjs';
+import { map, catchError, tap, switchMap, debounce, take } from 'rxjs/operators';
+
+import { MEMORIAL_YEAR } from '../constants';
+import {
+  User,
+  Meeting,
+  UserParticipationMeeting,
+  BereavedStatus,
+  BereavedGuidance,
+  BereavedProfile,
+  UserRole,
+  UserProfile,
+  MeetingParticipate,
+  Contact,
+  HostParticipation,
+  ParticipateParticipation,
+  ParticipateParticipationMeeting,
+  MeetingBereaved,
+  Address,
+  VolunteerProfile
+} from 'models';
+import { AnalyticsService } from './analytics.service';
+import { MeetingForm } from '../../host/host-form/host-form.component';
+import { ParticipationsService } from './participations.service';
+
+export interface UserMeeting {
+  meeting: Meeting;
+  user: User;
+}
+
+export interface VolunteeringUser {
+  user: User;
+  isVolunteer: boolean;
+}
+
+export interface BereavedVolunteer {
+  user: User;
+  bereaved: User;
+}
+
+export interface UpdateBereavedStatus {
+  bereaved: User;
+  status: BereavedStatus;
+}
+
+export interface UpdateBereavedGuidance {
+  bereaved: User;
+  guidance: BereavedGuidance;
+}
+
+export interface UpdateUserBirthDate {
+  user: User;
+  birthDate: number;
+}
+
+export interface UpdateBereavedNotes {
+  bereaved: User;
+  notes: string;
+}
+
+export interface UpdateUserAddress {
+  user: User;
+  address: Address;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  constructor(
+    private angularFireDatabase: AngularFireDatabase,
+    private analyticsService: AnalyticsService,
+    private participationsService: ParticipationsService
+  ) {}
+
+  public getUserById(userId: string): Observable<User> {
+    const telemetry = { userId };
+
+    this.analyticsService.logEvent('GetUserById', telemetry);
+    return this.angularFireDatabase
+      .object<User>(`users/${userId}`)
+      .valueChanges()
+      .pipe(
+        tap(() => this.analyticsService.logEvent('GetUserByIdSuccess', telemetry)),
+        map(user => ({
+          id: userId,
+          ...user
+        })),
+        map(user => {
+          this.parseBereavedParticipation(user);
+          this.parseParticipateParticipation(user);
+          this.parseHostParticipation(user);
+
+          return user;
+        }),
+        catchError(error => {
+          this.analyticsService.logEvent('GetUserByIdFailed', {
+            ...telemetry,
+            error
+          });
+          console.error(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public updateUserLastSignIn(user: User) {
+    const telemetry = { userId: user.id };
+
+    this.analyticsService.logEvent('UpdateUserLastSignIn', telemetry);
+
+    return from(this.angularFireDatabase.object(`users/${user.id}/lastSignInDate`).set(Date.now())).pipe(
+      tap(() => {
+        this.analyticsService.logEvent('UpdateUserLastSignInSuccess', telemetry);
+      }),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('UpdateUserLastSignInFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public createMeeting(user: User, meetingForm: MeetingForm, year = MEMORIAL_YEAR): Observable<Meeting> {
+    const parsedMeeting: Partial<Meeting> = {
+      ...meetingForm,
+      date: Date.parse(`${meetingForm.date}T${meetingForm.hour}`),
+      count: 0,
+      contact: {
+        firstName: user.profile.firstName,
+        lastName: user.profile.lastName,
+        phoneNumber: user.profile.phoneNumber,
+        email: user.profile.email
+      }
+    };
+
+    const telemetry = { meeting: parsedMeeting, hostId: user.id, year };
+
+    this.analyticsService.logEvent('CreateMeeting', telemetry);
+
+    return from(this.angularFireDatabase.list<Partial<Meeting>>(`events/${year}/${user.id}`).push(parsedMeeting)).pipe(
+      tap(() => {
+        this.analyticsService.logEvent('CreateMeetingSuccess', telemetry);
+      }),
+      map(
+        meetingSnapshot =>
+          ({
+            ...parsedMeeting,
+            hostId: user.id,
+            id: meetingSnapshot.key
+          } as Meeting)
+      ),
+      catchError(error => {
+        this.analyticsService.logEvent('CreateMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public updateMeeting(
+    hostId: string,
+    meetingId: string,
+    meetingForm: MeetingForm,
+    year = MEMORIAL_YEAR
+  ): Observable<boolean> {
+    const parsedMeeting: Partial<Meeting> = {
+      ...meetingForm,
+      date: Date.parse(`${meetingForm.date}T${meetingForm.hour}`)
+    };
+
+    const telemetry = { meeting: parsedMeeting, hostId, meetingId, year };
+
+    this.analyticsService.logEvent('UpdateMeeting', telemetry);
+
+    return from(
+      this.angularFireDatabase.object<Meeting>(`events/${year}/${hostId}/${meetingId}`).update(parsedMeeting)
+    ).pipe(
+      tap(() => {
+        this.analyticsService.logEvent('UpdateMeetingSuccess', telemetry);
+      }),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('UpdateMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public deleteMeeting(hostId: string, meetingId: string, year = MEMORIAL_YEAR): Observable<boolean> {
+    const telemetry = { hostId, meetingId, year };
+
+    this.analyticsService.logEvent('DeleteMeeting', telemetry);
+
+    return from(this.angularFireDatabase.object(`events/${year}/${hostId}/${meetingId}`).remove()).pipe(
+      tap(() => {
+        this.analyticsService.logEvent('DeleteMeetingSuccess', telemetry);
+      }),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('DeleteMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public updateUserMapGuideLastVisit(userId: string) {
+    const now = Date.now();
+
+    const telemetry = { now };
+
+    this.analyticsService.logEvent('UserMapGuideLastVisit', telemetry);
+    return from(this.angularFireDatabase.object<number>(`users/${userId}/meetingMapGuideLastVisit`).set(now)).pipe(
+      tap(() => {
+        this.analyticsService.logEvent('UserMapGuideLastVisitSuccess', telemetry);
+      }),
+      catchError(error => {
+        this.analyticsService.logEvent('UserMapGuideLastVisitFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setUserRole(user: User, role: UserRole) {
+    const telemetry = { role };
+
+    this.analyticsService.logEvent('SetUserType', telemetry);
+    return from(this.angularFireDatabase.object<UserRole>(`users/${user.id}/role`).set(role)).pipe(
+      tap(() => this.analyticsService.logEvent('SetUserTypeSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetUserTypeFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setUserProfile(user: User, profile: UserProfile) {
+    const telemetry = { userId: user.id };
+
+    this.analyticsService.logEvent('SetUserProfile', telemetry);
+    return from(this.angularFireDatabase.object<UserProfile>(`users/${user.id}/profile`).set(profile)).pipe(
+      tap(() => this.analyticsService.logEvent('SetUserProfileSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetUserProfileFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setUserVolunteer(user: User, isVolunteer: boolean) {
+    const telemetry = { isVolunteer };
+
+    this.analyticsService.logEvent('SetUserVolunteer', telemetry);
+    return from(this.angularFireDatabase.object<boolean>(`users/${user.id}/isVolunteer`).set(isVolunteer)).pipe(
+      tap(() => this.analyticsService.logEvent('SetUserVolunteerSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetUserVolunteerFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public bereavedVolunteer(volunteer: User, bereaved: User) {
+    const telemetry = { volunteerId: volunteer.id, bereavedId: bereaved.id };
+
+    this.analyticsService.logEvent('BereavedVolunteer', telemetry);
+    return from(
+      this.angularFireDatabase.object<VolunteerProfile>(`users/${bereaved.id}/volunteer`).set({
+        id: volunteer.id,
+        firstName: volunteer.profile.firstName,
+        lastName: volunteer.profile.lastName
+      })
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('BereavedVolunteerSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('BereavedVolunteerFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public removeVolunteer(bereaved: User) {
+    const telemetry = { bereavedId: bereaved.id };
+
+    this.analyticsService.logEvent('RemoveVolunteer', telemetry);
+    return from(this.angularFireDatabase.object<VolunteerProfile>(`users/${bereaved.id}/volunteer`).remove()).pipe(
+      tap(() => this.analyticsService.logEvent('RemoveVolunteerSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('RemoveVolunteerFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setBereavedStatus(bereaved: User, status: BereavedStatus, year = MEMORIAL_YEAR) {
+    const telemetry = { userId: bereaved.id, status, year };
+
+    this.analyticsService.logEvent('SetBereavedStatus', telemetry);
+    return from(
+      this.angularFireDatabase
+        .object<BereavedStatus>(`users/${bereaved.id}/bereavedParticipation/${year}/status`)
+        .set(status)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedStatusSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedStatusFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setBereavedNotes(bereaved: User, notes: string, year = MEMORIAL_YEAR) {
+    const telemetry = { userId: bereaved.id, notes, year };
+
+    this.analyticsService.logEvent('SetBereavedNotes', telemetry);
+    return from(
+      this.angularFireDatabase.object<string>(`users/${bereaved.id}/bereavedParticipation/${year}/notes`).set(notes)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedNotesSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedNotesFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setUserAddress(user: User, address: Address) {
+    const telemetry = { userId: user.id, address };
+
+    this.analyticsService.logEvent('setUserAddress', telemetry);
+    return from(this.angularFireDatabase.object<Address>(`users/${user.id}/profile/address`).set(address)).pipe(
+      tap(() => this.analyticsService.logEvent('setUserAddressSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('setUserAddressFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setUserBirthDate(user: User, birthDate: number) {
+    const telemetry = { userId: user.id, birthDate };
+
+    this.analyticsService.logEvent('setUserBirthDate', telemetry);
+    return from(this.angularFireDatabase.object<number>(`users/${user.id}/profile/birthDay`).set(birthDate)).pipe(
+      tap(() => this.analyticsService.logEvent('setUserBirthDateSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('setUserBirthDateFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setBereavedProfile(bereaved: User, bereavedProfile: BereavedProfile) {
+    this.analyticsService.logEvent('SetBereavedProfile', {
+      userId: bereaved.id
+    });
+    return from(
+      this.angularFireDatabase.object<BereavedProfile>(`users/${bereaved.id}/bereavedProfile`).set(bereavedProfile)
+    ).pipe(
+      tap(() =>
+        this.analyticsService.logEvent('SetBereavedProfileSuccess', {
+          userId: bereaved.id
+        })
+      ),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedProfileFailed', {
+          userId: bereaved.id
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public setBereavedGuidance(bereaved: User, guidance: BereavedGuidance, year = MEMORIAL_YEAR) {
+    const telemetry = { userId: bereaved.id, guidance, year };
+
+    this.analyticsService.logEvent('SetBereavedGuidance', telemetry);
+    return from(
+      this.angularFireDatabase
+        .object<BereavedGuidance>(`users/${bereaved.id}/bereavedParticipation/${year}/guidance`)
+        .set(guidance)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedGuidanceSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedGuidanceFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public getBereaveds(year = MEMORIAL_YEAR): Observable<User[]> {
+    const telemetry = { year };
+
+    this.analyticsService.logEvent('GetBereaveds', telemetry);
+    return this.angularFireDatabase
+      .list<User>(`users`, ref => ref.orderByChild('role').equalTo(UserRole.bereaved))
+      .snapshotChanges(['child_changed', 'child_removed']) // TODO: Workaround for loop
+      .pipe(
+        map(usersSnapshot =>
+          usersSnapshot
+            .map(userSnapshot => ({
+              id: userSnapshot.key,
+              ...userSnapshot.payload.val()
+            }))
+            .filter(user => !!user.profile)
+            .map(user => {
+              this.parseBereavedParticipation(user, year);
+              return user;
+            })
+        ),
+        tap(bereaveds =>
+          this.analyticsService.logEvent('GetBereavedsSuccess', {
+            ...telemetry,
+            count: bereaveds.length
+          })
+        ),
+        catchError(error => {
+          this.analyticsService.logEvent('GetBereavedsFailed', {
+            ...telemetry,
+            error
+          });
+          console.error(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getUsers(): Observable<User[]> {
+    const telemetry = {};
+
+    this.analyticsService.logEvent('GetUsers');
+    return this.angularFireDatabase
+      .list<User>(`users`)
+      .snapshotChanges(['child_changed', 'child_removed']) // TODO: Workaround for loop
+      .pipe(
+        map(usersSnapshot =>
+          usersSnapshot
+            .map(userSnapshot => ({
+              id: userSnapshot.key,
+              ...userSnapshot.payload.val()
+            }))
+            .filter(user => !!user.profile)
+        ),
+        tap(users =>
+          this.analyticsService.logEvent('GetUsersSuccess', {
+            ...telemetry,
+            count: users.length
+          })
+        ),
+        catchError(error => {
+          this.analyticsService.logEvent('GetUsersFailed');
+          console.error(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getMeeting(hostId: string, meetingId: string, year = MEMORIAL_YEAR): Observable<Meeting> {
+    const telemetry = { hostId, meetingId, year };
+
+    this.analyticsService.logEvent('GetMeeting', telemetry);
+    return this.angularFireDatabase
+      .object<Meeting>(`events/${year}/${hostId}/${meetingId}`)
+      .snapshotChanges()
+      .pipe(
+        tap(() => this.analyticsService.logEvent('GetMeetingSuccess', telemetry)),
+        map(meetingSnapshot => ({
+          ...meetingSnapshot.payload.val(),
+          hostId,
+          id: meetingSnapshot.key
+        })),
+        catchError(error => {
+          this.analyticsService.logEvent('GetMeetingFailed', telemetry);
+          console.error(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getMeetingParticipates(
+    hostId: string,
+    meetingId: string,
+    year = MEMORIAL_YEAR
+  ): Observable<MeetingParticipate[]> {
+    const telemetry = { hostId, meetingId, year };
+
+    this.analyticsService.logEvent('GetMeetingParticipates', telemetry);
+    return this.angularFireDatabase
+      .list<MeetingParticipate>(`eventsParticipates/${year}/${hostId}/${meetingId}`)
+      .snapshotChanges()
+      .pipe(
+        tap(() => this.analyticsService.logEvent('getMeetingParticipatesSuccess', telemetry)),
+        map(participates =>
+          participates.map(participate => ({
+            id: participate.key,
+            ...participate.payload.val()
+          }))
+        ),
+        catchError(error => {
+          this.analyticsService.logEvent('getMeetingParticipatesFailed', telemetry);
+          console.log(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getMeetings(year = MEMORIAL_YEAR): Observable<Meeting[]> {
+    const telemetry = { year };
+
+    this.analyticsService.logEvent('GetMeetings', telemetry);
+    return this.angularFireDatabase
+      .list<Meeting>(`events/${year}`)
+      .snapshotChanges()
+      .pipe(
+        tap(() => this.analyticsService.logEvent('GetMeetingsSuccess', telemetry)),
+        map(meetingsSnapshot => {
+          const meetings: Meeting[] = [];
+
+          for (const hostMeetingsSnapshot of meetingsSnapshot) {
+            const hostId = hostMeetingsSnapshot.key;
+
+            const hostMeetings = this.firebaseMapToArray<Meeting>(hostMeetingsSnapshot.payload.val(), { hostId });
+
+            meetings.push(...hostMeetings);
+          }
+
+          return meetings;
+        }),
+        catchError(error => {
+          this.analyticsService.logEvent('GetMeetingsFailed', telemetry);
+          console.log(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getAllMeetings(): Observable<Meeting[]> {
+    const telemetry = {};
+
+    this.analyticsService.logEvent('GetAllMeetings', telemetry);
+    return this.angularFireDatabase
+      .list<{ [year: string]: { [hostId: string]: { [meetingId: string]: Meeting } } }>(`events`)
+      .snapshotChanges()
+      .pipe(
+        tap(() => this.analyticsService.logEvent('GetAllMeetingsSuccess', telemetry)),
+        map(meetingsSnapshot => {
+          const meetings: Meeting[] = [];
+
+          for (const yearlyMeetingsSnapshot of meetingsSnapshot) {
+            const yearlyMeetings = this.firebaseMapToArray<{ [hostId: string]: { [meetingId: string]: Meeting } }>(
+              yearlyMeetingsSnapshot.payload.val()
+            );
+
+            for (const hostMeetingsMap of yearlyMeetings) {
+              const hostId = hostMeetingsMap.id;
+
+              delete hostMeetingsMap.id;
+
+              const hostMeetings = this.firebaseMapToArray<Meeting>(hostMeetingsMap, { hostId });
+
+              meetings.push(...hostMeetings);
+            }
+          }
+
+          return meetings;
+        }),
+        catchError(error => {
+          this.analyticsService.logEvent('GetAllMeetingsFailed', telemetry);
+          console.log(error);
+          return throwError(error);
+        })
+      );
+  }
+
+  public getNoBerevedMeetings(year = MEMORIAL_YEAR): Observable<Meeting[]> {
+    return this.getMeetings(year).pipe(map((meetings: Meeting[]) => meetings.filter(meeting => !meeting.bereaved)));
+  }
+
+  public bereavedJoinMeeting(bereaved: User, meeting: Meeting, year = MEMORIAL_YEAR): Observable<boolean> {
+    const telemetry = {
+      userId: bereaved.id,
+      hostId: meeting.hostId,
+      id: meeting.id,
+      year
+    };
+
+    this.analyticsService.logEvent('BereavedJoinMeeting', telemetry);
+
+    return combineLatest([this.getUserById(bereaved.id), this.getMeeting(meeting.hostId, meeting.id, year)]).pipe(
+      take(1),
+      tap(([bereaved, meeting]) => {
+        if (!this.participationsService.isBereavedCanParticipatingMeeting(bereaved, meeting)) {
+          throw new Error("Bereaved can't participate meeting.");
+        }
+      }),
+      switchMap(([b, m]) => {
+        const meetingBereaved: MeetingBereaved = {
+          id: b.id,
+          firstName: b.profile.firstName,
+          lastName: b.profile.lastName,
+          email: b.profile.email,
+          phoneNumber: b.profile.phoneNumber,
+          slains: b.bereavedProfile.slains
+        };
+
+        return from(
+          this.angularFireDatabase.object(`events/${year}/${m.hostId}/${m.id}/bereaved`).set(meetingBereaved)
+        );
+      }),
+      tap(() => this.analyticsService.logEvent('BereavedJoinMeetingSuccess', telemetry)),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('BereavedJoinMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public participateJoinMeeting(
+    participate: User,
+    meeting: Meeting,
+    accompanies: number,
+    year = MEMORIAL_YEAR
+  ): Observable<boolean> {
+    const telemetry = {
+      userId: participate.id,
+      hostId: meeting.hostId,
+      id: meeting.id,
+      year
+    };
+
+    this.analyticsService.logEvent('ParticipateJoinMeeting', telemetry);
+
+    return combineLatest([this.getUserById(participate.id), this.getMeeting(meeting.hostId, meeting.id, year)]).pipe(
+      take(1),
+      tap(([p, m]) => {
+        if (!this.participationsService.isParticipateCanParticipatingMeeting(p, m)) {
+          throw new Error("Participate can't participate meeting.");
+        }
+      }),
+      switchMap(([p, m]) => {
+        const meetingParticipate: MeetingParticipate = {
+          firstName: p.profile.firstName,
+          lastName: p.profile.lastName,
+          email: p.profile.email,
+          phoneNumber: p.profile.phoneNumber,
+          accompanies
+        };
+        return from(
+          this.angularFireDatabase
+            .object(`eventsParticipates/${year}/${m.hostId}/${m.id}/${p.id}`)
+            .set(meetingParticipate)
+        );
+      }),
+      tap(() => this.analyticsService.logEvent('ParticipateJoinMeetingSuccess', telemetry)),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('ParticipateJoinMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public participateLeaveMeeting(user: User, meeting: Meeting, year = MEMORIAL_YEAR): Observable<boolean> {
+    const telemetry = {
+      userId: user.id,
+      hostId: meeting.hostId,
+      id: meeting.id,
+      year
+    };
+
+    this.analyticsService.logEvent('ParticipateLeaveMeeting', telemetry);
+
+    return from(
+      this.angularFireDatabase.object(`eventsParticipates/${year}/${meeting.hostId}/${meeting.id}/${user.id}`).remove()
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('ParticipateLeaveMeetingSuccess', telemetry)),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('ParticipateLeaveMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public bereavedLeaveMeeting(bereaved: User, meeting: Meeting, year = MEMORIAL_YEAR): Observable<boolean> {
+    const telemetry = {
+      userId: bereaved.id,
+      hostId: meeting.hostId,
+      id: meeting.id,
+      year
+    };
+
+    this.analyticsService.logEvent('BereavedLeaveMeeting', telemetry);
+
+    return from(
+      this.angularFireDatabase.object(`events/${year}/${meeting.hostId}/${meeting.id}/bereaved`).remove()
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('BereavedLeaveMeetingSuccess', telemetry)),
+      map(() => true),
+      catchError(error => {
+        this.analyticsService.logEvent('BereavedLeaveMeetingFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  public postContact(contactForm: Contact, user?: User) {
+    contactForm.date = new Date().getTime();
+
+    const telemetry = { userId: user && user.id };
+
+    this.analyticsService.logEvent('PostContact', telemetry);
+
+    return this.angularFireDatabase
+      .list<Contact>(`contacts/${user ? user.id : 'anonymous'}`)
+      .push(contactForm)
+      .then(
+        result => {
+          this.analyticsService.logEvent('PostContactSuccess', telemetry);
+        },
+        error => {
+          this.analyticsService.logEvent('PostContactFailed', {
+            ...telemetry,
+            error
+          });
+          console.error(error);
+          throw error;
+        }
+      );
+  }
+
+  private parseHostParticipation(user: User, year = MEMORIAL_YEAR) {
+    if (user.hostParticipation && user.hostParticipation[year] && user.hostParticipation[year]) {
+      const meetings: UserParticipationMeeting[] = this.firebaseMapToArray<UserParticipationMeeting>(
+        user.hostParticipation[year].meetings,
+        { hostId: user.id }
+      );
+
+      const hostParticipation: HostParticipation = {
+        meetings
+      };
+
+      user.hostParticipation[year] = hostParticipation;
+    }
+  }
+
+  private parseParticipateParticipation(user: User, year = MEMORIAL_YEAR) {
+    if (user.participateParticipation && user.participateParticipation[year] && user.participateParticipation[year]) {
+      const participateMeetings: ParticipateParticipationMeeting[] = [];
+
+      if (user.participateParticipation[year].meetings) {
+        Array.from(Object.entries(user.participateParticipation[year].meetings)).forEach(
+          ([hostId, meetings]: [string, Object]) => {
+            Array.from(Object.entries(meetings)).forEach(([id, meeting]: [string, ParticipateParticipationMeeting]) => {
+              participateMeetings.push({
+                id,
+                hostId,
+                title: meeting.title,
+                accompanies: meeting.accompanies
+              });
+            });
+          }
+        );
+      }
+
+      const participateParticipation: ParticipateParticipation = {
+        meetings: participateMeetings
+      };
+
+      user.participateParticipation[year] = participateParticipation;
+    }
+  }
+
+  private parseBereavedParticipation(user: User, year = MEMORIAL_YEAR) {
+    if (user.bereavedParticipation && user.bereavedParticipation[year] && user.bereavedParticipation[year]) {
+      const bereavedMeetings: UserParticipationMeeting[] = [];
+
+      if (user.bereavedParticipation[year].meetings) {
+        Array.from(Object.entries(user.bereavedParticipation[year].meetings)).forEach(
+          ([hostId, meetings]: [string, Object]) => {
+            Array.from(Object.entries(meetings)).forEach(([id, meeting]: [string, UserParticipationMeeting]) => {
+              bereavedMeetings.push({
+                id,
+                hostId,
+                title: meeting.title
+              });
+            });
+          }
+        );
+
+        user.bereavedParticipation[year].meetings = bereavedMeetings;
+      }
+    }
+  }
+
+  private firebaseMapToArray<T>(map: Object, additionalData = {}): T[] {
+    if (map) {
+      return Array.from(Object.entries(map)).map(([id, object]: [string, T]) => ({
+        ...object,
+        id,
+        ...additionalData
+      }));
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<div class="footer-container">
+  <div class="footer">
+    <div class="row">
+      <div class="col col-logo">
+        <div class="logo-footer"></div>
+      </div>
+      <div class="col col-links">
+        <div class="title">ניווט</div>
+        <div class="links">
+          <a class="site-link" routerLink="home">דף הבית</a>
+          <a class="site-link" routerLink="meetings">מפגשים</a>
+          <a class="site-link" routerLink="about">אודותינו</a>
+          <a class="site-link" routerLink="agenda">מבנה הערב</a>
+        </div>
+      </div>
+      <div class="col col-links">
+        <div class="title"></div>
+        <div class="links">
+          <a class="site-link" routerLink="questions">שאלות</a>
+          <a class="site-link" routerLink="gallery">גלריה</a>
+          <a class="site-link" routerLink="contact">צור קשר</a>
+          <a class="site-link" href="/assets/docs/תנאי%20שימוש%20האחים%20שלנו.pdf" target="_blank">מדיניות פרטיות</a>
+        </div>
+      </div>
+      <div class="col col-links">
+        <div class="title">מפגשים</div>
+        <div class="links">
+          <a class="site-link" routerLink="meetings">מפת מפגשים</a>
+          <a class="site-link" [routerLink]="participationsService.isUserCanTell(user) ? null : 'tell'">
+            אני רוצה לספר</a
+          >
+          <a class="site-link" [routerLink]="participationsService.isUserCanHost(user) ? null : 'host'">
+            אני רוצה לארח</a
+          >
+          <a class="site-link" [routerLink]="participationsService.isUserCanParticipate(user) ? null : 'participate'">
+            אני רוצה להשתתף</a
+          >
+        </div>
+      </div>
+      <div class="col col-links">
+        <div class="title">אודותינו</div>
+        <div class="links">
+          <a class="site-link link" routerLink="about">רקע</a>
+          <a class="site-link link" routerLink="team"> השותפים שלנו</a>
+          <a class="site-link link" routerLink="articles">עלינו בתקשורת</a>
+          <a class="site-link link" routerLink="news">כותבים לנו</a>
+        </div>
+      </div>
+      <div class="col col-details">
+        <div class="title">פרטי התקשרות</div>
+        <div class="details">
+          <div>
+            <span>
+              טלפון:
+            </span>
+            <a href="tel:+972584094624" class="site-link">058-409-4624</a>
+          </div>
+          <div>
+            <span>
+              אימייל:
+            </span>
+            <a href="mailto:info@ourbrothers.org" class="site-link">info@ourbrothers.org</a>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.facebook.com/ourbrotherss/" target="_blank">
+            <img width="10.02px" height="17.65px" class="social-icon facebook-icon" src="../assets/img/facebook.png" />
+          </a>
+          <a href="mailto:info@ourbrothers.org">
+            <img width="19.47px" height="13.12px" class="social-icon email-icon" src="../assets/img/email.png" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCgKTy9WBTcb2Udm0tqwIzAg" target="_blank">
+            <img width="19px" height="15px" class="social-icon youtube-icon" src="../assets/img/youtube.png" />
+          </a>
+          <a href="tel:+972584094624">
+            <img
+              width="14.71px"
+              height="14.71px"
+              class="social-icon whatsapp-icon"
+              src="../../../assets/img/whatsapp.svg"
+            />
+          </a>
+          <a href="https://instagram.com/ourbrothers2021?igshid=196ey1ufdoxz">
+            <img
+              width="14.12px"
+              height="14.12px"
+              class="social-icon instegram-icon"
+              src="../../../assets/svg/Combined Shape.svg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div class="bottom-line">
+      <!-- <div class="publisher">
+        <a href="https://github.com/gilhanan/our-brothers/graphs/contributors" class="publisher-link" target="_blank">
+          <span>
+            פותח בהתנדבות
+          </span>
+          <i class="fas fa-heart"></i>
+        </a>
+      </div> -->
+      <div class="copyrights">© 2021 כל הזכויות שמורות לאחים שלנו</div>
+      <div class="version">
+        <!-- <a class="version-link" [href]="'https://github.com/gilhanan/our-brothers/commits/' + revision" target="_blank">
+          {{ version }}-{{ revision }}
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-mobile">
+  <div class="social-box">
+    <a href="mailto:info@ourbrothers.org" class="site-link">
+      <i class="far fa-envelope"></i>
+    </a>
+  </div>
+  <div class="social-box">
+    <a href="tel:+972584094624" class="site-link">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+  <div class="social-box">
+    <a href="https://wa.me/972584094624" target="_blank" class="site-link">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</div>

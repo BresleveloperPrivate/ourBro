@@ -1,0 +1,13 @@
+.participations-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  .participation-button {
+    margin-bottom: 25px;
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}

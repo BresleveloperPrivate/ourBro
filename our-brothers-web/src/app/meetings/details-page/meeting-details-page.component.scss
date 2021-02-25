@@ -1,0 +1,83 @@
+.medium-heading {
+  min-height: 1em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .col {
+    flex: 0 0 auto;
+    margin: 10px;
+    min-width: 350px;
+    max-width: 400px;
+
+    @media only screen and (max-width: 768px) {
+      margin: 5px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  .site-button {
+    margin: 10px;
+
+    &.edit-button {
+      flex: 0 0 auto;
+
+      &::before {
+        content: '';
+        width: 55px;
+        height: 50px;
+        background-image: url(../../../assets/img/host_edit_white.svg);
+        background-position: 50% 50%;
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.delete-button {
+      flex: 0 0 auto;
+
+      &::before {
+        content: '';
+        width: 65px;
+        height: 50px;
+        background-image: url(../../../assets/img/host_delete_white.svg);
+        background-position: 50% 50%;
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.share-container {
+  width: 370px;
+  display: flex;
+  align-items: center;
+
+  .share-text {
+    font-size: 18px;
+    color: #818181;
+    font-family: 'Heebo';
+  }
+
+  .facebook-icon {
+    width: 16px;
+    height: 28px;
+    background-image: url(../../../assets/img/facebook.png);
+    background-size: 100% 100%;
+  }
+
+  .whatsapp-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url(../../../assets/img/whatsapp.png);
+    background-size: 100% 100%;
+  }
+}

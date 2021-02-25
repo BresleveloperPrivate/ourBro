@@ -1,0 +1,45 @@
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+  max-width: calc(100% - 200px);
+  width: 1170px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  .modal-header {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .free-text-filter-container {
+    margin-top: 30px;
+  }
+
+  .meetings-list {
+    margin-top: 30px;
+    height: 60vh;
+    position: relative;
+  }
+
+  .cancel-button-container {
+    margin-top: 30px;
+    text-align: center;
+
+    .cancel-button {
+      display: inline-block;
+    }
+  }
+
+  .close-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

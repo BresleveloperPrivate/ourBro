@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  align-items: center;
+
+  .free-text-filter-col {
+    flex: 1;
+
+    @media only screen and (max-width: 650px) {
+      padding: 20px;
+      padding-left: 5px;
+    }
+
+    .free-text-filter {
+      border-radius: 0px;
+    }
+  }
+
+  .view-toggle-col {
+    flex: 0;
+    padding: 15px;
+    padding-left: 0;
+
+    @media only screen and (max-width: 650px) {
+      padding: 20px;
+      padding-right: 0;
+
+      .view-toggle.map {
+        position: fixed;
+        z-index: 9999999;
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+  }
+}

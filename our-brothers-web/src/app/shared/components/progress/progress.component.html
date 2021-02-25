@@ -1,0 +1,17 @@
+<div class="progress">
+  <div class="progress-heading" [class.expended]="isExpended" (click)="e()">
+    {{ title }}
+  </div>
+  <br />
+  <div *ngIf="isExpended" class="progress-body">
+    <ng-content></ng-content>
+  </div>
+</div>
+<!-- את זה לשים במקום הסרגל -->
+<!-- <progress title="Shiping Details">
+  Shiping Details Contect
+</progress>
+<br>
+<progress title="Bilding Details">
+  Bilding Details Contect
+</progress> -->

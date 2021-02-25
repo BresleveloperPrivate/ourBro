@@ -1,0 +1,40 @@
+<app-modal-select-meeting
+  *ngIf="!!selectingBereaved"
+  [meetings]="noBerevedMeetings"
+  [bereaved]="selectingBereaved"
+  (selectMeeting)="selectedMeeting$.next($event)"
+>
+</app-modal-select-meeting>
+<div class="medium-heading">ניהול אחים</div>
+<div class="container-fluid bereaveds-container">
+  <app-free-text-filter class="free-text-filter" [(filter)]="filter" (filterChange)="filterBereaveds()">
+  </app-free-text-filter>
+  <div class="bereaveds-list-container">
+    <div *ngIf="loading" class="loading">
+      טוען..
+    </div>
+    <div *ngIf="!loading">
+      <div class="error-message" *ngIf="error; else bereavedList">
+        {{ error }}
+      </div>
+      <ng-template #bereavedList>
+        <app-bereaveds-list
+          [filteredBereaveds]="filteredBereavedsIds"
+          [bereaveds]="bereaveds"
+          [currentUser]="currentUser"
+          (joinBereved)="joinBereved($event)"
+          (leaveBereaved)="leaveBereaved($event)"
+          (volunteering)="volunteering($event)"
+          (deleting)="deleting($event)"
+          (bereavedStatus)="bereavedStatus($event)"
+          (bereavedGuidance)="bereavedGuidance($event)"
+          (bereavedBirthDate)="bereavedBirthDate($event)"
+          (bereavedNotes)="bereavedNotes($event)"
+          (bereavedAddress)="bereavedAddress($event)"
+          (bereavedVolunteer)="bereavedVolunteer($event)"
+          (removeVolunteer)="removeVolunteer($event)"
+        ></app-bereaveds-list>
+      </ng-template>
+    </div>
+  </div>
+</div>

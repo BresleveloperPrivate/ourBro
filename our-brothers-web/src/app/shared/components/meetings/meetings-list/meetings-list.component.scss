@@ -1,0 +1,48 @@
+.show-full-meetings-container {
+  margin: 5px 0;
+
+  @media only screen and (max-width: 750px) {
+    margin-right: 20px;
+  }
+}
+
+.list-header {
+  .date-col {
+    flex: 0 1 130px;
+  }
+
+  .participants-col {
+    flex: 0 1 175px;
+  }
+
+  .join-col {
+    flex: 0 1 130px;
+  }
+
+  .col {
+    &:first-child {
+      padding-right: 0;
+    }
+    &:last-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.meeting-items-container {
+  height: 490px;
+  overflow: auto;
+
+  @media only screen and (max-width: 1000px) {
+    height: 700px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    height: 450px;
+  }
+
+  .meeting-items {
+    height: 100%;
+    direction: ltr;
+  }
+}

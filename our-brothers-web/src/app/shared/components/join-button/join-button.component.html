@@ -1,0 +1,3 @@
+<button class="join-button" [ngClass]="{ joined: joined }" (click)="join.emit()" [disabled]="disabled">
+  {{ joined ? 'משובץ' : 'שיבוץ' }}
+</button>

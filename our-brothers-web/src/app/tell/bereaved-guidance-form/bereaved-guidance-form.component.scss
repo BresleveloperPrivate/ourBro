@@ -1,0 +1,32 @@
+.training-container {
+  max-width: 770px;
+  margin: auto;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 15px;
+  }
+
+  .training-text {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #818181;
+  }
+
+  .training-options {
+    color: #818181;
+
+    .training-option {
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      &.not-interseted {
+        margin-top: 20px;
+      }
+    }
+  }
+}

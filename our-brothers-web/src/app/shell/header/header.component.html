@@ -1,0 +1,27 @@
+<nav class="header-container">
+  <div class="nav-toggle header-toggler" (click)="sideMenuOpen = !sideMenuOpen">
+    <span class="bar" [class.active]="sideMenuOpen"></span>
+  </div>
+  <div class="header">
+    <a class="logo-header" routerLink="home"></a>
+    <div class="nav-content" [class.open]="sideMenuOpen">
+      <ul class="links-header">
+        <li class="link-header" *ngFor="let menu of menues; trackBy: trackByFn">
+          <app-menu-item [menu]="menu"> </app-menu-item>
+        </li>
+      </ul>
+      <div class="action-buttons">
+        <a class="action-header-support-us site-button" href="https://connect2care.carmel6000.com/#/">
+          מתחברים וזוכרים</a
+        >
+
+        <button *ngIf="!user" class="action-header-login site-button" [disabled]="loading" (click)="onLogin()">
+          התחבר
+        </button>
+        <button *ngIf="user" class="action-header-login site-button" [disabled]="loading" (click)="onLogout()">
+          התנתק
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

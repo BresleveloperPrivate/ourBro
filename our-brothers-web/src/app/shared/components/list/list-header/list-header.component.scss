@@ -1,0 +1,27 @@
+:host {
+  .sorting-title {
+    color: rgb(129, 129, 129);
+    font-size: 18px;
+    font-family: 'Heebo';
+    margin-top: 15px;
+
+    @media only screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .columns {
+    display: flex;
+    flex-flow: row;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(227, 229, 231);
+
+    @media only screen and (max-width: 1024px) {
+      padding-bottom: 10px;
+    }
+
+    &.scroll {
+      margin-right: 23px;
+    }
+  }
+}

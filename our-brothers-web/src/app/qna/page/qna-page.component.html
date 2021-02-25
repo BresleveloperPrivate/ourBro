@@ -1,0 +1,55 @@
+<img class="image-header" src="../../../assets/img/qnaHeader.jpg.png" alt="Questions and Answers Page Header Image" />
+<div class="site-divider"></div>
+<h1 class="small-heading" data-aos="fade-up" data-aos-duration="1000">
+  שאלות ותשובות
+</h1>
+<h2 class="medium-heading" data-aos="fade-up" data-aos-duration="1000">
+  עונים על הכל
+</h2>
+
+
+<a class="action-header-support-us site-button connectqne" href="https://connect2care.carmel6000.com/#/info">
+  <span>שאלות ותשובות</span>
+
+  <span>
+    מתחברים וזוכרים
+  </span>
+
+</a>
+<!-- cr -->
+<!-- <a class="connect medium-heading" href="https://connect2care.carmel6000.com/#/info" data-aos="fade-up"
+  data-aos-duration="1000">
+  שאלות ותשובות מתחברים וזוכרים
+</a> -->
+<div class="qna-types-list-container">
+  <div class="container">
+    <div class="role-buttons">
+      <div class="role-button" [class.current]="currentQType === UserRole.bereaved"
+        (click)="currentQType = UserRole.bereaved">
+        אחים
+      </div>
+      <div class="role-button" [class.current]="currentQType === UserRole.host" (click)="currentQType = UserRole.host">
+        מארחים
+      </div>
+      <div class="role-button" [class.current]="currentQType === UserRole.participate"
+        (click)="currentQType = UserRole.participate">
+        משתתפים
+      </div>
+    </div>
+  </div>
+</div>
+<div class="qna-list-wrapper">
+  <div class="container">
+    <ng-container [ngSwitch]="currentQType">
+      <ng-container *ngSwitchCase="UserRole.bereaved">
+        <app-qna-list [qnaList]="qnaBrothers"></app-qna-list>
+      </ng-container>
+      <ng-container *ngSwitchCase="UserRole.host">
+        <app-qna-list [qnaList]="qnaHosts"></app-qna-list>
+      </ng-container>
+      <ng-container *ngSwitchCase="UserRole.participate">
+        <app-qna-list [qnaList]="qnaParticipates"></app-qna-list>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

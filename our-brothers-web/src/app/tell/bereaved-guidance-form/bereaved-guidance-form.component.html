@@ -1,0 +1,34 @@
+<div class="medium-heading">מפגשי הדרכה</div>
+<div class="training-container">
+  <div class="training-text">
+    <p>
+      מפגשי ההכנה יתקיימו בין ה-2.4 ל-29.3 ברחבי הארץ במטרה להכין אותך ולסייע לך לקראת המפגשים. הסדנאות יכללו תכנים
+      פרקטיים לאחים חדשים ע"י ד"ר צוריאל ראשי ומנחים נוספים, ולאחים ותיקים ע"י פרויקט 21. כמו כן, תתקיים סדנה של נט"ל
+      שמטרתה להקנות כלים רגשיים להתמודדדות עם המפגש. כמו כן, יתקיימו הרצאות לדוגמה של שני אחים שכולים וסיוע בבניית השיחה
+      ו/או המצגת.
+    </p>
+  </div>
+  <div class="training-options">
+    <p>
+      סדנאות ההכנה יתקיימו במספר מוקדים:
+    </p>
+    <div *ngFor="let option of options" class="training-option">
+      <app-checkbox
+        [label]="option.details"
+        [checked]="selected[option.value]"
+        (checkedChanged)="onGuidanceChange(option.value, $event)"
+      ></app-checkbox>
+    </div>
+    <div class="training-option not-interseted">
+      <app-checkbox
+        [label]="'לא מעוניין בהדרכה'"
+        [checked]="notIntereseted"
+        (checkedChanged)="onNotInterestedChange($event)"
+      >
+      </app-checkbox>
+    </div>
+  </div>
+</div>
+<button (click)="onSubmit()" class="site-button primary-button step-button">
+  לאישור הפרטים
+</button>

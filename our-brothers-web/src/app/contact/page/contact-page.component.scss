@@ -1,0 +1,54 @@
+.details {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 90px;
+  text-align: right;
+  color: #818181;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .medium-heading {
+    @media only screen and (min-width: 768px) {
+      text-align: right;
+    }
+  }
+
+  .details-text {
+    text-align: right;
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  .details-contact-table {
+    display: table;
+    @media only screen and (max-width: 768px) {
+      font-size: 15px;
+    }
+    .row {
+      display: table-row-group;
+    }
+    .col {
+      display: table-cell;
+      padding: 5px 0 5px 25px;
+      @media only screen and (max-width: 768px) {
+        text-align: right;
+        padding: 5px 0 5px 5px;
+      }
+
+      .division {
+        margin-left: 8px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.contact-form {
+  padding: 50px;
+}

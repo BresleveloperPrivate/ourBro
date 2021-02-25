@@ -1,0 +1,63 @@
+.form {
+  max-width: 770px;
+  margin: auto;
+
+  .form-row {
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+      padding: 5px;
+    }
+
+    .col {
+      flex: 1;
+
+      margin: 0 5px;
+
+      @media only screen and (min-width: 768px) {
+        padding-top: 10px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        padding-top: 15px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        margin: 0;
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .other-lang-input {
+    font-size: 18px;
+    margin: 20px 0;
+
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+    }
+
+    .other-lang-select {
+      font-size: 18px;
+    }
+  }
+
+  .agree-input {
+    font-size: 18px;
+    margin: 20px 0;
+
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+    }
+
+    .site-link {
+      margin-right: 4px;
+      vertical-align: top;
+    }
+  }
+
+  .sumbit-button {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,150 @@
+<div class="host-form-container">
+  <div class="medium-heading">
+    פרטי האירוח
+  </div>
+  <div class="form" [formGroup]="form">
+    <div class="form-items-container">
+      <app-host-input-text class="input" label="שם המפגש:" controlName="title" [formGroup]="form"></app-host-input-text>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-text
+        class="input"
+        label="תאריך:"
+        controlName="date"
+        iconUrl="assets/img/host_calendar.svg"
+        inputType="date"
+        [formGroup]="form"
+        [min]="minDate"
+        [max]="maxDate"
+      ></app-host-input-text>
+      <app-host-input-text
+        class="input"
+        label="שעה:"
+        controlName="hour"
+        iconUrl="assets/img/host_clock.svg"
+        inputType="time"
+        [formGroup]="form"
+      ></app-host-input-text>
+    </div>
+    <div class="form-items-container">
+      <app-places-select
+        class="input places-select"
+        [formattedAddress]="address.value?.formattedAddress"
+        [types]="['address']"
+        [placeholder]="'כתובת'"
+        (change)="address.patchValue($event)"
+        [invalid]="!address.valid && address.touched"
+      ></app-places-select>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-text
+        class="input"
+        label="הערות לכתובת (קומה,כניסה):"
+        controlName="notes"
+        iconUrl="assets/img/host_location.svg"
+        [textarea]="true"
+        [formGroup]="address"
+      ></app-host-input-text>
+    </div>
+    <div class="address-map-container">
+      <app-place-map [longitude]="address.value?.longitude" [latitude]="address.value?.latitude"></app-place-map>>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-text
+        class="input"
+        label="מספר מוזמנים מקסימלי:"
+        inputType="number"
+        iconUrl="assets/img/host_users.svg"
+        controlName="capacity"
+        [formGroup]="form"
+      ></app-host-input-text>
+      <div class="empty-half"></div>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-options
+        class="input"
+        label="קהל מוזמנים:"
+        iconUrl="assets/img/host_users.svg"
+        [options]="[
+          { text: 'פתוח לקהל הרחב', value: false },
+          { text: 'סגור למוזמנים בלבד', value: true }
+        ]"
+        [currentOption]="invited.value"
+        [invalid]="!invited.valid && invited.touched"
+        (optionSelected)="invited.setValue($event)"
+      ></app-host-input-options>
+    </div>
+    <div class="host-description-container">
+      <p class="host-description">
+        <span class="host-description-title">פתוח לקהל הרחב - </span>
+        מארח יקר, שים לב. תודה שאתה פותח את ביתך לקהל השומעים הרחב, אך יש לקחת בחשבון שלמרות זאת הינך מחויב להזמין לביתך
+        מכרים, חברים וכו'.
+      </p>
+      <p class="host-description">
+        <span class="host-description-title">סגור למוזמנים בלבד - </span>
+        מארח יקר, שים לב. אירוח זה הוא אירוח סגור למוזמנייך בלבד ולא יוכלו להצטרף אליו קהל שומעים רחב.
+      </p>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-options
+        class="input"
+        label="נגישות:"
+        iconUrl="assets/img/host_accessibility.svg"
+        [options]="[
+          { text: 'קיים', value: true },
+          { text: 'לא קיים', value: false }
+        ]"
+        [currentOption]="accessibility.value"
+        [invalid]="!accessibility.valid && accessibility.touched"
+        (optionSelected)="accessibility.setValue($event)"
+      ></app-host-input-options>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-options
+        class="input"
+        label="אפשרות להקרנת מצגת:"
+        iconUrl="assets/img/host_tv.svg"
+        [options]="[
+          { text: 'קיים', value: true },
+          { text: 'לא קיים', value: false }
+        ]"
+        [currentOption]="media.value"
+        [invalid]="!media.valid && media.touched"
+        (optionSelected)="media.setValue($event)"
+      ></app-host-input-options>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-options
+        class="input"
+        label="הסכמה לצילום במפגש:"
+        iconUrl="assets/img/host_camera.svg"
+        [options]="[
+          { text: 'מסכים', value: true },
+          { text: 'לא מסכים', value: false }
+        ]"
+        [currentOption]="reviewable.value"
+        [invalid]="!reviewable.valid && reviewable.touched"
+        (optionSelected)="reviewable.setValue($event)"
+      ></app-host-input-options>
+    </div>
+    <div class="form-items-container">
+      <app-host-input-options
+        class="input"
+        label="האם מדובר בקהל יעד מסוים?"
+        iconUrl="assets/img/host_users.svg"
+        [options]="audienceOptions"
+        [currentOption]="audience.value"
+        [invalid]="!audience.valid && audience.touched"
+        (optionSelected)="audience.setValue($event)"
+      ></app-host-input-options>
+    </div>
+  </div>
+  <div class="host-form-submit-container">
+    <p class="form-invalid-message" *ngIf="formInvalid">
+      אחד או יותר מהשדות אינם תקינים
+    </p>
+    <button (click)="onSubmit()" class="host-form-submit-btn site-button primary-button">
+      {{ meeting ? 'עדכן אירוח >>' : 'צור אירוח >>' }}
+    </button>
+  </div>
+</div>

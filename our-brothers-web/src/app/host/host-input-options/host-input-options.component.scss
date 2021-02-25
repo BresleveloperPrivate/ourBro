@@ -1,0 +1,77 @@
+.host-options-container {
+  position: relative;
+  padding: 5px;
+  background-color: white;
+  min-height: 50px;
+  border: 1px solid rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &.invalid {
+    border-color: red;
+  }
+
+  .icon-label {
+    flex: 0 0 auto;
+    width: 270px;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+
+    .input-icon {
+      width: 45px;
+      height: 50px;
+      background-position: 50% 50%;
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+    }
+
+    .input-label {
+      font-size: 18px;
+      color: rgb(153, 153, 153);
+      font-family: 'Heebo';
+    }
+  }
+
+  .options-container {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .option {
+      width: 190px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      margin: 5px;
+
+      .option-mark {
+        width: 17px;
+        height: 17px;
+        border: 1px solid rgb(153, 153, 153);
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+
+      .option-text {
+        font-size: 18px;
+        color: rgb(153, 153, 153);
+        font-family: 'Heebo';
+      }
+
+      &.current-option {
+        .option-mark {
+          border-color: #3786b1;
+          background-color: #3786b1;
+        }
+      }
+    }
+  }
+}

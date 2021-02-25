@@ -1,0 +1,80 @@
+.progressbar-container {
+  display: flex;
+  flex-direction: row;
+  font-family: 'arbel';
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 0px;
+  }
+
+  .progressbar-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .step-circle-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .step-circle {
+        flex: 0 1 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(10, 165, 155);
+        font-size: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: 768px) {
+          height: 60px;
+          flex-basis: 60px;
+          font-size: 22px;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          height: 70px;
+          flex-basis: 70px;
+          font-size: 30px;
+        }
+      }
+
+      .step-line {
+        flex-grow: 1;
+        height: 7px;
+        background-color: rgb(219, 219, 219);
+
+        &.current {
+          background-color: #dbdbdb;
+        }
+        &.done {
+          background-color: rgb(10, 165, 155);
+        }
+      }
+    }
+
+    .step-name {
+      font-size: 13px;
+      text-align: center;
+      color: rgb(0, 115, 109);
+      margin-top: 10px;
+
+      @media only screen and (min-width: 425px) {
+        font-size: 14px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        font-size: 22px;
+      }
+
+      @media only screen and (min-width: 1024px) {
+        font-size: 24px;
+      }
+    }
+  }
+}
