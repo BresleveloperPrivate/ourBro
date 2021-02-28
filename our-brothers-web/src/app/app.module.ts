@@ -24,7 +24,8 @@ import { ShellModule } from './shell/shell.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SvgIconsModule } from '@ngneat/svg-icon';
-import { MapModule } from './map/map.module';
+
+//import { MapModule } from './map/map.module';
 //import { MapComponent } from './map/map.component';
 //import { AngularSvgIconModule } from 'angular-svg-icon';
 
@@ -34,7 +35,7 @@ registerLocaleData(localeHe);
   declarations: [AppComponent, HomePageComponent],
   imports: [
     ShellModule,
-    MapModule,
+    //MapModule,
     //MapComponent,
     AuthModule,
     ParticipationsButtonsModule,

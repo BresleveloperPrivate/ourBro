@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MeetingsPageComponent } from './meetings-page.component';
+import { TryPageComponent } from './try-page.component';
 import { ParticipationsButtonsModule } from '../../shared/components/participations-buttons/participations-buttons.module';
 import { MeetingsComponentsModule } from '../../shared/components/meetings/meetings-components.module';
-//import { MeetingDetailsPageComponent } from '../details-page/meeting-details-page.component';
+import {TryDetailsPageComponent } from '../details-page/try-details-page.component';
 import { PipesModule } from '../../shared/pipes/pipes.module';
-import { MeetingsModule } from '../meetings.module';
+import { TryModule } from '../try.module';
 import { RemoveButtonModule } from '../../shared/components/remove-button/remove-button.module';
 import { MeetingJoinButtonModule } from '../../shared/components/meeting-join-button/meeting-join-button.module';
 
 const routes = [
   {
     path: '',
-    component: MeetingsPageComponent
+    component: TryPageComponent
   },
-  // {
-  //   path: ':memorialYear/:hostId/:meetingId',
-  //   component: MeetingDetailsPageComponent
-  // }
+  {
+    path: ':memorialYear/:hostId/:meetingId',
+    component: TryDetailsPageComponent
+  }
 ];
 
 @NgModule({
   imports: [
-    MeetingsModule,
+    TryModule,
     ParticipationsButtonsModule,
     MeetingsComponentsModule,
     RemoveButtonModule,
@@ -32,8 +32,6 @@ const routes = [
     CommonModule,
     PipesModule
   ],
-  declarations: [MeetingsPageComponent,
-    // MeetingDetailsPageComponent
-  ]
+  declarations: [TryPageComponent, TryDetailsPageComponent]
 })
-export class MeetingsPageModule { }
+export class TryPageModule { }
