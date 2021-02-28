@@ -11,4 +11,4 @@ const api = [HostMeetingInputTextComponent, MeetingParticipatesListComponent];
   imports: [PipesModule, CommonModule],
   exports: api
 })
-export class MeetingsModule {}
+export class MeetingsModule { }

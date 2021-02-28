@@ -39,10 +39,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./meetings/page/meetings-page.module').then(({ MeetingsPageModule }) => MeetingsPageModule)
   },
-  // {
-  //   path: 'map',
-  //   loadChildren: () => import('./map/map.module').then(({ MapModule }) => MapModule)
-  // },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then(({ MapModule }) => MapModule)
+  },
   {
     path: 'about',
     loadChildren: () => import('./about/page/about-page.module').then(({ AboutPageModule }) => AboutPageModule),
@@ -117,4 +117,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

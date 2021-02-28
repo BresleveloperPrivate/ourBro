@@ -1,11 +1,14 @@
+import { SignInService } from './../../shared/services/signIn.service';
+import { MEMORIAL_YEAR } from 'src/app/shared/constants';
+import { User } from 'models';
 import { Component, Input } from '@angular/core';
-import { finalize, take } from 'rxjs/operators';
+import { finalize, take, last } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService, AuthErrors } from '../../shared/services/auth.service';
 import { RegistrationForm } from '../registration-form/registration-form.types';
 import { LoginForm } from '../login-form/login-form.types';
 import { ForgotPasswordForm } from '../forgot-password-form/forgot-password-form.types';
-
+//import { lastLogin } from '../../app.component'
 export type LoginMode = 'Login' | 'Register' | 'Forgot';
 //export type LoginKind='Host'|'Participate'|'Tell';
 
@@ -16,10 +19,26 @@ export type LoginMode = 'Login' | 'Register' | 'Forgot';
 })
 export class LoginPopupComponent {
   @Input() mode: LoginMode = 'Login';
-  //@Input() kind:LoginKind;
+  @Input() user: User;
   loading: boolean;
+  //@Input() lastLogin: Number;
   //currURl = location.pathname;
-  constructor(public authService: AuthService, private toastr: ToastrService) {}
+  //currdate = 1614521972000;
+  currdate = 1646521972000;
+  lastdate = this.signInService.lastLogin;
+  public yearDate: Date
+  //public Ayeardate
+
+
+
+  // @Input() lastSigh: User;
+
+
+
+
+  constructor(public authService: AuthService,
+    public signInService: SignInService,
+    private toastr: ToastrService) { }
 
   signInWithEmailAndPassword(form: LoginForm) {
     this.loading = true;
@@ -106,8 +125,24 @@ export class LoginPopupComponent {
   // הפונקציה לא גמורה ומצריכה טיפול
   private loginSuccessSignIn() {
     this.authService.user.pipe(take(1)).subscribe(() => {
-      this.authService.closeLogin();
-      this.toastr.success(`התחברת בהצלחה!`);
+      // console.log("tehila", this.lastdate);
+      this.yearDate = new Date(this.lastdate)
+      //this.Ayeardate= new Date(this.yearDate)
+      //console.log('yearfate', this.yearDate)
+      //console.log('ggggggg', typeof (this.yearDate));
+      if ((this.yearDate).getFullYear() < 2022) {
+
+        // this.authService.loginSuccessRegister();
+        this.authService.closeLoginRegister()
+        this.toastr.success(`התחברת בהצלחה!`);
+
+
+      }
+
+      // }
+      else {
+        this.authService.closeLogin()
+      }
     });
   }
 

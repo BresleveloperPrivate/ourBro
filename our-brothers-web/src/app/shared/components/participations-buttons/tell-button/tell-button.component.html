@@ -1,41 +1,27 @@
-<app-flip-card
-  [disabled]="loading || (user && !participationService.isUserCanTell(user))"
-  [frontImage]="frontImage"
-  [frontTitle]="'אני רוצה לספר'"
-  [backText]="'אח/אחות שכולים? מעוניינים לספר את ספורכם האישי?'"
-  [backButtonText]="'לפרטים נוספים'"
-  [backButtonUrl]="'tell'"
->
+<app-flip-card [disabled]="loading || (user && !participationService.isUserCanTell(user))" [frontImage]="frontImage"
+  [frontTitle]="'אני רוצה לספר'" [backText]="'אח/אחות שכולים? מעוניינים לספר את ספורכם האישי?'"
+  [backButtonText]="'לפרטים נוספים'" [backButtonUrl]="'tell'">
 </app-flip-card>
 
 <ng-template #frontImage>
   <!-- <?xml version="1.0" encoding="UTF-8"?> -->
-  <svg
-    class="size-icon"
-    width="100%"
-    height="100%"
-    viewBox="0 0 38 54"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-  >
+  <svg class="size-icon" width="100%" height="100%" viewBox="0 0 38 54" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" class="image"
+    [class.disabled]="loading || (user && !participationService.isUserCanTell(user))">
     <title>Group 8</title>
-    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Styleguide" class="aaa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="Icons" transform="translate(-68.000000, -147.000000)">
         <g id="Group-8" transform="translate(68.575096, 147.358781)">
           <path
             d="M22.7382248,21.6474247 C26.1900045,21.6474247 29.3150045,23.0465349 31.5770595,25.3085899 C33.8391146,27.570645 35.2382248,30.695645 35.2382248,34.1474247 L35.2382248,34.1474247 L35.2382248,50.8309851 L1.5,50.8309851 L1.5,34.1474247 C1.5,30.695645 2.89911016,27.570645 5.16116524,25.3085899 C7.42322031,23.0465349 10.5482203,21.6474247 14,21.6474247 L14,21.6474247 Z"
-            id="Rectangle"
-            stroke="#082551"
-            stroke-width="3"
-          ></path>
+            id="Rectangle" stroke="#082551" stroke-width="3"></path>
           <circle id="Oval" stroke="#082551" stroke-width="3" cx="18.3691124" cy="10.9742106" r="9.47421059"></circle>
-          <g id="Group" transform="translate(19.509578, 28.288414)" fill="#16B3AB">
+          <g id="Group" class="person" transform="translate(19.509578, 28.288414)" fill="#16B3AB">
             <g transform="translate(0.014003, -0.002921)" id="Path">
               <g transform="translate(0.068594, 0.002921)">
                 <path
-                  d="M3.42281254,0.351398275 C1.86323567,0.351398275 0.816199463,1.61377246 0.816199463,3.1727075 C0.816199463,4.94167935 3.28760549,7.05523915 5.40550996,8.46662461 C7.52340705,7.05523915 9.96624003,4.9075954 9.99482038,3.1727075 C10.020494,1.61399379 9.01118483,0.351398275 7.45160722,0.351398275 C6.78625476,0.351398275 6.11147566,0.703373139 5.40550996,1.40902898 C4.69953689,0.703373139 4.08816522,0.351398275 3.42281254,0.351398275 Z"
-                ></path>
+                  d="M3.42281254,0.351398275 C1.86323567,0.351398275 0.816199463,1.61377246 0.816199463,3.1727075 C0.816199463,4.94167935 3.28760549,7.05523915 5.40550996,8.46662461 C7.52340705,7.05523915 9.96624003,4.9075954 9.99482038,3.1727075 C10.020494,1.61399379 9.01118483,0.351398275 7.45160722,0.351398275 C6.78625476,0.351398275 6.11147566,0.703373139 5.40550996,1.40902898 C4.69953689,0.703373139 4.08816522,0.351398275 3.42281254,0.351398275 Z">
+                </path>
               </g>
             </g>
           </g>
@@ -50,8 +36,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 75 120"
     xml:space="preserve"
-    class="image"
-    [class.disabled]="loading || (user && !participationService.isUserCanTell(user))"
+   
   >
     <svg:path
       class="person"
