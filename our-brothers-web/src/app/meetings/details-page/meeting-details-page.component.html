@@ -1,4 +1,4 @@
-<!-- <img class="image-header" src="../../../assets/img/meetingsHeader.jpg" />
+<img class="image-header" src="../../../assets/img/meetingsHeader.jpg" />
 <div class="site-divider"></div>
 <div class="medium-heading">
   <span *ngIf="!loadingMeeting">
@@ -72,8 +72,8 @@
     </div>
   </div>
 
-  *ngIf="user?.isAdmin && meeting"
-  להוסיף בתנאי או מנהל או שזה המפגש שלו ז""א יוזר נטכחי" 
+  <!-- *ngIf="user?.isAdmin && meeting" -->
+  <!-- להוסיף בתנאי או מנהל או שזה המפגש שלו ז""א יוזר נטכחי"  -->
 
   <div class="row" *ngIf="user?.isAdmin && meeting">
     <div class="col">
@@ -90,7 +90,7 @@
       </div>
     </div>
   </div>
-  <div class="col">
+  <!-- <div class="col">
     <div class="share-container">
       <div class="share-text">
         שיתוף באמצעות :
@@ -98,7 +98,7 @@
       <div class="facebook-icon"></div>
       <div class="whatsapp-icon"></div>
     </div>
-  </div>
+  </div> -->
   <ng-container *ngIf="meeting?.bereaved || participationsService.isBereavedCanParticipatingMeeting(user, meeting)">
     <div class="medium-heading">
       אח/ות שכול/ה
@@ -170,4 +170,4 @@
       </div>
     </div>
   </ng-container>
-</div> -->
+</div>

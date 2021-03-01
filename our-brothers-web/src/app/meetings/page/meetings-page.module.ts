@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MeetingsPageComponent } from './meetings-page.component';
 import { ParticipationsButtonsModule } from '../../shared/components/participations-buttons/participations-buttons.module';
 import { MeetingsComponentsModule } from '../../shared/components/meetings/meetings-components.module';
-//import { MeetingDetailsPageComponent } from '../details-page/meeting-details-page.component';
+import { MeetingDetailsPageComponent } from '../details-page/meeting-details-page.component';
 import { PipesModule } from '../../shared/pipes/pipes.module';
 import { MeetingsModule } from '../meetings.module';
 import { RemoveButtonModule } from '../../shared/components/remove-button/remove-button.module';
@@ -15,10 +15,10 @@ const routes = [
     path: '',
     component: MeetingsPageComponent
   },
-  // {
-  //   path: ':memorialYear/:hostId/:meetingId',
-  //   component: MeetingDetailsPageComponent
-  // }
+  {
+    path: ':memorialYear/:hostId/:meetingId',
+    component: MeetingDetailsPageComponent
+  }
 ];
 
 @NgModule({
@@ -33,7 +33,7 @@ const routes = [
     PipesModule
   ],
   declarations: [MeetingsPageComponent,
-    // MeetingDetailsPageComponent
+     MeetingDetailsPageComponent
   ]
 })
 export class MeetingsPageModule { }

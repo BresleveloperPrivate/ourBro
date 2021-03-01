@@ -9,11 +9,11 @@ import { AuthService } from '../../shared/services/auth.service';
 import { ParticipationsService } from 'src/app/shared/services/participations.service';
 
 @Component({
-  selector: 'app-try-details-page',
-  templateUrl: './try-details-page.component.html',
-  styleUrls: ['./try-details-page.component.scss']
+  selector: 'app-map-meeting-details-page',
+  templateUrl: './map-meeting-details-page.component.html',
+  styleUrls: ['./map-meeting-details-page.component.scss']
 })
-export class TryDetailsPageComponent implements OnInit, OnDestroy {
+export class MapMeetingDetailsPageComponent implements OnInit, OnDestroy {
   public user: User;
 
   public loadingMeeting = true;
@@ -37,7 +37,7 @@ export class TryDetailsPageComponent implements OnInit, OnDestroy {
     public dataService: DataService,
     public utilsService: UtilsService,
     public participationsService: ParticipationsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.user.subscribe(user => {

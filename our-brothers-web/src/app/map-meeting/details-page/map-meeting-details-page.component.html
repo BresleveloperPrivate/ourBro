@@ -15,60 +15,60 @@
 <div *ngIf="loadingMeeting || meeting" class="meeting-details">
   <div class="row" *ngIf="extraData">
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_user.svg"
-        [text]="meeting?.contact.firstName + ' ' + meeting?.contact.lastName"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
+        [text]="meeting?.contact.firstName + ' ' + meeting?.contact.lastName"></app-host-map-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_phone.svg"
-        [text]="meeting?.contact?.phoneNumber | phone"></app-host-try-input-text>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_calendar.svg" label="תאריך:"
-        [text]="meeting?.date | date: 'dd.MM.yyyy'"></app-host-try-input-text>
-    </div>
-    <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_clock.svg" label="שעה:"
-        [text]="meeting?.date | date: 'HH:mm'"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_phone.svg"
+        [text]="meeting?.contact?.phoneNumber | phone"></app-host-map-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_location.svg" label="כתובת:"
-        [text]="meeting?.address?.formattedAddress"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_calendar.svg" label="תאריך:"
+        [text]="meeting?.date | date: 'dd.MM.yyyy'"></app-host-map-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_users.svg" label="מספר מוזמנים:"
-        [text]="meeting?.capacity"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_clock.svg" label="שעה:"
+        [text]="meeting?.date | date: 'HH:mm'"></app-host-map-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_users.svg"
-        [text]="meeting?.invited ? 'סגור למוזמנים בלבד' : 'פתוח לקהל הרחב'"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_location.svg" label="כתובת:"
+        [text]="meeting?.address?.formattedAddress"></app-host-map-meeting-input-text>
+    </div>
+    <div class="col">
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_users.svg" label="מספר מוזמנים:"
+        [text]="meeting?.capacity"></app-host-map-meeting-input-text>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_users.svg"
+        [text]="meeting?.invited ? 'סגור למוזמנים בלבד' : 'פתוח לקהל הרחב'"></app-host-map-meeting-input-text>
     </div>
 
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_accessibility.svg" label=" נגישות:"
-        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_accessibility.svg" label=" נגישות:"
+        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"></app-host-map-meeting-input-text>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_tv.svg"
-        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_tv.svg"
+        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"></app-host-map-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_camera.svg"
-        [text]="meeting?.invited ? 'לא מסכים' : ' מסכים'"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_camera.svg"
+        [text]="meeting?.invited ? 'לא מסכים' : ' מסכים'"></app-host-map-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-try-input-text class="input" iconUrl="assets/img/host_users.svg" label="קהל יעד:"
-        [text]="meeting ? utilsService.meetingAudienceLabels[meeting.audience] : ''"></app-host-try-input-text>
+      <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_users.svg" label="קהל יעד:"
+        [text]="meeting ? utilsService.meetingAudienceLabels[meeting.audience] : ''"></app-host-map-meeting-input-text>
     </div>
   </div>
 
@@ -106,30 +106,30 @@
     <ng-container *ngIf="meeting?.bereaved">
       <div class="row">
         <div class="col">
-          <app-host-try-input-text class="input" iconUrl="assets/img/host_user.svg"
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
             [text]="meeting?.bereaved ? meeting.bereaved.firstName + ' ' + meeting.bereaved.lastName : ''">
-          </app-host-try-input-text>
+          </app-host-map-meeting-input-text>
         </div>
         <div class="col" *ngIf="meeting?.bereaved?.slains?.length < 2">
-          <app-host-try-input-text class="input" iconUrl="assets/img/host_user.svg"
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
             [text]="meeting.bereaved.slains[0].firstName + ' ' + meeting.bereaved.slains[0].lastName + ' ז&quot;ל'">
-          </app-host-try-input-text>
+          </app-host-map-meeting-input-text>
         </div>
       </div>
       <div class="row" *ngIf="meeting?.bereaved?.slains?.length > 1">
         <div class="col" *ngFor="let slain of meeting.bereaved.slains">
-          <app-host-try-input-text class="input" iconUrl="assets/img/host_user.svg"
-            [text]="slain.firstName + ' ' + slain.lastName + ' ז&quot;ל'"></app-host-try-input-text>
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
+            [text]="slain.firstName + ' ' + slain.lastName + ' ז&quot;ל'"></app-host-map-meeting-input-text>
         </div>
       </div>
       <div class="row" *ngIf="meeting?.bereaved && extraData">
         <div class="col">
-          <app-host-try-input-text class="input" iconUrl="assets/img/host_phone.svg"
-            [text]="meeting?.bereaved?.phoneNumber | phone"></app-host-try-input-text>
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_phone.svg"
+            [text]="meeting?.bereaved?.phoneNumber | phone"></app-host-map-meeting-input-text>
         </div>
         <div class="col">
-          <app-host-try-input-text class="input" iconUrl="assets/img/host_email.svg" [text]="meeting?.bereaved?.email">
-          </app-host-try-input-text>
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_email.svg" [text]="meeting?.bereaved?.email">
+          </app-host-map-meeting-input-text>
         </div>
       </div>
     </ng-container>

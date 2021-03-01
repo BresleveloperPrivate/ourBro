@@ -46,42 +46,42 @@ export class MeetingsPageComponent implements OnInit {
     });
   }
 
-  // onMapGuideCompleted() {
-  //   this.mapShowGuide = true;
-  //   if (this.user && this.user.id) {
-  //     this.dataService.updateUserMapGuideLastVisit(this.user.id);
-  //   }
-  // }
+  onMapGuideCompleted() {
+    this.mapShowGuide = true;
+    if (this.user && this.user.id) {
+      this.dataService.updateUserMapGuideLastVisit(this.user.id);
+    }
+  }
 
-  // onJoinMeeting(meeting: Meeting) {
-  //   if (meeting && this.user) {
-  //     if (window.confirm('האם ברצונך להשתבץ למפגש?')) {
-  //       (this.user.role === 'bereaved'
-  //         ? this.dataService.bereavedJoinMeeting(this.user, meeting)
-  //         : this.dataService.participateJoinMeeting(this.user, meeting, this.getAccompanies())
-  //       ).subscribe(
-  //         () => {
-  //           this.toastr.success('שובצת בהצלחה');
-  //           this.router.navigate([`meetings/${this.year}/${meeting.hostId}/${meeting.id}`]);
-  //         },
-  //         () => {
-  //           this.toastr.error('שגיאה - לא ניתן להשתבץ למפגש. נא ליצור קשר');
-  //         }
-  //       );
-  //     }
-  //   }
-  // }
+  onJoinMeeting(meeting: Meeting) {
+    if (meeting && this.user) {
+      if (window.confirm('האם ברצונך להשתבץ למפגש?')) {
+        (this.user.role === 'bereaved'
+          ? this.dataService.bereavedJoinMeeting(this.user, meeting)
+          : this.dataService.participateJoinMeeting(this.user, meeting, this.getAccompanies())
+        ).subscribe(
+          () => {
+            this.toastr.success('שובצת בהצלחה');
+            this.router.navigate([`meetings/${this.year}/${meeting.hostId}/${meeting.id}`]);
+          },
+          () => {
+            this.toastr.error('שגיאה - לא ניתן להשתבץ למפגש. נא ליצור קשר');
+          }
+        );
+      }
+    }
+  }
 
-  // getAccompanies(): number {
-  //   let accompaniesAnswer = window.prompt('האם יגיעו איתך אנשים נוספים?', '0');
+  getAccompanies(): number {
+    let accompaniesAnswer = window.prompt('האם יגיעו איתך אנשים נוספים?', '0');
 
-  //   let number = Number.parseInt(accompaniesAnswer);
+    let number = Number.parseInt(accompaniesAnswer);
 
-  //   while (!(!Number.isNaN(number) && number >= 0 && number <= 7)) {
-  //     accompaniesAnswer = window.prompt('נא להזין מספר משתתפים בין 0 ל-7', '0');
-  //     number = Number.parseInt(accompaniesAnswer);
-  //   }
+    while (!(!Number.isNaN(number) && number >= 0 && number <= 7)) {
+      accompaniesAnswer = window.prompt('נא להזין מספר משתתפים בין 0 ל-7', '0');
+      number = Number.parseInt(accompaniesAnswer);
+    }
 
-  //   return number;
-  // }
+    return number;
+  }
 }

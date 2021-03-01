@@ -10,13 +10,13 @@ import { AuthService } from '../../shared/services/auth.service';
 const oneWeek = 1000 * 60 * 60 * 24 * 7;
 
 @Component({
-  selector: 'app-try-page',
-  templateUrl: './try-page.component.html',
-  styleUrls: ['./try-page.component.scss']
+  selector: 'app-map-meeting-page',
+  templateUrl: './map-meeting-page.component.html',
+  styleUrls: ['./map-meeting-page.component.scss']
 })
-export class TryPageComponent implements OnInit {
+export class MapMeetingPageComponent implements OnInit {
   user: User;
-  //loadingUser = true;
+  loadingUser = true;
   meetings: Meeting[];
   mapShowGuide = false;
   year = MEMORIAL_YEAR;
@@ -31,7 +31,7 @@ export class TryPageComponent implements OnInit {
   ngOnInit(): void {
     this.authService.user.subscribe(user => {
       this.user = user;
-      // this.loadingUser = false;
+      this.loadingUser = false;
 
       if (
         !this.mapShowGuide &&
