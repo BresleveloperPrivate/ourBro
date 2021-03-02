@@ -5,7 +5,11 @@
   (selectMeeting)="selectedMeeting$.next($event)"
 >
 </app-modal-select-meeting>
-<div class="medium-heading">ניהול אחים</div>
+<div class="medium-heading">
+  ניהול אחים
+  <a id="excel" href="#" (click)="usersToExcel()">הורד אקסל</a>
+
+</div>
 <div class="container-fluid bereaveds-container">
   <app-free-text-filter class="free-text-filter" [(filter)]="filter" (filterChange)="filterBereaveds()">
   </app-free-text-filter>
