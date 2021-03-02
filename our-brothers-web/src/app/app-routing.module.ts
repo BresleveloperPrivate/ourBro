@@ -41,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'map',
-    loadChildren: () => import('./try/page/try-page.module').then(({ TryPageModule }) => TryPageModule)
+    loadChildren: () => import('./map-meeting/page/map-meeting-page.module').then(({ MapMeetingPageModule }) => MapMeetingPageModule)
   },
   {
     path: 'about',
@@ -91,7 +91,7 @@ const routes: Routes = [
     path: 'admin-bereaveds',
     loadChildren: () =>
       import('./admin/bereaveds/page/admin-bereaveds-page.module').then(
-        ({ AdminBereavedsPageModule }) => AdminBereavedsPageModule
+        ({ AdminBereavedsPageComponent }) => AdminBereavedsPageComponent
       )
   },
   {

@@ -21,19 +21,8 @@ export class LoginPopupComponent {
   @Input() mode: LoginMode = 'Login';
   @Input() user: User;
   loading: boolean;
-  //@Input() lastLogin: Number;
-  //currURl = location.pathname;
-  //currdate = 1614521972000;
-  currdate = 1646521972000;
   lastdate = this.signInService.lastLogin;
   public yearDate: Date
-  //public Ayeardate
-
-
-
-  // @Input() lastSigh: User;
-
-
 
 
   constructor(public authService: AuthService,
@@ -125,14 +114,8 @@ export class LoginPopupComponent {
   // הפונקציה לא גמורה ומצריכה טיפול
   private loginSuccessSignIn() {
     this.authService.user.pipe(take(1)).subscribe(() => {
-      // console.log("tehila", this.lastdate);
       this.yearDate = new Date(this.lastdate)
-      //this.Ayeardate= new Date(this.yearDate)
-      //console.log('yearfate', this.yearDate)
-      //console.log('ggggggg', typeof (this.yearDate));
-      if ((this.yearDate).getFullYear() < 2022) {
-
-        // this.authService.loginSuccessRegister();
+      if ((this.yearDate).getFullYear() < MEMORIAL_YEAR) {
         this.authService.closeLoginRegister()
         this.toastr.success(`התחברת בהצלחה!`);
 

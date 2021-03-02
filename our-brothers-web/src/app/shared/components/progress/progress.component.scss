@@ -3,11 +3,14 @@
   border-radius: 5px;
   margin-right: 5%;
   width: 90%;
+ 
 }
 .progress-heading {
   font-weight: bold;
   padding: 20px;
   cursor: pointer;
+  color: #082551 ;
+  height: 60px;
 }
 
 .progress-body {
@@ -19,4 +22,13 @@
 }
 .add-icon{
   margin-right: 95%;
+  margin-top: -20px;
 }
+.renove-icon{
+  margin-right: 95%;
+margin-top: -10px;
+}
+// .progress-title{
+//   color: #082551;
+//   //margin: 20px 20px 0px 0px ;
+// }

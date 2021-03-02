@@ -1,3 +1,4 @@
+//import { EnrollmentService } from './../../shared/services/enrollment.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, combineLatest, Subscription } from 'rxjs';
@@ -28,12 +29,13 @@ export class HostPageComponent implements OnInit, OnDestroy {
   public aa: boolean = false;
 
   constructor(
+    //public enrollmentService: EnrollmentService,
     private router: Router,
     private authService: AuthService,
     private dataService: DataService,
     private toastr: ToastrService,
     private participationsService: ParticipationsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));
@@ -76,6 +78,12 @@ export class HostPageComponent implements OnInit, OnDestroy {
     );
 
     this.currentStep$.next(0);
+    setTimeout(() => {
+      this.currentStep$.next(1);
+    })
+
+
+
   }
 
   onProfileSubmit(profileForm: ProfileForm) {

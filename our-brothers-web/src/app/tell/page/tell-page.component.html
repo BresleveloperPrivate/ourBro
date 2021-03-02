@@ -3,6 +3,14 @@
   <section *ngIf="currentStep > 0">
     <div class="site-divider"></div>
     <div class="small-heading">פרטים נוספים</div>
+
+    <app-progress title="הסבר">
+      <section class="registration-step">
+        <app-bereaved-intro></app-bereaved-intro>
+      </section>
+    </app-progress>
+
+    <br />
     <app-progress title=" פרטים אישיים">
       <section class="registration-step">
         <app-bereaved-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
@@ -10,18 +18,12 @@
       </section>
     </app-progress>
     <br />
-    <!-- [expended]="true" -->
     <app-progress title="פרטי החלל">
       <section class="registration-step">
         <app-slain-form [slain]="slain" (submit)="onSlainsSubmit($event)"></app-slain-form>
       </section>
     </app-progress>
     <br />
-
-    <!-- {{slain.deathDate}}<br> -->
-    <!-- {{slain.firstName}}<br>
-  {{slain.lastName}}<br> -->
-    <!-- {{slain.id}}<br> -->
 
     <app-progress title="מפגשי בדרכה">
       <section class="registration-step">
@@ -48,7 +50,7 @@
   <div class="registration-steps">
     <ng-container [ngSwitch]="currentStep">
       <ng-container *ngSwitchCase="0">
-        <app-bereaved-intro (submit)="currentStep$.next(1)"></app-bereaved-intro>
+        <!-- <app-bereaved-intro (submit)="currentStep$.next(1)"></app-bereaved-intro> -->
       </ng-container>
       <ng-container *ngSwitchCase="1">
         <!-- login -->

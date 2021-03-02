@@ -12,7 +12,7 @@
         "prod": [
           "our-brothers"
         ],
-        "try": [
+        "test": [
           "our-brothers-test"
         ]
       }

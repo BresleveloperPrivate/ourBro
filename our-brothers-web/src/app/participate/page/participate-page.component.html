@@ -1,33 +1,29 @@
 <img class="image-header" src="../../../assets/img/tellHeader.jpg" alt="Meetings Page Header Image" />
 <section class="registration-page">
+
+
   <section *ngIf="currentStep > 0">
     <div class="site-divider"></div>
     <div class="small-heading">פרטים נוספים</div>
+    <app-progress title="הסבר">
+       <section class="registration-step">
+        <app-participate-intro (submit)="currentStep$.next(1)"></app-participate-intro>
+      </section> 
+
+    </app-progress>
+    <br />
+
     <app-progress title="פרטי משתמש">
       <section class="registration-step">
-        <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
+        <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event) ">
         </app-profile-form>
       </section>
     </app-progress>
   </section>
   <br />
 
-  <!-- <div class="ok" *ngIf="ok">
-    {{ [user.profile.firstName] + ' ' + [user.profile.lastName] }}
 
-    <br />
-    {{ user.profile.email }}
-    <br />
-
-    {{ user.profile.phoneNumber }}
-
-    <button (click)="submitOk()" class="site-button primary-button">
-      לאישור
-    </button>
-  </div>
-  <br /> -->
-
-  <app-progress title="הרשמה">
+  <app-progress title="הרשמה" *ngIf="ok ">
     <app-meetings [user]="user" [meetings]="meetings" (joinMeeting)="onJoinMeeting($event)"> </app-meetings>
   </app-progress>
   <!-- <button (click)="submit.emit()" class="site-button primary-button intro-button">
@@ -39,15 +35,15 @@
   <div class="registration-steps">
     <ng-container [ngSwitch]="currentStep">
       <ng-container *ngSwitchCase="0">
-        <app-participate-intro (submit)="currentStep$.next(1)"></app-participate-intro>
+        <!-- <app-participate-intro (submit)="currentStep$.next(1)"></app-participate-intro> -->
       </ng-container>
       <ng-container *ngSwitchCase="1">
         <!-- login -->
       </ng-container>
       <ng-container *ngSwitchCase="2">
         <section class="registration-step">
-          <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
-          </app-profile-form>
+          <!-- <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)"> -->
+          <!-- </app-profile-form> -->
         </section>
       </ng-container>
       <ng-container *ngSwitchCase="3">

@@ -1,3 +1,4 @@
+//import { EnrollmentService } from './../../services/enrollment.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
@@ -7,12 +8,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ProgressComponent {
   @Input('title') title: string;
-
   @Input('expended') expended: boolean = false;
 
-  public isExpended: boolean;
+
+  // constructor(public enrollmentService :EnrollmentService ,) { }
+  //@Input('open') open: boolean = false;
+
+  @Input('isExpended') isExpended = true;
 
   public e() {
+    this.isExpended = !this.isExpended;
+  }
+
+
+  public onlyOne() {
     this.isExpended = !this.isExpended;
   }
 }

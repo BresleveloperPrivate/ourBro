@@ -75,7 +75,7 @@
   <!-- *ngIf="user?.isAdmin && meeting" -->
   <!-- להוסיף בתנאי או מנהל או שזה המפגש שלו ז""א יוזר נטכחי" -->
 
-  <div class="row" *ngIf="user?.isAdmin && meeting">
+  <div class="row" *ngIf="(user?.isAdmin && meeting)||(user?.id && meeting)">
     <div class="col">
       <div class="buttons">
         <a class="site-button invert edit-button"
@@ -128,7 +128,8 @@
             [text]="meeting?.bereaved?.phoneNumber | phone"></app-host-map-meeting-input-text>
         </div>
         <div class="col">
-          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_email.svg" [text]="meeting?.bereaved?.email">
+          <app-host-map-meeting-input-text class="input" iconUrl="assets/img/host_email.svg"
+            [text]="meeting?.bereaved?.email">
           </app-host-map-meeting-input-text>
         </div>
       </div>

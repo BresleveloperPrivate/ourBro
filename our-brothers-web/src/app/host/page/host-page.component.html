@@ -3,27 +3,22 @@
 <section class="registration-page">
   <section *ngIf="currentStep > 0">
     <div class="site-divider"></div>
+
     <div class="small-heading">פרטים נוספים</div>
-    <app-progress title="פרטי משתמש">
+
+
+    <app-progress title="הסבר">
+      <section class="step0">
+        <app-host-intro></app-host-intro>
+      </section>
+    </app-progress>
+    <br />
+    <app-progress title="פרטי משתמש" >
       <section class="registration-step">
         <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
         </app-profile-form>
       </section>
     </app-progress>
-    <br />
-    <!-- <div class="ok" *ngIf="ok">
-      {{ [user.profile.firstName] + ' ' + [user.profile.lastName] }}
-  
-      <br />
-      {{ user.profile.email }}
-      <br />
-  
-      {{ user.profile.phoneNumber }}
-  
-      <button (click)="submitOk()" class="site-button primary-button">
-        לאישור
-      </button>
-    </div> -->
     <br />
     <app-progress title="פרטי הארוח">
       <section class="registration-step">
@@ -31,14 +26,15 @@
       </section>
     </app-progress>
   </section>
+  <br />
   <!-- [currentStep]="currentStep - 1"
   [steps]="[{ title: 'התחברות' }, { title: 'הרשמה' }, { title: 'פרטי האירוח' }, { title: 'אישור האירוח' }]" -->
   <div class="registration-steps">
     <ng-container [ngSwitch]="currentStep">
       <ng-container *ngSwitchCase="0">
-        <section class="step0">
+        <!-- <section class="step0">
           <app-host-intro (nextStep)="currentStep$.next(1)"></app-host-intro>
-        </section>
+        </section> -->
       </ng-container>
       <ng-container *ngSwitchCase="1">
         <!-- login -->

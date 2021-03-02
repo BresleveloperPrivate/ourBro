@@ -33,7 +33,7 @@ const routes = [
     PipesModule
   ],
   declarations: [MeetingsPageComponent,
-     MeetingDetailsPageComponent
+    MeetingDetailsPageComponent
   ]
 })
 export class MeetingsPageModule { }

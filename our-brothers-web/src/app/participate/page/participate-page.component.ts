@@ -1,3 +1,4 @@
+//import { EnrollmentService } from './../../shared/services/enrollment.service';
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, combineLatest, Subscription } from 'rxjs';
@@ -25,16 +26,18 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
   public year = MEMORIAL_YEAR;
   public ok: boolean = false;
   public enrollment: boolean = false;
+  public curr = false;
 
   private subscriptions: Subscription[] = [];
   //@Output() submit = new EventEmitter<void>();
   constructor(
+    //public enrollmentService: EnrollmentService,
     private router: Router,
     private authService: AuthService,
     private participationsService: ParticipationsService,
     private toastr: ToastrService,
     private dataService: DataService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));
@@ -81,11 +84,23 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
         this.meetings = meetings;
       })
     );
+
+    setTimeout(() => {
+      this.currentStep$.next(1);
+    })
   }
 
   onProfileSubmit(profileForm: ProfileForm) {
     this.dataService.setUserProfile(this.user, profileForm);
-    this.ok = true;
+
+    //this.curr=!this.curr
+    //this.enrollmentService.e(this.curr);
+    setTimeout(() => {
+      this.ok = true;
+    })
+
+    //this.enrollmentService.isExpended = !this.enrollmentService.isExpended;
+
   }
 
   onJoinMeeting(meeting: Meeting) {

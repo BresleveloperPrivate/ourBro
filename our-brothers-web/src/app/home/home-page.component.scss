@@ -1,7 +1,10 @@
 .body {
-  background: url('../../assets/svg/Shape.svg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background:url("../../assets/svg/Shape.svg");
+  //background-repeat: no-repeat;
+  //background: no-repeat url("../../media/examples/lizard.png");
+  //background-attachment: fixed;
+ // color: red;
+ //z-index: 3333;
   background-position: center;
   width: 260.21px;
   height: 550px;
@@ -104,8 +107,12 @@
 .home-page-icons-text {
   font-size: 16px;
   color: #15305a;
+  margin-top:-15px ;
+ 
 }
-
+.abroad{
+  margin-right: 10px;
+}
 @media only screen and (max-width: 786px) {
   .home-page-first {
     flex-direction: column;
@@ -153,6 +160,7 @@
       // grid-area: 2 / 2 / 5 / 4;
       flex-grow: 3.5;
       margin: 20px;
+      
 
       border-radius: 15px;
       // width: auto;
@@ -445,10 +453,13 @@
 
 .home-page-toolbox-icons {
   //text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+  //display: flex;
+  //flex-wrap: wrap;
   //margin-left: auto;
-  margin-right: 35%;
+  margin-right: 32%;
+  .text-to-icon{
+    margin-top: -30px;
+  }
   svg {
     //padding-left: 50%;
     padding: 0px 25px 0px 25px;
@@ -617,11 +628,12 @@
     border-radius: 50%;
   }
 }
-// .sticky-button{
+.sticky-button{
 
-//   position: sticky;
-//   top: 0;
-// }
+  position: fixed;
+  top:20%;
+  z-index: 3;
+}
 .contact-form {
   padding-bottom: 50px;
 }
