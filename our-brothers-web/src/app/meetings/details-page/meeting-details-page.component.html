@@ -15,61 +15,100 @@
 <div *ngIf="loadingMeeting || meeting" class="meeting-details">
   <div class="row" *ngIf="extraData">
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
-        [text]="meeting?.contact.firstName + ' ' + meeting?.contact.lastName"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_user.svg"
+        [text]="meeting?.contact.firstName + ' ' + meeting?.contact.lastName"
+      ></app-host-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_phone.svg"
-        [text]="meeting?.contact?.phoneNumber | phone"></app-host-meeting-input-text>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_calendar.svg" label="תאריך:"
-        [text]="meeting?.date | date: 'dd.MM.yyyy'"></app-host-meeting-input-text>
-    </div>
-    <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_clock.svg" label="שעה:"
-        [text]="meeting?.date | date: 'HH:mm'"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_phone.svg"
+        [text]="meeting?.contact?.phoneNumber | phone"
+      ></app-host-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_location.svg" label="כתובת:"
-        [text]="meeting?.address?.formattedAddress"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_calendar.svg"
+        label="תאריך:"
+        [text]="meeting?.date | date: 'dd.MM.yyyy'"
+      ></app-host-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_users.svg" label="מספר מוזמנים:"
-        [text]="meeting?.capacity"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_clock.svg"
+        label="שעה:"
+        [text]="meeting?.date | date: 'HH:mm'"
+      ></app-host-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_users.svg"
-        [text]="meeting?.invited ? 'סגור למוזמנים בלבד' : 'פתוח לקהל הרחב'"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_location.svg"
+        label="כתובת:"
+        [text]="meeting?.address?.formattedAddress"
+      ></app-host-meeting-input-text>
+    </div>
+    <div class="col">
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_users.svg"
+        label="מספר מוזמנים:"
+        [text]="meeting?.capacity"
+      ></app-host-meeting-input-text>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_users.svg"
+        [text]="meeting?.invited ? 'סגור למוזמנים בלבד' : 'פתוח לקהל הרחב'"
+      ></app-host-meeting-input-text>
     </div>
 
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_accessibility.svg" label=" נגישות:"
-        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'">
-        </app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_accessibility.svg"
+        label=" נגישות:"
+        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"
+      >
+      </app-host-meeting-input-text>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_tv.svg"
-        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_tv.svg"
+        [text]="meeting?.invited ? 'לא קיים  ' : 'קיים'"
+      ></app-host-meeting-input-text>
     </div>
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_camera.svg"
-        [text]="meeting?.invited ? 'לא מסכים' : ' מסכים'"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_camera.svg"
+        [text]="meeting?.invited ? 'לא מסכים' : ' מסכים'"
+      ></app-host-meeting-input-text>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-host-meeting-input-text class="input" iconUrl="assets/img/host_users.svg" label="קהל יעד:"
-        [text]="meeting ? utilsService.meetingAudienceLabels[meeting.audience] : ''"></app-host-meeting-input-text>
+      <app-host-meeting-input-text
+        class="input"
+        iconUrl="assets/img/host_users.svg"
+        label="קהל יעד:"
+        [text]="meeting ? utilsService.meetingAudienceLabels[meeting.audience] : ''"
+      ></app-host-meeting-input-text>
     </div>
   </div>
 
@@ -79,8 +118,10 @@
   <div class="row" *ngIf="user?.isAdmin && meeting">
     <div class="col">
       <div class="buttons">
-        <a class="site-button invert edit-button"
-          [routerLink]="'/host/' + year + '/' + meeting.hostId + '/' + meeting.id">
+        <a
+          class="site-button invert edit-button"
+          [routerLink]="'/host/' + year + '/' + meeting.hostId + '/' + meeting.id"
+        >
           <i class="fas fa-pencil-alt"></i>
           עריכת פרטים
         </a>
@@ -107,23 +148,32 @@
     <ng-container *ngIf="meeting?.bereaved">
       <div class="row">
         <div class="col">
-          <app-host-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
-            [text]="meeting?.bereaved ? meeting.bereaved.firstName + ' ' + meeting.bereaved.lastName : ''">
+          <app-host-meeting-input-text
+            class="input"
+            iconUrl="assets/img/host_user.svg"
+            [text]="meeting?.bereaved ? meeting.bereaved.firstName + ' ' + meeting.bereaved.lastName : ''"
+          >
           </app-host-meeting-input-text>
         </div>
         <div class="col" *ngIf="meeting?.bereaved?.slains?.length < 2">
-          <app-host-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
-            [text]="meeting.bereaved.slains[0].firstName + ' ' + meeting.bereaved.slains[0].lastName + ' ז&quot;ל'">
+          <app-host-meeting-input-text
+            class="input"
+            iconUrl="assets/img/host_user.svg"
+            [text]="meeting.bereaved.slains[0].firstName + ' ' + meeting.bereaved.slains[0].lastName + ' ז&quot;ל'"
+          >
           </app-host-meeting-input-text>
         </div>
       </div>
       <div class="row" *ngIf="meeting?.bereaved?.slains?.length > 1">
         <div class="col" *ngFor="let slain of meeting.bereaved.slains">
-          <app-host-meeting-input-text class="input" iconUrl="assets/img/host_user.svg"
-            [text]="slain.firstName + ' ' + slain.lastName + ' ז&quot;ל'"></app-host-meeting-input-text>
+          <app-host-meeting-input-text
+            class="input"
+            iconUrl="assets/img/host_user.svg"
+            [text]="slain.firstName + ' ' + slain.lastName + ' ז&quot;ל'"
+          ></app-host-meeting-input-text>
         </div>
       </div>
-      <div class="row" *ngIf="meeting?.bereaved && extraData">
+      <!-- <div class="row" *ngIf="meeting?.bereaved && extraData">
         <div class="col">
           <app-host-meeting-input-text class="input" iconUrl="assets/img/host_phone.svg"
             [text]="meeting?.bereaved?.phoneNumber | phone"></app-host-meeting-input-text>
@@ -132,20 +182,30 @@
           <app-host-meeting-input-text class="input" iconUrl="assets/img/host_email.svg"
             [text]="meeting?.bereaved?.email"></app-host-meeting-input-text>
         </div>
-      </div>
+      </div> -->
     </ng-container>
-    <div class="row" *ngIf="
+    <div
+      class="row"
+      *ngIf="
         participationsService.isBereavedParticipatingMeeting(user, meeting) ||
         participationsService.isBereavedCanParticipatingMeeting(user, meeting)
-      ">
+      "
+    >
       <div class="col">
         <div class="buttons">
-          <app-remove-button class="button" *ngIf="participationsService.isBereavedParticipatingMeeting(user, meeting)"
-            (remove)="onBereavedLeaveMeeting()">
+          <app-remove-button
+            class="button"
+            *ngIf="participationsService.isBereavedParticipatingMeeting(user, meeting)"
+            (remove)="onBereavedLeaveMeeting()"
+          >
           </app-remove-button>
-          <app-meeting-join-button class="button"
-            *ngIf="participationsService.isBereavedCanParticipatingMeeting(user, meeting)" [user]="user"
-            [meeting]="meeting" (join)="onBereavedJoinMeeting()"></app-meeting-join-button>
+          <app-meeting-join-button
+            class="button"
+            *ngIf="participationsService.isBereavedCanParticipatingMeeting(user, meeting)"
+            [user]="user"
+            [meeting]="meeting"
+            (join)="onBereavedJoinMeeting()"
+          ></app-meeting-join-button>
         </div>
       </div>
     </div>
@@ -154,19 +214,28 @@
     <div class="medium-heading">רשימת המשתתפים בארוע ({{ (meeting.count || 0) + '/' + meeting.capacity }})</div>
     <app-meeting-participates-list [user]="user" [meeting]="meeting" [meetingParticipates]="meetingParticipates">
     </app-meeting-participates-list>
-    <div class="row" *ngIf="
+    <div
+      class="row"
+      *ngIf="
         participationsService.isParticipateParticipatingMeeting(user, meeting) ||
         participationsService.isParticipateCanParticipatingMeeting(user, meeting)
-      ">
+      "
+    >
       <div class="col">
         <div class="buttons">
-          <app-remove-button class="button"
+          <app-remove-button
+            class="button"
             *ngIf="participationsService.isParticipateParticipatingMeeting(user, meeting)"
-            (remove)="onParticipateLeaveMeeting()">
+            (remove)="onParticipateLeaveMeeting()"
+          >
           </app-remove-button>
-          <app-meeting-join-button class="button"
-            *ngIf="participationsService.isParticipateCanParticipatingMeeting(user, meeting)" [user]="user"
-            [meeting]="meeting" (join)="onParticipateJoinMeeting()"></app-meeting-join-button>
+          <app-meeting-join-button
+            class="button"
+            *ngIf="participationsService.isParticipateCanParticipatingMeeting(user, meeting)"
+            [user]="user"
+            [meeting]="meeting"
+            (join)="onParticipateJoinMeeting()"
+          ></app-meeting-join-button>
         </div>
       </div>
     </div>

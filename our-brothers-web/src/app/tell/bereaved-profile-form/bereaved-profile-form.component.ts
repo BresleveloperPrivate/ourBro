@@ -103,7 +103,9 @@ export class BereavedProfileFormComponent implements OnInit {
         phoneNumber: this.phoneNumber.value,
         //phoneNumber: this.utilsService.toInternationalPhoneNumber(this.phoneNumber.value.replace(/-/g, '')),
         address: this.address.value,
+        // birthDay: new Date(this.birthDay.value).getTime(),
         birthDay: new Date(this.birthDay.value).getTime(),
+
         otherLang: this.otherLang.value
       };
 

@@ -18,7 +18,8 @@ export class HomePageComponent implements OnInit {
   public user: User;
   public loadingUser = true;
   public postingContact = false;
-  public src$: any;
+  public src1$: any;
+  public src2$: any;
 
   constructor(private authService: AuthService, private dataService: DataService, private toastr: ToastrService) {}
 
@@ -28,13 +29,25 @@ export class HomePageComponent implements OnInit {
       this.loadingUser = false;
     });
 
-    this.src$ = of(
+    this.src1$ = of(
       '../../assets/img/home-page/h-p-1.jpg',
-      '../../assets/img/home-page/h-p-2.jpg',
-      '../../assets/img/home-page/h-p-3.jpg',
-      '../../assets/img/home-page/h-p-4.jpg',
-      '../../assets/img/home-page/h-p-5.jpg',
+      '../../assets/img/home-page/h-p-2.JPG',
+      '../../assets/img/home-page/h-p-3.JPG',
+      '../../assets/img/home-page/h-p-4.JPG',
+      '../../assets/img/home-page/h-p-5.jpeg',
       '../../assets/img/home-page/h-p-6.jpg'
+    ).pipe(
+      concatMap(url => of(url).pipe(delay(5000))),
+      repeat()
+    );
+
+    this.src2$ = of(
+      '../../assets/img/home-page/h-p-7.jpg',
+      '../../assets/img/home-page/h-p-8.jpg',
+      '../../assets/img/home-page/h-p-9.jpg',
+      '../../assets/img/home-page/h-p-10.jpeg',
+      '../../assets/img/home-page/h-p-11.jpeg',
+      '../../assets/img/home-page/h-p-12.jpg'
     ).pipe(
       concatMap(url => of(url).pipe(delay(5000))),
       repeat()
