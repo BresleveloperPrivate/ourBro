@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "our-brothers",
-    "test": "our-brothers"
+    "test": "our-brothers",
+    "our-brother": "our-brothers"
   },
   "targets": {
     "our-brothers": {
@@ -12,7 +13,7 @@
         "prod": [
           "our-brothers"
         ],
-        "test": [
+        "first": [
           "our-brothers-test"
         ]
       }

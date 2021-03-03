@@ -1,11 +1,17 @@
 {
   "hosting": {
-    "target": "test",
+    "target": "first",
     "public": "our-brothers-web/public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
   "functions": {
