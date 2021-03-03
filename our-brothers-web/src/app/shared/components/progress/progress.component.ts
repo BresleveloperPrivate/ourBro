@@ -7,21 +7,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./progress.component.scss']
 })
 export class ProgressComponent {
-  @Input('title') title: string;
-  @Input('expended') expended: boolean = false;
+  @Input() title: string;
+  @Input() expended: boolean = false;
+  @Input() isExpended = false;
 
-
-  // constructor(public enrollmentService :EnrollmentService ,) { }
-  //@Input('open') open: boolean = false;
-
-  @Input('isExpended') isExpended = true;
-
+  //constructor(public enrollmentService: EnrollmentService) { }
   public e() {
     this.isExpended = !this.isExpended;
   }
 
-
-  public onlyOne() {
-    this.isExpended = !this.isExpended;
-  }
+  // public try() {
+  //   this.enrollmentService.e(this.isExpended);
+  // }
+  // public onlyOne() {
+  //   this.isExpended = !this.isExpended;
+  // }
 }

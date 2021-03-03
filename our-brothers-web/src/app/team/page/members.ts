@@ -51,9 +51,8 @@ export const members: TeamMember[] = [
   {
     name: 'איילה אזולאי  ',
     title: 'חברת ועד מנהל   ',
-    frontImage: ''
+    frontImage: '/assets/img/about/b-20-1.jpg'
   },
-
 
   {
     name: 'דניאל סלים',
@@ -194,8 +193,6 @@ export const members: TeamMember[] = [
   //   }]
   // },
 
-
-
   // {
   //   name: 'טלי לזניק',
   //   title: 'חברת עמותה ומייסדת',
@@ -211,11 +208,10 @@ export const members: TeamMember[] = [
     name: 'נופית חי',
     title: 'מעצבת אתר',
     frontImage: '/assets/img/about/b-15-1.jpg'
-  },
+  }
   // {
   //   name: 'גיל חנן',
   //   title: 'מנהל אתר',
   //   frontImage: '/assets/img/about/b-14-1.jpg'
   // },
-
 ];

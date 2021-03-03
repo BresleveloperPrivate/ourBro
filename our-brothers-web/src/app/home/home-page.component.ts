@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { of } from 'rxjs';
+import { concatMap, delay, repeat } from 'rxjs/operators';
 
 import { User, Contact } from 'models';
 import { AuthService } from '../shared/services/auth.service';
@@ -16,6 +18,7 @@ export class HomePageComponent implements OnInit {
   public user: User;
   public loadingUser = true;
   public postingContact = false;
+  public src$: any;
 
   constructor(private authService: AuthService, private dataService: DataService, private toastr: ToastrService) {}
 
@@ -24,6 +27,18 @@ export class HomePageComponent implements OnInit {
       this.user = user;
       this.loadingUser = false;
     });
+
+    this.src$ = of(
+      '../../assets/img/home-page/h-p-1.jpg',
+      '../../assets/img/home-page/h-p-2.jpg',
+      '../../assets/img/home-page/h-p-3.jpg',
+      '../../assets/img/home-page/h-p-4.jpg',
+      '../../assets/img/home-page/h-p-5.jpg',
+      '../../assets/img/home-page/h-p-6.jpg'
+    ).pipe(
+      concatMap(url => of(url).pipe(delay(5000))),
+      repeat()
+    );
   }
 
   onContactSubmit(form: ContactForm) {

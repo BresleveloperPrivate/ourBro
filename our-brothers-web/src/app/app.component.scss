@@ -7,3 +7,25 @@
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
 }
+
+.div-home-page-flow {
+  width: 238px;
+  height: 69px;
+  border-radius: 34.5px;
+  display: flex;
+  flex-grow: 8;
+  flex-direction: row-reverse;
+  //color: #16b3ab;
+  .home-page-flow {
+    background-color: white;
+    width: 57.75px;
+    height: 57.75px;
+    padding: 7px;
+    border-radius: 50%;
+  }
+}
+.sticky-button {
+  position: fixed;
+  top: 20%;
+  z-index: 3;
+}

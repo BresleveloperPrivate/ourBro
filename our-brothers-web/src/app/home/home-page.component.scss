@@ -1,10 +1,10 @@
 .body {
-  background:url("../../assets/svg/Shape.svg");
+  background: url('../../assets/svg/Shape.svg');
   //background-repeat: no-repeat;
   //background: no-repeat url("../../media/examples/lizard.png");
   //background-attachment: fixed;
- // color: red;
- //z-index: 3333;
+  // color: red;
+  //z-index: 3333;
   background-position: center;
   width: 260.21px;
   height: 550px;
@@ -107,10 +107,9 @@
 .home-page-icons-text {
   font-size: 16px;
   color: #15305a;
-  margin-top:-15px ;
- 
+  margin-top: -15px;
 }
-.abroad{
+.abroad {
   margin-right: 10px;
 }
 @media only screen and (max-width: 786px) {
@@ -160,7 +159,6 @@
       // grid-area: 2 / 2 / 5 / 4;
       flex-grow: 3.5;
       margin: 20px;
-      
 
       border-radius: 15px;
       // width: auto;
@@ -457,7 +455,7 @@
   //flex-wrap: wrap;
   //margin-left: auto;
   margin-right: 32%;
-  .text-to-icon{
+  .text-to-icon {
     margin-top: -30px;
   }
   svg {
@@ -612,28 +610,28 @@
   }
 }
 
-.div-home-page-flow {
-  width: 238px;
-  height: 69px;
-  border-radius: 34.5px;
-  display: flex;
-  flex-grow: 8;
-  flex-direction: row-reverse;
-  //color: #16b3ab;
-  .home-page-flow {
-    background-color: white;
-    width: 57.75px;
-    height: 57.75px;
-    padding: 7px;
-    border-radius: 50%;
-  }
-}
-.sticky-button{
+// .div-home-page-flow {
+//   width: 238px;
+//   height: 69px;
+//   border-radius: 34.5px;
+//   display: flex;
+//   flex-grow: 8;
+//   flex-direction: row-reverse;
+//   //color: #16b3ab;
+//   .home-page-flow {
+//     background-color: white;
+//     width: 57.75px;
+//     height: 57.75px;
+//     padding: 7px;
+//     border-radius: 50%;
+//   }
+// }
+// .sticky-button{
 
-  position: fixed;
-  top:20%;
-  z-index: 3;
-}
+//   position: fixed;
+//   top:20%;
+//   z-index: 3;
+// }
 .contact-form {
   padding-bottom: 50px;
 }

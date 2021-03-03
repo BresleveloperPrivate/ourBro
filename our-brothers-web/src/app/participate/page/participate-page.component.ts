@@ -37,7 +37,7 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
     private participationsService: ParticipationsService,
     private toastr: ToastrService,
     private dataService: DataService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));
@@ -87,20 +87,15 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       this.currentStep$.next(1);
-    })
+    });
   }
 
   onProfileSubmit(profileForm: ProfileForm) {
     this.dataService.setUserProfile(this.user, profileForm);
 
-    //this.curr=!this.curr
-    //this.enrollmentService.e(this.curr);
     setTimeout(() => {
       this.ok = true;
-    })
-
-    //this.enrollmentService.isExpended = !this.enrollmentService.isExpended;
-
+    });
   }
 
   onJoinMeeting(meeting: Meeting) {

@@ -41,7 +41,8 @@ const routes: Routes = [
   },
   {
     path: 'map',
-    loadChildren: () => import('./map-meeting/page/map-meeting-page.module').then(({ MapMeetingPageModule }) => MapMeetingPageModule)
+    loadChildren: () =>
+      import('./map-meeting/page/map-meeting-page.module').then(({ MapMeetingPageModule }) => MapMeetingPageModule)
   },
   {
     path: 'about',
@@ -91,7 +92,7 @@ const routes: Routes = [
     path: 'admin-bereaveds',
     loadChildren: () =>
       import('./admin/bereaveds/page/admin-bereaveds-page.module').then(
-        ({ AdminBereavedsPageComponent }) => AdminBereavedsPageComponent
+        ({ AdminBereavedsPageModule }) => AdminBereavedsPageModule
       )
   },
   {
@@ -117,4 +118,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
