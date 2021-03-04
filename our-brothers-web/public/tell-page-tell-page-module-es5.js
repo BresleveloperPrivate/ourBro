@@ -1570,7 +1570,8 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'onProfileSubmit',
               value: function onProfileSubmit(profileForm) {
-                this.dataService.setUserProfile(this.user, profileForm); //this.expended = true;
+                this.dataService.setUserProfile(this.user, profileForm); //this.slain=slain;
+                //this.expended = true;
                 //this.a=false;
               }
             },
@@ -1677,7 +1678,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             [3, 'user', 'firebaseUser', 'submit'],
             ['title', '\u05E4\u05E8\u05D8\u05D9 \u05D4\u05D7\u05DC\u05DC'],
             [3, 'slain', 'submit'],
-            ['title', '\u05DE\u05E4\u05D2\u05E9\u05D9 \u05D1\u05D3\u05E8\u05DB\u05D4'],
+            ['title', '\u05DE\u05E4\u05D2\u05E9\u05D9 \u05D4\u05D3\u05E8\u05DB\u05D4'],
             [3, 'submit'],
             ['title', '\u05E9\u05D9\u05D1\u05D5\u05E5'],
             [3, 'user', 'meetings', 'joinMeeting']

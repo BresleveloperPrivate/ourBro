@@ -76,7 +76,7 @@ export class MeetingDetailsPageComponent implements OnInit, OnDestroy {
   }
 
   onDelete() {
-    if (window.confirm('האם ברצונך למחוק את המפגש?')) {
+    if (window.confirm('האם ברצונך למחוק את המפגש שלך? פעולה זאת לא ניתנת לשחזור ותמחוק את המפגש לגמרי')) {
       this.dataService.deleteMeeting(this.meeting.hostId, this.meeting.id, this.year).subscribe(
         () => {
           this.toastr.success('מפגש נמחק בהצלחה!');

@@ -1015,7 +1015,8 @@ function _createClass(Constructor, protoProps, staticProps) {
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngIf',
-              (ctx_r157.user == null ? null : ctx_r157.user.isAdmin) && ctx_r157.meeting
+              ((ctx_r157.user == null ? null : ctx_r157.user.isAdmin) && ctx_r157.meeting) ||
+                (ctx_r157.user == null ? null : ctx_r157.user.id) === ctx_r157.meeting.hostId
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
@@ -1110,7 +1111,7 @@ function _createClass(Constructor, protoProps, staticProps) {
               value: function onDelete() {
                 var _this2 = this;
 
-                if (window.confirm('האם ברצונך למחוק את המפגש?')) {
+                if (window.confirm('האם ברצונך למחוק את המפגש שלך? פעולה זאת לא ניתנת לשחזור ותמחוק את המפגש לגמרי')) {
                   this.dataService.deleteMeeting(this.meeting.hostId, this.meeting.id, this.year).subscribe(
                     function() {
                       _this2.toastr.success('מפגש נמחק בהצלחה!');

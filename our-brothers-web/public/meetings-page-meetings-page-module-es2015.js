@@ -705,7 +705,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngIf',
-              (ctx_r157.user == null ? null : ctx_r157.user.isAdmin) && ctx_r157.meeting
+              ((ctx_r157.user == null ? null : ctx_r157.user.isAdmin) && ctx_r157.meeting) ||
+                (ctx_r157.user == null ? null : ctx_r157.user.id) === ctx_r157.meeting.hostId
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
@@ -766,7 +767,7 @@
             });
           }
           onDelete() {
-            if (window.confirm('האם ברצונך למחוק את המפגש?')) {
+            if (window.confirm('האם ברצונך למחוק את המפגש שלך? פעולה זאת לא ניתנת לשחזור ותמחוק את המפגש לגמרי')) {
               this.dataService.deleteMeeting(this.meeting.hostId, this.meeting.id, this.year).subscribe(
                 () => {
                   this.toastr.success('מפגש נמחק בהצלחה!');

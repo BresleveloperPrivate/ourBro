@@ -39,7 +39,7 @@ export class TellPageComponent implements OnInit, OnDestroy {
     private participationsService: ParticipationsService,
     private toastr: ToastrService,
     private dataService: DataService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));
@@ -93,11 +93,12 @@ export class TellPageComponent implements OnInit, OnDestroy {
 
     setTimeout(() => {
       this.currentStep$.next(1);
-    })
+    });
   }
 
   onProfileSubmit(profileForm: BereavedProfileForm) {
     this.dataService.setUserProfile(this.user, profileForm);
+    //this.slain=slain;
     //this.expended = true;
     //this.a=false;
   }

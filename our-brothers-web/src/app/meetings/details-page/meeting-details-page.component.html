@@ -115,7 +115,7 @@
   <!-- *ngIf="user?.isAdmin && meeting" -->
   <!-- להוסיף בתנאי או מנהל או שזה המפגש שלו ז""א יוזר נטכחי"  -->
 
-  <div class="row" *ngIf="user?.isAdmin && meeting">
+  <div class="row" *ngIf="(user?.isAdmin && meeting) || user?.id === meeting.hostId">
     <div class="col">
       <div class="buttons">
         <a
