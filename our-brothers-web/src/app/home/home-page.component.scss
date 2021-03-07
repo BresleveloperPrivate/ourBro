@@ -61,6 +61,25 @@
   border: 5px white solid;
   /*grid-area: 2 / 2 / 4 / 4;*/
 }
+
+@media only screen and (max-width: 786px) {
+  .image-1,
+  .image-2 {
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
+  .image-1 {
+    margin-right: -49%;
+  }
+  .image-2 {
+    margin-left: -65%;
+    margin-top: -50%;
+    border-radius: 10px;
+    margin-bottom: 10%;
+  }
+}
+
 // .home-page-image {
 //   height: 495px;
 //   width: 495px;
@@ -96,6 +115,13 @@
   .home-page-donate {
     color: #16b3ab;
     margin-right: 6%;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .home-page-text {
+    padding-right: 7%;
+    padding-left: 7%;
   }
 }
 
@@ -360,11 +386,11 @@
       //flex-grow: 12;
       margin: 20px;
       border-radius: 15px;
-      width: 70%;
-      height: 70vh;
+      width: 80%;
+      height: 50%;
       p {
         font-family: 'Heebo';
-        font-size: 16px;
+        font-size: 14px;
         color: #ffffff;
         letter-spacing: 0;
         text-align: center;
@@ -376,6 +402,7 @@
     }
     .home-page-square-1 {
       background: #15305a;
+      margin-top: -70px;
     }
     .home-page-square-2 {
       // grid-area: 2 / 4 / 5 / 6;
@@ -386,6 +413,9 @@
       // border-radius: 15px;
       // width: auto;
       // height: 70vh;
+    }
+    .aaa {
+      font-size: 20px;
     }
   }
 }
@@ -435,6 +465,12 @@
 .meeting-button-1 {
   text-align: center;
 }
+
+@media only screen and (max-width: 786px) {
+  .meeting-button-1 {
+    margin-bottom: 10%;
+  }
+}
 // p {
 //   font-family: 'Heebo';
 //   font-size: 16px;
@@ -456,16 +492,28 @@
   padding-top: 10px;
   width: 70px;
 }
+
+@media only screen and (max-width: 786px) {
+  .meeting-button-2 {
+    margin-bottom: 10%;
+  }
+}
+
 .home-page-logo-our-brother {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 60%;
   // width: 300px;
   // .iconnnn {
   //   width: 200px;
   //   height: 150px;
   // }
+}
+@media only screen and (max-width: 786px) {
+  .home-page-logo-our-brother {
+    width: 70%;
+  }
 }
 
 .home-page-meeting {
@@ -545,6 +593,12 @@
     }
   }
 }
+@media only screen and (max-width: 786px) {
+  .div-to-table {
+    margin-right: 15%;
+  }
+}
+
 // @media only screen and (max-width: 786px) {
 //   .home-page-toolbox-icons {
 //     margin-right: 25%;
