@@ -20,7 +20,7 @@ import { ProgressComponent } from '../../shared/components/progress/progress.com
 export class TellPageComponent implements OnInit, OnDestroy {
   public slain: Slain;
   public user: User;
-  //  public firebaseSlain:firebase.Slain;
+  //public firebaseSlain:firebase.Slain;
   public firebaseUser: firebase.User;
   public meetings: Meeting[];
   public currentStep: number = 0;

@@ -23,22 +23,24 @@
     <div class="home-page-image">
       <!-- <img class="image image-1" src="../../assets/img/gallery_left.jpg" alt="Metting Gallery Image 1"
         data-aos="fade-right" data-aos-duration="1000" /> -->
-
-      <img
-        class="image image-1"
-        [attr.src]="src1$ | async"
-        alt="Metting Gallery Image 1"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-      />
-
-      <img
-        class="image image-2"
-        [attr.src]="src2$ | async"
-        alt="Metting Gallery Image 1"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-      />
+      <div class="size-to-imege-1">
+        <img
+          class="image image-1"
+          [attr.src]="src1$ | async"
+          alt="Metting Gallery Image 1"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        />
+      </div>
+      <div class="size-to-image-2">
+        <img
+          class="image image-2"
+          [attr.src]="src2$ | async"
+          alt="Metting Gallery Image 1"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        />
+      </div>
       <!-- <img
         class="image image-2 "
         src="../../assets/img/home-page/h-p-1.jpg"
@@ -73,30 +75,29 @@
     </div>
     <!-- class="site-text"  -->
     <div data-aos="fade-down" data-aos-duration="1000">
-      <p class="home-page-text">
-        אתם הולכים לשמוע סיפור שעוד לא שמעתם, סיפורם של האחים והאחיות השכולים.
-        <br />
-        על אלו שלבשו מדים ויצאו לצבא ועל אלו שנשארו בבית וחיכו להם.
-        <br />
-        על משפחה שלמה שיום אחד התפרקה. זהו סיפור על חיים שנחצו ברגע.
-        <br />
-        הקול שלנו מספר סיפור אישי, משפחתי ולאומי. סיפורה של מדינת ישראל.
-        <br />
-        אנחנו האחים, בוחרים לשתף אתכם; בכאב ובשמחה, בהתמודדות, בתקווה ובגעגוע שאינו פוסק.
-        <br />
-        בחרנו להנציח אותם באמצעות מפגשים אלו.
-        <br />
-        במפגשים בכל רחבי הארץ, אתם תשמעו את הסיפור שלנו;
-        <br />
-        על ספה, על הדשא, במשרד, בחצר או בכל מקום שתבחרו. אחים יפתחו את ליבם.
-        <br />
-        ישתפו אתכם ברגעים הכי אינטימיים ואישיים שלהם ויספרו לכם על האחים שלהם, שהם כל כך אהבו.
-        <br />
-        <span class="home-page-bold">האחים של כולנו</span>
-        <br />
+      <section class="home-page-text">
+        <p>
+          אנחנו מזמינים אתכם להתחבר ליום הזיכרון לחללי מערכות ישראל ונפגעי פעולות האיבה דרך סיפורם של האחים והאחיות
+          השכולים במפגשים פיזיים בימים שלקראת יום הזיכרון (9-14.4.21).
+        </p>
+        <p>
+          אתם תכירו אדם אחד שהיה עולם ומלואו למשפחתו ולחבריו. אתם תשמעו על הדפיקה בדלת, על משפחה שיום אחד התפרקה, ועל
+          חיים שנחצו ברגע – לחיים איתו ולחיים בלעדיו.
+        </p>
+
+        <p>
+          הקול שלנו מספר סיפור שהינו אישי, משפחתי ולאומי, והוא סיפורה של מדינת ישראל.
+        </p>
+        <p>
+          במטרה להנציח את אלה שאינם ולהתחבר ליום הזיכרון ממקום אישי, אנחנו האחים, נפגשים אתכם ומספרים לכם עליהם - על
+          רגעי הכאב והשמחה, על ההתמודדות, התקווה והגעגוע שאינו פוסק.
+        </p>
+        <p>
+          אנחנו מזמינים אתכם לקחת חלק.
+        </p>
 
         <!-- אנחנו מזמינים אתכם לקחת חלק. -->
-      </p>
+      </section>
 
       <a
         class="action-header-support-us site-button home-page-donate"
@@ -270,7 +271,7 @@
       <svg-icon class="iconnnn" src="../../assets/svg/ourbtotherwhite.svg"></svg-icon>
     </div> -->
     <img class="home-page-logo-our-brother" src="../../assets/img/ourbrotherpng.png" />
-    <div class="aaa" routerLink="meetings">מפגשים פרונטלים</div>
+    <div class="aaa meetinglightblue" routerLink="meetings">מפגשים פרונטלים</div>
     <p>
       במפגשים אלו אחיות ואחים שכולים מספרים את סיפורם האישי ומתארחים בבתים ברחבי הארץ.
     </p>
@@ -307,6 +308,9 @@
     <table>
       <tr>
         <th>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdysCMih5-VnB241KuP9zFbLyju9NqShDwntZHpBcUsGntqLg/viewform"
+          ></a>
           <svg
             class="group_5"
             width="61px"
@@ -316,7 +320,7 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <title>Group 5</title>
+            <title>סדנאות למובילי מפגש</title>
             <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <g id="Icons" transform="translate(-151.000000, -70.000000)" fill-rule="nonzero">
                 <g id="Group-5" transform="translate(151.942636, 70.690852)">

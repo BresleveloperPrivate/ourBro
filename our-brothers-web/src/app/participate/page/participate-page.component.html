@@ -4,15 +4,15 @@
     <div class="site-divider"></div>
     <div class="small-heading">פרטים נוספים</div>
 
-    <app-progress title="הסבר">
+    <app-progress title="הסבר" [isExpended]="true">
       <section class="registration-step">
-        <app-participate-intro (submit)="currentStep$.next(1)"></app-participate-intro>
+        <app-participate-intro></app-participate-intro>
       </section>
     </app-progress>
 
     <br />
 
-    <app-progress title="פרטי משתמש">
+    <app-progress title="פרטי משתמש" [isExpended]="true">
       <section class="registration-step">
         <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
         </app-profile-form>

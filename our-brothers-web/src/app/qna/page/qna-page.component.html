@@ -7,7 +7,6 @@
   עונים על הכל
 </h2>
 
-
 <a class="action-header-support-us site-button connectqne" href="https://connect2care.carmel6000.com/#/info">
   <span>שאלות ותשובות</span>
   <span>
@@ -24,15 +23,21 @@
 <div class="qna-types-list-container">
   <div class="container">
     <div class="role-buttons">
-      <div class="role-button" [class.current]="currentQType === UserRole.bereaved"
-        (click)="currentQType = UserRole.bereaved">
+      <div
+        class="role-button"
+        [class.current]="currentQType === UserRole.bereaved"
+        (click)="currentQType = UserRole.bereaved"
+      >
         אחים
       </div>
       <div class="role-button" [class.current]="currentQType === UserRole.host" (click)="currentQType = UserRole.host">
         מארחים
       </div>
-      <div class="role-button" [class.current]="currentQType === UserRole.participate"
-        (click)="currentQType = UserRole.participate">
+      <div
+        class="role-button"
+        [class.current]="currentQType === UserRole.participate"
+        (click)="currentQType = UserRole.participate"
+      >
         משתתפים
       </div>
     </div>
@@ -52,4 +57,9 @@
       </ng-container>
     </ng-container>
   </div>
+</div>
+
+<div class=" container qna-list-wrapper">
+  לא ענינו על כל השאלות? מוזמנים
+  <a target="_blank" href="/contact">'ליצור איתנו קשר'</a>.
 </div>

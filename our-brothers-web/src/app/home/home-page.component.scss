@@ -3,7 +3,7 @@
   //background-repeat: no-repeat;
   //background: no-repeat url("../../media/examples/lizard.png");
   //background-attachment: fixed;
-  color: red;
+  //color: red;
   //z-index: 3333;
   background-position: center;
   width: 260.21px;
@@ -37,46 +37,57 @@
     opacity: 0.07;
   }
 }
-
+//.size-to-imege-1
 .image-1 {
   /*grid-area: 1 / 1 / 3 / 3;*/
   //height: 495px;
   width: auto;
   position: absolute;
   opacity: 1;
+  margin-right: -100px;
   /* visibility: visible; */
 
-  width: 400px;
-  height: 400px;
+  width: 30%;
+  height: 15%;
   border-radius: 5px;
 }
 .image-2 {
   opacity: 1;
-  position: relative;
-  left: 140px;
-  top: 140px;
-  width: 400px;
-  height: 400px;
+  position: absolute;
+  margin-top: -100px;
+  left: 20%;
+  top: 14%;
+  width: 30%;
+  height: 15%;
   border-radius: 5px;
   border: 5px white solid;
   /*grid-area: 2 / 2 / 4 / 4;*/
 }
 
 @media only screen and (max-width: 786px) {
-  .image-1,
-  .image-2 {
-    width: 300px;
-    height: 300px;
-    position: relative;
-  }
-  .image-1 {
-    margin-right: -49%;
-  }
-  .image-2 {
-    margin-left: -65%;
-    margin-top: -50%;
-    border-radius: 10px;
-    margin-bottom: 10%;
+  .home-page-first {
+    flex-direction: column;
+    .size-to-imege-1,
+    .size-to-imege-2 {
+      width: 300px;
+      height: 300px;
+    }
+    .image-1,
+    .image-2 {
+      position: inherit;
+      display: block;
+      margin-right: -33%;
+    }
+    .image-1 {
+      //-right: -38.5%;
+    }
+    .image-2 {
+      //margin-right: -40%;
+      // margin-top: -50%;
+      border-radius: 5px;
+      margin-top: 5%;
+      border: none;
+    }
   }
 }
 
@@ -104,11 +115,19 @@
     color: #0f2b56;
   }
 }
+
+@media only screen and (max-width: 786px) {
+  .home-page-title {
+    margin-top: -90px;
+  }
+}
+
 .home-page-text {
   font-size: 16px;
   color: #818181;
   font-family: 'Heebo';
   padding-right: 6%;
+  max-width: 620px;
   .home-page-bold {
     font-weight: bold;
   }
@@ -461,6 +480,9 @@
   letter-spacing: 0;
   text-align: center;
   font-weight: 700;
+}
+.meetinglightblue {
+  margin-top: -24px;
 }
 .meeting-button-1 {
   text-align: center;

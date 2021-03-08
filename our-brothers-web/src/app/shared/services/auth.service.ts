@@ -1,3 +1,4 @@
+//import { Slain } from './../../../../../types/models/index';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -29,7 +30,7 @@ export class AuthService {
   public user: Observable<User>;
   public slain: Observable<Slain>;
   public firebaseUser: Observable<firebase.User> = this.angularFireAuth.authState;
-  //public firebaseSlain: Observable<firebase.User> = this.angularFireAuth.authState;
+  // public firebaseSlain: Observable<firebase.Slain> = this.angularFireAuth.authState;
   public needLogin$: Subject<LoginMode> = new Subject();
 
   private firstTimeGetUser = true;

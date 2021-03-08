@@ -6,14 +6,13 @@
 
     <div class="small-heading">פרטים נוספים</div>
 
-
-    <app-progress title="הסבר">
+    <app-progress title="הסבר" [isExpended]="true">
       <section class="step0">
         <app-host-intro></app-host-intro>
       </section>
     </app-progress>
     <br />
-    <app-progress title="פרטי משתמש" >
+    <app-progress title="פרטי משתמש">
       <section class="registration-step">
         <app-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
         </app-profile-form>

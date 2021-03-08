@@ -11,6 +11,7 @@ import { AuthService } from '../../shared/services/auth.service';
 import { ParticipationsService } from '../../shared/services/participations.service';
 import { DataService } from '../../shared/services/data.service';
 import { ProfileForm } from '../../shared/components/profile-form/profile-form.types';
+//import {Progress}from '../../shared/components/progress/progress.component'
 
 @Component({
   selector: 'app-participate-page',
@@ -92,10 +93,7 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
 
   onProfileSubmit(profileForm: ProfileForm) {
     this.dataService.setUserProfile(this.user, profileForm);
-
-    setTimeout(() => {
-      this.ok = true;
-    });
+    this.ok = true;
   }
 
   onJoinMeeting(meeting: Meeting) {
