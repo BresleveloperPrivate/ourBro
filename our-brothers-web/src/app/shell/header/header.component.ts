@@ -64,12 +64,12 @@ export class HeaderComponent implements OnInit, OnChanges {
         subMenues: [
           { route: 'about', title: 'רקע' },
           { route: 'team', title: 'הצוות שלנו' },
-          { route: 'articles', title: 'עלינו בתקשורת' },
+          { route: 'articles', title: 'עלינו בתקשורת' }
           // { route: 'news', title: 'כותבים עלינו' }
         ]
       },
       { route: 'agenda', title: 'מבנה הערב' },
-      { route: 'questions', title: 'שאלות' },
+      { route: 'questions', title: 'שאלות תשובות"' },
       { route: 'gallery', title: 'גלריה' },
       { route: 'contact', title: 'צרו קשר' }
     ];

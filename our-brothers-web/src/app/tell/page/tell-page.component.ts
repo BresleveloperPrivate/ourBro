@@ -26,7 +26,7 @@ export class TellPageComponent implements OnInit, OnDestroy {
   public currentStep: number = 0;
   public currentStep$ = new Subject<number>();
   public year = MEMORIAL_YEAR;
-  //public expended: boolean = false;
+  public profile: boolean = false;
   //public ok: boolean = false;
   //public scheduling: boolean = false;
 

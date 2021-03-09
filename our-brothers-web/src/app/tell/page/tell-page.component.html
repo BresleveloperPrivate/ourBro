@@ -4,14 +4,14 @@
     <div class="site-divider"></div>
     <div class="small-heading">פרטים נוספים</div>
 
-    <app-progress title="הסבר" [isExpended]="true">
+    <app-progress title="פרוט" [isExpended]="true">
       <section class="registration-step">
         <app-bereaved-intro></app-bereaved-intro>
       </section>
     </app-progress>
 
     <br />
-    <app-progress title=" פרטים אישיים">
+    <app-progress title=" פרטים אישיים" *>
       <section class="registration-step">
         <app-bereaved-profile-form [user]="user" [firebaseUser]="firebaseUser" (submit)="onProfileSubmit($event)">
         </app-bereaved-profile-form>

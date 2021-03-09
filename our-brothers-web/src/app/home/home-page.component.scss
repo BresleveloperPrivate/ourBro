@@ -159,11 +159,14 @@
   margin-top: 2px;
 }
 .home-page-icons-text-2 {
-  margin-top: -20px;
+  margin-top: -15px;
 }
-.abroad {
-  margin-right: 10px;
+.icon-table-1 {
+  margin-top: 5px;
 }
+// .abroad {
+//   margin-right: 10px;
+// }
 @media only screen and (max-width: 786px) {
   .home-page-first {
     flex-direction: column;
@@ -482,7 +485,7 @@
   font-weight: 700;
 }
 .meetinglightblue {
-  margin-top: -24px;
+  margin-top: -36px;
 }
 .meeting-button-1 {
   text-align: center;
@@ -586,7 +589,7 @@
 }
 .div-to-table {
   display: flex;
-  margin-right: 32%;
+  margin-right: 23%;
   flex-wrap: wrap;
   .home-page-toolbox-icons {
     .text-to-icon {
@@ -594,7 +597,9 @@
     }
     svg {
       //padding-left: 50%;
-      padding: 0px 25px 0px 25px;
+      //padding: 0px 25px 0px 25px;
+      margin-right: 50px;
+      margin-left: 50px;
       cursor: pointer;
     }
     .group_5 {
@@ -610,8 +615,10 @@
       height: 100px;
     }
     .abroed-icon {
-      width: 103.16px;
-      height: 68.23px;
+      width: 124.82px;
+      height: 82.55px;
+      // width: 200px;
+      // height: 150px;
     }
   }
 }
