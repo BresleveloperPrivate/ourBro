@@ -23,7 +23,7 @@
         AboutPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
           type: AboutPageComponent,
           selectors: [['app-about-page']],
-          decls: 67,
+          decls: 70,
           vars: 0,
           consts: [
             ['src', '../../../assets/img/aboutHeader.jpg', 1, 'image-header'],
@@ -124,86 +124,93 @@
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](28, 'div', 7);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](29, 'div', 8);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](30, 'div', 9);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](31, 'div', 10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](28, 'p');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                32,
+                29,
+                ' \u05E2\u05DC \u05D4\u05E2\u05DE\u05D5\u05EA\u05D4 '
+              );
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](30, 'a', 5);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](31, 'div', 7);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](32, 'div', 8);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](33, 'div', 9);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](34, 'div', 10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
+                35,
                 '\u05DE\u05D9 \u05D4\u05DD \u05D4\u05D0\u05D7\u05D9\u05DD?'
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](33, 'div', 11);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](34, 'p');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](36, 'div', 11);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](37, 'p');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                35,
+                38,
                 ' \u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5 \u05DE\u05D2\u05D9\u05E2\u05D9\u05DD \u05DE\u05DB\u05DC \u05E7\u05E9\u05EA \u05D4\u05D2\u05D9\u05DC\u05D0\u05D9\u05DD \u05D5\u05D4\u05D0\u05D6\u05D5\u05E8\u05D9\u05DD \u05D1\u05D0\u05E8\u05E5 \u05D5\u05DE\u05D7\u05D5\u05E6\u05D4 \u05DC\u05D4. '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](36, 'p');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](39, 'p');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                37,
+                40,
                 ' \u05DE\u05D4\u05E6\u05E4\u05D5\u05DF \u05D5\u05E2\u05D3 \u05D4\u05D3\u05E8\u05D5\u05DD, \u05E6\u05E2\u05D9\u05E8\u05D9\u05DD \u05D5\u05DE\u05D1\u05D5\u05D2\u05E8\u05D9\u05DD, \u05D3\u05EA\u05D9\u05D9\u05DD \u05D5\u05D7\u05D9\u05DC\u05D5\u05E0\u05D9\u05D9\u05DD, \u05D9\u05D4\u05D5\u05D3\u05D9\u05DD \u05D5\u05E9\u05D0\u05D9\u05E0\u05DD \u05D9\u05D4\u05D5\u05D3\u05D9\u05DD, \u05E9\u05D0\u05D7\u05D9\u05D4\u05DD \u05E0\u05E4\u05DC\u05D5 \u05D1\u05DE\u05E2\u05E8\u05DB\u05D5\u05EA \u05D9\u05E9\u05E8\u05D0\u05DC \u05DE\u05D0\u05D6 \u05D4\u05E7\u05DE\u05EA\u05D4 \u05D5\u05DB\u05DF \u05E0\u05E4\u05D2\u05E2\u05D9 \u05E4\u05E2\u05D5\u05DC\u05D5\u05EA \u05D0\u05D9\u05D1\u05D4. '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](38, 'div', 12);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](41, 'div', 12);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                39,
+                42,
                 ' \u05D4\u05D0\u05D7\u05D9\u05DD \u05D4\u05DD \u05DB\u05D5\u05DC\u05E0\u05D5. '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](40, 'div', 13);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](41, 'img', 14);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](43, 'div', 13);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](44, 'img', 14);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](42, 'div', 1);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](43, 'h2', 3);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](45, 'div', 1);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](46, 'h2', 3);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                44,
+                47,
                 ' \u05D4\u05D9\u05E2\u05D3\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5\n'
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](45, 'div', 15);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](46, 'div', 16);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](47, 'div', 10);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](48, '\u05E7\u05D4\u05D9\u05DC\u05EA');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](49, 'br');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](50, '\u05D0\u05D7\u05D9\u05DD');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](48, 'div', 15);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](49, 'div', 16);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](50, 'div', 10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](51, '\u05E7\u05D4\u05D9\u05DC\u05EA');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](52, 'br');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](53, '\u05D0\u05D7\u05D9\u05DD');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](51, 'div', 11);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](54, 'div', 11);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                52,
-                ' \u05DC\u05D1\u05E0\u05D5\u05EA \u05E7\u05D4\u05D9\u05DC\u05D4 \u05EA\u05D5\u05DE\u05DB\u05EA, \u05DE\u05DB\u05D9\u05DC\u05D4 \u05D5\u05DE\u05E2\u05E6\u05D9\u05DE\u05D4 \u05E2\u05D1\u05D5\u05E8 \u05D4\u05D0\u05D7\u05D9\u05DD \u05D4\u05E9\u05DB\u05D5\u05DC\u05D9\u05DD '
-              );
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](53, 'div', 17);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](54, 'div', 10);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](55, '\u05E9\u05D9\u05D7');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](56, 'br');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](57, '\u05E6\u05D9\u05D1\u05D5\u05E8\u05D9');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](58, 'div', 11);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                59,
+                55,
                 ' \u05DC\u05D9\u05E6\u05D5\u05E8 \u05DE\u05E7\u05D5\u05DD \u05D5\u05DE\u05D5\u05D3\u05E2\u05D5\u05EA \u05DC\u05D0\u05D7\u05D9\u05DD \u05D5\u05D4\u05D0\u05D7\u05D9\u05D5\u05EA \u05D4\u05E9\u05DB\u05D5\u05DC\u05D9\u05DD \u05DC\u05E1\u05E4\u05E8 \u05D0\u05EA \u05D4\u05E1\u05D9\u05E4\u05D5\u05E8 \u05E9\u05DC\u05D4\u05DD \u05D1\u05E9\u05D9\u05D7 \u05D4\u05E6\u05D9\u05D1\u05D5\u05E8\u05D9 '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](60, 'div', 18);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](61, 'div', 10);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](62, '\u05DC\u05E9\u05EA\u05E3');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](63, 'br');
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](64, '\u05DC\u05D6\u05DB\u05D5\u05E8');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](56, 'div', 17);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](57, 'div', 10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](58, '\u05E9\u05D9\u05D7');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](59, 'br');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](60, '\u05E6\u05D9\u05D1\u05D5\u05E8\u05D9');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](65, 'div', 11);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](61, 'div', 11);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                66,
-                ' "\u05D1\u05D7\u05D9\u05D9\u05D4\u05DD \u05E6\u05D9\u05D5\u05D5 \u05DC\u05E0\u05D5 \u05D0\u05EA \u05D4\u05D7\u05D9\u05D9\u05DD": \u05DC\u05E9\u05EA\u05E3 \u05D5\u05DC\u05D6\u05DB\u05D5\u05E8 \u05D0\u05EA \u05D4\u05E0\u05D5\u05E4\u05DC\u05D9\u05DD \u05D1\u05D7\u05D9\u05D9\u05D4\u05DD \u05D5\u05D1\u05DE\u05D5\u05EA\u05DD \u05D5\u05DC\u05D9\u05E6\u05D5\u05E8 \u05DE\u05E1\u05E8 \u05E9\u05DC \u05D0\u05D7\u05D3\u05D5\u05EA, \u05EA\u05E7\u05D5\u05D5\u05D4 \u05D5\u05D0\u05D4\u05D1\u05D4 \u05DC\u05DE\u05D5\u05DC\u05D3\u05EA '
+                62,
+                ' \u05DC\u05D4\u05D5\u05E1\u05D9\u05E3 \u05DE\u05D9\u05DE\u05D3 \u05DC\u05D0\u05D5\u05E4\u05DF \u05D1\u05D5 \u05D4\u05D7\u05D1\u05E8\u05D4 \u05D4\u05D9\u05E9\u05E8\u05D0\u05DC\u05D9\u05EA \u05D6\u05D5\u05DB\u05E8\u05EA \u05D0\u05EA \u05E0\u05D5\u05E4\u05DC\u05D9\u05D4 '
+              );
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](63, 'div', 18);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](64, 'div', 10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](65, '\u05DC\u05E9\u05EA\u05E3');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](66, 'br');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](67, '\u05DC\u05D6\u05DB\u05D5\u05E8');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](68, 'div', 11);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
+                69,
+                ' "\u05D1\u05DE\u05D5\u05EA\u05DD \u05E6\u05D9\u05D5\u05D5 \u05DC\u05E0\u05D5 \u05D0\u05EA \u05D4\u05D7\u05D9\u05D9\u05DD": \u05DC\u05D6\u05DB\u05D5\u05E8 \u05D0\u05EA \u05D4\u05E0\u05D5\u05E4\u05DC\u05D9\u05DD \u05D1\u05D7\u05D9\u05D9\u05D4\u05DD \u05D5\u05D1\u05DE\u05D5\u05EA\u05DD, \u05D5\u05DC\u05D9\u05E6\u05D5\u05E7 \u05DE\u05E9\u05DE\u05E2\u05D5\u05EA \u05E9\u05DC \u05D7\u05D9\u05D9\u05DD \u05D5\u05D4\u05DE\u05E9\u05DB\u05D9\u05D5\u05EA \u05DC\u05D0\u05D5\u05D1\u05D3\u05DF \u05D5\u05DC\u05D6\u05DB\u05E8\u05DD. '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();

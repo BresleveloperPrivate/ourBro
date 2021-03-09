@@ -78,7 +78,16 @@ export const videos: Video[] = [
   },
   {
     src: 'https://www.youtube.com/embed/smnA24xAPKY'
-  }
+  },
+
+  { src: 'https://www.youtube.com/watch?v=Q8Tl6A6nVX0&t=7s' },
+  { src: 'https://www.youtube.com/watch?v=8v1o7LKS20w&t=131' },
+  { src: 'https://www.youtube.com/watch?v=jtR6HF3MQKw&t=35s' },
+  { src: 'https://www.youtube.com/watch?v=2YRrjkU12aM' },
+  { src: 'https://www.youtube.com/watch?v=LnM-vsbjJ9U&t=1s' },
+  { src: 'https://www.youtube.com/watch?v=1xYTJsDMW64' },
+  { src: 'https://www.youtube.com/watch?v=WVRZ7fBR3Y4' }
+
   // {
   //   src: 'https://www.youtube.com/watch?v=a6YqpDrbqV'
   // },

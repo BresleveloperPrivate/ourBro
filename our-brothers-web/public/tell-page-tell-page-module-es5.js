@@ -129,7 +129,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
         function BereavedGuidanceFormComponent_div_9_Template(rf, ctx) {
           if (rf & 1) {
-            var _r136 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r138 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 8);
 
@@ -138,13 +138,13 @@ function _createClass(Constructor, protoProps, staticProps) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'checkedChanged',
               function BereavedGuidanceFormComponent_div_9_Template_app_checkbox_checkedChanged_1_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r136);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r138);
 
-                var option_r134 = ctx.$implicit;
+                var option_r136 = ctx.$implicit;
 
-                var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r137 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r135.onGuidanceChange(option_r134.value, $event);
+                return ctx_r137.onGuidanceChange(option_r136.value, $event);
               }
             );
 
@@ -154,15 +154,15 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var option_r134 = ctx.$implicit;
+            var option_r136 = ctx.$implicit;
 
-            var ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r135 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('label', option_r134.details)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('label', option_r136.details)(
               'checked',
-              ctx_r133.selected[option_r134.value]
+              ctx_r135.selected[option_r136.value]
             );
           }
         }
@@ -460,7 +460,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
                 8,
-                " \u05D0\u05D7\u05D9\u05DD \u05D9\u05E7\u05E8\u05D9\u05DD, \u05D0\u05E0\u05D5 \u05E9\u05DE\u05D7\u05D9\u05DD \u05E9\u05D0\u05EA\u05DD \u05DE\u05E2\u05D5\u05E0\u05D9\u05D9\u05E0\u05D9\u05DD \u05DC\u05E7\u05D7\u05EA \u05D7\u05DC\u05E7 \u05D1\u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5'. "
+                " \u05D0\u05D7\u05D9\u05DD \u05D5\u05D0\u05D7\u05D9\u05D5\u05EA \u05D9\u05E7\u05E8\u05D9\u05DD, \u05D0\u05E0\u05D5 \u05E9\u05DE\u05D7\u05D9\u05DD \u05E9\u05D0\u05EA\u05DD \u05DE\u05E2\u05D5\u05E0\u05D9\u05D9\u05E0\u05D9\u05DD \u05DC\u05E7\u05D7\u05EA \u05D7\u05DC\u05E7 \u05D1\u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5'. "
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -469,7 +469,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
                 10,
-                " \u05E9\u05DE\u05D7 \u05DC\u05E1\u05D9\u05D9\u05E2 \u05DC\u05DA \u05D1\u05DB\u05DC \u05D3\u05E8\u05DA \u05E9\u05E0\u05D5\u05DB\u05DC \u05E2\u05DC \u05DE\u05E0\u05EA \u05E9\u05EA\u05D5\u05DB\u05DC \u05DC\u05E7\u05D9\u05D9\u05DD \u05DE\u05E4\u05D2\u05E9 \u05E2\u05D5\u05E6\u05DE\u05EA\u05D9, \u05DE\u05E8\u05D2\u05E9 \u05D5\u05D9\u05D9\u05D7\u05D5\u05D3\u05D9. \u05D1\u05DC\u05D7\u05D9\u05E6\u05D4 \u05E2\u05DC \u05DB\u05E4\u05EA\u05D5\u05E8 '\u05D4\u05DE\u05E9\u05DA', \u05D9\u05EA\u05D7\u05D9\u05DC \u05EA\u05D4\u05DC\u05D9\u05DA \u05D4\u05D4\u05E8\u05E9\u05DE\u05D4, \u05D1\u05D5 \u05D9\u05E9 \u05E6\u05D5\u05E8\u05DA \u05D1\u05DE\u05D9\u05DC\u05D5\u05D9 \u05E4\u05E8\u05D8\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD, \u05DE\u05D9\u05DC\u05D5\u05D9 \u05E4\u05E8\u05D8\u05D9 \u05D7\u05DC\u05DC \u05D5\u05DC\u05D1\u05E1\u05D5\u05E3- \u05E9\u05D9\u05D1\u05D5\u05E6\u05DA \u05D1\u05D0\u05D7\u05D3 \u05D4\u05D1\u05EA\u05D9\u05DD \u05D4\u05DE\u05D0\u05E8\u05D7\u05D9\u05DD \u05E9\u05E0\u05E4\u05EA\u05D7\u05D5. \u05D7\u05DC\u05E7 \u05DE\u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D9\u05D4\u05D9\u05D5 \u05D1\u05E1\u05D1\u05D9\u05D1\u05D4 \u05D0\u05D9\u05E0\u05D8\u05D9\u05DE\u05D9\u05EA \u05D5\u05D7\u05DC\u05E7\u05DD, \u05D1\u05D0\u05D5\u05D5\u05D9\u05E8\u05D4 \u05D2\u05D3\u05D5\u05DC\u05D4 \u05D9\u05D5\u05EA\u05E8. "
+                ' \u05E0\u05E9\u05DE\u05D7 \u05DC\u05E1\u05D9\u05D9\u05E2 \u05DC\u05DB\u05DD \u05D1\u05DB\u05DC \u05D3\u05E8\u05DA \u05E9\u05E0\u05D5\u05DB\u05DC \u05E2\u05DC \u05DE\u05E0\u05EA \u05E9\u05EA\u05D5\u05DB\u05DC\u05D5 \u05DC\u05E7\u05D9\u05D9\u05DD \u05DE\u05E4\u05D2\u05E9 \u05E2\u05D5\u05E6\u05DE\u05EA\u05D9, \u05DE\u05E8\u05D2\u05E9 \u05D5\u05D9\u05D9\u05D7\u05D5\u05D3\u05D9. '
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -478,7 +478,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
                 12,
-                " \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D0\u05E0\u05D5 \u05E0\u05E7\u05D9\u05D9\u05DD \u05DE\u05E4\u05D2\u05E9\u05D9 \u05D4\u05D3\u05E8\u05DB\u05D4 \u05D1\u05DE\u05D8\u05E8\u05D4 \u05DC\u05D4\u05DB\u05D9\u05DF \u05D0\u05D5\u05EA\u05DA \u05D5\u05DC\u05E1\u05D9\u05D9\u05E2 \u05DC\u05DA \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD. \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D9\u05DB\u05DC\u05DC\u05D5 \u05EA\u05DB\u05E0\u05D9\u05DD \u05E4\u05E8\u05E7\u05D8\u05D9\u05D9\u05DD \u05D5\u05D4\u05E7\u05E0\u05D9\u05D9\u05EA \u05DB\u05DC\u05D9\u05DD \u05E9\u05D9\u05E1\u05D9\u05D9\u05E2\u05D5 \u05DC\u05DA \u05DE\u05D1\u05E0\u05D9\u05EA \u05D5\u05E8\u05D2\u05E9\u05D9\u05EA \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9, \u05D1\u05D9\u05DF \u05D0\u05DD \u05DC\u05E7\u05D7\u05EA \u05D7\u05DC\u05E7 \u05D1\u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5' \u05D1\u05E2\u05D1\u05E8 \u05D5\u05D1\u05D9\u05DF \u05D0\u05DD \u05DC\u05D0. "
+                " \u05D1\u05DC\u05D7\u05D9\u05E6\u05D4 \u05E2\u05DC \u05DB\u05E4\u05EA\u05D5\u05E8 '\u05D4\u05DE\u05E9\u05DA', \u05D9\u05EA\u05D7\u05D9\u05DC \u05EA\u05D4\u05DC\u05D9\u05DA \u05D4\u05D4\u05E8\u05E9\u05DE\u05D4, \u05D1\u05D5 \u05D9\u05E9 \u05E6\u05D5\u05E8\u05DA \u05D1\u05DE\u05D9\u05DC\u05D5\u05D9 \u05E4\u05E8\u05D8\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD, \u05DE\u05D9\u05DC\u05D5\u05D9 \u05E4\u05E8\u05D8\u05D9 \u05D7\u05DC\u05DC \u05D5\u05DC\u05D1\u05E1\u05D5\u05E3 - \u05E9\u05D9\u05D1\u05D5\u05E6\u05DA \u05D1\u05D0\u05D7\u05D3 \u05D4\u05D1\u05EA\u05D9\u05DD \u05D4\u05DE\u05D0\u05E8\u05D7\u05D9\u05DD \u05E9\u05E0\u05E4\u05EA\u05D7\u05D5. \u05D7\u05DC\u05E7 \u05DE\u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D9\u05D4\u05D9\u05D5 \u05D1\u05E1\u05D1\u05D9\u05D1\u05D4 \u05D0\u05D9\u05E0\u05D8\u05D9\u05DE\u05D9\u05EA \u05D5\u05D7\u05DC\u05E7\u05DD, \u05D1\u05D0\u05D5\u05D5\u05D9\u05E8\u05D4 \u05D2\u05D3\u05D5\u05DC\u05D4 \u05D9\u05D5\u05EA\u05E8. "
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -487,7 +487,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
                 14,
-                ' \u05E8\u05D5\u05D1 \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05DE\u05EA\u05E7\u05D9\u05D9\u05DE\u05D9\u05DD \u05D1\u05D9\u05D5\u05DD \u05E8\u05D0\u05E9\u05D5\u05DF, \u05D4-26.4 \u05D1\u05E9\u05E2\u05D4 20:00, \u05D0\u05DA \u05D9\u05E9\u05E0\u05D4 \u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05DC\u05D4\u05E9\u05EA\u05D1\u05E5 \u05DC\u05D9\u05D5\u05EA\u05E8 \u05DE\u05D1\u05D9\u05EA \u05DE\u05D0\u05E8\u05D7 \u05D0\u05D7\u05D3 \u05D1\u05D9\u05DF \u05D4\u05EA\u05D0\u05E8\u05D9\u05DB\u05D9\u05DD 22-28 \u05D1\u05D0\u05E4\u05E8\u05D9\u05DC. \u05D0\u05E0\u05D7\u05E0\u05D5 \u05E4\u05D4 \u05D1\u05E9\u05D1\u05D9\u05DC\u05DB\u05DD. '
+                " \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D0\u05E0\u05D5 \u05E0\u05E7\u05D9\u05D9\u05DD \u05E1\u05D3\u05E0\u05D0\u05D5\u05EA \u05D4\u05D3\u05E8\u05DB\u05D4 \u05D1\u05D6\u05D5\u05DD \u05D1\u05DE\u05D8\u05E8\u05D4 \u05DC\u05D4\u05DB\u05D9\u05DF \u05D0\u05D5\u05EA\u05DA \u05D5\u05DC\u05E1\u05D9\u05D9\u05E2 \u05DC\u05DA \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD. \u05D4\u05E1\u05D3\u05E0\u05D0\u05D5\u05EA \u05D9\u05DB\u05DC\u05DC\u05D5 \u05EA\u05DB\u05E0\u05D9\u05DD \u05E4\u05E8\u05E7\u05D8\u05D9\u05D9\u05DD \u05D5\u05D4\u05E7\u05E0\u05D9\u05D9\u05EA \u05DB\u05DC\u05D9\u05DD \u05E9\u05D9\u05E1\u05D9\u05D9\u05E2\u05D5 \u05DC\u05DA \u05DE\u05D1\u05E0\u05D9\u05EA \u05D5\u05E8\u05D2\u05E9\u05D9\u05EA \u05DC\u05E7\u05E8\u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9, \u05D1\u05D9\u05DF \u05D0\u05DD \u05DC\u05E7\u05D7\u05EA \u05D7\u05DC\u05E7 \u05D1\u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5' \u05D1\u05E2\u05D1\u05E8 \u05D5\u05D1\u05D9\u05DF \u05D0\u05DD \u05DC\u05D0. \u05D4\u05DE\u05E4\u05D2\u05E9\u05D9\u05DD \u05D9\u05EA\u05E7\u05D9\u05D9\u05DE\u05D5 \u05D1\u05E9\u05D1\u05D5\u05E2 \u05E9\u05E1\u05D1\u05D9\u05D1 \u05D9\u05D5\u05DD \u05D4\u05D6\u05D9\u05DB\u05E8\u05D5\u05DF 9-14.4.21. \u05D9\u05E9\u05E0\u05D4 \u05D0\u05E4\u05E9\u05E8\u05D5\u05EA \u05DC\u05D4\u05E9\u05EA\u05D1\u05E5 \u05DC\u05D9\u05D5\u05EA\u05E8 \u05DE\u05D1\u05D9\u05EA \u05DE\u05D0\u05E8\u05D7 \u05D0\u05D7\u05D3. \u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5' \u05DE\u05EA\u05E7\u05D9\u05D9\u05DE\u05D9\u05DD \u05D1\u05DE\u05E1\u05D2\u05E8\u05EA \u05D4\u05E0\u05D7\u05D9\u05D5\u05EA \u05D4\u05EA\u05D5 \u05D4\u05D9\u05E8\u05D5\u05E7 (\u05D0\u05DB\u05D9\u05E4\u05EA \u05D4\u05D4\u05E0\u05D7\u05D9\u05D5\u05EA \u05D1\u05D0\u05D7\u05E8\u05D9\u05D5\u05EA \u05D4\u05DE\u05D0\u05E8\u05D7 \u05D1\u05DC\u05D1\u05D3). \u05E4\u05D4 \u05D1\u05E9\u05D1\u05D9\u05DC\u05DB\u05DD \u05DC\u05DB\u05DC \u05E9\u05D0\u05DC\u05D4. "
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -1271,32 +1271,74 @@ function _createClass(Constructor, protoProps, staticProps) {
         );
         /* harmony import */
 
-        var _bereaved_profile_form_bereaved_profile_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-          /*! ../bereaved-profile-form/bereaved-profile-form.component */
-          './src/app/tell/bereaved-profile-form/bereaved-profile-form.component.ts'
-        );
-        /* harmony import */
-
-        var _slain_form_slain_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+        var _slain_form_slain_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
           /*! ../slain-form/slain-form.component */
           './src/app/tell/slain-form/slain-form.component.ts'
         );
         /* harmony import */
 
-        var _bereaved_guidance_form_bereaved_guidance_form_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+        var _bereaved_guidance_form_bereaved_guidance_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
           /*! ../bereaved-guidance-form/bereaved-guidance-form.component */
           './src/app/tell/bereaved-guidance-form/bereaved-guidance-form.component.ts'
         );
         /* harmony import */
 
-        var _shared_components_meetings_meetings_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+        var _shared_components_meetings_meetings_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
           /*! ../../shared/components/meetings/meetings.component */
           './src/app/shared/components/meetings/meetings.component.ts'
+        );
+        /* harmony import */
+
+        var _bereaved_profile_form_bereaved_profile_form_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+          /*! ../bereaved-profile-form/bereaved-profile-form.component */
+          './src/app/tell/bereaved-profile-form/bereaved-profile-form.component.ts'
         ); //import { EnrollmentService } from './../../shared/services/enrollment.service';
+
+        function TellPageComponent_section_2_app_progress_8_Template(rf, ctx) {
+          if (rf & 1) {
+            var _r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-progress', 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'section', 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](2, 'app-bereaved-profile-form', 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'submit',
+              function TellPageComponent_section_2_app_progress_8_Template_app_bereaved_profile_form_submit_2_listener(
+                $event
+              ) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r63);
+
+                var ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+
+                return ctx_r62.onProfileSubmit($event);
+              }
+            );
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+
+          if (rf & 2) {
+            var ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r61.user)(
+              'firebaseUser',
+              ctx_r61.firebaseUser
+            );
+          }
+        }
 
         function TellPageComponent_section_2_Template(rf, ctx) {
           if (rf & 1) {
-            var _r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r65 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'section');
 
@@ -1323,70 +1365,31 @@ function _createClass(Constructor, protoProps, staticProps) {
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](7, 'br');
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](8, 'app-progress', 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](9, 'section', 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](10, 'app-bereaved-profile-form', 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
-              'submit',
-              function TellPageComponent_section_2_Template_app_bereaved_profile_form_submit_10_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r62);
-
-                var ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-
-                return ctx_r61.onProfileSubmit($event);
-              }
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              8,
+              TellPageComponent_section_2_app_progress_8_Template,
+              3,
+              2,
+              'app-progress',
+              10
             );
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](9, 'br');
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](10, 'app-progress', 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](11, 'section', 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](11, 'br');
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](12, 'app-progress', 12);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](13, 'section', 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](14, 'app-slain-form', 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](12, 'app-slain-form', 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'submit',
-              function TellPageComponent_section_2_Template_app_slain_form_submit_14_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r62);
-
-                var ctx_r63 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-
-                return ctx_r63.onSlainsSubmit($event);
-              }
-            );
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](15, 'br');
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](16, 'app-progress', 14);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](17, 'section', 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](18, 'app-bereaved-guidance-form', 15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
-              'submit',
-              function TellPageComponent_section_2_Template_app_bereaved_guidance_form_submit_18_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r62);
+              function TellPageComponent_section_2_Template_app_slain_form_submit_12_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r65);
 
                 var ctx_r64 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r64.onGuidanceSubmit($event);
+                return ctx_r64.onSlainsSubmit($event);
               }
             );
 
@@ -1396,20 +1399,45 @@ function _createClass(Constructor, protoProps, staticProps) {
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](19, 'br');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](13, 'br');
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](20, 'app-progress', 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](14, 'app-progress', 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](21, 'app-meetings', 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](15, 'section', 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](16, 'app-bereaved-guidance-form', 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'submit',
+              function TellPageComponent_section_2_Template_app_bereaved_guidance_form_submit_16_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r65);
+
+                var ctx_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+
+                return ctx_r66.onGuidanceSubmit($event);
+              }
+            );
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](17, 'br');
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](18, 'app-progress', 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](19, 'app-meetings', 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinMeeting',
-              function TellPageComponent_section_2_Template_app_meetings_joinMeeting_21_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r62);
+              function TellPageComponent_section_2_Template_app_meetings_joinMeeting_19_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r65);
 
-                var ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r67 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r65.onJoinMeeting($event);
+                return ctx_r67.onJoinMeeting($event);
               }
             );
 
@@ -1423,14 +1451,11 @@ function _createClass(Constructor, protoProps, staticProps) {
           if (rf & 2) {
             var ctx_r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r54.user)(
-              'firebaseUser',
-              ctx_r54.firebaseUser
-            );
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('isExpended', true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('slain', ctx_r54.slain);
 
@@ -1490,8 +1515,8 @@ function _createClass(Constructor, protoProps, staticProps) {
             this.dataService = dataService;
             this.currentStep = 0;
             this.currentStep$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__['Subject']();
-            this.year = _shared_constants__WEBPACK_IMPORTED_MODULE_4__['MEMORIAL_YEAR']; //public expended: boolean = false;
-            //public ok: boolean = false;
+            this.year = _shared_constants__WEBPACK_IMPORTED_MODULE_4__['MEMORIAL_YEAR'];
+            this.profile = false; //public ok: boolean = false;
             //public scheduling: boolean = false;
 
             this.subscriptions = [];
@@ -1672,16 +1697,17 @@ function _createClass(Constructor, protoProps, staticProps) {
             [4, 'ngSwitchCase'],
             [1, 'site-divider'],
             [1, 'small-heading'],
-            ['title', '\u05D4\u05E1\u05D1\u05E8'],
+            ['title', '\u05E4\u05E8\u05D5\u05D8', 3, 'isExpended'],
             [1, 'registration-step'],
-            ['title', ' \u05E4\u05E8\u05D8\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD'],
-            [3, 'user', 'firebaseUser', 'submit'],
+            ['title', ' \u05E4\u05E8\u05D8\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD', 4, ''],
             ['title', '\u05E4\u05E8\u05D8\u05D9 \u05D4\u05D7\u05DC\u05DC'],
             [3, 'slain', 'submit'],
             ['title', '\u05DE\u05E4\u05D2\u05E9\u05D9 \u05D4\u05D3\u05E8\u05DB\u05D4'],
             [3, 'submit'],
             ['title', '\u05E9\u05D9\u05D1\u05D5\u05E5'],
-            [3, 'user', 'meetings', 'joinMeeting']
+            [3, 'user', 'meetings', 'joinMeeting'],
+            ['title', ' \u05E4\u05E8\u05D8\u05D9\u05DD \u05D0\u05D9\u05E9\u05D9\u05D9\u05DD'],
+            [3, 'user', 'firebaseUser', 'submit']
           ],
           template: function TellPageComponent_Template(rf, ctx) {
             if (rf & 1) {
@@ -1692,8 +1718,8 @@ function _createClass(Constructor, protoProps, staticProps) {
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
                 2,
                 TellPageComponent_section_2_Template,
-                22,
-                5,
+                20,
+                4,
                 'section',
                 2
               );
@@ -1803,14 +1829,14 @@ function _createClass(Constructor, protoProps, staticProps) {
             _angular_common__WEBPACK_IMPORTED_MODULE_10__['NgSwitchCase'],
             _shared_components_progress_progress_component__WEBPACK_IMPORTED_MODULE_11__['ProgressComponent'],
             _bereaved_intro_bereaved_intro_component__WEBPACK_IMPORTED_MODULE_12__['BereavedIntroComponent'],
-            _bereaved_profile_form_bereaved_profile_form_component__WEBPACK_IMPORTED_MODULE_13__[
-              'BereavedProfileFormComponent'
-            ],
-            _slain_form_slain_form_component__WEBPACK_IMPORTED_MODULE_14__['SlainFormComponent'],
-            _bereaved_guidance_form_bereaved_guidance_form_component__WEBPACK_IMPORTED_MODULE_15__[
+            _slain_form_slain_form_component__WEBPACK_IMPORTED_MODULE_13__['SlainFormComponent'],
+            _bereaved_guidance_form_bereaved_guidance_form_component__WEBPACK_IMPORTED_MODULE_14__[
               'BereavedGuidanceFormComponent'
             ],
-            _shared_components_meetings_meetings_component__WEBPACK_IMPORTED_MODULE_16__['MeetingsComponent']
+            _shared_components_meetings_meetings_component__WEBPACK_IMPORTED_MODULE_15__['MeetingsComponent'],
+            _bereaved_profile_form_bereaved_profile_form_component__WEBPACK_IMPORTED_MODULE_16__[
+              'BereavedProfileFormComponent'
+            ]
           ],
           styles: [
             '\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RlbGwvcGFnZS90ZWxsLXBhZ2UuY29tcG9uZW50LnNjc3MifQ== */'

@@ -486,18 +486,18 @@ function _classCallCheck(instance, Constructor) {
 
         function MeetingsMapGuideComponent_div_0_div_8_Template(rf, ctx) {
           if (rf & 1) {
-            var _r126 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r128 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 11);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function MeetingsMapGuideComponent_div_0_div_8_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r126);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r128);
 
-                var ctx_r125 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                var ctx_r127 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
-                return ctx_r125.next();
+                return ctx_r127.next();
               }
             );
 
@@ -509,18 +509,18 @@ function _classCallCheck(instance, Constructor) {
 
         function MeetingsMapGuideComponent_div_0_div_9_Template(rf, ctx) {
           if (rf & 1) {
-            var _r128 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r130 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function MeetingsMapGuideComponent_div_0_div_9_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r128);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r130);
 
-                var ctx_r127 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                var ctx_r129 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
-                return ctx_r127.prev();
+                return ctx_r129.prev();
               }
             );
 
@@ -543,31 +543,31 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var i_r130 = ctx.index;
+            var i_r132 = ctx.index;
 
-            var ctx_r123 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            var ctx_r125 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngClass',
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](1, _c0, i_r130 === ctx_r123.stage)
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](1, _c0, i_r132 === ctx_r125.stage)
             );
           }
         }
 
         function MeetingsMapGuideComponent_div_0_div_11_Template(rf, ctx) {
           if (rf & 1) {
-            var _r132 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r134 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function MeetingsMapGuideComponent_div_0_div_11_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r132);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r134);
 
-                var ctx_r131 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                var ctx_r133 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
-                return ctx_r131.onGuideCompleted();
+                return ctx_r133.onGuideCompleted();
               }
             );
 
@@ -648,32 +648,32 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r120 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r122 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', ctx_r120.stages[ctx_r120.stage], ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', ctx_r122.stages[ctx_r122.stage], ' ');
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngIf',
-              ctx_r120.stage < ctx_r120.stages.length - 1
+              ctx_r122.stage < ctx_r122.stages.length - 1
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx_r120.stage > 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx_r122.stage > 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r120.stages);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r122.stages);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngIf',
-              ctx_r120.stage >= ctx_r120.stages.length - 1
+              ctx_r122.stage >= ctx_r122.stages.length - 1
             );
           }
         }
@@ -862,19 +862,19 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var legend_r119 = ctx.$implicit;
+            var legend_r121 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'src',
-              legend_r119.iconUrl,
+              legend_r121.iconUrl,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeUrl']
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](legend_r119.label);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](legend_r121.label);
           }
         }
 
@@ -1088,12 +1088,12 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r111 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](
-              ctx_r111.utilsService.meetingAudienceLabels[ctx_r111.meeting.audience]
+              ctx_r113.utilsService.meetingAudienceLabels[ctx_r113.meeting.audience]
             );
           }
         }
@@ -1122,12 +1122,12 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var slain_r115 = ctx.$implicit;
+            var slain_r117 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](
-              slain_r115.firstName + ' ' + slain_r115.lastName + ' \u05D6"\u05DC'
+              slain_r117.firstName + ' ' + slain_r117.lastName + ' \u05D6"\u05DC'
             );
           }
         }
@@ -1165,23 +1165,23 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r114 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](
-              ctx_r112.meeting.bereaved.firstName + ' ' + ctx_r112.meeting.bereaved.lastName
+              ctx_r114.meeting.bereaved.firstName + ' ' + ctx_r114.meeting.bereaved.lastName
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r112.meeting.bereaved.slains);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r114.meeting.bereaved.slains);
           }
         }
 
         function MeetingsMapMeetingComponent_div_16_Template(rf, ctx) {
           if (rf & 1) {
-            var _r117 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r119 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 3);
 
@@ -1190,11 +1190,11 @@ function _classCallCheck(instance, Constructor) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'join',
               function MeetingsMapMeetingComponent_div_16_Template_app_meeting_join_button_join_1_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r117);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r119);
 
-                var ctx_r116 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r118 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r116.joinMeeting.emit();
+                return ctx_r118.joinMeeting.emit();
               }
             );
 
@@ -1204,13 +1204,13 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r113 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r115 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r113.user)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r115.user)(
               'meeting',
-              ctx_r113.meeting
+              ctx_r115.meeting
             );
           }
         }
@@ -1666,15 +1666,15 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r97 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r99 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r97.user);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r99.user);
           }
         }
 
         function MeetingsMapComponent_app_meetings_map_navigator_2_Template(rf, ctx) {
           if (rf & 1) {
-            var _r102 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r104 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-meetings-map-navigator', 8);
 
@@ -1683,11 +1683,11 @@ function _classCallCheck(instance, Constructor) {
               function MeetingsMapComponent_app_meetings_map_navigator_2_Template_app_meetings_map_navigator_navigate_0_listener(
                 $event
               ) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r102);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r104);
 
-                var ctx_r101 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r101.navigate($event);
+                return ctx_r103.navigate($event);
               }
             );
 
@@ -1697,19 +1697,19 @@ function _classCallCheck(instance, Constructor) {
 
         function MeetingsMapComponent_app_meetings_map_guide_3_Template(rf, ctx) {
           if (rf & 1) {
-            var _r104 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r106 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-meetings-map-guide', 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'guideCompleted',
               function MeetingsMapComponent_app_meetings_map_guide_3_Template_app_meetings_map_guide_guideCompleted_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r104);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r106);
 
-                var ctx_r103 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r105 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                ctx_r103.showGuide = false;
-                return ctx_r103.guideCompleted.emit();
+                ctx_r105.showGuide = false;
+                return ctx_r105.guideCompleted.emit();
               }
             );
 
@@ -1733,20 +1733,20 @@ function _classCallCheck(instance, Constructor) {
 
         function MeetingsMapComponent_ng_template_6_Template(rf, ctx) {
           if (rf & 1) {
-            var _r109 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r111 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'agm-marker', 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'markerClick',
               function MeetingsMapComponent_ng_template_6_Template_agm_marker_markerClick_0_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r109);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r111);
 
-                var _r107 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](2);
+                var _r109 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](2);
 
-                var ctx_r108 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r108.clicked($event, _r107);
+                return ctx_r110.clicked($event, _r109);
               }
             );
 
@@ -1757,15 +1757,15 @@ function _classCallCheck(instance, Constructor) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinMeeting',
               function MeetingsMapComponent_ng_template_6_Template_app_meetings_map_meeting_joinMeeting_3_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r109);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r111);
 
-                var meeting_r105 = ctx.$implicit;
+                var meeting_r107 = ctx.$implicit;
 
-                var ctx_r110 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r112 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r110.joinMeeting.emit({
-                  user: ctx_r110.user,
-                  meeting: meeting_r105
+                return ctx_r112.joinMeeting.emit({
+                  user: ctx_r112.user,
+                  meeting: meeting_r107
                 });
               }
             );
@@ -1778,26 +1778,26 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var meeting_r105 = ctx.$implicit;
+            var meeting_r107 = ctx.$implicit;
 
-            var ctx_r100 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r102 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('latitude', meeting_r105.address.latitude)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('latitude', meeting_r107.address.latitude)(
               'longitude',
-              meeting_r105.address.longitude
+              meeting_r107.address.longitude
             )('label', '')(
               'iconUrl',
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
                 8,
                 _c1,
-                ctx_r100.getMeetingIconUrl(meeting_r105),
+                ctx_r102.getMeetingIconUrl(meeting_r107),
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](7, _c0)
               )
             )('markerDraggable', false);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('meeting', meeting_r105)('user', ctx_r100.user);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('meeting', meeting_r107)('user', ctx_r102.user);
           }
         }
 
@@ -2480,7 +2480,7 @@ function _classCallCheck(instance, Constructor) {
 
         function MeetingsComponent_ng_container_4_Template(rf, ctx) {
           if (rf & 1) {
-            var _r93 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r95 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerStart'](0);
 
@@ -2489,20 +2489,20 @@ function _classCallCheck(instance, Constructor) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinMeeting',
               function MeetingsComponent_ng_container_4_Template_app_meetings_map_joinMeeting_1_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r93);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r95);
 
-                var ctx_r92 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r94 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r92.joinMeeting.emit($event);
+                return ctx_r94.joinMeeting.emit($event);
               }
             )(
               'guideCompleted',
               function MeetingsComponent_ng_container_4_Template_app_meetings_map_guideCompleted_1_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r93);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r95);
 
-                var ctx_r94 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r96 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r94.guideCompleted.emit();
+                return ctx_r96.guideCompleted.emit();
               }
             );
 
@@ -2512,31 +2512,31 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r91 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r89.user)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r91.user)(
               'meetings',
-              ctx_r89.filteredMeetings
-            )('showGuide', ctx_r89.mapShowGuide);
+              ctx_r91.filteredMeetings
+            )('showGuide', ctx_r91.mapShowGuide);
           }
         }
 
         function MeetingsComponent_ng_template_5_Template(rf, ctx) {
           if (rf & 1) {
-            var _r96 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r98 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-meetings-list', 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinMeeting',
               function MeetingsComponent_ng_template_5_Template_app_meetings_list_joinMeeting_0_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r96);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r98);
 
-                var ctx_r95 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r97 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r95.joinMeeting.emit($event);
+                return ctx_r97.joinMeeting.emit($event);
               }
             );
 
@@ -2544,11 +2544,11 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r91 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r93 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r91.user)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r93.user)(
               'meetings',
-              ctx_r91.filteredMeetings
+              ctx_r93.filteredMeetings
             );
           }
         }
@@ -2677,7 +2677,7 @@ function _classCallCheck(instance, Constructor) {
             }
 
             if (rf & 2) {
-              var _r90 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](6);
+              var _r92 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](6);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
@@ -2689,7 +2689,7 @@ function _classCallCheck(instance, Constructor) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.view === 'map')('ngIfElse', _r90);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.view === 'map')('ngIfElse', _r92);
             }
           },
           directives: [
@@ -2791,18 +2791,18 @@ function _classCallCheck(instance, Constructor) {
 
         function ViewToggleComponent_div_1_Template(rf, ctx) {
           if (rf & 1) {
-            var _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r87 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function ViewToggleComponent_div_1_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r85);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r87);
 
-                var ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r84.viewChange.emit('map');
+                return ctx_r86.viewChange.emit('map');
               }
             );
 
@@ -2836,18 +2836,18 @@ function _classCallCheck(instance, Constructor) {
 
         function ViewToggleComponent_div_2_Template(rf, ctx) {
           if (rf & 1) {
-            var _r87 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function ViewToggleComponent_div_2_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r87);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r89);
 
-                var ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r86.viewChange.emit('list');
+                return ctx_r88.viewChange.emit('list');
               }
             );
 

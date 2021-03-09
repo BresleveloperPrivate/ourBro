@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit, OnChanges {
       {
         title: 'מפגשים',
         subMenues: [
-          { route: 'meetings', title: 'מפגשים' },
+          // { route: 'meetings', title: 'מפגשים' },
           { route: 'map', title: 'מפת מפגשים' },
           { route: 'tell', title: 'אני רוצה לספר' },
           { route: 'host', title: 'אני רוצה לארח' },

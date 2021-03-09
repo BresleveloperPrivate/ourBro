@@ -1929,7 +1929,7 @@ function _createClass(Constructor, protoProps, staticProps) {
           outputs: {
             nextStep: 'nextStep'
           },
-          decls: 11,
+          decls: 13,
           vars: 0,
           consts: [
             [1, 'intro'],
@@ -1974,7 +1974,16 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
                 10,
-                ' \u05E0\u05D9\u05EA\u05DF \u05DC\u05E4\u05EA\u05D5\u05D7 \u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9 \u05DC\u05E7\u05D4\u05DC \u05D4\u05E8\u05D7\u05D1, \u05D1\u05EA\u05D9\u05D0\u05D5\u05DD \u05DE\u05D5\u05DC\u05DA, \u05D0\u05D5 \u05DC\u05E1\u05D2\u05D5\u05E8 \u05D0\u05D5\u05EA\u05D5 \u05DC\u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05DD \u05D1\u05DC\u05D1\u05D3. \u05DC\u05EA\u05E9\u05D5\u05DE\u05EA \u05DC\u05D9\u05D1\u05DA, \u05D1\u05D3\u05E8\u05DA \u05DB\u05DC\u05DC, \u05DB\u05DE\u05D5\u05EA \u05D4\u05E0\u05E8\u05E9\u05DE\u05D9\u05DD \u05DC\u05D0\u05D9\u05E8\u05D5\u05D7 \u05D2\u05D3\u05D5\u05DC\u05D4 \u05DE\u05DB\u05DE\u05D5\u05EA \u05D4\u05D0\u05D7\u05D9\u05DD \u05D4\u05E0\u05E8\u05E9\u05DE\u05D9\u05DD, \u05DE\u05DB\u05D9\u05D5\u05DF \u05E9\u05DC\u05E8\u05D5\u05D1 \u05E7\u05DC \u05D9\u05D5\u05EA\u05E8 \u05DC\u05E4\u05EA\u05D5\u05D7 \u05D0\u05EA \u05D4\u05D1\u05D9\u05EA \u05DE\u05D0\u05E9\u05E8 \u05DC\u05D4\u05D5\u05D1\u05D9\u05DC \u05D5\u05DC\u05E9\u05EA\u05E3 \u05D1\u05E1\u05D9\u05E4\u05D5\u05E8 \u05D0\u05D9\u05E9\u05D9. \u05D0\u05E0\u05D7\u05E0\u05D5 \u05E4\u05D4 \u05D1\u05E9\u05D1\u05D9\u05DC\u05DB\u05DD. '
+                ' \u05E0\u05D9\u05EA\u05DF \u05DC\u05E4\u05EA\u05D5\u05D7 \u05D0\u05EA \u05D4\u05DE\u05E4\u05D2\u05E9 \u05DC\u05E7\u05D4\u05DC \u05D4\u05E8\u05D7\u05D1, \u05D1\u05EA\u05D9\u05D0\u05D5\u05DD \u05DE\u05D5\u05DC\u05DA, \u05D0\u05D5 \u05DC\u05E1\u05D2\u05D5\u05E8 \u05D0\u05D5\u05EA\u05D5 \u05DC\u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05DD \u05D1\u05DC\u05D1\u05D3. \u05DC\u05EA\u05E9\u05D5\u05DE\u05EA \u05DC\u05D9\u05D1\u05DA, \u05D1\u05D3\u05E8\u05DA \u05DB\u05DC\u05DC, \u05DB\u05DE\u05D5\u05EA \u05D4\u05E0\u05E8\u05E9\u05DE\u05D9\u05DD \u05DC\u05D0\u05D9\u05E8\u05D5\u05D7 \u05D2\u05D3\u05D5\u05DC\u05D4 \u05DE\u05DB\u05DE\u05D5\u05EA \u05D4\u05D0\u05D7\u05D9\u05DD \u05D4\u05E0\u05E8\u05E9\u05DE\u05D9\u05DD, \u05DE\u05DB\u05D9\u05D5\u05DF \u05E9\u05DC\u05E8\u05D5\u05D1 \u05E7\u05DC \u05D9\u05D5\u05EA\u05E8 \u05DC\u05E4\u05EA\u05D5\u05D7 \u05D0\u05EA \u05D4\u05D1\u05D9\u05EA \u05DE\u05D0\u05E9\u05E8 \u05DC\u05D4\u05D5\u05D1\u05D9\u05DC \u05D5\u05DC\u05E9\u05EA\u05E3 \u05D1\u05E1\u05D9\u05E4\u05D5\u05E8 \u05D0\u05D9\u05E9\u05D9. '
+              );
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](11, 'p');
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
+                12,
+                " \u05DE\u05E4\u05D2\u05E9\u05D9 '\u05D4\u05D0\u05D7\u05D9\u05DD \u05E9\u05DC\u05E0\u05D5' \u05DE\u05EA\u05E7\u05D9\u05D9\u05DE\u05D9\u05DD \u05D1\u05DE\u05E1\u05D2\u05E8\u05EA \u05D4\u05E0\u05D7\u05D9\u05D5\u05EA \u05D4\u05EA\u05D5 \u05D4\u05D9\u05E8\u05D5\u05E7 (\u05D0\u05DB\u05D9\u05E4\u05EA \u05D4\u05D4\u05E0\u05D7\u05D9\u05D5\u05EA \u05D1\u05D0\u05D7\u05E8\u05D9\u05D5\u05EA \u05D4\u05DE\u05D0\u05E8\u05D7 \u05D1\u05DC\u05D1\u05D3). \u05D0\u05E0\u05D7\u05E0\u05D5 \u05E4\u05D4 \u05D1\u05E9\u05D1\u05D9\u05DC\u05DB\u05DD \u05DC\u05DB\u05DC \u05E9\u05D0\u05DC\u05D4. "
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -2371,7 +2380,11 @@ function _createClass(Constructor, protoProps, staticProps) {
           if (rf & 2) {
             var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('isExpended', true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r24.user)(
               'firebaseUser',
@@ -2565,7 +2578,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             [4, 'ngSwitchCase'],
             [1, 'site-divider'],
             [1, 'small-heading'],
-            ['title', '\u05D4\u05E1\u05D1\u05E8'],
+            ['title', '\u05E4\u05D9\u05E8\u05D5\u05D8', 3, 'isExpended'],
             [1, 'step0'],
             ['title', '\u05E4\u05E8\u05D8\u05D9 \u05DE\u05E9\u05EA\u05DE\u05E9'],
             [1, 'registration-step'],
@@ -2583,7 +2596,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                 2,
                 HostPageComponent_section_2_Template,
                 15,
-                3,
+                4,
                 'section',
                 2
               );

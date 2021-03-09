@@ -205,14 +205,14 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'span', 3);
           }
           if (rf & 2) {
-            const ctx_r81 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngClass',
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
                 1,
                 _c0,
-                ctx_r81.sorted === 'asc',
-                ctx_r81.sorted === 'desc'
+                ctx_r83.sorted === 'asc',
+                ctx_r83.sorted === 'desc'
               )
             );
           }

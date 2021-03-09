@@ -45,9 +45,9 @@
           }
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-            const _r267 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](19);
+            const _r268 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](19);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngTemplateOutlet', _r267);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngTemplateOutlet', _r268);
           }
         }
         function DonatePageComponent_div_17_Template(rf, ctx) {
@@ -58,9 +58,9 @@
           }
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-            const _r267 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](19);
+            const _r268 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](19);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngTemplateOutlet', _r267);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngTemplateOutlet', _r268);
           }
         }
         function DonatePageComponent_ng_template_18_Template(rf, ctx) {

@@ -1,13 +1,13 @@
 .kits-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(250px, 15%));
+  grid-template-columns: repeat(5, minmax(200px, 15%));
   grid-gap: 1em;
   place-content: center;
   margin-bottom: 3em;
   justify-content: center;
 
   @media only screen and (max-width: 1600px) {
-    grid-template-columns: repeat(5, minmax(250px, 15%));
+    grid-template-columns: repeat(5, minmax(200px, 15%));
   }
 
   @media only screen and (max-width: 768px) {
