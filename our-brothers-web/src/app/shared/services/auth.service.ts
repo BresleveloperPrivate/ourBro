@@ -141,6 +141,10 @@ export class AuthService {
     this.needLogin$.next(null);
     this.router.navigate(['/home']);
   }
+  public closeLoginTell() {
+    this.needLogin$.next(null);
+    this.router.navigate(['/tell']);
+  }
 
   public closeLoginRegister() {
     this.needLogin$.next(null);

@@ -35,7 +35,7 @@ export class HostPageComponent implements OnInit, OnDestroy {
     private dataService: DataService,
     private toastr: ToastrService,
     private participationsService: ParticipationsService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));
@@ -80,10 +80,7 @@ export class HostPageComponent implements OnInit, OnDestroy {
     this.currentStep$.next(0);
     setTimeout(() => {
       this.currentStep$.next(1);
-    })
-
-
-
+    });
   }
 
   onProfileSubmit(profileForm: ProfileForm) {
@@ -92,12 +89,15 @@ export class HostPageComponent implements OnInit, OnDestroy {
   }
 
   onNewMeeting(meetingDetails: MeetingForm) {
+    console.log('vbn', this.user, meetingDetails);
     this.dataService.createMeeting(this.user, meetingDetails).subscribe(
       (meeting: Meeting) => {
         this.toastr.success('נוצר מפגש בהצלחה!');
         this.router.navigate([`meetings/${this.year}/${meeting.hostId}/${meeting.id}`]);
       },
       () => {
+        console.log(this.toastr);
+
         this.toastr.error('שגיאה - לא ניתן ליצור מפגש. נא ליצור קשר.');
       }
     );

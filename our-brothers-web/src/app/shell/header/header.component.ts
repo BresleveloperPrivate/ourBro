@@ -56,7 +56,9 @@ export class HeaderComponent implements OnInit, OnChanges {
           { route: 'map', title: 'מפת מפגשים' },
           { route: 'tell', title: 'אני רוצה לספר' },
           { route: 'host', title: 'אני רוצה לארח' },
-          { route: 'participate', title: 'אני רוצה להשתתף' }
+          // { route: 'participate', title: 'אני רוצה להשתתף' }
+          { route: 'home', title: 'אני רוצה להשתתף' }
+          //  שינו רק בגלל בקורונה שנה הבאה להחזיר שורהקודצת ולמחוק אותה
         ]
       },
       {
@@ -69,7 +71,7 @@ export class HeaderComponent implements OnInit, OnChanges {
         ]
       },
       { route: 'agenda', title: 'מבנה הערב' },
-      { route: 'questions', title: 'שאלות תשובות"' },
+      { route: 'questions', title: 'שאלות תשובות' },
       { route: 'gallery', title: 'גלריה' },
       { route: 'contact', title: 'צרו קשר' }
     ];

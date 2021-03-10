@@ -1,3 +1,4 @@
+import { User, BereavedProfile } from './../../../../../types/models/index';
 import { Router } from '@angular/router';
 
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
@@ -20,6 +21,7 @@ export interface SlainForm {
 export class SlainFormComponent implements OnInit {
   @Input()
   public slain: Slain;
+  @Input() user: User;
 
   @Output() submit = new EventEmitter<SlainForm>();
   // @Input()
@@ -32,17 +34,23 @@ export class SlainFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private utilsService: UtilsService, private router: Router) {}
 
   ngOnInit() {
+    const profile: BereavedProfile = this.user.bereavedProfile || ({} as BereavedProfile);
+
+    // if (profile.story) {
+    //   this.story = true;
+    // }
+
     this.form = this.fb.group({
       firstName: [
-        '',
+        profile.slains[0].firstName || '',
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
       lastName: [
-        '',
+        profile.slains[0].lastName || '',
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
-      deathDate: ['', Validators.required],
-      story: ['', [Validators.minLength(100), Validators.maxLength(500)]]
+      deathDate: [new Date(profile.slains[0].deathDate).toISOString().split('T')[0] || '', Validators.required],
+      story: [profile.story || '', [Validators.minLength(100), Validators.maxLength(500)]]
     });
 
     this.form.valueChanges.subscribe(() => {

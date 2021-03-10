@@ -11,6 +11,7 @@ export interface HostInputOption {
   styleUrls: ['./host-input-options.component.scss']
 })
 export class HostInputOptionsComponent {
+  @Input() disabled: any;
   @Input() iconUrl: string;
   @Input() label: string;
   @Input() options: HostInputOption[];

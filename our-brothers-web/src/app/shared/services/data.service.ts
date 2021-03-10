@@ -144,7 +144,7 @@ export class DataService {
     const telemetry = { meeting: parsedMeeting, hostId: user.id, year };
 
     this.analyticsService.logEvent('CreateMeeting', telemetry);
-
+    console.log('hiii', telemetry);
     return from(this.angularFireDatabase.list<Partial<Meeting>>(`events/${year}/${user.id}`).push(parsedMeeting)).pipe(
       tap(() => {
         this.analyticsService.logEvent('CreateMeetingSuccess', telemetry);
@@ -158,6 +158,7 @@ export class DataService {
           } as Meeting)
       ),
       catchError(error => {
+        console.log('error', error);
         this.analyticsService.logEvent('CreateMeetingFailed', {
           ...telemetry,
           error

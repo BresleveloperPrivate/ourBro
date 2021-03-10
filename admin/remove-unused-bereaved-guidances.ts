@@ -7,7 +7,7 @@ admin.initializeApp({
   databaseURL: 'https://our-brothers.firebaseio.com'
 });
 
-const year = 2020;
+const year = 2021;
 
 const db = admin.database();
 

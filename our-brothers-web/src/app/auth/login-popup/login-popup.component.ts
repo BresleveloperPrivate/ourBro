@@ -1,4 +1,5 @@
-import { SignInService } from './../../shared/services/signIn.service';
+import { UserRole } from './../../../../../types/models/index';
+import { UserService } from '../../shared/services/user.service';
 import { MEMORIAL_YEAR } from 'src/app/shared/constants';
 import { User } from 'models';
 import { Component, Input } from '@angular/core';
@@ -21,13 +22,10 @@ export class LoginPopupComponent {
   @Input() mode: LoginMode = 'Login';
   @Input() user: User;
   loading: boolean;
-  lastdate = this.signInService.lastLogin;
-  public yearDate: Date
 
+  public yearDate: Date;
 
-  constructor(public authService: AuthService,
-    public signInService: SignInService,
-    private toastr: ToastrService) { }
+  constructor(public authService: AuthService, public userService: UserService, private toastr: ToastrService) {}
 
   signInWithEmailAndPassword(form: LoginForm) {
     this.loading = true;
@@ -114,18 +112,79 @@ export class LoginPopupComponent {
   // הפונקציה לא גמורה ומצריכה טיפול
   private loginSuccessSignIn() {
     this.authService.user.pipe(take(1)).subscribe(() => {
-      this.yearDate = new Date(this.lastdate)
-      if ((this.yearDate).getFullYear() < MEMORIAL_YEAR) {
-        this.authService.closeLoginRegister()
-        this.toastr.success(`התחברת בהצלחה!`);
+      // this.yearDate = new Date(this.userService.user.lastSignInDate)
+      switch (this.userService.user.role) {
+        case 'host':
+          //1 get user mwwtings
 
+          let hostMeetings = this.userService.user.hostParticipation;
+          if (hostMeetings && hostMeetings[2021]) {
+            //2 test if user has meeting in 2021
+            //3 ig has meeting in 2021 re-route to homepage
+            this.authService.closeLogin();
+            this.toastr.success(`התחברת בהצלחה!`);
+          } else {
+            //4 else re-route to host-page
+            //todo create functuon to host
+          }
+          break;
+        case 'bereaved':
+          //
+          //1 get user mwwtings
+          let bereavedMeetings = this.userService.user.bereavedParticipation;
+          if (bereavedMeetings && hostMeetings[2021]) {
+            //2 test if user has meeting in 2021
+            //3 ig has meeting in 2021 re-route to homepage
+            this.authService.closeLogin();
+            this.toastr.success(`התחברת בהצלחה!`);
+          }
+          //2 test if user has meeting in 2021
+          //3 ig has meeting in 2021 re-route to homepage
+          //4 else re-route to tel-page
+          break;
+        case 'participate':
+        //re-route to home
+        case null:
+        ///re-route-to meetings
 
+        default:
+          break;
       }
+
+      // if (this.kindOfRole === 'bereaved') {
+      //   //console.log('1', Object.keys(this.bravedMeetings));
+      //   console.log('2', this.bravedMeetings);
+      //   let b = Object.keys(this.bravedMeetings).find(i => i === '2020');
+      //   console.log('b', b);
+      //   let r = Object.keys(this.bravedMeetings).find(i => i === '2021');
+      //   console.log('r', r);
+
+      //   let c = Object.keys(this.bravedMeetings).find(i => i === '2021');
+      //   console.log('bcccc', c);
+      //   // console.log('rrrrrrrrrrrrrrrrrrr', this.user.bereavedParticipation);
+      //   if (!c) {
+      //     console.log('undefined');
+      //     this.authService.closeLoginTell()
+      //     this.toastr.success(`התחברת בהצלחה!`);
+      //   }
+      //   else {
+      //     this.authService.closeLogin()
+      //     this.toastr.success(`התחברת בהצלחה!`);
+      //   }
+      // }
+
+      // else {
+      //   this.authService.closeLoginRegister()
+      //   this.toastr.success(`התחברת בהצלחה!`);
+      // }
 
       // }
-      else {
-        this.authService.closeLogin()
-      }
+
+      // }
+      // }
+      // else {
+      //   this.authService.closeLogin()
+      // }
     });
   }
 
