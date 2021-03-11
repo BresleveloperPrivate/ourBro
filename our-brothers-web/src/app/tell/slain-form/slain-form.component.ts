@@ -5,6 +5,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UtilsService } from '../../shared/services/utils.service';
 import { Slain } from 'models';
+import { UserService } from 'src/app/shared/services/user.service';
 
 export interface SlainForm {
   firstName: string;
@@ -21,7 +22,7 @@ export interface SlainForm {
 export class SlainFormComponent implements OnInit {
   @Input()
   public slain: Slain;
-  @Input() user: User;
+  user: User;
 
   @Output() submit = new EventEmitter<SlainForm>();
   // @Input()
@@ -31,37 +32,49 @@ export class SlainFormComponent implements OnInit {
   formInvalid = false;
   maxDate = new Date().toISOString().split('T')[0];
 
-  constructor(private fb: FormBuilder, private utilsService: UtilsService, private router: Router) {}
+  constructor(private fb: FormBuilder, 
+              private utilsService: UtilsService, 
+              private userService: UserService, 
+              private router: Router) {}
 
-  ngOnInit() {
-    const profile: BereavedProfile = this.user.bereavedProfile || ({} as BereavedProfile);
-    console.log(' SlainFormComponent profile', profile);
 
-    // if (profile.story) {
-    //   this.story = true;
-    // }
-    let getProp = x =>
-      profile && profile.slains && profile.slains.length && profile.slains.length > 0 && profile.slains[0][x]
-        ? profile.slains[0][x]
-        : '';
+  ngOnInit(){
+    console.log("SlainFormComponent ngOnInit");
 
+
+    this.userService.firebaseTellUser.subscribe(u => {
+      this.user = u;
+      console.log("SlainFormComponent recieved firebaseTellUser.subscribe", u);
+
+      let slain = {}
+      let story = ''
+      if (  u && 
+            u.bereavedProfile && 
+            u.bereavedProfile.slains && 
+            u.bereavedProfile.slains.length && 
+            u.bereavedProfile.slains.length > 0
+      ) {
+        slain = u.bereavedProfile.slains[0]
+        story = u.bereavedProfile.story
+      }
+      this.initiateFrom(slain, story);
+
+    })
+  }
+
+  initiateFrom(slain, story) {
+    let ddate = slain.deathDate ? new Date(slain.deathDate).toISOString().split('T')[0] : ''
     this.form = this.fb.group({
       firstName: [
-        // profile.slains[0].firstName,
-        getProp('firstName'),
+        slain.firstName || '',
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
       lastName: [
-        //profile.slains[0].lastName,
-        getProp('lastName'),
+        slain.lastName || '',
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
-
-      deathDate: [
-        new Date(getProp('deathDate') ? getProp('deathDate') : null).toISOString().split('T')[0],
-        Validators.required
-      ],
-      story: [profile.story, [Validators.minLength(100), Validators.maxLength(500)]]
+      deathDate: [ddate, Validators.required],
+      story: [story, [Validators.minLength(100), Validators.maxLength(500)]]
     });
 
     this.form.valueChanges.subscribe(() => {
@@ -88,15 +101,10 @@ export class SlainFormComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       const parsedForm: SlainForm = {
-        // firstName: this.firstName.value.trim(),
-        // lastName: this.lastName.value.trim(),
-        // deathDate: new Date(this.deathDate.value).getTime(),
-        // story: this.story.value.trim()
-
-        firstName: this.form.get('firstName').value.trim(),
-        lastName: this.form.get('lastName').value.trim(),
-        deathDate: new Date(this.form.get('deathDate').value).getTime(),
-        story: this.form.get('story').value.trim()
+        firstName: this.firstName.value.trim(),
+        lastName: this.lastName.value.trim(),
+        deathDate: new Date(this.deathDate.value).getTime(),
+        story: this.story.value.trim()
       };
 
       this.submit.emit(parsedForm);
