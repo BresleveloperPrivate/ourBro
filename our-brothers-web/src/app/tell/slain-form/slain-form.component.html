@@ -22,39 +22,40 @@
         />
       </div>
     </div>
-  </div>
 
-  <!-- {{slain.firstName}} -->
+    <!-- {{slain.firstName}} -->
 
-  <div class="form-row">
-    <div class="col">
-      <input
-        class="form-field"
-        type="text"
-        placeholder="תאריך נפילה*"
-        formControlName="deathDate"
-        [class.invalid]="!deathDate.valid && deathDate.touched"
-        [max]="maxDate"
-        onfocus="(this.type='date')"
-        onblur="(this.type='text')"
-      />
+    <div class="form-row">
+      <div class="col">
+        <input
+          class="form-field "
+          type="text"
+          placeholder="תאריך נפילה*"
+          formControlName="deathDate"
+          [class.invalid]="!deathDate.valid && deathDate.touched"
+          [max]="maxDate"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      </div>
+      <div class="col"></div>
     </div>
-    <div class="col"></div>
-  </div>
-  <div class="form-row">
-    <div class="col">
-      <textarea
-        class="form-field"
-        placeholder="הסיפור שלי - (100-500) תווים"
-        formControlName="story"
-        [class.invalid]="!story.valid && story.touched"
-      ></textarea>
+    <div class="form-row">
+      <div class="col">
+        <textarea
+          class="form-field"
+          placeholder="הסיפור שלי - (100-500) תווים"
+          formControlName="story"
+          [class.invalid]="!story.valid && story.touched"
+        ></textarea>
+      </div>
     </div>
+
+    <p class="form-invalid-message" *ngIf="formInvalid">
+      אחד או יותר מהשדות אינם תקינים
+    </p>
+    <button (click)="onSubmit()" class="sumbit-button site-button primary-button">
+      לאישור הפרטים
+    </button>
   </div>
-  <p class="form-invalid-message" *ngIf="formInvalid">
-    אחד או יותר מהשדות אינם תקינים
-  </p>
-  <button (click)="onSubmit()" class="sumbit-button site-button primary-button">
-    לאישור הפרטים
-  </button>
 </div>

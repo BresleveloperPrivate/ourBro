@@ -569,11 +569,11 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var articleItem_r238 = ctx.$implicit;
+            var articleItem_r237 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('articleItem', articleItem_r238);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('articleItem', articleItem_r237);
           }
         }
 
@@ -594,11 +594,11 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r236 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r235 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r236.articles);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r235.articles);
           }
         }
 
@@ -837,20 +837,20 @@ function _classCallCheck(instance, Constructor) {
 
         function ArticlesSwitcherComponent_ng_container_2_button_1_Template(rf, ctx) {
           if (rf & 1) {
-            var _r245 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r244 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'button', 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function ArticlesSwitcherComponent_ng_container_2_button_1_Template_button_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r245);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r244);
 
-                var i_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
+                var i_r240 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
 
-                var ctx_r243 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r242 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r243.handleItemClick(i_r241);
+                return ctx_r242.handleItemClick(i_r240);
               }
             );
 
@@ -860,22 +860,22 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var i_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
+            var i_r240 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
 
-            var ctx_r242 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngStyle',
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](
                 2,
                 _c0,
-                i_r241 === ctx_r242.selectedNumber ? '#00a099' : 'gray'
+                i_r240 === ctx_r241.selectedNumber ? '#00a099' : 'gray'
               )
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' 0', i_r241, ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' 0', i_r240, ' ');
           }
         }
 
@@ -896,11 +896,11 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var i_r241 = ctx.index;
+            var i_r240 = ctx.index;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', i_r241 !== 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', i_r240 !== 0);
           }
         }
 

@@ -345,9 +345,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const articleItem_r238 = ctx.$implicit;
+            const articleItem_r237 = ctx.$implicit;
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('articleItem', articleItem_r238);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('articleItem', articleItem_r237);
           }
         }
         function ArticlesContainerComponent_div_7_Template(rf, ctx) {
@@ -364,9 +364,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r236 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r235 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r236.articles);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r235.articles);
           }
         }
         class ArticlesContainerComponent {
@@ -541,33 +541,33 @@
         };
         function ArticlesSwitcherComponent_ng_container_2_button_1_Template(rf, ctx) {
           if (rf & 1) {
-            const _r245 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            const _r244 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'button', 3);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function ArticlesSwitcherComponent_ng_container_2_button_1_Template_button_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r245);
-                const i_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
-                const ctx_r243 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r243.handleItemClick(i_r241);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r244);
+                const i_r240 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
+                const ctx_r242 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                return ctx_r242.handleItemClick(i_r240);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const i_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
-            const ctx_r242 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const i_r240 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']().index;
+            const ctx_r241 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngStyle',
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](
                 2,
                 _c0,
-                i_r241 === ctx_r242.selectedNumber ? '#00a099' : 'gray'
+                i_r240 === ctx_r241.selectedNumber ? '#00a099' : 'gray'
               )
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' 0', i_r241, ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' 0', i_r240, ' ');
           }
         }
         function ArticlesSwitcherComponent_ng_container_2_Template(rf, ctx) {
@@ -584,9 +584,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const i_r241 = ctx.index;
+            const i_r240 = ctx.index;
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', i_r241 !== 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', i_r240 !== 0);
           }
         }
         class ArticlesSwitcherComponent {

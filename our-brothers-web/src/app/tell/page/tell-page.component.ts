@@ -12,6 +12,7 @@ import { ParticipationsService } from '../../shared/services/participations.serv
 import { SlainForm } from '../slain-form/slain-form.component';
 import { BereavedProfileForm } from '../bereaved-profile-form/bereaved-profile-form.component';
 import { ProgressComponent } from '../../shared/components/progress/progress.component';
+import { UserService } from 'src/app/shared/services/user.service';
 @Component({
   selector: 'app-tell-page',
   templateUrl: './tell-page.component.html',
@@ -38,6 +39,8 @@ export class TellPageComponent implements OnInit, OnDestroy {
     private authService: AuthService,
     private participationsService: ParticipationsService,
     private toastr: ToastrService,
+    private _userService: UserService,
+
     private dataService: DataService
   ) {}
 
@@ -59,6 +62,9 @@ export class TellPageComponent implements OnInit, OnDestroy {
         console.log('tel page firebase subscribe user ', user);
 
         this.user = user;
+        console.log('TellPageComponent firebase cb', user);
+
+        this._userService.setFirebaseTellUser(user);
         this.currentStep = currentStep;
 
         // Auto navigations after the first step
@@ -120,8 +126,11 @@ export class TellPageComponent implements OnInit, OnDestroy {
       slains,
       story
     };
+    alert('הפרטים נשמרו בהצלחה אפשר להמשיך להשתבץ למפגש');
+    console.log('slain בדיקה');
 
     this.dataService.setBereavedProfile(this.user, bereavedProfile);
+
     //this.ok = true;
   }
 

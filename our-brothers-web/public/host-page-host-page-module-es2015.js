@@ -222,7 +222,7 @@
           /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
         );
 
-        function HostFormComponent_p_39_Template(rf, ctx) {
+        function HostFormComponent_p_40_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'p', 24);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
@@ -236,22 +236,22 @@
           return ['address'];
         };
         const _c1 = function() {
-          return { text: '\u05E4\u05EA\u05D5\u05D7 \u05DC\u05E7\u05D4\u05DC \u05D4\u05E8\u05D7\u05D1', value: false };
-        };
-        const _c2 = function() {
           return {
             text: '\u05E1\u05D2\u05D5\u05E8 \u05DC\u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05DD \u05D1\u05DC\u05D1\u05D3',
             value: true
           };
         };
-        const _c3 = function(a0, a1) {
-          return [a0, a1];
+        const _c2 = function(a0) {
+          return [a0];
         };
-        const _c4 = function() {
+        const _c3 = function() {
           return { text: '\u05E7\u05D9\u05D9\u05DD', value: true };
         };
-        const _c5 = function() {
+        const _c4 = function() {
           return { text: '\u05DC\u05D0 \u05E7\u05D9\u05D9\u05DD', value: false };
+        };
+        const _c5 = function(a0, a1) {
+          return [a0, a1];
         };
         const _c6 = function() {
           return { text: '\u05DE\u05E1\u05DB\u05D9\u05DD', value: true };
@@ -346,7 +346,7 @@
             } else {
               this.form.reset({
                 title: 'משפחת ' + this.user.profile.lastName,
-                date: new Date(Date.UTC(_shared_constants__WEBPACK_IMPORTED_MODULE_3__['MEMORIAL_YEAR'], 3, 26))
+                date: new Date(Date.UTC(_shared_constants__WEBPACK_IMPORTED_MODULE_3__['MEMORIAL_YEAR'], 3, 11))
                   .toISOString()
                   .split('T')[0],
                 hour: '20:00',
@@ -423,8 +423,8 @@
           selectors: [['app-host-form']],
           inputs: { user: 'user', meeting: 'meeting' },
           outputs: { submitMeetingDetailsPage: 'submitMeetingDetailsPage' },
-          decls: 42,
-          vars: 53,
+          decls: 43,
+          vars: 51,
           consts: [
             [1, 'host-form-container'],
             [1, 'medium-heading'],
@@ -630,82 +630,84 @@
                 '\u05E4\u05EA\u05D5\u05D7 \u05DC\u05E7\u05D4\u05DC \u05D4\u05E8\u05D7\u05D1 - '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](25, 'span');
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                25,
-                " \u05DE\u05D0\u05E8\u05D7 \u05D9\u05E7\u05E8, \u05E9\u05D9\u05DD \u05DC\u05D1. \u05EA\u05D5\u05D3\u05D4 \u05E9\u05D0\u05EA\u05D4 \u05E4\u05D5\u05EA\u05D7 \u05D0\u05EA \u05D1\u05D9\u05EA\u05DA \u05DC\u05E7\u05D4\u05DC \u05D4\u05E9\u05D5\u05DE\u05E2\u05D9\u05DD \u05D4\u05E8\u05D7\u05D1, \u05D0\u05DA \u05D9\u05E9 \u05DC\u05E7\u05D7\u05EA \u05D1\u05D7\u05E9\u05D1\u05D5\u05DF \u05E9\u05DC\u05DE\u05E8\u05D5\u05EA \u05D6\u05D0\u05EA \u05D4\u05D9\u05E0\u05DA \u05DE\u05D7\u05D5\u05D9\u05D1 \u05DC\u05D4\u05D6\u05DE\u05D9\u05DF \u05DC\u05D1\u05D9\u05EA\u05DA \u05DE\u05DB\u05E8\u05D9\u05DD, \u05D7\u05D1\u05E8\u05D9\u05DD \u05D5\u05DB\u05D5'. "
+                26,
+                ' \u05D0\u05D5\u05E4\u05E6\u05D9\u05D4 \u05D6\u05D5 \u05DC\u05D0 \u05E8\u05DC\u05D5\u05D5\u05E0\u05D8\u05D9\u05EA \u05D4\u05E9\u05E0\u05D4 \u05D1\u05E2\u05E7\u05D1\u05D5\u05EA \u05D4\u05E0\u05D7\u05D9\u05D5\u05EA \u05DE\u05E9\u05E8\u05D3 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA'
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](26, 'p', 15);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](27, 'span', 16);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](27, 'p', 15);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](28, 'span', 16);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                28,
+                29,
                 '\u05E1\u05D2\u05D5\u05E8 \u05DC\u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05DD \u05D1\u05DC\u05D1\u05D3 - '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
-                29,
+                30,
                 ' \u05DE\u05D0\u05E8\u05D7 \u05D9\u05E7\u05E8, \u05E9\u05D9\u05DD \u05DC\u05D1. \u05D0\u05D9\u05E8\u05D5\u05D7 \u05D6\u05D4 \u05D4\u05D5\u05D0 \u05D0\u05D9\u05E8\u05D5\u05D7 \u05E1\u05D2\u05D5\u05E8 \u05DC\u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05D9\u05DA \u05D1\u05DC\u05D1\u05D3 \u05D5\u05DC\u05D0 \u05D9\u05D5\u05DB\u05DC\u05D5 \u05DC\u05D4\u05E6\u05D8\u05E8\u05E3 \u05D0\u05DC\u05D9\u05D5 \u05E7\u05D4\u05DC \u05E9\u05D5\u05DE\u05E2\u05D9\u05DD \u05E8\u05D7\u05D1. '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](30, 'div', 3);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](31, 'app-host-input-options', 17);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](31, 'div', 3);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](32, 'app-host-input-options', 17);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
                 'optionSelected',
-                function HostFormComponent_Template_app_host_input_options_optionSelected_31_listener($event) {
+                function HostFormComponent_Template_app_host_input_options_optionSelected_32_listener($event) {
                   return ctx.accessibility.setValue($event);
                 }
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](32, 'div', 3);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](33, 'app-host-input-options', 18);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](33, 'div', 3);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](34, 'app-host-input-options', 18);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
                 'optionSelected',
-                function HostFormComponent_Template_app_host_input_options_optionSelected_33_listener($event) {
+                function HostFormComponent_Template_app_host_input_options_optionSelected_34_listener($event) {
                   return ctx.media.setValue($event);
                 }
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](34, 'div', 3);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](35, 'app-host-input-options', 19);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](35, 'div', 3);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](36, 'app-host-input-options', 19);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
                 'optionSelected',
-                function HostFormComponent_Template_app_host_input_options_optionSelected_35_listener($event) {
+                function HostFormComponent_Template_app_host_input_options_optionSelected_36_listener($event) {
                   return ctx.reviewable.setValue($event);
                 }
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](36, 'div', 3);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](37, 'app-host-input-options', 20);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](37, 'div', 3);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](38, 'app-host-input-options', 20);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
                 'optionSelected',
-                function HostFormComponent_Template_app_host_input_options_optionSelected_37_listener($event) {
+                function HostFormComponent_Template_app_host_input_options_optionSelected_38_listener($event) {
                   return ctx.audience.setValue($event);
                 }
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](38, 'div', 21);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](39, 'div', 21);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
-                39,
-                HostFormComponent_p_39_Template,
+                40,
+                HostFormComponent_p_40_Template,
                 2,
                 0,
                 'p',
                 22
               );
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](40, 'button', 23);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](41, 'button', 23);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
                 'click',
-                function HostFormComponent_Template_button_click_40_listener() {
+                function HostFormComponent_Template_button_click_41_listener() {
                   return ctx.onSubmit();
                 }
               );
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](41);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](42);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -742,21 +744,20 @@
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'options',
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
-                  35,
-                  _c3,
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](33, _c1),
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](34, _c2)
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](
+                  34,
+                  _c2,
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](33, _c1)
                 )
               )('currentOption', ctx.invited.value)('invalid', !ctx.invited.valid && ctx.invited.touched);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](11);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](12);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'options',
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
-                  40,
-                  _c3,
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](38, _c4),
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](39, _c5)
+                  38,
+                  _c5,
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](36, _c3),
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](37, _c4)
                 )
               )('currentOption', ctx.accessibility.value)(
                 'invalid',
@@ -766,20 +767,20 @@
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'options',
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
-                  45,
-                  _c3,
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](43, _c4),
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](44, _c5)
+                  43,
+                  _c5,
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](41, _c3),
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](42, _c4)
                 )
               )('currentOption', ctx.media.value)('invalid', !ctx.media.valid && ctx.media.touched);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'options',
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
-                  50,
-                  _c3,
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](48, _c6),
-                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](49, _c7)
+                  48,
+                  _c5,
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](46, _c6),
+                  _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](47, _c7)
                 )
               )('currentOption', ctx.reviewable.value)('invalid', !ctx.reviewable.valid && ctx.reviewable.touched);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
@@ -977,6 +978,7 @@
           type: HostInputOptionsComponent,
           selectors: [['app-host-input-options']],
           inputs: {
+            disabled: 'disabled',
             iconUrl: 'iconUrl',
             label: 'label',
             options: 'options',
@@ -1039,6 +1041,11 @@
             ],
             null,
             {
+              disabled: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
               iconUrl: [
                 {
                   type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
@@ -1781,12 +1788,14 @@
             //this.ok = true;
           }
           onNewMeeting(meetingDetails) {
+            console.log('vbn', this.user, meetingDetails);
             this.dataService.createMeeting(this.user, meetingDetails).subscribe(
               meeting => {
                 this.toastr.success('נוצר מפגש בהצלחה!');
                 this.router.navigate([`meetings/${this.year}/${meeting.hostId}/${meeting.id}`]);
               },
               () => {
+                console.log(this.toastr);
                 this.toastr.error('שגיאה - לא ניתן ליצור מפגש. נא ליצור קשר.');
               }
             );

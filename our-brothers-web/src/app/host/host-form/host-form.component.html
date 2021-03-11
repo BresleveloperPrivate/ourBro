@@ -61,7 +61,7 @@
       <div class="empty-half"></div>
     </div>
     <div class="form-items-container">
-      <app-host-input-options
+      <!-- <app-host-input-options
         class="input"
         label="קהל מוזמנים:"
         iconUrl="assets/img/host_users.svg"
@@ -69,6 +69,15 @@
           { text: 'פתוח לקהל הרחב', value: false },
           { text: 'סגור למוזמנים בלבד', value: true }
         ]"
+        [currentOption]="invited.value"
+        [invalid]="!invited.valid && invited.touched"
+        (optionSelected)="invited.setValue($event)"
+      ></app-host-input-options> -->
+      <app-host-input-options
+        class="input"
+        label="קהל מוזמנים:"
+        iconUrl="assets/img/host_users.svg"
+        [options]="[{ text: 'סגור למוזמנים בלבד', value: true }]"
         [currentOption]="invited.value"
         [invalid]="!invited.valid && invited.touched"
         (optionSelected)="invited.setValue($event)"

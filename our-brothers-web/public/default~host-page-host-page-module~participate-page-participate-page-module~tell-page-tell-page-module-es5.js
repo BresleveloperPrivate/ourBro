@@ -58,9 +58,34 @@ function _createClass(Constructor, protoProps, staticProps) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnamespaceSVG']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'svg', 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'svg', 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](1, 'path', 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](1, 'path', 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+        }
+
+        function ProgressComponent_div_5__svg_svg_2_Template(rf, ctx) {
+          if (rf & 1) {
+            var _r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnamespaceSVG']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'svg', 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'click',
+              function ProgressComponent_div_5__svg_svg_2_Template__svg_svg_click_0_listener() {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r53);
+
+                var ctx_r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+
+                return ctx_r52.e();
+              }
+            );
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](1, 'path', 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](2, ' /> ');
 
@@ -68,25 +93,30 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
         }
 
-        function ProgressComponent__svg_svg_4_Template(rf, ctx) {
+        function ProgressComponent_div_5_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnamespaceSVG']();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'svg', 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](1, 'path', 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-          }
-        }
-
-        function ProgressComponent_div_6_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵprojection'](1);
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              2,
+              ProgressComponent_div_5__svg_svg_2_Template,
+              3,
+              0,
+              'svg',
+              7
+            );
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+
+          if (rf & 2) {
+            var ctx_r50 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx_r50.isExpended);
           }
         }
 
@@ -125,27 +155,11 @@ function _createClass(Constructor, protoProps, staticProps) {
             isExpended: 'isExpended'
           },
           ngContentSelectors: _c0,
-          decls: 7,
-          vars: 6,
+          decls: 6,
+          vars: 5,
           consts: [
             [1, 'progress'],
             [1, 'progress-heading', 3, 'click'],
-            [
-              'class',
-              'renove-icon',
-              'width',
-              '40',
-              'height',
-              '40',
-              'viewBox',
-              '0 0 24 24',
-              'fill',
-              'none',
-              'xmlns',
-              'http://www.w3.org/2000/svg',
-              4,
-              'ngIf'
-            ],
             [
               'class',
               'add-icon',
@@ -175,13 +189,36 @@ function _createClass(Constructor, protoProps, staticProps) {
               'xmlns',
               'http://www.w3.org/2000/svg',
               1,
-              'renove-icon'
+              'add-icon'
             ],
             [
+              'fill-rule',
+              'evenodd',
+              'clip-rule',
+              'evenodd',
               'd',
-              'M8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H8Z',
+              'M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z',
               'fill',
               '#16B3AB'
+            ],
+            [1, 'progress-body'],
+            [
+              'class',
+              'renove-icon',
+              'width',
+              '40',
+              'height',
+              '40',
+              'viewBox',
+              '0 0 24 24',
+              'fill',
+              'none',
+              'xmlns',
+              'http://www.w3.org/2000/svg',
+              3,
+              'click',
+              4,
+              'ngIf'
             ],
             [
               'width',
@@ -195,19 +232,16 @@ function _createClass(Constructor, protoProps, staticProps) {
               'xmlns',
               'http://www.w3.org/2000/svg',
               1,
-              'add-icon'
+              'renove-icon',
+              3,
+              'click'
             ],
             [
-              'fill-rule',
-              'evenodd',
-              'clip-rule',
-              'evenodd',
               'd',
-              'M13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z',
+              'M8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H8Z',
               'fill',
               '#16B3AB'
-            ],
-            [1, 'progress-body']
+            ]
           ],
           template: function ProgressComponent_Template(rf, ctx) {
             if (rf & 1) {
@@ -229,32 +263,23 @@ function _createClass(Constructor, protoProps, staticProps) {
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
                 3,
                 ProgressComponent__svg_svg_3_Template,
-                3,
+                2,
                 0,
                 'svg',
                 2
               );
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
-                4,
-                ProgressComponent__svg_svg_4_Template,
-                2,
-                0,
-                'svg',
-                3
-              );
-
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](5, 'br');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](4, 'br');
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
-                6,
-                ProgressComponent_div_6_Template,
-                2,
-                0,
+                5,
+                ProgressComponent_div_5_Template,
+                3,
+                1,
                 'div',
-                4
+                3
               );
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -271,10 +296,6 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.isExpended);
-
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', !ctx.isExpended);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
@@ -284,7 +305,7 @@ function _createClass(Constructor, protoProps, staticProps) {
           },
           directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__['NgIf']],
           styles: [
-            '.progress[_ngcontent-%COMP%] {\n  border: #ccc solid 1px;\n  border-radius: 5px;\n  margin-right: 5%;\n  width: 90%;\n}\n\n.progress-heading[_ngcontent-%COMP%] {\n  font-weight: bold;\n  padding: 20px;\n  cursor: pointer;\n  color: #082551;\n  height: 60px;\n}\n\n.progress-body[_ngcontent-%COMP%] {\n  padding: 20px;\n}\n\n.expended[_ngcontent-%COMP%] {\n  background-color: #f0f0f0;\n}\n\n.add-icon[_ngcontent-%COMP%] {\n  margin-right: 95%;\n  margin-top: -20px;\n}\n\n.renove-icon[_ngcontent-%COMP%] {\n  margin-right: 95%;\n  margin-top: -10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcHJvZ3Jlc3MvQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxwcm9ncmVzc1xccHJvZ3Jlc3MuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3Byb2dyZXNzL3Byb2dyZXNzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsVUFBQTtBQ0NGOztBREVBO0VBQ0UsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0FDQ0Y7O0FERUE7RUFDRSxhQUFBO0FDQ0Y7O0FERUE7RUFDRSx5QkFBQTtBQ0NGOztBRENBO0VBQ0UsaUJBQUE7RUFDQSxpQkFBQTtBQ0VGOztBREFBO0VBQ0UsaUJBQUE7RUFDRixpQkFBQTtBQ0dBIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcHJvZ3Jlc3MvcHJvZ3Jlc3MuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZ3Jlc3Mge1xyXG4gIGJvcmRlcjogI2NjYyBzb2xpZCAxcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIG1hcmdpbi1yaWdodDogNSU7XHJcbiAgd2lkdGg6IDkwJTtcclxuIFxyXG59XHJcbi5wcm9ncmVzcy1oZWFkaW5nIHtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBjb2xvcjogIzA4MjU1MSA7XHJcbiAgaGVpZ2h0OiA2MHB4O1xyXG59XHJcblxyXG4ucHJvZ3Jlc3MtYm9keSB7XHJcbiAgcGFkZGluZzogMjBweDtcclxufVxyXG5cclxuLmV4cGVuZGVkIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjBmMGYwO1xyXG59XHJcbi5hZGQtaWNvbntcclxuICBtYXJnaW4tcmlnaHQ6IDk1JTtcclxuICBtYXJnaW4tdG9wOiAtMjBweDtcclxufVxyXG4ucmVub3ZlLWljb257XHJcbiAgbWFyZ2luLXJpZ2h0OiA5NSU7XHJcbm1hcmdpbi10b3A6IC0xMHB4O1xyXG59XHJcbi8vIC5wcm9ncmVzcy10aXRsZXtcclxuLy8gICBjb2xvcjogIzA4MjU1MTtcclxuLy8gICAvL21hcmdpbjogMjBweCAyMHB4IDBweCAwcHggO1xyXG4vLyB9XHJcbiIsIi5wcm9ncmVzcyB7XG4gIGJvcmRlcjogI2NjYyBzb2xpZCAxcHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luLXJpZ2h0OiA1JTtcbiAgd2lkdGg6IDkwJTtcbn1cblxuLnByb2dyZXNzLWhlYWRpbmcge1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgcGFkZGluZzogMjBweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzA4MjU1MTtcbiAgaGVpZ2h0OiA2MHB4O1xufVxuXG4ucHJvZ3Jlc3MtYm9keSB7XG4gIHBhZGRpbmc6IDIwcHg7XG59XG5cbi5leHBlbmRlZCB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMGYwZjA7XG59XG5cbi5hZGQtaWNvbiB7XG4gIG1hcmdpbi1yaWdodDogOTUlO1xuICBtYXJnaW4tdG9wOiAtMjBweDtcbn1cblxuLnJlbm92ZS1pY29uIHtcbiAgbWFyZ2luLXJpZ2h0OiA5NSU7XG4gIG1hcmdpbi10b3A6IC0xMHB4O1xufSJdfQ== */'
+            '.progress[_ngcontent-%COMP%] {\n  border: #ccc solid 1px;\n  border-radius: 5px;\n  margin-right: 5%;\n  width: 90%;\n}\n\n.progress-heading[_ngcontent-%COMP%] {\n  font-weight: bold;\n  padding: 20px;\n  cursor: pointer;\n  color: #082551;\n  height: 60px;\n}\n\n.progress-body[_ngcontent-%COMP%] {\n  padding: 20px;\n  cursor: pointer;\n}\n\n.expended[_ngcontent-%COMP%] {\n  background-color: #f0f0f0;\n}\n\n.add-icon[_ngcontent-%COMP%] {\n  margin-right: 95%;\n  margin-top: -20px;\n}\n\n.renove-icon[_ngcontent-%COMP%] {\n  margin-right: 95%;\n  margin-top: -10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcHJvZ3Jlc3MvQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxwcm9ncmVzc1xccHJvZ3Jlc3MuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3Byb2dyZXNzL3Byb2dyZXNzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usc0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsVUFBQTtBQ0NGOztBRENBO0VBQ0UsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0FDRUY7O0FEQ0E7RUFDRSxhQUFBO0VBQ0EsZUFBQTtBQ0VGOztBRENBO0VBQ0UseUJBQUE7QUNFRjs7QURBQTtFQUNFLGlCQUFBO0VBQ0EsaUJBQUE7QUNHRjs7QUREQTtFQUNFLGlCQUFBO0VBQ0EsaUJBQUE7QUNJRiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3Byb2dyZXNzL3Byb2dyZXNzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2dyZXNzIHtcclxuICBib3JkZXI6ICNjY2Mgc29saWQgMXB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBtYXJnaW4tcmlnaHQ6IDUlO1xyXG4gIHdpZHRoOiA5MCU7XHJcbn1cclxuLnByb2dyZXNzLWhlYWRpbmcge1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIGNvbG9yOiAjMDgyNTUxO1xyXG4gIGhlaWdodDogNjBweDtcclxufVxyXG5cclxuLnByb2dyZXNzLWJvZHkge1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4uZXhwZW5kZWQge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmMGYwZjA7XHJcbn1cclxuLmFkZC1pY29uIHtcclxuICBtYXJnaW4tcmlnaHQ6IDk1JTtcclxuICBtYXJnaW4tdG9wOiAtMjBweDtcclxufVxyXG4ucmVub3ZlLWljb24ge1xyXG4gIG1hcmdpbi1yaWdodDogOTUlO1xyXG4gIG1hcmdpbi10b3A6IC0xMHB4O1xyXG59XHJcbi8vIC5wcm9ncmVzcy10aXRsZXtcclxuLy8gICBjb2xvcjogIzA4MjU1MTtcclxuLy8gICAvL21hcmdpbjogMjBweCAyMHB4IDBweCAwcHggO1xyXG4vLyB9XHJcbiIsIi5wcm9ncmVzcyB7XG4gIGJvcmRlcjogI2NjYyBzb2xpZCAxcHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luLXJpZ2h0OiA1JTtcbiAgd2lkdGg6IDkwJTtcbn1cblxuLnByb2dyZXNzLWhlYWRpbmcge1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgcGFkZGluZzogMjBweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICBjb2xvcjogIzA4MjU1MTtcbiAgaGVpZ2h0OiA2MHB4O1xufVxuXG4ucHJvZ3Jlc3MtYm9keSB7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuLmV4cGVuZGVkIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YwZjBmMDtcbn1cblxuLmFkZC1pY29uIHtcbiAgbWFyZ2luLXJpZ2h0OiA5NSU7XG4gIG1hcmdpbi10b3A6IC0yMHB4O1xufVxuXG4ucmVub3ZlLWljb24ge1xuICBtYXJnaW4tcmlnaHQ6IDk1JTtcbiAgbWFyZ2luLXRvcDogLTEwcHg7XG59Il19 */'
           ]
         });
         /*@__PURE__*/
