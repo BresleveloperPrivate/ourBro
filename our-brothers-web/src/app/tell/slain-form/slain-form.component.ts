@@ -35,22 +35,33 @@ export class SlainFormComponent implements OnInit {
 
   ngOnInit() {
     const profile: BereavedProfile = this.user.bereavedProfile || ({} as BereavedProfile);
+    console.log(' SlainFormComponent profile', profile);
 
     // if (profile.story) {
     //   this.story = true;
     // }
+    let getProp = x =>
+      profile && profile.slains && profile.slains.length && profile.slains.length > 0 && profile.slains[0][x]
+        ? profile.slains[0][x]
+        : '';
 
     this.form = this.fb.group({
       firstName: [
-        profile.slains[0].firstName || '',
+        // profile.slains[0].firstName,
+        getProp('firstName'),
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
       lastName: [
-        profile.slains[0].lastName || '',
+        //profile.slains[0].lastName,
+        getProp('lastName'),
         [Validators.required, Validators.maxLength(20), Validators.pattern(this.utilsService.namePattern)]
       ],
-      deathDate: [new Date(profile.slains[0].deathDate).toISOString().split('T')[0] || '', Validators.required],
-      story: [profile.story || '', [Validators.minLength(100), Validators.maxLength(500)]]
+
+      deathDate: [
+        new Date(getProp('deathDate') ? getProp('deathDate') : null).toISOString().split('T')[0],
+        Validators.required
+      ],
+      story: [profile.story, [Validators.minLength(100), Validators.maxLength(500)]]
     });
 
     this.form.valueChanges.subscribe(() => {
@@ -77,10 +88,15 @@ export class SlainFormComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       const parsedForm: SlainForm = {
-        firstName: this.firstName.value.trim(),
-        lastName: this.lastName.value.trim(),
-        deathDate: new Date(this.deathDate.value).getTime(),
-        story: this.story.value.trim()
+        // firstName: this.firstName.value.trim(),
+        // lastName: this.lastName.value.trim(),
+        // deathDate: new Date(this.deathDate.value).getTime(),
+        // story: this.story.value.trim()
+
+        firstName: this.form.get('firstName').value.trim(),
+        lastName: this.form.get('lastName').value.trim(),
+        deathDate: new Date(this.form.get('deathDate').value).getTime(),
+        story: this.form.get('story').value.trim()
       };
 
       this.submit.emit(parsedForm);

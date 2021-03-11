@@ -116,7 +116,6 @@ export class LoginPopupComponent {
       switch (this.userService.user.role) {
         case 'host':
           //1 get user mwwtings
-
           let hostMeetings = this.userService.user.hostParticipation;
           if (hostMeetings && hostMeetings[2021]) {
             //2 test if user has meeting in 2021
@@ -126,16 +125,22 @@ export class LoginPopupComponent {
           } else {
             //4 else re-route to host-page
             //todo create functuon to host
+
+            this.authService.closeLoginHost();
+            this.toastr.success(`התחברת בהצלחה!`);
           }
           break;
         case 'bereaved':
           //
           //1 get user mwwtings
           let bereavedMeetings = this.userService.user.bereavedParticipation;
-          if (bereavedMeetings && hostMeetings[2021]) {
+          if (bereavedMeetings && bereavedMeetings[2021]) {
             //2 test if user has meeting in 2021
             //3 ig has meeting in 2021 re-route to homepage
             this.authService.closeLogin();
+            this.toastr.success(`התחברת בהצלחה!`);
+          } else {
+            this.authService.closeLoginTell();
             this.toastr.success(`התחברת בהצלחה!`);
           }
           //2 test if user has meeting in 2021
@@ -143,9 +148,13 @@ export class LoginPopupComponent {
           //4 else re-route to tel-page
           break;
         case 'participate':
+          this.authService.closeLoginPartisipate();
+          this.toastr.success(`התחברת בהצלחה!`);
+          break;
         //re-route to home
         case null:
-        ///re-route-to meetings
+          this.authService.closeLoginRegister();
+          break;
 
         default:
           break;

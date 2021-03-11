@@ -145,7 +145,14 @@ export class AuthService {
     this.needLogin$.next(null);
     this.router.navigate(['/tell']);
   }
-
+  public closeLoginHost() {
+    this.needLogin$.next(null);
+    this.router.navigate(['/tell']);
+  }
+  public closeLoginPartisipate() {
+    this.needLogin$.next(null);
+    this.router.navigate(['/map']);
+  }
   public closeLoginRegister() {
     this.needLogin$.next(null);
     this.router.navigate(['/meetings']);

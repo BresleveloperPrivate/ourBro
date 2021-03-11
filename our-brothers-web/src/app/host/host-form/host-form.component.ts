@@ -112,7 +112,7 @@ export class HostFormComponent implements OnInit {
     } else {
       this.form.reset({
         title: 'משפחת ' + this.user.profile.lastName,
-        date: new Date(Date.UTC(MEMORIAL_YEAR, 3, 13)).toISOString().split('T')[0],
+        date: new Date(Date.UTC(MEMORIAL_YEAR, 3, 11)).toISOString().split('T')[0],
         hour: '20:00',
         capacity: 30
       });

@@ -14,13 +14,13 @@
     <p>
       סדנאות ההכנה יתקיימו במספר מוקדים:
     </p>
-    <div *ngFor="let option of options" class="training-option">
+    <!-- <div *ngFor="let option of options" class="training-option">
       <app-checkbox
         [label]="option.details"
         [checked]="selected[option.value]"
         (checkedChanged)="onGuidanceChange(option.value, $event)"
       ></app-checkbox>
-    </div>
+    </div> -->
     <div class="training-option not-interseted">
       <app-checkbox
         [label]="'לא מעוניין בהדרכה'"

@@ -56,6 +56,8 @@ export class TellPageComponent implements OnInit, OnDestroy {
           })
         )
       ).subscribe(([user, currentStep]) => {
+        console.log('tel page firebase subscribe user ', user);
+
         this.user = user;
         this.currentStep = currentStep;
 
