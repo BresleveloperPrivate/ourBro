@@ -1,24 +1,26 @@
 <div class="medium-heading">פרטי חלל</div>
-<div class="form" [formGroup]="form">
-  <div class="form-row">
-    <div class="col">
-      <input
-        class="form-field"
-        type="text"
-        placeholder="שם פרטי*"
-        formControlName="firstName"
-        [class.invalid]="!firstName.valid && firstName.touched"
-      />
-    </div>
-    <!-- value="{{slain.firstName}}"  -->
-    <div class="col">
-      <input
-        class="form-field"
-        type="text"
-        placeholder="שם משפחה*"
-        formControlName="lastName"
-        [class.invalid]="!lastName.valid && lastName.touched"
-      />
+<div *ngIf="form">
+  <div class="form" [formGroup]="form">
+    <div class="form-row">
+      <div class="col">
+        <input
+          class="form-field"
+          type="text"
+          placeholder="שם פרטי*"
+          formControlName="firstName"
+          [class.invalid]="!firstName.valid && firstName.touched"
+        />
+      </div>
+      <!-- value="{{slain.firstName}}"  -->
+      <div class="col">
+        <input
+          class="form-field"
+          type="text"
+          placeholder="שם משפחה*"
+          formControlName="lastName"
+          [class.invalid]="!lastName.valid && lastName.touched"
+        />
+      </div>
     </div>
   </div>
 
