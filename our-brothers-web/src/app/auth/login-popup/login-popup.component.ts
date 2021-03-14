@@ -112,6 +112,7 @@ export class LoginPopupComponent {
   // הפונקציה לא גמורה ומצריכה טיפול
   private loginSuccessSignIn() {
     this.authService.user.pipe(take(1)).subscribe(() => {
+      console.log('hi come to our sute');
       // this.yearDate = new Date(this.userService.user.lastSignInDate)
       switch (this.userService.user.role) {
         case 'host':

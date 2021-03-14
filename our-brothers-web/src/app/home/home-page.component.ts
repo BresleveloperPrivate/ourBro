@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { concatMap, delay, repeat } from 'rxjs/operators';
 
 import { User, Contact } from 'models';
@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit {
       // '../../assets/img/home-page/h-p-5.jpeg',
       // '../../assets/img/home-page/h-p-6.jpg'
     ).pipe(
-      concatMap(url => of(url).pipe(delay(5000))),
+      concatMap((url, idx) => (idx == 0 ? of(url) : of(url).pipe(delay(5000)))),
       repeat()
     );
 
@@ -49,7 +49,7 @@ export class HomePageComponent implements OnInit {
       // '../../assets/img/home-page/h-p-11.jpeg',
       // '../../assets/img/home-page/h-p-12.jpg'
     ).pipe(
-      concatMap(url => of(url).pipe(delay(5000))),
+      concatMap((url, idx) => (idx == 0 ? of(url) : of(url).pipe(delay(5000)))),
       repeat()
     );
   }

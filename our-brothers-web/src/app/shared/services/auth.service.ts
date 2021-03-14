@@ -30,7 +30,6 @@ export class AuthService {
   public user: Observable<User>;
   public slain: Observable<Slain>;
   public firebaseUser: Observable<firebase.User> = this.angularFireAuth.authState;
-  // public firebaseSlain: Observable<firebase.Slain> = this.angularFireAuth.authState;
   public needLogin$: Subject<LoginMode> = new Subject();
 
   private firstTimeGetUser = true;

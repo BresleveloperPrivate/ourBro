@@ -127,7 +127,7 @@ export class TellPageComponent implements OnInit, OnDestroy {
       story
     };
     alert('הפרטים נשמרו בהצלחה אפשר להמשיך להשתבץ למפגש');
-    console.log('slain בדיקה');
+    // console.log('slain בדיקה');
 
     this.dataService.setBereavedProfile(this.user, bereavedProfile);
 

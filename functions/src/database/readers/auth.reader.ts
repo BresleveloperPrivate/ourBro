@@ -7,8 +7,21 @@ export const onAuthUserCreate = functions.auth
     return usersWriter.setRegisteredDate(event.uid, Date.now());
   });
 
+
+
+
+
+
 export const onAuthUserDelete = functions.auth
   .user()
   .onDelete((event, context) => {
     return usersWriter.remove(event.uid);
   });
+
+
+
+  export const testCreate = functions.auth
+  .test()
+  .onCreate((event, context) => {
+    return usersWriter.setRegisteredDate(event.uid, Date.now());
+  })

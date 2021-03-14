@@ -1,3 +1,4 @@
+
 import * as functions from 'firebase-functions';
 import { admin } from './services/firebase-admin';
 import * as express from 'express';
@@ -364,17 +365,17 @@ async function smsHostOnBereaved(
   const body =
     (status === 'join'
       ? 'שמחים להודיע כי נרשמו לביתכם. נא צרו קשר עם האח/ות השכול/ה, ' +
-        firstName +
-        ' ' +
-        lastName +
-        ', ' +
-        'טלפון: ' +
-        phoneNumber
+      firstName +
+      ' ' +
+      lastName +
+      ', ' +
+      'טלפון: ' +
+      phoneNumber
       : 'שים לב כי האח/ות השכול/ה ' +
-        firstName +
-        ' ' +
-        lastName +
-        ' עזב/ה את האירוח בביתך. המתן לשיבוץ חדש או פנה אלינו לתמיכה.') +
+      firstName +
+      ' ' +
+      lastName +
+      ' עזב/ה את האירוח בביתך. המתן לשיבוץ חדש או פנה אלינו לתמיכה.') +
     ' כאן בשבילכם, האחים שלנו.';
 
   const message = {
@@ -758,3 +759,96 @@ function calcParticipatesCount(participates: {
       0
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////
+
+
+
+
+export const onTryCreate = functions.database
+  .ref('/test/number/1')
+  .onCreate((event, context) => {
+    const meeting = event.val();
+
+    //const { year, hostId, meetingId } = context.params;
+
+    const hostParticipationMeeting: UserParticipationMeeting = {
+      title: meeting.title
+    };
+
+    // console.log(
+    //   `Linking meeting {${meetingId}} year {${year}} host {${hostId}}.`,
+    //   hostParticipationMeeting
+    // );
+
+    return admin
+      .database()
+      .ref(`/test/number/1`)
+      .set(hostParticipationMeeting)
+      .then(() => {
+        // console.log(
+        //   `Succesfully linked meeting {${meetingId}} year {${year}} host {${hostId}}.`
+        // );
+      })
+      .catch(error => {
+        // console.error(
+        //   `Failed to link meeting {${meetingId}} year {${year}} host {${hostId}}.`,
+        //   error
+        // );
+      });
+  });
+///////////////////////
+function checkMail(
+  // contact: Contact,
+  // userId: string,
+  // contactId: string
+): Mail.Options {
+  const mailOptions: Mail.Options = {
+    from: '"האחים שלנו" <website@ourbrothers.org>',
+    to: 'lodyosii2019@gmail.com',
+    cc: 'info@ourbrothers.org',
+    bcc: 'ourbrothers.noreply@gmail.com'
+  };
+
+  mailOptions.subject = 'בדיקת מייל'
+  mailOptions.text = 'תהילה '
+  console.log('hiiiii mailll');
+
+  // mailOptions.subject = 'האחים שלנו - ' + contact.subject;
+  // mailOptions.text =
+  //   'שלום, ' +
+  //   contact.name +
+  //   '.' +
+  //   '\n\n' +
+  //   '.קיבלנו בהצלחה את פניתך ונחזור אליך בהקדם האפשרי';
+
+  // if (contact.body) {
+  //   mailOptions.text += '\n\n' + 'תוכן פניתך:' + '\n' + contact.body;
+  // }
+
+  // if (contact.phoneNumber) {
+  //   mailOptions.text += '\n\n' + 'טלפון ליצירת קשר: ' + contact.phoneNumber;
+  // }
+
+  // if (userId !== 'anonymous') {
+  //   mailOptions.text += '\n\n' + 'מזהה משתמש: ' + userId;
+  // }
+
+  // mailOptions.text += '\n\n' + 'מזהה הודעה: ' + contactId;
+
+  return mailOptions;
+}
+
+checkMail()
+console.log('hiiiii mailll under');
+

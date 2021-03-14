@@ -1,5 +1,7 @@
 /* tslint:disable */
 
+
+
 export interface Meeting {
   hostId: string;
   id: string;
@@ -114,10 +116,10 @@ export interface BaseParticipation<T = any> {
 }
 
 export interface ParticipateParticipation
-  extends BaseParticipation<ParticipateParticipationMeeting> {}
+  extends BaseParticipation<ParticipateParticipationMeeting> { }
 
 export interface HostParticipation
-  extends BaseParticipation<UserParticipationMeeting> {}
+  extends BaseParticipation<UserParticipationMeeting> { }
 
 export interface BereavedParticipation
   extends BaseParticipation<UserParticipationMeeting> {

@@ -43,6 +43,7 @@ export class MeetingsMapComponent implements OnInit {
     if (this.isCenterCurrentLocation) {
       this.centerCurrentLocation();
     }
+    console.log('mapLatitude', this.mapLatitude);
   }
 
   centerCurrentLocation() {

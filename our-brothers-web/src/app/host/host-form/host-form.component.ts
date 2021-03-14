@@ -77,9 +77,9 @@ export class HostFormComponent implements OnInit {
       date: [null, [Validators.required, this.utilsService.validateMeetingDate]],
       hour: [null, Validators.required],
       address: this.fb.group({
-        formattedAddress: [null /*Validators.required*/],
-        latitude: [null /*Validators.required*/],
-        longitude: [null /*Validators.required*/],
+        formattedAddress: [null, Validators.required],
+        latitude: [null, Validators.required],
+        longitude: [null, Validators.required],
         notes: [null, [Validators.maxLength(200)]]
       }),
       capacity: [null, [Validators.required, Validators.min(2), Validators.max(300)]],
