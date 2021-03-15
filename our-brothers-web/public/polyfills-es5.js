@@ -3581,7 +3581,8 @@ function _createClass(Constructor, protoProps, staticProps) {
             var fn = aFunction(this);
             var partArgs = slice.call(arguments, 1);
 
-            var boundFunction = function bound /* args... */() {
+            var boundFunction = function bound() /* args... */
+            {
               var args = partArgs.concat(slice.call(arguments));
               return this instanceof boundFunction ? construct(fn, args.length, args) : fn.apply(that, args);
             };
@@ -8379,7 +8380,8 @@ function _createClass(Constructor, protoProps, staticProps) {
             forced: ISNT_GENERIC
           },
           {
-            of: function of /* ...args */() {
+            of: function of() /* ...args */
+            {
               var index = 0;
               var argumentsLength = arguments.length;
               var result = new (typeof this == 'function' ? this : Array)(argumentsLength);

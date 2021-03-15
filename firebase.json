@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "tolive",
+    "target": "app",
     "public": "our-brothers-web/public",
     "ignore": [
       "firebase.json",
