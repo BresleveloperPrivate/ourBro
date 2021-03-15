@@ -10,11 +10,11 @@
         "beta": [
           "our-brothers-beta"
         ],
-        "prod": [
-          "our-brothers"
-        ],
         "new": [
           "our-brothers-test"
+        ],
+        "work": [
+          "our-brothers"
         ]
       }
     }
