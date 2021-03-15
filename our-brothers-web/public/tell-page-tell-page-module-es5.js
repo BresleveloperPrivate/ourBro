@@ -1439,7 +1439,8 @@ function _createClass(Constructor, protoProps, staticProps) {
         }
 
         var TellPageComponent = /*#__PURE__*/ (function() {
-          function TellPageComponent(router, authService, participationsService, toastr, _userService, dataService) { // public enrollmentService: EnrollmentService,
+          function TellPageComponent(router, authService, participationsService, toastr, _userService, dataService) {
+            // public enrollmentService: EnrollmentService,
             _classCallCheck(this, TellPageComponent);
 
             this.router = router;
