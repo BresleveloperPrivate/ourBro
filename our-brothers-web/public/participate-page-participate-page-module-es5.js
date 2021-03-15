@@ -337,7 +337,8 @@ function _createClass(Constructor, protoProps, staticProps) {
 
         var ParticipatePageComponent = /*#__PURE__*/ (function() {
           //@Output() submit = new EventEmitter<void>();
-          function ParticipatePageComponent(router, authService, participationsService, toastr, dataService) { //public enrollmentService: EnrollmentService,
+          function ParticipatePageComponent(router, authService, participationsService, toastr, dataService) {
+            //public enrollmentService: EnrollmentService,
             _classCallCheck(this, ParticipatePageComponent);
 
             this.router = router;
