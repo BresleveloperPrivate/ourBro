@@ -254,8 +254,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'app-team-card', 6);
           }
           if (rf & 2) {
-            const member_r234 = ctx.$implicit;
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('member', member_r234);
+            const member_r238 = ctx.$implicit;
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('member', member_r238);
           }
         }
         class TeamPageComponent {
@@ -459,17 +459,17 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const slain_r232 = ctx.$implicit;
+            const slain_r236 = ctx.$implicit;
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r232.pre);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r236.pre);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'href',
-              slain_r232.link,
+              slain_r236.link,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeUrl']
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r232.title);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r236.title);
           }
         }
         function TeamCardComponent_div_12_Template(rf, ctx) {
@@ -482,15 +482,15 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r231 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r235 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'href',
-              'mailto:' + ctx_r231.member.email,
+              'mailto:' + ctx_r235.member.email,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeUrl']
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r231.member.email);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r235.member.email);
           }
         }
         class TeamCardComponent {

@@ -108,20 +108,20 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var v_r271 = ctx.$implicit;
+            var v_r275 = ctx.$implicit;
 
-            var ctx_r270 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            var ctx_r274 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'title',
-              ctx_r270.optionsMap[v_r271].details || ''
+              ctx_r274.optionsMap[v_r275].details || ''
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
               ' ',
-              ctx_r270.optionsMap[v_r271].label,
+              ctx_r274.optionsMap[v_r275].label,
               ' '
             );
           }
@@ -140,9 +140,9 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var ctx_r265 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r269 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r265.values);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r269.values);
           }
         }
 
@@ -156,17 +156,17 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var ctx_r267 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r271 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r267.placeholder);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r271.placeholder);
           }
         }
 
         function SelectComponent_div_6_Template(rf, ctx) {
           if (rf & 1) {
-            var _r273 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r277 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 10);
 
@@ -175,11 +175,11 @@ function _createClass(Constructor, protoProps, staticProps) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function SelectComponent_div_6_Template_span_click_1_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r273);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r277);
 
-                var ctx_r272 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                var ctx_r276 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
-                return ctx_r272.valueChange.emit(null);
+                return ctx_r276.valueChange.emit(null);
               }
             );
 
@@ -195,20 +195,20 @@ function _createClass(Constructor, protoProps, staticProps) {
 
         function SelectComponent_div_7_div_1_Template(rf, ctx) {
           if (rf & 1) {
-            var _r277 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            var _r281 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 15);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function SelectComponent_div_7_div_1_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r277);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r281);
 
-                var option_r275 = ctx.$implicit;
+                var option_r279 = ctx.$implicit;
 
-                var ctx_r276 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                var ctx_r280 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
-                return ctx_r276.onSelectOption(option_r275.value);
+                return ctx_r280.onSelectOption(option_r279.value);
               }
             );
 
@@ -218,20 +218,20 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var option_r275 = ctx.$implicit;
+            var option_r279 = ctx.$implicit;
 
-            var ctx_r274 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            var ctx_r278 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵclassProp'](
               'active',
-              ctx_r274.selectedMap[option_r275.value]
+              ctx_r278.selectedMap[option_r279.value]
             );
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('title', option_r275.details || '');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('title', option_r279.details || '');
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', option_r275.label, ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', option_r279.label, ' ');
           }
         }
 
@@ -252,11 +252,11 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var ctx_r269 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r273 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r269.options);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r273.options);
           }
         }
 
@@ -460,7 +460,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             }
 
             if (rf & 2) {
-              var _r266 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](5);
+              var _r270 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](5);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'ngClass',
@@ -469,7 +469,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.values.length)('ngIfElse', _r266);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.values.length)('ngIfElse', _r270);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
 

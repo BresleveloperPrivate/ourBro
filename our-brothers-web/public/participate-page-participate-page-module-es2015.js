@@ -67,7 +67,7 @@
 
         function ParticipatePageComponent_section_2_Template(rf, ctx) {
           if (rf & 1) {
-            const _r146 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            const _r150 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'section');
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](1, 'div', 7);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](2, 'div', 8);
@@ -88,9 +88,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'submit',
               function ParticipatePageComponent_section_2_Template_app_profile_form_submit_10_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r146);
-                const ctx_r145 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r145.onProfileSubmit($event);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r150);
+                const ctx_r149 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                return ctx_r149.onProfileSubmit($event);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -99,40 +99,40 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r138 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r142 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](4);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('isExpended', true);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](4);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('isExpended', true);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r138.user)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r142.user)(
               'firebaseUser',
-              ctx_r138.firebaseUser
+              ctx_r142.firebaseUser
             );
           }
         }
         function ParticipatePageComponent_app_progress_4_Template(rf, ctx) {
           if (rf & 1) {
-            const _r148 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            const _r152 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-progress', 13);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'app-meetings', 14);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinMeeting',
               function ParticipatePageComponent_app_progress_4_Template_app_meetings_joinMeeting_1_listener($event) {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r148);
-                const ctx_r147 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r147.onJoinMeeting($event);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r152);
+                const ctx_r151 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                return ctx_r151.onJoinMeeting($event);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r139 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r143 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r139.user)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r143.user)(
               'meetings',
-              ctx_r139.meetings
+              ctx_r143.meetings
             );
           }
         }

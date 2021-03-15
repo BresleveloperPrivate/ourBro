@@ -306,9 +306,9 @@
               ],
               hour: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].required],
               address: this.fb.group({
-                formattedAddress: [null /*Validators.required*/],
-                latitude: [null /*Validators.required*/],
-                longitude: [null /*Validators.required*/],
+                formattedAddress: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].required],
+                latitude: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].required],
+                longitude: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].required],
                 notes: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].maxLength(200)]]
               }),
               capacity: [

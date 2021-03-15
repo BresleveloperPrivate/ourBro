@@ -895,19 +895,19 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var year_r389 = ctx.$implicit;
+            var year_r393 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r389.year);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r393.year);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r389.meetingStatistics.count);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r393.meetingStatistics.count);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r389.meetingStatistics.registered);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r393.meetingStatistics.registered);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
@@ -915,7 +915,7 @@ function _createClass(Constructor, protoProps, staticProps) {
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipeBind1'](
                 9,
                 4,
-                year_r389.meetingStatistics.registered / year_r389.meetingStatistics.count
+                year_r393.meetingStatistics.registered / year_r393.meetingStatistics.count
               )
             );
           }
@@ -1215,11 +1215,11 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var ctx_r394 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            var ctx_r398 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', ctx_r394.error, ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', ctx_r398.error, ' ');
           }
         }
 
@@ -1241,21 +1241,21 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var ctx_r396 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            var ctx_r400 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('users', ctx_r396.users);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('bereaveds', ctx_r396.bereaveds);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('users', ctx_r400.users);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('meetings', ctx_r396.meetings);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('bereaveds', ctx_r400.bereaveds);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('users', ctx_r396.users);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('meetings', ctx_r400.meetings);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('users', ctx_r400.users);
           }
         }
 
@@ -1287,13 +1287,13 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var _r395 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](3);
+            var _r399 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](3);
 
-            var ctx_r393 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r397 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx_r393.error)('ngIfElse', _r395);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx_r397.error)('ngIfElse', _r399);
           }
         }
 
@@ -1676,23 +1676,23 @@ function _createClass(Constructor, protoProps, staticProps) {
           }
 
           if (rf & 2) {
-            var year_r391 = ctx.$implicit;
+            var year_r395 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r391.year);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r395.year);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r391.registeredUsers.participate);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r395.registeredUsers.participate);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r391.registeredUsers.bereaved);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r395.registeredUsers.bereaved);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r391.registeredUsers.host);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](year_r395.registeredUsers.host);
           }
         }
 

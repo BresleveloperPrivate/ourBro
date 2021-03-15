@@ -38,9 +38,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const ctx_r259 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r263 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r259.qnaBrothers);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r263.qnaBrothers);
           }
         }
         function QnaPageComponent_ng_container_26_Template(rf, ctx) {
@@ -50,9 +50,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const ctx_r260 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r264 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r260.qnaHosts);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r264.qnaHosts);
           }
         }
         function QnaPageComponent_ng_container_27_Template(rf, ctx) {
@@ -62,9 +62,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const ctx_r261 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r265 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r261.qnaParticipates);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaList', ctx_r265.qnaParticipates);
           }
         }
         class QnaPageComponent {
@@ -740,10 +740,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'div', 7);
           }
           if (rf & 2) {
-            const ctx_r262 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r266 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'innerHtml',
-              ctx_r262.answerSafeHtml,
+              ctx_r266.answerSafeHtml,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeHtml']
             );
           }
@@ -951,9 +951,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
           }
           if (rf & 2) {
-            const qnaItem_r258 = ctx.$implicit;
+            const qnaItem_r262 = ctx.$implicit;
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaItem', qnaItem_r258);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('qnaItem', qnaItem_r262);
           }
         }
         class QnaListComponent {}
