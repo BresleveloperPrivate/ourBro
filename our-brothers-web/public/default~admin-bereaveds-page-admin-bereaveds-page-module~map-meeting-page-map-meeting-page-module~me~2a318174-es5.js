@@ -6462,11 +6462,11 @@ function _createClass(Constructor, protoProps, staticProps) {
           if (rf & 1) {
             var _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'button', 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-meeting-join-button', 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
-              function MeetingListRowComponent_ng_template_20_Template_button_click_0_listener() {
+              function MeetingListRowComponent_ng_template_20_Template_app_meeting_join_button_click_0_listener() {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r89);
 
                 var ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
@@ -6474,8 +6474,6 @@ function _createClass(Constructor, protoProps, staticProps) {
                 return ctx_r88.onLogin();
               }
             );
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](1, 'hjjj');
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
@@ -6551,7 +6549,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             [4, 'ngIf'],
             [1, 'meeting-item-col', 'meeting-join'],
             [1, 'join-button', 3, 'user', 'meeting', 'join'],
-            [3, 'click']
+            [1, 'join-button', 3, 'click']
           ],
           template: function MeetingListRowComponent_Template(rf, ctx) {
             if (rf & 1) {
@@ -6641,7 +6639,7 @@ function _createClass(Constructor, protoProps, staticProps) {
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
                 20,
                 MeetingListRowComponent_ng_template_20_Template,
-                2,
+                1,
                 0,
                 'ng-template',
                 null,
