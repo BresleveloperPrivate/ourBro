@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "tehila",
+    "target": "tolive",
     "public": "our-brothers-web/public",
     "ignore": [
       "firebase.json",
