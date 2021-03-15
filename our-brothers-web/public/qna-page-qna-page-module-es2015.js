@@ -107,7 +107,7 @@
             ['data-aos', 'fade-up', 'data-aos-duration', '1000', 1, 'medium-heading'],
             [
               'href',
-              'https://connect2care.carmel6000.com/#/info',
+              'https://connect2care.ourbrothers.co.il/#/info',
               1,
               'action-header-support-us',
               'site-button',
@@ -425,7 +425,7 @@
             answer: `המפגשים יתקיימו במקומות שונים ברחבי הארץ והעולם, ביניהם בתים פרטיים, חברות, ארגונים, תנועות נוער, בתי ספר, מפגשים דיגיטליים בזום ועוד. 
       ניתן לבדוק את מאפייני המפגש <a target="_blank" href="/meetings">בעמוד המפגשים<a/> באתר.
       בכדי להשתתף במפגשים הדיגיטליים בזום יתקיימו במסגרת מיזם
-      <a target="_blank" href="https://connect2care.carmel6000.com/#/"> מתחברים וזוכרים<a/>
+      <a target="_blank" href="https://connect2care.ourbrothers.co.il/"> מתחברים וזוכרים<a/>
       שהקימה עמותת האחים שלנו.
       `
           },
@@ -484,7 +484,7 @@
             answer: `תוכל להציע לחברים ומכרים לפתוח את ביתם לאירוח ולהתארח אצלם,
      וכמובן שאנו נעשה מאמץ לעזור לך במציאת בית מארח במקרה הצורך.
      כמו כן, יש אפשרות גם לפתוח מפגש בזום דרך מיזם 
-     <a target="_blank" href="https://connect2care.carmel6000.com/#/"> מתחברים וזוכרים<a/>
+     <a target="_blank" href="https://connect2care.ourbrothers.co.il/"> מתחברים וזוכרים<a/>
      שהקמנו.`
           },
           {
@@ -551,7 +551,7 @@
         אם לא תקבל שיבוץ - ניתן כמובן להירשם כמשתתף באחד המפגשים הקרובים לביתך.
         או לחלופין להשתתף באחד ממפגשי האונללין שלנו דרך 
         מיזם 
-     <a target="_blank" href="https://connect2care.carmel6000.com/#/"> מתחברים וזוכרים<a/>
+     <a target="_blank" href="https://connect2care.ourbrothers.co.il/"> מתחברים וזוכרים<a/>
          שהקמנו. 
     `
           },
@@ -635,7 +635,7 @@
             answer: `ניתן <a target="_blank" href="/contact">ליצור איתנו קשר<a/> 
     ונשמח לחזור אליך לפרטים נוספים.
     אופציה נוספת לקיים מפגש וירטואלי בזום דרך מיזם
-    <a target="_blank" href="https://connect2care.carmel6000.com/#/"> מתחברים וזוכרים<a/>
+    <a target="_blank" href="https://connect2care.ourbrothers.co.il/"> מתחברים וזוכרים<a/>
       שהקמנו.
     `
           },

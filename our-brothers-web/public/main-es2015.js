@@ -2875,7 +2875,7 @@
             ['src', '../../assets/svg/a.svg', 1, 'home-page-logo-connect2care'],
             [1, 'aaa'],
             [1, 'action-buttons', 'meeting-button-1'],
-            ['href', 'https://connect2care.carmel6000.com/', 1, 'action-header-support-us', 'site-button'],
+            ['href', 'https://connect2care.ourbrothers.co.il/', 1, 'action-header-support-us', 'site-button'],
             [1, 'home-page-square-2'],
             [
               'width',
@@ -7531,7 +7531,7 @@
             [1, 'links-header'],
             ['class', 'link-header', 4, 'ngFor', 'ngForOf', 'ngForTrackBy'],
             [1, 'action-buttons'],
-            ['href', 'https://connect2care.carmel6000.com/#/', 1, 'action-header-support-us', 'site-button'],
+            ['href', 'https://connect2care.ourbrothers.co.il/', 1, 'action-header-support-us', 'site-button'],
             ['class', 'action-header-login site-button', 3, 'disabled', 'click', 4, 'ngIf'],
             [1, 'link-header'],
             [3, 'menu'],
