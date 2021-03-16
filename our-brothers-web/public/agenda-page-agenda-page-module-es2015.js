@@ -254,7 +254,7 @@
             [1, 'fas', 'fa-angle-double-left'],
             ['src', '../../../assets/svg/Group 19.svg', 1, 'kit-icon'],
             ['href', '/assets/img/Invitation.jpg', 'target', '_blank', 1, 'site-button', 'download-button'],
-            ['src', '../../../assets/docs/\u05E2\u05E8\u05DB\u05EA \u05D0\u05D7.pdf', 1, 'kit-icon'],
+            ['src', '../../../assets/svg/Group 20.svg', 1, 'kit-icon'],
             [
               'href',
               '../../../assets/docs/\u05E2\u05E8\u05DB\u05EA \u05DE\u05D0\u05E8\u05D7.pdf',

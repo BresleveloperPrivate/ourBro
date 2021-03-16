@@ -1,4 +1,5 @@
 <app-flip-card
+  class="partisipate"
   [disabled]="true"
   [frontImage]="frontImage"
   [frontTitle]="'אני רוצה להשתתף'"
@@ -15,6 +16,7 @@
 לא סגורה לחלוטין אלה להוסיף במקום שורה זאת  -->
 <!-- [disabled]="loading || (user && !participationService.isUserCanParticipate(user)) -->
 <!-- [class.disabled]=""loading || (user && !participationService.isUserCanParticipate(user)) -->
+
 <ng-template #frontImage>
   <svg
     width="100%"
@@ -53,6 +55,7 @@
       </g>
     </g>
   </svg>
+
   <!-- <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -83,3 +86,9 @@
     />
   </svg> -->
 </ng-template>
+
+<br />
+<span>
+  אופציה זו סגורה השנה עקב <br />
+  מגבלות משרד הבריאות
+</span>

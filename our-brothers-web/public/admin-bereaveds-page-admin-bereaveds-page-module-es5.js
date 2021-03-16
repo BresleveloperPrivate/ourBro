@@ -1671,17 +1671,17 @@ function _classCallCheck(instance, Constructor) {
           './src/app/admin/bereaveds/sort-bereaveds/sort-bereaveds.pipe.ts'
         );
 
-        function BereavedsListComponent_div_10_Template(rf, ctx) {
+        function BereavedsListComponent_div_13_Template(rf, ctx) {
           if (rf & 1) {
             var _r285 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div');
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'app-bereaveds-list-row', 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'app-bereaveds-list-row', 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'joinBereved',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_joinBereved_1_listener() {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_joinBereved_1_listener() {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1692,7 +1692,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'leaveBereaved',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_leaveBereaved_1_listener($event) {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_leaveBereaved_1_listener($event) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1704,7 +1704,7 @@ function _classCallCheck(instance, Constructor) {
                   meeting: $event
                 });
               }
-            )('deleting', function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_deleting_1_listener() {
+            )('deleting', function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_deleting_1_listener() {
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
               var bereaved_r283 = ctx.$implicit;
@@ -1714,7 +1714,7 @@ function _classCallCheck(instance, Constructor) {
               return ctx_r287.deleting.emit(bereaved_r283);
             })(
               'volunteering',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_volunteering_1_listener($event) {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_volunteering_1_listener($event) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1728,7 +1728,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedStatus',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedStatus_1_listener($event) {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedStatus_1_listener($event) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1742,7 +1742,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedGuidance',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedGuidance_1_listener(
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedGuidance_1_listener(
                 $event
               ) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
@@ -1758,7 +1758,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedBirthDate',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedBirthDate_1_listener(
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedBirthDate_1_listener(
                 $event
               ) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
@@ -1774,7 +1774,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedNotes',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedNotes_1_listener($event) {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedNotes_1_listener($event) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1788,7 +1788,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedAddress',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedAddress_1_listener(
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedAddress_1_listener(
                 $event
               ) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
@@ -1804,7 +1804,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'bereavedVolunteer',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_bereavedVolunteer_1_listener() {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_bereavedVolunteer_1_listener() {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1818,7 +1818,7 @@ function _classCallCheck(instance, Constructor) {
               }
             )(
               'removeVolunteer',
-              function BereavedsListComponent_div_10_Template_app_bereaveds_list_row_removeVolunteer_1_listener() {
+              function BereavedsListComponent_div_13_Template_app_bereaveds_list_row_removeVolunteer_1_listener() {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r285);
 
                 var bereaved_r283 = ctx.$implicit;
@@ -1899,18 +1899,35 @@ function _classCallCheck(instance, Constructor) {
             bereavedVolunteer: 'bereavedVolunteer',
             removeVolunteer: 'removeVolunteer'
           },
-          decls: 12,
+          decls: 15,
           vars: 7,
           consts: [
             [1, 'list-header', 3, 'scroll', 'sort', 'sortChange'],
             [1, 'col-row-state'],
-            ['title', '\u05E9\u05DD \u05DE\u05DC\u05D0', 'field', 'name'],
-            ['title', '\u05E4\u05E8\u05D8\u05D9 \u05D4\u05EA\u05E7\u05E9\u05E8\u05D5\u05EA'],
+            ['title', '\u05D0-\u05EA ', 'field', 'name'],
             ['title', '\u05DE\u05E7\u05D5\u05DD \u05DE\u05D2\u05D5\u05E8\u05D9\u05DD', 'field', 'address'],
             ['title', '\u05D5\u05EA\u05E7 \u05D1\u05E9\u05DB\u05D5\u05DC', 'field', 'seniority', 1, 'col-seniority'],
-            ['title', '\u05D4\u05D3\u05E8\u05DB\u05D5\u05EA', 'field', 'guidance', 1, 'col-guidance'],
+            ['title', '\u05D4\u05D3\u05E8\u05DB\u05D4', 'field', 'guidance', 1, 'col-guidance'],
             ['title', '\u05E1\u05D8\u05D8\u05D5\u05E1', 'field', 'status', 1, 'col-status'],
-            ['title', '\u05E9\u05D9\u05D1\u05D5\u05E5', 'field', 'meetings'],
+            ['title', '\u05DE\u05EA\u05E0\u05D3\u05D1', 'field', 'valunteer', 1, 'col-status'],
+            ['title', '\u05D0\u05E1\u05DE\u05E1', 'field', 'sms', 1, 'col-status'],
+            [
+              'title',
+              '\u05DE\u05E9\u05EA\u05EA\u05E3 \u05D1\u05D4\u05D3\u05E8\u05DB\u05D4',
+              'field',
+              'participateInGuidance',
+              1,
+              'col-status'
+            ],
+            ['title', '\u05DE\u05E8\u05E6\u05D4 \u05D1\u05E9\u05E4\u05D5\u05EA', 'field', 'languages', 1, 'col-status'],
+            [
+              'title',
+              '\u05E4\u05E2\u05D9\u05DC-\u05DC\u05D0 \u05E4\u05E2\u05D9\u05DC',
+              'field',
+              'active',
+              1,
+              'col-status'
+            ],
             [1, 'bereaved-items'],
             [4, 'ngFor', 'ngForOf'],
             [
@@ -1957,20 +1974,26 @@ function _classCallCheck(instance, Constructor) {
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](8, 'app-list-column', 8);
 
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](9, 'app-list-column', 9);
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](10, 'app-list-column', 10);
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](11, 'app-list-column', 11);
+
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](9, 'div', 9);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](12, 'div', 12);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
-                10,
-                BereavedsListComponent_div_10_Template,
+                13,
+                BereavedsListComponent_div_13_Template,
                 2,
                 4,
                 'div',
-                10
+                13
               );
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipe'](11, 'sortBereaveds');
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipe'](14, 'sortBereaveds');
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
             }
@@ -1981,12 +2004,12 @@ function _classCallCheck(instance, Constructor) {
                 ctx.sortedColumn
               );
 
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](10);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](13);
 
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'ngForOf',
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipeBind3'](
-                  11,
+                  14,
                   3,
                   ctx.bereaveds,
                   ctx.sortedColumn,
