@@ -1,3 +1,5 @@
+import { FormBuilder } from '@angular/forms';
+import { Email } from './../../types/models/index';
 
 import * as functions from 'firebase-functions';
 import { admin } from './services/firebase-admin';
@@ -770,59 +772,170 @@ function calcParticipatesCount(participates: {
 
 
 
+
+
+
+
+
+
+const AWS = require('aws-sdk');
+AWS.config.update({ region: 'eu-west-1' });
+
+const sourceEmail = 'ourbrother@connect2care.ourbrothers.co.il' // 'Zikaron@ourbrothers.org';
+
+const awsSendEmail = async (options) => {
+    const params = {
+        Destination: { /* required */
+            // CcAddresses: [
+            //     sourceEmail
+            // ],
+            ToAddresses: [
+                options.to
+            ]
+        },
+        Message: { /* required */
+            Body: { /* required */
+                Html: {
+                    Charset: "UTF-8",
+                    Data: options.html
+                },
+                Text: {
+                    Charset: "UTF-8",
+                    Data: options.text  || 'test' // TODO should we add plain text to all emails?
+                }
+            },
+            Subject: {
+                Charset: 'UTF-8',
+                Data: options.subject
+            }
+        },
+        Source: sourceEmail, /* required */
+        ReplyToAddresses: [
+            sourceEmail
+        ],
+    };
+
+    try {
+        const sendEmailPromise = new AWS.SES({ apiVersion: '2010-12-01' }).sendEmail(params).promise();
+        const data = await sendEmailPromise;
+        console.log('awsSendEmail data:', data);
+    } catch (err) {
+        console.log('awsSendEmail error:', err)
+    }
+
+}
+
+module.exports = awsSendEmail;
+
+
+
+
+
+
+
+
+
+
+
+// ************************************
+// export const onEmailCreate = functions.database
+//   .ref('/emails/{userId}')
+//   .onCreate((event, context) => {
+//     const sendEmail = event.val();
+
+//     const { userId } = context.params;
+
+//     const email: Email = {
+//       to: sendEmail.to,
+//       from: sendEmail.from,
+//       subject: sendEmail.subject,
+//       imgURL: sendEmail.imgURL,
+//       message: sendEmail.message
+
+
+//     };
+
+//     console.log(
+//       `Linking email { user {${userId}}.`,
+//       email
+//     );
+
+//     return admin
+//       .database()
+//       .ref(`/users/${hostId}/hostParticipation/${year}/meetings/${meetingId}`)
+//       .set(hostParticipationMeeting)
+//       .then(() => {
+//         console.log(
+//           `Succesfully linked meeting {${meetingId}} year {${year}} host {${hostId}}.`
+//         );
+//       })
+//       .catch(error => {
+//         console.error(
+//           `Failed to link meeting {${meetingId}} year {${year}} host {${hostId}}.`,
+//           error
+//         );
+//       });
+//   });
+
+
+
+
+
+
+
 /////////////////////////////////////////
 
 
 
 
-export const onTryCreate = functions.database
-  .ref('/test/number/1')
-  .onCreate((event, context) => {
-    const meeting = event.val();
+// export const onTryCreate = functions.database
+//   .ref('/test/number/1')
+//   .onCreate((event, context) => {
+//     const meeting = event.val();
 
-    //const { year, hostId, meetingId } = context.params;
+//     //const { year, hostId, meetingId } = context.params;
 
-    const hostParticipationMeeting: UserParticipationMeeting = {
-      title: meeting.title
-    };
+//     const hostParticipationMeeting: UserParticipationMeeting = {
+//       title: meeting.title
+//     };
 
     // console.log(
     //   `Linking meeting {${meetingId}} year {${year}} host {${hostId}}.`,
     //   hostParticipationMeeting
     // );
 
-    return admin
-      .database()
-      .ref(`/test/number/1`)
-      .set(hostParticipationMeeting)
-      .then(() => {
-        // console.log(
-        //   `Succesfully linked meeting {${meetingId}} year {${year}} host {${hostId}}.`
-        // );
-      })
-      .catch(error => {
-        // console.error(
-        //   `Failed to link meeting {${meetingId}} year {${year}} host {${hostId}}.`,
-        //   error
-        // );
-      });
-  });
+  //   return admin
+  //     .database()
+  //     .ref(`/test/number/1`)
+  //     .set(hostParticipationMeeting)
+  //     .then(() => {
+  //       // console.log(
+  //       //   `Succesfully linked meeting {${meetingId}} year {${year}} host {${hostId}}.`
+  //       // );
+  //     })
+  //     .catch(error => {
+  //       // console.error(
+  //       //   `Failed to link meeting {${meetingId}} year {${year}} host {${hostId}}.`,
+  //       //   error
+  //       // );
+  //     });
+  // });
 ///////////////////////
-function checkMail(
-  // contact: Contact,
-  // userId: string,
-  // contactId: string
-): Mail.Options {
-  const mailOptions: Mail.Options = {
-    from: '"האחים שלנו" <website@ourbrothers.org>',
-    to: 'lodyosii2019@gmail.com',
-    cc: 'info@ourbrothers.org',
-    bcc: 'ourbrothers.noreply@gmail.com'
-  };
+// function checkMail(
+//   // contact: Contact,
+//   // userId: string,
+//   // contactId: string
+// ): Mail.Options {
+//   const mailOptions: Mail.Options = {
+//     from: '"האחים שלנו" <website@ourbrothers.org>',
+//     to: 'lodyosii2019@gmail.com',
+//     cc: 'info@ourbrothers.org',
+//     bcc: 'ourbrothers.noreply@gmail.com'
+//   };
 
-  mailOptions.subject = 'בדיקת מייל'
-  mailOptions.text = 'תהילה '
-  console.log('hiiiii mailll');
+//   mailOptions.subject = 'בדיקת מייל'
+//   mailOptions.text = 'תהילה '
+//   console.log('hiiiii mailll');
 
   // mailOptions.subject = 'האחים שלנו - ' + contact.subject;
   // mailOptions.text =
@@ -846,9 +959,9 @@ function checkMail(
 
   // mailOptions.text += '\n\n' + 'מזהה הודעה: ' + contactId;
 
-  return mailOptions;
-}
+//   return mailOptions;
+// }
 
-checkMail()
-console.log('hiiiii mailll under');
+// checkMail()
+// console.log('hiiiii mailll under');
 

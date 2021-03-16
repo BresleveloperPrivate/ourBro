@@ -20,7 +20,8 @@ import {
   ParticipateParticipationMeeting,
   MeetingBereaved,
   Address,
-  VolunteerProfile
+  VolunteerProfile,
+  Email
 } from 'models';
 import { AnalyticsService } from './analytics.service';
 import { MeetingForm } from '../../host/host-form/host-form.component';
@@ -884,3 +885,46 @@ export class DataService {
     }
   }
 }
+
+///////////////////////////////
+//   public createEmail(user: User): Observable<Email> {
+//     const parsedMeeting: Partial<Email> = {
+//       ...meetingForm,
+//       date: Date.parse(`${meetingForm.date}T${meetingForm.hour}`),
+//       count: 0,
+//       contact: {
+//         firstName: user.profile.firstName,
+//         lastName: user.profile.lastName,
+//         phoneNumber: user.profile.phoneNumber,
+//         email: user.profile.email
+//       }
+//     };
+
+//     const telemetry = { meeting: parsedMeeting, hostId: user.id, year };
+
+//     this.analyticsService.logEvent('CreateMeeting', telemetry);
+//     console.log('hiii', telemetry);
+//     return from(this.angularFireDatabase.list<Partial<Meeting>>(`events/${year}/${user.id}`).push(parsedMeeting)).pipe(
+//       tap(() => {
+//         this.analyticsService.logEvent('CreateMeetingSuccess', telemetry);
+//       }),
+//       map(
+//         meetingSnapshot =>
+//           ({
+//             ...parsedMeeting,
+//             hostId: user.id,
+//             id: meetingSnapshot.key
+//           } as Meeting)
+//       ),
+//       catchError(error => {
+//         console.log('error', error);
+//         this.analyticsService.logEvent('CreateMeetingFailed', {
+//           ...telemetry,
+//           error
+//         });
+//         console.error(error);
+//         return throwError(error);
+//       })
+//     );
+//   }
+// }

@@ -134,6 +134,7 @@ export interface UserParticipationMeeting {
   title: string;
 }
 
+
 export interface ParticipateParticipationMeeting
   extends UserParticipationMeeting {
   accompanies: number;
@@ -221,4 +222,12 @@ export interface ServerDonation extends ClientDonation {
 export interface SMSMessage {
   body: string;
   date: number;
+}
+export interface Email {
+  to: string;
+  from: string;
+  subject: string;
+  imgURL?: string;
+  message: string;
+
 }
