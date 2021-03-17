@@ -1,13 +1,10 @@
 <div class="row-container">
   <div class="row">
     <div class="col col-row-state">
-      <button
-        class="volunteering-button"
-        *ngIf="currentUser?.isAdmin"
-        (click)="volunteering.emit(!bereaved.isVolunteer)"
-      >
+      <!-- <button class="volunteering-button" *ngIf="currentUser?.isAdmin"
+        (click)="volunteering.emit(!bereaved.isVolunteer)">
         <div class="key-icon" [ngClass]="{ disabled: !bereaved.isVolunteer }"></div>
-      </button>
+      </button> -->
       <button class="trash-button" *ngIf="currentUser?.isAdmin" (click)="deleting.emit()">
         <div class="trash-icon"></div>
       </button>
@@ -128,6 +125,7 @@
             (valueChange)="bereavedNotes.emit($event)"
             [type]="'textarea'"
           ></app-editable-text>
+          <a> הסטורית הערות</a>
         </div>
       </div>
     </div>

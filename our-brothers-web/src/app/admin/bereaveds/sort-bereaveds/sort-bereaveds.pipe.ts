@@ -2,16 +2,21 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { User } from 'models';
 import { SortedColumn } from '../../../shared/components/list/list-header/list-header.types';
 
-const getFullName = (user: User, year: number) => (user.profile ? user.profile.firstName + user.profile.lastName : '');
+//const getFullName = (user: User, year: number) => (user.profile ? user.profile.firstName + user.profile.lastName : '');
+const getFirstName = (user: User, year: number) => (user.profile ? user.profile.firstName : '');
+const getLastName = (user: User, year: number) => (user.profile ? user.profile.lastName : '');
 const getAddress = (user: User, year: number) => user?.profile?.address?.latitude || Number.MIN_VALUE;
+const getAge = (user: User, year: number) => user.profile?.birthDay || Number.MAX_VALUE;
 const getSeniority = (user: User, year: number) => user.bereavedProfile?.slains?.[0]?.deathDate || Number.MAX_VALUE;
 const getGuidance = (user: User, year: number) => user.bereavedParticipation?.[year]?.guidance?.general || '';
 const getStatus = (user: User, year: number) => user.bereavedParticipation?.[year]?.status || '';
 const getMeetings = (user: User, year: number) => user.bereavedParticipation?.[year]?.meetings?.length || 0;
 
 const valueGetter = {
-  name: getFullName,
+  firstName: getFirstName,
+  lastName: getLastName,
   address: getAddress,
+  age: getAge,
   seniority: getSeniority,
   guidance: getGuidance,
   status: getStatus,

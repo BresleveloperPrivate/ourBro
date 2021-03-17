@@ -7,11 +7,12 @@ import { PipesModule } from '../../shared/pipes/pipes.module';
 import { ListModule } from '../../shared/components/list/list.module';
 import { FreeTextFilterModule } from '../../shared/components/free-text-filter/free-text-filter.module';
 import { SortUsersPipe } from './sort-users/sort-users.pipe';
+import { JoinButtonModule } from '../../shared/components/join-button/join-button.module';
 
 const api = [UsersListRowComponent, UsersListComponent];
 
 @NgModule({
-  imports: [SelectModule, CommonModule, PipesModule, ListModule, FreeTextFilterModule],
+  imports: [SelectModule, CommonModule, PipesModule, ListModule, FreeTextFilterModule, JoinButtonModule],
   declarations: [api, SortUsersPipe],
   exports: api
 })

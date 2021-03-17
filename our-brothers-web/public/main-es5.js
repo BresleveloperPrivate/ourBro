@@ -6384,10 +6384,20 @@ function _classCallCheck(instance, Constructor) {
             user: 'user',
             loading: 'loading'
           },
-          decls: 3,
+          decls: 8,
           vars: 6,
           consts: [
-            [3, 'disabled', 'frontImage', 'frontTitle', 'backText', 'backButtonText', 'backButtonUrl'],
+            [
+              1,
+              'partisipate',
+              3,
+              'disabled',
+              'frontImage',
+              'frontTitle',
+              'backText',
+              'backButtonText',
+              'backButtonUrl'
+            ],
             ['frontImage', ''],
             [
               'width',
@@ -6457,6 +6467,24 @@ function _classCallCheck(instance, Constructor) {
                 1,
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplateRefExtractor']
               );
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](3, 'br');
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](4, 'span');
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
+                5,
+                ' \u05D0\u05D5\u05E4\u05E6\u05D9\u05D4 \u05D6\u05D5 \u05E1\u05D2\u05D5\u05E8\u05D4 \u05D4\u05E9\u05E0\u05D4 \u05E2\u05E7\u05D1 '
+              );
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](6, 'br');
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
+                7,
+                ' \u05DE\u05D2\u05D1\u05DC\u05D5\u05EA \u05DE\u05E9\u05E8\u05D3 \u05D4\u05D1\u05E8\u05D9\u05D0\u05D5\u05EA\n'
+              );
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
             }
 
             if (rf & 2) {
@@ -6476,7 +6504,7 @@ function _classCallCheck(instance, Constructor) {
           },
           directives: [_flip_card_flip_card_component__WEBPACK_IMPORTED_MODULE_2__['FlipCardComponent']],
           styles: [
-            '.image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n.image.disabled[_ngcontent-%COMP%]   .person[_ngcontent-%COMP%] {\n  fill: #aaaaaa;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxwYXJ0aWNpcGF0aW9ucy1idXR0b25zXFxwYXJ0aWNpcGF0ZS1idXR0b25cXHBhcnRpY2lwYXRlLWJ1dHRvbi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vcGFydGljaXBhdGUtYnV0dG9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUNDRjtBRE9JO0VBQ0UsYUFBQTtBQ0xOIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vcGFydGljaXBhdGUtYnV0dG9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcblxyXG4gIC8vIC5wZXJzb24ge1xyXG4gIC8vICAgZmlsbDogIzAwYTE5OTtcclxuICAvLyAgIG9wYWNpdHk6IDAuODg7XHJcbiAgLy8gfVxyXG5cclxuICAmLmRpc2FibGVkIHtcclxuICAgIC5wZXJzb24ge1xyXG4gICAgICBmaWxsOiAjYWFhYWFhO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iLCIuaW1hZ2Uge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuLmltYWdlLmRpc2FibGVkIC5wZXJzb24ge1xuICBmaWxsOiAjYWFhYWFhO1xufSJdfQ== */'
+            '.image[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n.image.disabled[_ngcontent-%COMP%]   .person[_ngcontent-%COMP%] {\n  fill: #aaaaaa;\n}\n.image[_ngcontent-%COMP%]   .partisipate[_ngcontent-%COMP%] {\n  margin-top: -20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxwYXJ0aWNpcGF0aW9ucy1idXR0b25zXFxwYXJ0aWNpcGF0ZS1idXR0b25cXHBhcnRpY2lwYXRlLWJ1dHRvbi5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vcGFydGljaXBhdGUtYnV0dG9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7QUNDRjtBRE9JO0VBQ0UsYUFBQTtBQ0xOO0FEUUU7RUFDRSxpQkFBQTtBQ05KIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvcGFydGljaXBhdGlvbnMtYnV0dG9ucy9wYXJ0aWNpcGF0ZS1idXR0b24vcGFydGljaXBhdGUtYnV0dG9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltYWdlIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IDEwMCU7XHJcblxyXG4gIC8vIC5wZXJzb24ge1xyXG4gIC8vICAgZmlsbDogIzAwYTE5OTtcclxuICAvLyAgIG9wYWNpdHk6IDAuODg7XHJcbiAgLy8gfVxyXG5cclxuICAmLmRpc2FibGVkIHtcclxuICAgIC5wZXJzb24ge1xyXG4gICAgICBmaWxsOiAjYWFhYWFhO1xyXG4gICAgfVxyXG4gIH1cclxuICAucGFydGlzaXBhdGUge1xyXG4gICAgbWFyZ2luLXRvcDogLTIwcHg7XHJcbiAgfVxyXG59XHJcbiIsIi5pbWFnZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uaW1hZ2UuZGlzYWJsZWQgLnBlcnNvbiB7XG4gIGZpbGw6ICNhYWFhYWE7XG59XG4uaW1hZ2UgLnBhcnRpc2lwYXRlIHtcbiAgbWFyZ2luLXRvcDogLTIwcHg7XG59Il19 */'
           ],
           changeDetection: 0
         });

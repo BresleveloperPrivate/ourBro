@@ -2,9 +2,22 @@
   <app-list-column class="col-row-state"></app-list-column>
   <app-list-column title="שם פרטי" field="firstName"></app-list-column>
   <app-list-column title="שם משפחה" field="lastName"></app-list-column>
-  <app-list-column title="מייל" field="email"></app-list-column>
-  <app-list-column title="טלפון נייד" field="phoneNumber"></app-list-column>
+  <app-list-column title=" גיל" field="age"></app-list-column>
+  <app-list-column title="סוג משתמש " field="kind"></app-list-column>
+  <app-list-column title=" פעיל /לא פעיל" field="active"></app-list-column>
+
+  <!-- <app-list-column title="מייל" field="email"></app-list-column> -->
+  <!-- <app-list-column title="טלפון נייד" field="phoneNumber"></app-list-column> -->
 </app-list-header>
+
+<div class="tr">
+  <div class="name intr">שם פרטי</div>
+  <div class="conect intr">שם משפחה</div>
+  <div class="address intr">מייל</div>
+  <div class="slain intr ">טלפון</div>
+  <!-- <div class="status intr"> סטטוס</div>-->
+  <div class="join intr">שיבוץ</div>
+</div>
 <div class="users-items">
   <div *ngFor="let user of users | sortUsers: sortedColumn">
     <app-users-list-row
@@ -13,6 +26,7 @@
       [user]="user"
       (deleting)="deleting.emit(user)"
       (volunteering)="volunteering.emit({ user: user, isVolunteer: $event })"
-    ></app-users-list-row>
+    >
+    </app-users-list-row>
   </div>
 </div>

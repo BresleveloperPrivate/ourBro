@@ -21,3 +21,11 @@
     overflow: auto;
   }
 }
+.tr {
+  display: flex;
+  .intr {
+    flex: 1;
+    text-align: center;
+    color: #818181;
+  }
+}

@@ -22,12 +22,21 @@
   }
 }
 
-.medium-heading{
+.medium-heading {
   position: relative;
 }
-#excel{
+#excel {
   position: absolute;
   left: 10%;
   font-size: 20px;
   top: 50%;
+}
+
+.size-icon {
+  width: 20px;
+  height: 50px;
+}
+.size-icon-email {
+  width: 30px;
+  height: 30px;
 }

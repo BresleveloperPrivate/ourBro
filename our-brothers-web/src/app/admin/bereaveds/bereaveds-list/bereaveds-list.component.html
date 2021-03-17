@@ -1,20 +1,27 @@
 <app-list-header [scroll]="filteredBereaveds.size > 10" [(sort)]="sortedColumn" class="list-header">
   <app-list-column class="col-row-state"></app-list-column>
-  <app-list-column title="א-ת " field="name"></app-list-column>
-  <!-- <app-list-column title="פרטי התקשרות"></app-list-column> -->
+  <app-list-column title="שם פרטי" field="firstName"></app-list-column>
+  <app-list-column title="שם משפחה" field="lastName"></app-list-column>
   <app-list-column title="מקום מגורים" field="address"></app-list-column>
   <app-list-column title="ותק בשכול" field="seniority" class="col-seniority"></app-list-column>
-  <app-list-column title="הדרכה" field="guidance" class="col-guidance"></app-list-column>
-  <app-list-column title="סטטוס" field="status" class="col-status"></app-list-column>
-  <app-list-column title="מתנדב" field="valunteer" class="col-status"></app-list-column>
 
-  <app-list-column title="אסמס" field="sms" class="col-status"></app-list-column>
-  <app-list-column title="משתתף בהדרכה" field="participateInGuidance" class="col-status"></app-list-column>
-  <app-list-column title="מרצה בשפות" field="languages" class="col-status"></app-list-column>
+  <app-list-column class="drop-down-menu" title="סטטוס" field="status" class="col-status"></app-list-column>
+
+  <app-list-column class="drop-down-menu" title="מרצה בשפות" field="languages" class="col-status"></app-list-column>
   <app-list-column title="פעיל-לא פעיל" field="active" class="col-status"></app-list-column>
 
   <!-- <app-list-column title="שיבוץ" field="meetings"></app-list-column> -->
 </app-list-header>
+
+<div class="tr">
+  <div class="name intr">שם מלא</div>
+  <div class="conect intr">פרטי התקשרות</div>
+  <div class="address intr">מקום מגורים</div>
+  <div class="slain intr ">ותק בשכול</div>
+  <div class="status intr">סטטוס</div>
+  <div class="join intr">שיבוץ</div>
+</div>
+
 <div class="bereaved-items">
   <div *ngFor="let bereaved of bereaveds | sortBereaveds: sortedColumn:year">
     <app-bereaveds-list-row
