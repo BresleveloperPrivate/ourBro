@@ -5,6 +5,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import localeHe from '@angular/common/locales/he';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
@@ -24,6 +25,7 @@ import { ShellModule } from './shell/shell.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SvgIconsModule } from '@ngneat/svg-icon';
+import { EmailComponent } from './email/email/email.component';
 
 //import { MapModule } from './map/map.module';
 //import { MapComponent } from './map/map.component';
@@ -32,9 +34,11 @@ import { SvgIconsModule } from '@ngneat/svg-icon';
 registerLocaleData(localeHe);
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent],
+  declarations: [AppComponent, HomePageComponent, EmailComponent],
   imports: [
     ShellModule,
+    // AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     //MapModule,
     //MapComponent,
     AuthModule,
@@ -63,4 +67,4 @@ registerLocaleData(localeHe);
   providers: [{ provide: LOCALE_ID, useValue: 'he-IL' }, AuthService, DataService, HttpService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -27,8 +27,8 @@ export class PlacesSelectComponent implements AfterViewInit {
   private getPlaceAutocomplete() {
     this.mapsAPILoader.load().then(() => {
       const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement, {
-        componentRestrictions: { country: ['IL', 'PS'] },
-        types: this.types.slice()
+        //componentRestrictions: { country: ['IL', 'PS'] },
+        //  types: this.types.slice()
       });
 
       google.maps.event.addListener(autocomplete, 'place_changed', () => {

@@ -90,6 +90,8 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
   }
 
   joinBereved(bereaved: User) {
+    console.log('vbhnjkm,l', bereaved);
+
     this.selectingBereaved = bereaved;
     if (this.noBerevedMeetings && this.noBerevedMeetings.length) {
       this.selectedMeeting$.pipe(take(1)).subscribe(meeting => {
@@ -227,14 +229,15 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     //let data = this.bereaveds;
 
     let MasterArr = [
-      ['full name', 'phone', 'email', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
+      ['first name', 'last name', 'phone', 'email', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
 
       let a = [];
       if (b.profile) {
-        a.push(b.profile.firstName + ' ' + b.profile.lastName);
+        a.push(b.profile.firstName);
+        a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
         a.push(b.profile.email);
         a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');

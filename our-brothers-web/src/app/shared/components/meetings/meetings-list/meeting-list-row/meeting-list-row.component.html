@@ -33,14 +33,23 @@
       {{ meeting.bereaved.firstName + ' ' + meeting.bereaved.lastName }}
     </span>
   </div>
-  <div class="meeting-item-col meeting-join" *ngIf="participationsService.isUserHaveAllDetails(user); else login">
+
+  <!-- <div class="meeting-item-col meeting-join" *ngIf="participationsService.isUserHaveAllDetails(user)||user.isAdmin">
+    <app-meeting-join-button class="join-button" [user]="user" [meeting]="meeting" (join)="joinMeeting.emit(meeting)">
+    </app-meeting-join-button>
+  </div> -->
+
+  <div
+    class="meeting-item-col meeting-join"
+    *ngIf="participationsService.isUserHaveAllDetails(user) || user.isAdmin; else login"
+  >
     <app-meeting-join-button class="join-button" [user]="user" [meeting]="meeting" (join)="joinMeeting.emit(meeting)">
     </app-meeting-join-button>
   </div>
 
   <ng-template #login>
     <app-meeting-join-button class="join-button" (click)="onLogin()"> </app-meeting-join-button>
-    <!-- <button></button> -->
+    <button></button>
   </ng-template>
 
   <!-- <div *ngIf="number==5;else ShowDiff">
