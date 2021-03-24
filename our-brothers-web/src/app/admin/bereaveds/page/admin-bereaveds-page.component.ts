@@ -235,7 +235,85 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
       let b = this.bereaveds[i];
 
       if (this.only2021 && this.only2021 === true) {
-        if (!b.lastSignInDate || b.lastSignInDate < 1609459200) {
+        if (!b.lastSignInDate || b.lastSignInDate < 1609459200000) {
+
+          continue;
+        }
+      }
+
+
+      let a = [];
+      if (b.profile) {
+        a.push(b.profile.firstName);
+        a.push(b.profile.lastName);
+        a.push(b.profile.phoneNumber);
+        a.push(b.profile.email);
+        a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
+
+        if (b.bereavedProfile && b.bereavedProfile.slains) {
+          let sls = b.bereavedProfile.slains;
+          let ax = [...a];
+
+          for (let x = 0; x < sls.length; x++) {
+            const sx = sls[x];
+            ax.push(this.agePipe.transform(sx.deathDate));
+            ax.push(this.agePipe.transform(b.profile.birthDay));
+            ax.push(b.profile.otherLang ? b.profile.otherLang : '');
+            let sDetails = sx.firstName + ' ' + sx.lastName + ' ז"ל' + '  ---  ' + this.agePipe.transform(sx.deathDate);
+            ax.push(sDetails);
+            ax.push(b.bereavedProfile && b.bereavedProfile.story ? b.bereavedProfile.story : '');
+
+            MasterArr.push(ax);
+          }
+        } else {
+          a.push('');
+          a.push('');
+          a.push('');
+          a.push('');
+          a.push('');
+        }
+      }
+    }
+
+    let options = {
+      anchor: document.querySelector('#excel'),
+      format: 'xlsx',
+      filename: 'users-noy.xlsx'
+    };
+
+    console.log(MasterArr);
+    let sheet = {
+      //name: 'Sheet 1', // Sheet name
+      name: 'users-noy.xlsx',
+      from: {
+        //table: String/Element, // Table ID or table element
+        array: MasterArr // Array with data
+        //arrayHasHeader: true, // Array first row is the header // not in use
+        //removeColumns: [...], // Array of column indexes (from 0)
+        //filterRowFn: function(row) {return true} // Return true to keep
+      }
+    };
+
+    /*
+     */
+
+    window['ExcellentExport'].convert(options, [sheet], true);
+    //ExcellentExport.convert(options, [sheet], true);
+  }
+
+
+
+  barevedToExcel() {
+    //let data = this.bereaveds;
+    this.only2021 = true;
+    let MasterArr = [
+      ['first name', 'last name', 'phone', 'email', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
+    ];
+    for (let i = 0; i < this.bereaveds.length; i++) {
+      let b = this.bereaveds[i];
+
+      if (this.only2021 && this.only2021 === true) {
+        if (!b.lastSignInDate || b.lastSignInDate < 1609459200000) {
 
           continue;
         }
