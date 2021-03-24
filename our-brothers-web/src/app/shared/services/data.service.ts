@@ -61,6 +61,10 @@ export interface UpdateBereavedNotes {
   bereaved: User;
   notes: string;
 }
+export interface UpdateBereavedEmail {
+  bereaved: User;
+  email: string;
+}
 
 export interface UpdateUserAddress {
   user: User;
@@ -75,7 +79,7 @@ export class DataService {
     private angularFireDatabase: AngularFireDatabase,
     private analyticsService: AnalyticsService,
     private participationsService: ParticipationsService
-  ) {}
+  ) { }
 
   public getUserById(userId: string): Observable<User> {
     const telemetry = { userId };
@@ -375,6 +379,27 @@ export class DataService {
       })
     );
   }
+
+
+  public setBereavedEmail(bereaved: User, email: string, year = MEMORIAL_YEAR) {
+    const telemetry = { userId: bereaved.id, email, year };
+
+    this.analyticsService.logEvent('setBereavedEmail', telemetry);
+    return from(
+      this.angularFireDatabase.object<string>(`users/${bereaved.id}/profile/email`).set(email)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedEmailFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
 
   public setUserAddress(user: User, address: Address) {
     const telemetry = { userId: user.id, address };

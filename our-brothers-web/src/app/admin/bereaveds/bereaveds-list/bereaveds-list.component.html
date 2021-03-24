@@ -38,6 +38,7 @@
       (bereavedGuidance)="bereavedGuidance.emit({ bereaved: bereaved, guidance: $event })"
       (bereavedBirthDate)="bereavedBirthDate.emit({ user: bereaved, birthDate: $event })"
       (bereavedNotes)="bereavedNotes.emit({ bereaved: bereaved, notes: $event })"
+      (bereavedemail)="bereavedemail.emit({ bereaved: bereaved, email: $event })"
       (bereavedAddress)="bereavedAddress.emit({ user: bereaved, address: $event })"
       (bereavedVolunteer)="bereavedVolunteer.emit({ user: currentUser, bereaved: bereaved })"
       (removeVolunteer)="removeVolunteer.emit(bereaved)"></app-bereaveds-list-row>

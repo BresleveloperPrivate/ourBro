@@ -1,3 +1,4 @@
+
 import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -13,6 +14,7 @@ import {
   UpdateBereavedStatus,
   UpdateBereavedGuidance,
   UpdateBereavedNotes,
+  UpdateBereavedEmail,
   UpdateUserAddress,
   UpdateUserBirthDate,
   BereavedVolunteer
@@ -201,6 +203,12 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     }
   }
 
+  bereavedEmail({ bereaved, email }: UpdateBereavedEmail) {
+    if (bereaved) {
+      this.dataService.setBereavedEmail(bereaved, email);
+    }
+  }
+
   bereavedAddress({ user, address }: UpdateUserAddress) {
     if (user) {
       this.dataService.setUserAddress(user, address);
@@ -276,7 +284,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     }
 
     let options = {
-      anchor: document.querySelector('#excel'),
+      anchor: document.querySelector('#excelALL'),
       format: 'xlsx',
       filename: 'users-noy.xlsx'
     };

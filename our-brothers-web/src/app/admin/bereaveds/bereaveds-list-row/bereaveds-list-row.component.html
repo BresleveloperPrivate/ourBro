@@ -35,7 +35,8 @@
       </div>
       <div class="bereaved-email" *ngIf="bereaved.profile?.email">
         <div class="email-address">
-          {{ bereaved.profile?.email }}
+          <app-editable-text [value]="bereaved?.profile?.email||''"
+          (valueChange)="bereavedemail.emit($event)" [type]="'textarea'"></app-editable-text>
         </div>
         <div class="email-icon"></div>
       </div>
@@ -62,28 +63,12 @@
       </div>
     </div>
     <div class="col col-guidance">
-      <div class="bereaved-otherLang" *ngIf="bereaved?.lastSignInDate">
-        <div class="otherLang">
+      <div class="bereaved-active" *ngIf="bereaved?.lastSignInDate">
+        <div class="active">
           {{ normalDAte}}
         </div>
       </div>
     </div>
-    <!-- <div class="col col-guidance">
-      <app-select-bereaved-guidance
-        [value]="bereaved.profile.otherLang"
-        (valueChange)="bereavedGuidance.emit({ answered: true, general: $event })"></app-select-bereaved-guidance>
-    </div> -->
-
-    <!-- <div class="col col-otherLang">
-      <div class="bereaved-otherLang" *ngIf="bereaved.profile?.otherLang">
-        <div class="otherLang">
-          {{ bereaved.profile.otherLang }}
-        </div>
-        <div class="phone-icon"></div>
-      </div> -->
-
-
-
 
     <div class="col bereaved-meetings">
       <div *ngFor="let meeting of bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.meetings">

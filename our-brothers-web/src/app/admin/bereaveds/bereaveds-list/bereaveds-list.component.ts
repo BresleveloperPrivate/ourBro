@@ -7,6 +7,7 @@ import {
   UserMeeting,
   VolunteeringUser,
   UpdateBereavedNotes,
+  UpdateBereavedEmail,
   UpdateUserAddress,
   UpdateBereavedGuidance,
   UpdateUserBirthDate,
@@ -32,6 +33,7 @@ export class BereavedsListComponent {
   @Output() bereavedGuidance = new EventEmitter<UpdateBereavedGuidance>();
   @Output() bereavedBirthDate = new EventEmitter<UpdateUserBirthDate>();
   @Output() bereavedNotes = new EventEmitter<UpdateBereavedNotes>();
+  @Output() bereavedemail = new EventEmitter<UpdateBereavedEmail>();
   @Output() bereavedAddress = new EventEmitter<UpdateUserAddress>();
   @Output() bereavedVolunteer = new EventEmitter<BereavedVolunteer>();
   @Output() removeVolunteer = new EventEmitter<User>();
@@ -41,10 +43,10 @@ export class BereavedsListComponent {
     column: 'name',
     direction: 'asc'
   };
-  
 
 
-    
-    
+
+
+
 
 }

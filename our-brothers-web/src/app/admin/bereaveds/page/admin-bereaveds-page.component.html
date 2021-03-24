@@ -3,7 +3,7 @@
 </app-modal-select-meeting>
 <div class="medium-heading">
   ניהול אחים
-  <!-- <a id="excel" href="#" (click)="usersToExcel()">הורד אקסל</a> -->
+  <a id="excelALL" class="site-link" href="#" (click)="usersToExcel()">אקסל כל משתמשי האתר</a>
 </div>
 
 <div class="container-fluid bereaveds-container">
@@ -46,6 +46,7 @@
           (volunteering)="volunteering($event)" (deleting)="deleting($event)" (bereavedStatus)="bereavedStatus($event)"
           (bereavedGuidance)="bereavedGuidance($event)" (bereavedBirthDate)="bereavedBirthDate($event)"
           (bereavedNotes)="bereavedNotes($event)" (bereavedAddress)="bereavedAddress($event)"
+         (bereavedEmail)="bereavedEmail($event)"
           (bereavedVolunteer)="bereavedVolunteer($event)" (removeVolunteer)="removeVolunteer($event)">
         </app-bereaveds-list>
       </ng-template>
