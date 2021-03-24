@@ -1,6 +1,231 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
   ['tell-page-tell-page-module'],
   {
+    /***/ './src/app/shared/components/places-select/places-select.component.ts':
+      /*!****************************************************************************!*\
+  !*** ./src/app/shared/components/places-select/places-select.component.ts ***!
+  \****************************************************************************/
+      /*! exports provided: PlacesSelectComponent */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'PlacesSelectComponent', function() {
+          return PlacesSelectComponent;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @agm/core */ './node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js'
+        );
+        /// <reference types="@types/googlemaps" />
+        /// <reference types="@types/googlemaps" />
+
+        const _c0 = ['palcesInput'];
+        class PlacesSelectComponent {
+          constructor(mapsAPILoader) {
+            this.mapsAPILoader = mapsAPILoader;
+            this.formattedAddress = '';
+            this.change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
+          }
+          ngAfterViewInit() {
+            this.getPlaceAutocomplete();
+          }
+          getPlaceAutocomplete() {
+            this.mapsAPILoader.load().then(() => {
+              const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement, {
+                //componentRestrictions: { country: ['IL', 'PS'] },
+                //  types: this.types.slice()
+              });
+              google.maps.event.addListener(autocomplete, 'place_changed', () => {
+                const place = autocomplete.getPlace();
+                const parsedAddress = {
+                  formattedAddress: place.formatted_address.replace(', ישראל', ''),
+                  latitude: place.geometry.location.lat(),
+                  longitude: place.geometry.location.lng()
+                };
+                this.change.emit(parsedAddress);
+              });
+            });
+          }
+        }
+        PlacesSelectComponent.ɵfac = function PlacesSelectComponent_Factory(t) {
+          return new (t || PlacesSelectComponent)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdirectiveInject'](
+              _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader']
+            )
+          );
+        };
+        PlacesSelectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
+          type: PlacesSelectComponent,
+          selectors: [['app-places-select']],
+          viewQuery: function PlacesSelectComponent_Query(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵviewQuery'](_c0, true);
+            }
+            if (rf & 2) {
+              var _t;
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵqueryRefresh'](
+                (_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵloadQuery']())
+              ) && (ctx.addresstext = _t.first);
+            }
+          },
+          inputs: {
+            formattedAddress: 'formattedAddress',
+            types: 'types',
+            placeholder: 'placeholder',
+            invalid: 'invalid'
+          },
+          outputs: { change: 'change' },
+          decls: 2,
+          vars: 4,
+          consts: [
+            [
+              'type',
+              'text',
+              'autocorrect',
+              'off',
+              'autocapitalize',
+              'off',
+              'spellcheck',
+              'off',
+              1,
+              'form-field',
+              3,
+              'value',
+              'placeholder'
+            ],
+            ['palcesInput', '']
+          ],
+          template: function PlacesSelectComponent_Template(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'input', 0, 1);
+            }
+            if (rf & 2) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵclassProp']('invalid', ctx.invalid);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx.formattedAddress)(
+                'placeholder',
+                ctx.placeholder
+              );
+            }
+          },
+          styles: [
+            '\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BsYWNlcy1zZWxlY3QvcGxhY2VzLXNlbGVjdC5jb21wb25lbnQuc2NzcyJ9 */'
+          ]
+        });
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectComponent,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
+                args: [
+                  {
+                    selector: 'app-places-select',
+                    templateUrl: './places-select.component.html',
+                    styleUrls: ['./places-select.component.scss']
+                  }
+                ]
+              }
+            ],
+            function() {
+              return [{ type: _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader'] }];
+            },
+            {
+              formattedAddress: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              types: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              placeholder: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              invalid: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              change: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
+                }
+              ],
+              addresstext: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ViewChild'],
+                  args: ['palcesInput']
+                }
+              ]
+            }
+          );
+        })();
+
+        /***/
+      },
+
+    /***/ './src/app/shared/components/places-select/places-select.module.ts':
+      /*!*************************************************************************!*\
+  !*** ./src/app/shared/components/places-select/places-select.module.ts ***!
+  \*************************************************************************/
+      /*! exports provided: PlacesSelectModule */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'PlacesSelectModule', function() {
+          return PlacesSelectModule;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _places_select_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! ./places-select.component */ './src/app/shared/components/places-select/places-select.component.ts'
+        );
+
+        class PlacesSelectModule {}
+        PlacesSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
+          type: PlacesSelectModule
+        });
+        PlacesSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
+          factory: function PlacesSelectModule_Factory(t) {
+            return new (t || PlacesSelectModule)();
+          }
+        });
+        (function() {
+          (typeof ngJitMode === 'undefined' || ngJitMode) &&
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](PlacesSelectModule, {
+              declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+              exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+            });
+        })();
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectModule,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
+                args: [
+                  {
+                    declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+                    exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+                  }
+                ]
+              }
+            ],
+            null,
+            null
+          );
+        })();
+
+        /***/
+      },
+
     /***/ './src/app/tell/bereaved-guidance-form/bereaved-guidance-form.component.ts':
       /*!*********************************************************************************!*\
   !*** ./src/app/tell/bereaved-guidance-form/bereaved-guidance-form.component.ts ***!
@@ -1039,6 +1264,8 @@
             //this.expended = true;
             //this.a=false;
           }
+          // public onSubmit() {
+          // }
           onSlainsSubmit(slainForm) {
             const slains = [
               {

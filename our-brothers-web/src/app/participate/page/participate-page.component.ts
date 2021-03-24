@@ -30,7 +30,7 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
   public curr = false;
 
   private subscriptions: Subscription[] = [];
-  //@Output() submit = new EventEmitter<void>();
+  @Output() submit = new EventEmitter<void>();
   constructor(
     //public enrollmentService: EnrollmentService,
     private router: Router,
@@ -38,7 +38,7 @@ export class ParticipatePageComponent implements OnInit, OnDestroy {
     private participationsService: ParticipationsService,
     private toastr: ToastrService,
     private dataService: DataService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.firebaseUser.subscribe(firebaseUser => (this.firebaseUser = firebaseUser));

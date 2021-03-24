@@ -179,6 +179,178 @@
         /***/
       },
 
+    /***/ './src/app/shared/components/join-button/join-button.component.ts':
+      /*!************************************************************************!*\
+  !*** ./src/app/shared/components/join-button/join-button.component.ts ***!
+  \************************************************************************/
+      /*! exports provided: JoinButtonComponent */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'JoinButtonComponent', function() {
+          return JoinButtonComponent;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
+        );
+
+        const _c0 = function(a0) {
+          return { joined: a0 };
+        };
+        class JoinButtonComponent {
+          constructor() {
+            this.joined = false;
+            this.disabled = false;
+            this.join = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
+          }
+        }
+        JoinButtonComponent.ɵfac = function JoinButtonComponent_Factory(t) {
+          return new (t || JoinButtonComponent)();
+        };
+        JoinButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
+          type: JoinButtonComponent,
+          selectors: [['app-join-button']],
+          inputs: { joined: 'joined', disabled: 'disabled' },
+          outputs: { join: 'join' },
+          decls: 2,
+          vars: 5,
+          consts: [[1, 'join-button', 3, 'ngClass', 'disabled', 'click']],
+          template: function JoinButtonComponent_Template(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'button', 0);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+                'click',
+                function JoinButtonComponent_Template_button_click_0_listener() {
+                  return ctx.join.emit();
+                }
+              );
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](1);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+            }
+            if (rf & 2) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
+                'ngClass',
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](3, _c0, ctx.joined)
+              )('disabled', ctx.disabled);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
+                ' ',
+                ctx.joined ? '\u05DE\u05E9\u05D5\u05D1\u05E5' : '\u05E9\u05D9\u05D1\u05D5\u05E5',
+                '\n'
+              );
+            }
+          },
+          directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__['NgClass']],
+          styles: [
+            '.join-button[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 2px solid #00a099;\n  width: 125px;\n  max-width: 125px;\n  height: 40px;\n  font-size: 20px;\n  font-family: "arbel";\n  color: #00736d;\n  background-color: white;\n  cursor: pointer;\n}\n.join-button[_ngcontent-%COMP%]:disabled {\n  color: grey;\n  border-color: grey;\n  cursor: not-allowed;\n}\n.join-button.joined[_ngcontent-%COMP%] {\n  color: white;\n  border-color: #00a099;\n  background-color: #00a099;\n  cursor: auto;\n}\n@media only screen and (max-width: 600px) {\n  .join-button[_ngcontent-%COMP%] {\n    width: 100px;\n    height: 30px;\n    margin-left: 12px;\n    margin-bottom: 8px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvam9pbi1idXR0b24vQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxqb2luLWJ1dHRvblxcam9pbi1idXR0b24uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2pvaW4tYnV0dG9uL2pvaW4tYnV0dG9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0Esb0JBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0FDQ0Y7QURDRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0FDQ0o7QURFRTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQ0FKO0FER0U7RUEzQkY7SUE0QkksWUFBQTtJQUNBLFlBQUE7SUFDQSxpQkFBQTtJQUNBLGtCQUFBO0VDQUY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2pvaW4tYnV0dG9uL2pvaW4tYnV0dG9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmpvaW4tYnV0dG9uIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgYm9yZGVyOiAycHggc29saWQgcmdiKDAsIDE2MCwgMTUzKTtcclxuICB3aWR0aDogMTI1cHg7XHJcbiAgbWF4LXdpZHRoOiAxMjVweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGZvbnQtZmFtaWx5OiAnYXJiZWwnO1xyXG4gIGNvbG9yOiByZ2IoMCwgMTE1LCAxMDkpO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbiAgJjpkaXNhYmxlZCB7XHJcbiAgICBjb2xvcjogZ3JleTtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbiAgfVxyXG5cclxuICAmLmpvaW5lZCB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItY29sb3I6IHJnYigwLCAxNjAsIDE1Myk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwgMTYwLCAxNTMpO1xyXG4gICAgY3Vyc29yOiBhdXRvO1xyXG4gIH1cclxuXHJcbiAgQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEycHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA4cHg7XHJcbiAgfVxyXG59XHJcbiIsIi5qb2luLWJ1dHRvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBib3JkZXI6IDJweCBzb2xpZCAjMDBhMDk5O1xuICB3aWR0aDogMTI1cHg7XG4gIG1heC13aWR0aDogMTI1cHg7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LWZhbWlseTogXCJhcmJlbFwiO1xuICBjb2xvcjogIzAwNzM2ZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5qb2luLWJ1dHRvbjpkaXNhYmxlZCB7XG4gIGNvbG9yOiBncmV5O1xuICBib3JkZXItY29sb3I6IGdyZXk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uam9pbi1idXR0b24uam9pbmVkIHtcbiAgY29sb3I6IHdoaXRlO1xuICBib3JkZXItY29sb3I6ICMwMGEwOTk7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMGEwOTk7XG4gIGN1cnNvcjogYXV0bztcbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjAwcHgpIHtcbiAgLmpvaW4tYnV0dG9uIHtcbiAgICB3aWR0aDogMTAwcHg7XG4gICAgaGVpZ2h0OiAzMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAxMnB4O1xuICAgIG1hcmdpbi1ib3R0b206IDhweDtcbiAgfVxufSJdfQ== */'
+          ],
+          changeDetection: 0
+        });
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            JoinButtonComponent,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
+                args: [
+                  {
+                    selector: 'app-join-button',
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ChangeDetectionStrategy'].OnPush,
+                    templateUrl: './join-button.component.html',
+                    styleUrls: ['./join-button.component.scss']
+                  }
+                ]
+              }
+            ],
+            null,
+            {
+              joined: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              disabled: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              join: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
+                }
+              ]
+            }
+          );
+        })();
+
+        /***/
+      },
+
+    /***/ './src/app/shared/components/join-button/join-button.module.ts':
+      /*!*********************************************************************!*\
+  !*** ./src/app/shared/components/join-button/join-button.module.ts ***!
+  \*********************************************************************/
+      /*! exports provided: JoinButtonModule */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'JoinButtonModule', function() {
+          return JoinButtonModule;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _join_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! ./join-button.component */ './src/app/shared/components/join-button/join-button.component.ts'
+        );
+        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
+        );
+
+        class JoinButtonModule {}
+        JoinButtonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
+          type: JoinButtonModule
+        });
+        JoinButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
+          factory: function JoinButtonModule_Factory(t) {
+            return new (t || JoinButtonModule)();
+          },
+          imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']]]
+        });
+        (function() {
+          (typeof ngJitMode === 'undefined' || ngJitMode) &&
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](JoinButtonModule, {
+              declarations: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
+              imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']],
+              exports: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']]
+            });
+        })();
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            JoinButtonModule,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
+                args: [
+                  {
+                    declarations: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
+                    exports: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
+                    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']]
+                  }
+                ]
+              }
+            ],
+            null,
+            null
+          );
+        })();
+
+        /***/
+      },
+
     /***/ './src/app/shared/components/list/list-column/list-column.component.ts':
       /*!*****************************************************************************!*\
   !*** ./src/app/shared/components/list/list-column/list-column.component.ts ***!
@@ -205,14 +377,14 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'span', 3);
           }
           if (rf & 2) {
-            const ctx_r90 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'ngClass',
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](
                 1,
                 _c0,
-                ctx_r90.sorted === 'asc',
-                ctx_r90.sorted === 'desc'
+                ctx_r86.sorted === 'asc',
+                ctx_r86.sorted === 'desc'
               )
             );
           }

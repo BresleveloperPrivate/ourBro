@@ -43,7 +43,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
   selectingBereaved: User;
 
   private subscriptions: Subscription[] = [];
-
+  only2021: boolean
   constructor(
     private toastr: ToastrService,
     private authService: AuthService,
@@ -54,7 +54,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     public renderer2: Renderer2,
     @Inject(DOCUMENT) private _document,
     private agePipe: SeniorityPipe
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.subscriptions.push(
@@ -117,12 +117,12 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
       if (
         window.confirm(
           'האם ברצונך להסיר את ' +
-            user.profile.firstName +
-            ' ' +
-            user.profile.lastName +
-            ' מהמפגש ' +
-            meeting.title +
-            '?'
+          user.profile.firstName +
+          ' ' +
+          user.profile.lastName +
+          ' מהמפגש ' +
+          meeting.title +
+          '?'
         )
       ) {
         this.dataService.bereavedLeaveMeeting(user, meeting).subscribe(
@@ -142,12 +142,12 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
       if (
         window.confirm(
           'האם ברוצנך ' +
-            (isVolunteer ? 'להגדיר' : 'להסיר') +
-            ' את ' +
-            user.profile.firstName +
-            ' ' +
-            user.profile.lastName +
-            ' כמתנדב/ת?'
+          (isVolunteer ? 'להגדיר' : 'להסיר') +
+          ' את ' +
+          user.profile.firstName +
+          ' ' +
+          user.profile.lastName +
+          ' כמתנדב/ת?'
         )
       ) {
         this.dataService.setUserVolunteer(user, isVolunteer).subscribe(
@@ -233,6 +233,14 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
+
+      if (this.only2021 && this.only2021 === true) {
+        if (!b.lastSignInDate || b.lastSignInDate < 1609459200) {
+
+          continue;
+        }
+      }
+
 
       let a = [];
       if (b.profile) {

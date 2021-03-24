@@ -5,32 +5,34 @@
   <app-list-column title="מקום מגורים" field="address"></app-list-column>
   <app-list-column title="ותק בשכול" field="seniority" class="col-seniority"></app-list-column>
 
-  <app-list-column class="drop-down-menu" title="סטטוס" field="status" class="col-status"></app-list-column>
+  <app-list-column class="drop-down-menu col-status" title="סטטוס" field="status"></app-list-column>
 
-  <app-list-column class="drop-down-menu" title="מרצה בשפות" field="languages" class="col-status"></app-list-column>
-  <app-list-column title="פעיל-לא פעיל" field="active" class="col-status"></app-list-column>
+  <app-list-column class="drop-down-menu col-status" title="מרצה בשפות" field="languages">
+  </app-list-column>
+  <app-list-column title="פעיל-לא פעיל" field="active" class="col-seniority"></app-list-column>
 
   <!-- <app-list-column title="שיבוץ" field="meetings"></app-list-column> -->
 </app-list-header>
 
 <div class="tr">
+  <div class="empty intr"></div>
   <div class="name intr">שם מלא</div>
   <div class="conect intr">פרטי התקשרות</div>
   <div class="address intr">מקום מגורים</div>
   <div class="slain intr ">ותק בשכול</div>
   <div class="status intr">סטטוס</div>
+
+  <div class="status intr">מרצה בשפות</div>
+  <div class="status intr"> פעיל/ לא פעיל</div>
+
   <div class="join intr">שיבוץ</div>
 </div>
 
 <div class="bereaved-items">
   <div *ngFor="let bereaved of bereaveds | sortBereaveds: sortedColumn:year">
-    <app-bereaveds-list-row
-      [class.hidden]="!filteredBereaveds.has(bereaved.id)"
-      [bereaved]="bereaved"
-      [currentUser]="currentUser"
-      (joinBereved)="joinBereved.emit(bereaved)"
-      (leaveBereaved)="leaveBereaved.emit({ user: bereaved, meeting: $event })"
-      (deleting)="deleting.emit(bereaved)"
+    <app-bereaveds-list-row [class.hidden]="!filteredBereaveds.has(bereaved.id)" [bereaved]="bereaved"
+      [currentUser]="currentUser" (joinBereved)="joinBereved.emit(bereaved)"
+      (leaveBereaved)="leaveBereaved.emit({ user: bereaved, meeting: $event })" (deleting)="deleting.emit(bereaved)"
       (volunteering)="volunteering.emit({ user: bereaved, isVolunteer: $event })"
       (bereavedStatus)="bereavedStatus.emit({ bereaved: bereaved, status: $event })"
       (bereavedGuidance)="bereavedGuidance.emit({ bereaved: bereaved, guidance: $event })"
@@ -38,7 +40,6 @@
       (bereavedNotes)="bereavedNotes.emit({ bereaved: bereaved, notes: $event })"
       (bereavedAddress)="bereavedAddress.emit({ user: bereaved, address: $event })"
       (bereavedVolunteer)="bereavedVolunteer.emit({ user: currentUser, bereaved: bereaved })"
-      (removeVolunteer)="removeVolunteer.emit(bereaved)"
-    ></app-bereaveds-list-row>
+      (removeVolunteer)="removeVolunteer.emit(bereaved)"></app-bereaveds-list-row>
   </div>
 </div>

@@ -15,15 +15,37 @@ export class SelectBereavedStatusComponent {
   options: BereavedStatusOption[] = [
     {
       value: BereavedStatus.done,
-      label: 'הסתיים'
+      label: 'הושלם'
     },
-    {
-      value: BereavedStatus.inactive,
-      label: 'לא פעיל'
-    },
+    // {
+    //   value: BereavedStatus.embed,
+    //   label: 'שובץ'
+    // },
+    // {
+    //   value: BereavedStatus.notEmbed,
+    //   label: 'לא שובץ'
+    // },
     {
       value: BereavedStatus.waiting,
-      label: 'ממתין'
-    }
+      label: 'מחכה לתשובה'
+    },
+    // {
+    //   value: BereavedStatus.hostNoConnect,
+    //   label: 'מארח לא יצר קשר'
+    // },
+    // {
+    //   value: BereavedStatus.hostingHimself,
+    //   label: 'מארח את עצמו'
+    // },
+
+    // {
+    //   value: BereavedStatus.notParticipate,
+    //   label: 'לא רוצה להשתתף'
+    // },
+    // {
+    //   value: BereavedStatus.other,
+    //   label: 'אחר'
+    // },
+
   ];
 }

@@ -1,3 +1,4 @@
+//import { chooseOptions } from 'models';
 import { Injectable } from '@angular/core';
 import { Meeting, MeetingAudience, User } from 'models';
 import { MEMORIAL_YEAR, MAX_DATE, MIN_DATE } from '../constants';
@@ -20,6 +21,12 @@ export class UtilsService {
     soldiers: 'חיילים',
     students: 'סטודנטים'
   };
+  // public choose: { [c in chooseOptions]: string } = {
+  //   agree: 'מסכים',
+  //   notAgree: 'לא מסכים'
+
+
+  // }
 
   private readonly ISRAEL_PHONE_PREFIX = '972';
 

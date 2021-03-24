@@ -1,6 +1,3 @@
-<app-join-button
-  [joined]="participationsService.isUserParticipatingMeeting(user, meeting)"
-  [disabled]="!participationsService.isUserCanParticipatingMeeting(user, meeting)"
-  (join)="join.emit()"
->
+<app-join-button [joined]="participationsService.isUserParticipatingMeeting(user, meeting)" (join)="join.emit()"
+  [disabled]="!participationsService.isUserCanParticipatingMeeting(user, meeting)">
 </app-join-button>

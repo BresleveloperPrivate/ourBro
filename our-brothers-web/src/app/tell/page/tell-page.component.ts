@@ -111,6 +111,9 @@ export class TellPageComponent implements OnInit, OnDestroy {
     //this.a=false;
   }
 
+  // public onSubmit() {
+  
+  // }
   onSlainsSubmit(slainForm: SlainForm) {
     const slains: Slain[] = [
       {

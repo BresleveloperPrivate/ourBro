@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { UserProfile } from './../../../../../../types/models/index';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { User, BereavedStatus, BereavedGuidance, Meeting, Address } from 'models';
 import { MEMORIAL_YEAR } from '../../../shared/constants';
 import { ParticipationsService } from '../../../shared/services/participations.service';
@@ -18,14 +19,32 @@ export class BereavedsListRowComponent {
   @Output() volunteering = new EventEmitter<boolean>();
   @Output() bereavedStatus = new EventEmitter<BereavedStatus>();
   @Output() bereavedGuidance = new EventEmitter<BereavedGuidance>();
+  //@Output() bereavedlang=new EventEmitter<UserProfile>();
   @Output() bereavedBirthDate = new EventEmitter<number>();
   @Output() bereavedNotes = new EventEmitter<string>();
   @Output() bereavedAddress = new EventEmitter<Address>();
   @Output() bereavedVolunteer = new EventEmitter<void>();
   @Output() removeVolunteer = new EventEmitter<void>();
+  public normalDAte;
 
+  ngOnInit(): void {
+    this.normalDAte = new Date(this.bereaved.lastSignInDate).toISOString().split('T')[0];
+
+  }
+  public d = new Date().getTime();
   expanded = false;
   year = MEMORIAL_YEAR;
 
-  constructor(public participationsService: ParticipationsService) {}
+  constructor(public participationsService: ParticipationsService) {
+
+  }
+
+  // selectAll()
+  // {
+
+  // }
+  
+
 }
+
+

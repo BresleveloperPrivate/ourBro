@@ -8,6 +8,10 @@
       <button class="trash-button" *ngIf="currentUser?.isAdmin" (click)="deleting.emit()">
         <div class="trash-icon"></div>
       </button>
+
+      <img class="save-image" src="https://img.icons8.com/metro/26/000000/save.png" />
+      <img class="edit-image" src="https://img.icons8.com/pastel-glyph/64/000000/edit--v1.png" />
+
       <button class="expand-button" *ngIf="!expanded" (click)="expanded = true">
         <div class="expand-icon"></div>
       </button>
@@ -17,6 +21,10 @@
     </div>
     <div class="col col-name">
       {{ bereaved.profile?.firstName + ' ' + bereaved.profile?.lastName }}
+
+      <!-- <img class="star-image" *ngIf="(currentUser.registered+2)>d"
+        src="../../../../assets/img/iconfinder_star_2561394.png" /> -->
+
     </div>
     <div class="col col-communications">
       <div class="bereaved-phone" *ngIf="bereaved.profile?.phoneNumber">
@@ -32,30 +40,51 @@
         <div class="email-icon"></div>
       </div>
     </div>
-    <div class="col col-address">
-      <app-editable-text
-        [value]="bereaved?.profile?.address?.formattedAddress || ''"
-        (valueChange)="bereavedAddress.emit($event)"
-        [type]="'cities'"
-      ></app-editable-text>
+    <div class="col col-address to-edit">
+      <app-editable-text [value]="bereaved?.profile?.address?.formattedAddress || ''"
+        (valueChange)="bereavedAddress.emit($event)" [type]="'cities'"></app-editable-text>
     </div>
     <div class="col col-seniority">
       <div *ngFor="let slain of bereaved?.bereavedProfile?.slains">
         {{ slain.deathDate | seniority }}
       </div>
     </div>
-    <div class="col col-guidance">
-      <app-select-bereaved-guidance
-        [value]="bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.guidance?.general"
-        (valueChange)="bereavedGuidance.emit({ answered: true, general: $event })"
-      ></app-select-bereaved-guidance>
-    </div>
     <div class="col col-status">
       <app-select-bereaved-status
         [value]="bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.status"
-        (valueChange)="bereavedStatus.emit($event)"
-      ></app-select-bereaved-status>
+        (valueChange)="bereavedStatus.emit($event)"></app-select-bereaved-status>
     </div>
+    <div class="col col-guidance">
+      <div class="bereaved-otherLang" *ngIf="bereaved.profile?.otherLang">
+        <div class="otherLang">
+          {{ bereaved.profile.otherLang }}
+        </div>
+      </div>
+    </div>
+    <div class="col col-guidance">
+      <div class="bereaved-otherLang" *ngIf="bereaved?.lastSignInDate">
+        <div class="otherLang">
+          {{ normalDAte}}
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col col-guidance">
+      <app-select-bereaved-guidance
+        [value]="bereaved.profile.otherLang"
+        (valueChange)="bereavedGuidance.emit({ answered: true, general: $event })"></app-select-bereaved-guidance>
+    </div> -->
+
+    <!-- <div class="col col-otherLang">
+      <div class="bereaved-otherLang" *ngIf="bereaved.profile?.otherLang">
+        <div class="otherLang">
+          {{ bereaved.profile.otherLang }}
+        </div>
+        <div class="phone-icon"></div>
+      </div> -->
+
+
+
+
     <div class="col bereaved-meetings">
       <div *ngFor="let meeting of bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.meetings">
         <button class="leave-button" (click)="leaveBereaved.emit(meeting)">
@@ -82,11 +111,8 @@
         גיל:
       </div>
       <div>
-        <app-editable-text
-          [value]="bereaved.profile?.birthDay ? (bereaved.profile.birthDay | seniority) : ''"
-          (valueChange)="bereavedBirthDate.emit($event)"
-          [type]="'date'"
-        ></app-editable-text>
+        <app-editable-text [value]="bereaved.profile?.birthDay ? (bereaved.profile.birthDay | seniority) : ''"
+          (valueChange)="bereavedBirthDate.emit($event)" [type]="'date'"></app-editable-text>
       </div>
       <div class="title">
         שפות:
@@ -119,13 +145,10 @@
         הערות:
       </div>
       <div class="content">
-        <div class="scroll-container">
-          <app-editable-text
-            [value]="bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.notes"
-            (valueChange)="bereavedNotes.emit($event)"
-            [type]="'textarea'"
-          ></app-editable-text>
-          <a> הסטורית הערות</a>
+        <div class="scroll-container  to-edit">
+          <app-editable-text [value]="bereaved.bereavedParticipation && bereaved.bereavedParticipation[year]?.notes"
+            (valueChange)="bereavedNotes.emit($event)" [type]="'textarea'"></app-editable-text>
+
         </div>
       </div>
     </div>

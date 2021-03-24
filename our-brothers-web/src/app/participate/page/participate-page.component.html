@@ -21,12 +21,12 @@
   </section>
   <br />
 
-  <app-progress title="הרשמה" *ngIf="ok">
+  <app-progress title="הרשמה" >
     <app-meetings [user]="user" [meetings]="meetings" (joinMeeting)="onJoinMeeting($event)"> </app-meetings>
   </app-progress>
-  <!-- <button (click)="submit.emit()" class="site-button primary-button intro-button">
+  <button (click)="submit.emit()" class="site-button primary-button intro-button">
       המשך
-    </button> -->
+    </button>
   <br />
   <br />
 

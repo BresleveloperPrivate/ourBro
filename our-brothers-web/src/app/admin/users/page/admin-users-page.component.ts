@@ -1,3 +1,4 @@
+import { UpdateUserBirthDate } from './../../../shared/services/data.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -21,6 +22,7 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
   error = '';
   loading = true;
 
+  usersfilter: User[];
   selectedMeeting$ = new Subject<Meeting>();
   selectingUser: User;
 
@@ -32,7 +34,7 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
     private dataService: DataService,
     private httpService: HttpService,
     private utilsService: UtilsService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     console.log('hoiiiiii');
@@ -41,7 +43,9 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
       this.dataService.getUsers().subscribe(
         users => {
           this.loading = false;
-          this.users = users;
+          this.usersfilter = users.filter(i => i.role !== 'bereaved')
+          this.users = this.usersfilter;
+
           this.filterUsers();
         },
         error => {
@@ -52,6 +56,12 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
     );
   }
 
+
+  bereavedBirthDate({ user, birthDate }: UpdateUserBirthDate) {
+    if (user) {
+      this.dataService.setUserBirthDate(user, birthDate);
+    }
+  }
   filterUsers() {
     const filteredUsersIds = this.utilsService.filteringUsers(this.users, this.filter).map(({ id }) => id);
     this.filteredUsersIds = new Set(filteredUsersIds);
@@ -62,12 +72,12 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
       if (
         window.confirm(
           'האם ברוצנך ' +
-            (isVolunteer ? 'להגדיר' : 'להסיר') +
-            ' את ' +
-            user.profile.firstName +
-            ' ' +
-            user.profile.lastName +
-            ' כמתנדב/ת?'
+          (isVolunteer ? 'להגדיר' : 'להסיר') +
+          ' את ' +
+          user.profile.firstName +
+          ' ' +
+          user.profile.lastName +
+          ' כמתנדב/ת?'
         )
       ) {
         this.dataService.setUserVolunteer(user, isVolunteer).subscribe(
@@ -102,4 +112,8 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
       subscription.unsubscribe();
     });
   }
+
+
+
+
 }

@@ -11,8 +11,15 @@ export class UsersListRowComponent {
   @Input() currentUser: User;
   @Input() user: User;
 
+  @Output() userBirthDate = new EventEmitter<number>();
   @Output() deleting = new EventEmitter<void>();
   @Output() volunteering = new EventEmitter<boolean>();
-
+  public d = new Date().getTime();
   expanded = false;
+  public normalDAte;
+
+  ngOnInit(): void {
+    this.normalDAte = new Date(this.user.lastSignInDate).toISOString().split('T')[0];
+
+  }
 }

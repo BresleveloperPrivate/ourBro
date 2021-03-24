@@ -37,13 +37,14 @@ export class MeetingDetailsPageComponent implements OnInit, OnDestroy {
     public dataService: DataService,
     public utilsService: UtilsService,
     public participationsService: ParticipationsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.user.subscribe(user => {
       this.extraData = this.extraData || user.isAdmin;
       return (this.user = user);
     });
+
 
     this.activatedRoute.params.subscribe(params => {
       const { hostId, meetingId, memorialYear } = params;
@@ -60,7 +61,11 @@ export class MeetingDetailsPageComponent implements OnInit, OnDestroy {
           this.extraData ||
           this.participationsService.isHostParticipatingMeeting(this.user, meeting) ||
           this.participationsService.isBereavedParticipatingMeeting(this.user, meeting);
+ 
+
         return (this.meeting = meeting);
+
+
       });
 
       if (this.getMeetingParticipates$) {

@@ -300,9 +300,9 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var member_r238 = ctx.$implicit;
+            var member_r231 = ctx.$implicit;
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('member', member_r238);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('member', member_r231);
           }
         }
 
@@ -573,23 +573,23 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var slain_r236 = ctx.$implicit;
+            var slain_r229 = ctx.$implicit;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r236.pre);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r229.pre);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'href',
-              slain_r236.link,
+              slain_r229.link,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeUrl']
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r236.title);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](slain_r229.title);
           }
         }
 
@@ -609,19 +609,19 @@ function _classCallCheck(instance, Constructor) {
           }
 
           if (rf & 2) {
-            var ctx_r235 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            var ctx_r228 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'href',
-              'mailto:' + ctx_r235.member.email,
+              'mailto:' + ctx_r228.member.email,
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsanitizeUrl']
             );
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r235.member.email);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r228.member.email);
           }
         }
 

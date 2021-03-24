@@ -25,7 +25,7 @@ export class LoginPopupComponent {
 
   public yearDate: Date;
 
-  constructor(public authService: AuthService, public userService: UserService, private toastr: ToastrService) {}
+  constructor(public authService: AuthService, public userService: UserService, private toastr: ToastrService) { }
 
   signInWithEmailAndPassword(form: LoginForm) {
     this.loading = true;
@@ -123,13 +123,15 @@ export class LoginPopupComponent {
             //3 ig has meeting in 2021 re-route to homepage
             this.authService.closeLogin();
             this.toastr.success(`התחברת בהצלחה!`);
+
           } else {
             //4 else re-route to host-page
             //todo create functuon to host
 
             this.authService.closeLoginHost();
             this.toastr.success(`התחברת בהצלחה!`);
-          }
+        
+                }
           break;
         case 'bereaved':
           //
@@ -160,41 +162,9 @@ export class LoginPopupComponent {
         default:
           break;
       }
+      
 
-      // if (this.kindOfRole === 'bereaved') {
-      //   //console.log('1', Object.keys(this.bravedMeetings));
-      //   console.log('2', this.bravedMeetings);
-      //   let b = Object.keys(this.bravedMeetings).find(i => i === '2020');
-      //   console.log('b', b);
-      //   let r = Object.keys(this.bravedMeetings).find(i => i === '2021');
-      //   console.log('r', r);
 
-      //   let c = Object.keys(this.bravedMeetings).find(i => i === '2021');
-      //   console.log('bcccc', c);
-      //   // console.log('rrrrrrrrrrrrrrrrrrr', this.user.bereavedParticipation);
-      //   if (!c) {
-      //     console.log('undefined');
-      //     this.authService.closeLoginTell()
-      //     this.toastr.success(`התחברת בהצלחה!`);
-      //   }
-      //   else {
-      //     this.authService.closeLogin()
-      //     this.toastr.success(`התחברת בהצלחה!`);
-      //   }
-      // }
-
-      // else {
-      //   this.authService.closeLoginRegister()
-      //   this.toastr.success(`התחברת בהצלחה!`);
-      // }
-
-      // }
-
-      // }
-      // }
-      // else {
-      //   this.authService.closeLogin()
-      // }
     });
   }
 

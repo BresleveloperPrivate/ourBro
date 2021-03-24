@@ -615,7 +615,7 @@
            */
           sort(predicate) {
             if (this._multiple && this.selected) {
-              (this/** @type {?} */ ._selected)
+              this /** @type {?} */._selected
                 .sort(predicate);
             }
           }
@@ -953,10 +953,10 @@
              */
             this.BLINK =
               this.isBrowser &&
-              !!(/** @type {?} */ (window).chrome || hasV8BreakIterator) &&
-                typeof CSS !== 'undefined' &&
-                !this.EDGE &&
-                !this.TRIDENT;
+              !!(/** @type {?} */ (window.chrome || hasV8BreakIterator)) &&
+              typeof CSS !== 'undefined' &&
+              !this.EDGE &&
+              !this.TRIDENT;
             // Webkit is part of the userAgent in EdgeHTML, Blink and Trident. Therefore we need to
             // ensure that Webkit runs standalone and is not used as another engine's base.
             /**
@@ -1300,7 +1300,7 @@
               scrollContainer.scrollLeft = 1;
               rtlScrollAxisType = scrollContainer.scrollLeft === 0 ? 1 /* NEGATED */ : 2 /* INVERTED */;
             }
-            (scrollContainer/** @type {?} */ .parentNode)
+            scrollContainer /** @type {?} */.parentNode
               .removeChild(scrollContainer);
           }
           return rtlScrollAxisType;
@@ -1328,7 +1328,7 @@
           if (shadowDomIsSupported == null) {
             /** @type {?} */
             const head = typeof document !== 'undefined' ? document.head : null;
-            shadowDomIsSupported = !!(head && (/** @type {?} */ (head).createShadowRoot || head.attachShadow));
+            shadowDomIsSupported = !!(head && /** @type {?} */ (head.createShadowRoot || head.attachShadow));
           }
           return shadowDomIsSupported;
         }
@@ -1868,37 +1868,38 @@
             if (!this._platform.isBrowser) {
               return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__['of'])();
             }
-            return new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable']
-            /**
-             * @param {?} observer
-             * @return {?}
-             */(observer => {
-              if (!this._globalSubscription) {
-                this._addGlobalListener();
-              }
-              // In the case of a 0ms delay, use an observable without auditTime
-              // since it does add a perceptible delay in processing overhead.
-              /** @type {?} */
-              const subscription =
-                auditTimeInMs > 0
-                  ? this._scrolled
-                      .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__['auditTime'])(auditTimeInMs))
-                      .subscribe(observer)
-                  : this._scrolled.subscribe(observer);
-              this._scrolledCount++;
-              return (
-                /**
-                 * @return {?}
-                 */
-                () => {
-                  subscription.unsubscribe();
-                  this._scrolledCount--;
-                  if (!this._scrolledCount) {
-                    this._removeGlobalListener();
-                  }
+            return new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable'](
+              /**
+               * @param {?} observer
+               * @return {?}
+               */ observer => {
+                if (!this._globalSubscription) {
+                  this._addGlobalListener();
                 }
-              );
-            });
+                // In the case of a 0ms delay, use an observable without auditTime
+                // since it does add a perceptible delay in processing overhead.
+                /** @type {?} */
+                const subscription =
+                  auditTimeInMs > 0
+                    ? this._scrolled
+                        .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__['auditTime'])(auditTimeInMs))
+                        .subscribe(observer)
+                    : this._scrolled.subscribe(observer);
+                this._scrolledCount++;
+                return (
+                  /**
+                   * @return {?}
+                   */
+                  () => {
+                    subscription.unsubscribe();
+                    this._scrolledCount--;
+                    if (!this._scrolledCount) {
+                      this._removeGlobalListener();
+                    }
+                  }
+                );
+              }
+            );
           }
           /**
            * @return {?}
@@ -2087,20 +2088,20 @@
             this.ngZone = ngZone;
             this.dir = dir;
             this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_2__['Subject']();
-            this._elementScrolled = new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable']
-            /**
-             * @param {?} observer
-             * @return {?}
-             */(observer =>
-              this.ngZone.runOutsideAngular(
-                /**
-                 * @return {?}
-                 */
-                () =>
-                  Object(rxjs__WEBPACK_IMPORTED_MODULE_2__['fromEvent'])(this.elementRef.nativeElement, 'scroll')
-                    .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__['takeUntil'])(this._destroyed))
-                    .subscribe(observer)
-              )
+            this._elementScrolled = new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable'](
+              /**
+               * @param {?} observer
+               * @return {?}
+               */ observer =>
+                this.ngZone.runOutsideAngular(
+                  /**
+                   * @return {?}
+                   */
+                  () =>
+                    Object(rxjs__WEBPACK_IMPORTED_MODULE_2__['fromEvent'])(this.elementRef.nativeElement, 'scroll')
+                      .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__['takeUntil'])(this._destroyed))
+                      .subscribe(observer)
+                )
             );
           }
           /**
@@ -2596,30 +2597,30 @@
             /**
              * Emits when the index of the first element visible in the viewport changes.
              */
-            this.scrolledIndexChange = new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable']
-            /**
-             * @param {?} observer
-             * @return {?}
-             */(observer =>
-              this._scrollStrategy.scrolledIndexChange.subscribe(
-                /**
-                 * @param {?} index
-                 * @return {?}
-                 */
-                index =>
-                  Promise.resolve().then(
-                    /**
-                     * @return {?}
-                     */
-                    () =>
-                      this.ngZone.run(
-                        /**
-                         * @return {?}
-                         */
-                        () => observer.next(index)
-                      )
-                  )
-              )
+            this.scrolledIndexChange = new rxjs__WEBPACK_IMPORTED_MODULE_2__['Observable'](
+              /**
+               * @param {?} observer
+               * @return {?}
+               */ observer =>
+                this._scrollStrategy.scrolledIndexChange.subscribe(
+                  /**
+                   * @param {?} index
+                   * @return {?}
+                   */
+                  index =>
+                    Promise.resolve().then(
+                      /**
+                       * @return {?}
+                       */
+                      () =>
+                        this.ngZone.run(
+                          /**
+                           * @return {?}
+                           */
+                          () => observer.next(index)
+                        )
+                    )
+                )
             );
             /**
              * A stream that emits whenever the rendered range changes.
@@ -4205,178 +4206,6 @@
         /***/
       },
 
-    /***/ './src/app/shared/components/join-button/join-button.component.ts':
-      /*!************************************************************************!*\
-  !*** ./src/app/shared/components/join-button/join-button.component.ts ***!
-  \************************************************************************/
-      /*! exports provided: JoinButtonComponent */
-      /***/ function(module, __webpack_exports__, __webpack_require__) {
-        'use strict';
-        __webpack_require__.r(__webpack_exports__);
-        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'JoinButtonComponent', function() {
-          return JoinButtonComponent;
-        });
-        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
-        );
-        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
-        );
-
-        const _c0 = function(a0) {
-          return { joined: a0 };
-        };
-        class JoinButtonComponent {
-          constructor() {
-            this.joined = false;
-            this.disabled = false;
-            this.join = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
-          }
-        }
-        JoinButtonComponent.ɵfac = function JoinButtonComponent_Factory(t) {
-          return new (t || JoinButtonComponent)();
-        };
-        JoinButtonComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
-          type: JoinButtonComponent,
-          selectors: [['app-join-button']],
-          inputs: { joined: 'joined', disabled: 'disabled' },
-          outputs: { join: 'join' },
-          decls: 2,
-          vars: 5,
-          consts: [[1, 'join-button', 3, 'ngClass', 'disabled', 'click']],
-          template: function JoinButtonComponent_Template(rf, ctx) {
-            if (rf & 1) {
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'button', 0);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
-                'click',
-                function JoinButtonComponent_Template_button_click_0_listener() {
-                  return ctx.join.emit();
-                }
-              );
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](1);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
-            }
-            if (rf & 2) {
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
-                'ngClass',
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction1'](3, _c0, ctx.joined)
-              )('disabled', ctx.disabled);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
-                ' ',
-                ctx.joined ? '\u05DE\u05E9\u05D5\u05D1\u05E5' : '\u05E9\u05D9\u05D1\u05D5\u05E5',
-                '\n'
-              );
-            }
-          },
-          directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__['NgClass']],
-          styles: [
-            '.join-button[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 2px solid #00a099;\n  width: 125px;\n  max-width: 125px;\n  height: 40px;\n  font-size: 20px;\n  font-family: "arbel";\n  color: #00736d;\n  background-color: white;\n  cursor: pointer;\n}\n.join-button[_ngcontent-%COMP%]:disabled {\n  color: grey;\n  border-color: grey;\n  cursor: not-allowed;\n}\n.join-button.joined[_ngcontent-%COMP%] {\n  color: white;\n  border-color: #00a099;\n  background-color: #00a099;\n  cursor: auto;\n}\n@media only screen and (max-width: 600px) {\n  .join-button[_ngcontent-%COMP%] {\n    width: 100px;\n    height: 30px;\n    margin-left: 12px;\n    margin-bottom: 8px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2NvbXBvbmVudHMvam9pbi1idXR0b24vQzpcXFVzZXJzXFxUZWhpbGFcXGxhc3RcXG91ckJyb1xcb3VyLWJyb3RoZXJzLXdlYi9zcmNcXGFwcFxcc2hhcmVkXFxjb21wb25lbnRzXFxqb2luLWJ1dHRvblxcam9pbi1idXR0b24uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2pvaW4tYnV0dG9uL2pvaW4tYnV0dG9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0Esb0JBQUE7RUFDQSxjQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0FDQ0Y7QURDRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0FDQ0o7QURFRTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtBQ0FKO0FER0U7RUEzQkY7SUE0QkksWUFBQTtJQUNBLFlBQUE7SUFDQSxpQkFBQTtJQUNBLGtCQUFBO0VDQUY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2pvaW4tYnV0dG9uL2pvaW4tYnV0dG9uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmpvaW4tYnV0dG9uIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgYm9yZGVyOiAycHggc29saWQgcmdiKDAsIDE2MCwgMTUzKTtcclxuICB3aWR0aDogMTI1cHg7XHJcbiAgbWF4LXdpZHRoOiAxMjVweDtcclxuICBoZWlnaHQ6IDQwcHg7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGZvbnQtZmFtaWx5OiAnYXJiZWwnO1xyXG4gIGNvbG9yOiByZ2IoMCwgMTE1LCAxMDkpO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuXHJcbiAgJjpkaXNhYmxlZCB7XHJcbiAgICBjb2xvcjogZ3JleTtcclxuICAgIGJvcmRlci1jb2xvcjogZ3JleTtcclxuICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XHJcbiAgfVxyXG5cclxuICAmLmpvaW5lZCB7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBib3JkZXItY29sb3I6IHJnYigwLCAxNjAsIDE1Myk7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMCwgMTYwLCAxNTMpO1xyXG4gICAgY3Vyc29yOiBhdXRvO1xyXG4gIH1cclxuXHJcbiAgQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA2MDBweCkge1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEycHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiA4cHg7XHJcbiAgfVxyXG59XHJcbiIsIi5qb2luLWJ1dHRvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBib3JkZXI6IDJweCBzb2xpZCAjMDBhMDk5O1xuICB3aWR0aDogMTI1cHg7XG4gIG1heC13aWR0aDogMTI1cHg7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAyMHB4O1xuICBmb250LWZhbWlseTogXCJhcmJlbFwiO1xuICBjb2xvcjogIzAwNzM2ZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5qb2luLWJ1dHRvbjpkaXNhYmxlZCB7XG4gIGNvbG9yOiBncmV5O1xuICBib3JkZXItY29sb3I6IGdyZXk7XG4gIGN1cnNvcjogbm90LWFsbG93ZWQ7XG59XG4uam9pbi1idXR0b24uam9pbmVkIHtcbiAgY29sb3I6IHdoaXRlO1xuICBib3JkZXItY29sb3I6ICMwMGEwOTk7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMGEwOTk7XG4gIGN1cnNvcjogYXV0bztcbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNjAwcHgpIHtcbiAgLmpvaW4tYnV0dG9uIHtcbiAgICB3aWR0aDogMTAwcHg7XG4gICAgaGVpZ2h0OiAzMHB4O1xuICAgIG1hcmdpbi1sZWZ0OiAxMnB4O1xuICAgIG1hcmdpbi1ib3R0b206IDhweDtcbiAgfVxufSJdfQ== */'
-          ],
-          changeDetection: 0
-        });
-        /*@__PURE__*/ (function() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
-            JoinButtonComponent,
-            [
-              {
-                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
-                args: [
-                  {
-                    selector: 'app-join-button',
-                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ChangeDetectionStrategy'].OnPush,
-                    templateUrl: './join-button.component.html',
-                    styleUrls: ['./join-button.component.scss']
-                  }
-                ]
-              }
-            ],
-            null,
-            {
-              joined: [
-                {
-                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
-                }
-              ],
-              disabled: [
-                {
-                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
-                }
-              ],
-              join: [
-                {
-                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
-                }
-              ]
-            }
-          );
-        })();
-
-        /***/
-      },
-
-    /***/ './src/app/shared/components/join-button/join-button.module.ts':
-      /*!*********************************************************************!*\
-  !*** ./src/app/shared/components/join-button/join-button.module.ts ***!
-  \*********************************************************************/
-      /*! exports provided: JoinButtonModule */
-      /***/ function(module, __webpack_exports__, __webpack_require__) {
-        'use strict';
-        __webpack_require__.r(__webpack_exports__);
-        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'JoinButtonModule', function() {
-          return JoinButtonModule;
-        });
-        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
-        );
-        /* harmony import */ var _join_button_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-          /*! ./join-button.component */ './src/app/shared/components/join-button/join-button.component.ts'
-        );
-        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
-        );
-
-        class JoinButtonModule {}
-        JoinButtonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
-          type: JoinButtonModule
-        });
-        JoinButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
-          factory: function JoinButtonModule_Factory(t) {
-            return new (t || JoinButtonModule)();
-          },
-          imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']]]
-        });
-        (function() {
-          (typeof ngJitMode === 'undefined' || ngJitMode) &&
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](JoinButtonModule, {
-              declarations: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
-              imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']],
-              exports: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']]
-            });
-        })();
-        /*@__PURE__*/ (function() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
-            JoinButtonModule,
-            [
-              {
-                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
-                args: [
-                  {
-                    declarations: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
-                    exports: [_join_button_component__WEBPACK_IMPORTED_MODULE_1__['JoinButtonComponent']],
-                    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__['CommonModule']]
-                  }
-                ]
-              }
-            ],
-            null,
-            null
-          );
-        })();
-
-        /***/
-      },
-
     /***/ './src/app/shared/components/meeting-join-button/meeting-join-button.component.ts':
       /*!****************************************************************************************!*\
   !*** ./src/app/shared/components/meeting-join-button/meeting-join-button.component.ts ***!
@@ -4612,7 +4441,7 @@
 
         function MeetingListRowComponent_span_17_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'span', 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'span', 12);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](
               1,
               ' - \u05DE\u05D5\u05D6\u05DE\u05E0\u05D9\u05DD \u05D1\u05DC\u05D1\u05D3 '
@@ -4627,18 +4456,18 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r85 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            const ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
               ' ',
-              ctx_r85.meeting.bereaved.firstName + ' ' + ctx_r85.meeting.bereaved.lastName,
+              ctx_r83.meeting.bereaved.firstName + ' ' + ctx_r83.meeting.bereaved.lastName,
               ' '
             );
           }
         }
         function MeetingListRowComponent_div_18_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 13);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'span', 8);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](2, ' \u05D0\u05D7\\\u05D5\u05EA: ');
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -4648,7 +4477,7 @@
               2,
               1,
               'span',
-              15
+              14
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
@@ -4660,15 +4489,15 @@
         }
         function MeetingListRowComponent_div_19_Template(rf, ctx) {
           if (rf & 1) {
-            const _r87 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 16);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'app-meeting-join-button', 17);
+            const _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'app-meeting-join-button', 16);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'join',
               function MeetingListRowComponent_div_19_Template_app_meeting_join_button_join_1_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r87);
-                const ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r86.joinMeeting.emit(ctx_r86.meeting);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r85);
+                const ctx_r84 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                return ctx_r84.joinMeeting.emit(ctx_r84.meeting);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
@@ -4678,21 +4507,6 @@
             const ctx_r82 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('user', ctx_r82.user)('meeting', ctx_r82.meeting);
-          }
-        }
-        function MeetingListRowComponent_ng_template_20_Template(rf, ctx) {
-          if (rf & 1) {
-            const _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-meeting-join-button', 18);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
-              'click',
-              function MeetingListRowComponent_ng_template_20_Template_app_meeting_join_button_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r89);
-                const ctx_r88 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r88.onLogin();
-              }
-            );
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
         }
         class MeetingListRowComponent {
@@ -4706,7 +4520,6 @@
             this.sideMenuOpen = false;
           }
           onLogin() {
-            console.log('5555555555566666');
             this.authService.requestToLogin('Login');
           }
         }
@@ -4725,8 +4538,8 @@
           selectors: [['app-meeting-list-row']],
           inputs: { user: 'user', meeting: 'meeting', showBereaved: 'showBereaved' },
           outputs: { login: 'login', joinMeeting: 'joinMeeting' },
-          decls: 22,
-          vars: 12,
+          decls: 20,
+          vars: 11,
           consts: [
             [1, 'meeting-item'],
             [1, 'meeting-item-col', 'meeting-name'],
@@ -4739,14 +4552,12 @@
             [1, 'mobile-label'],
             ['style', 'margin-right: 2px;', 4, 'ngIf'],
             ['class', 'meeting-item-col meeting-bereaved', 4, 'ngIf'],
-            ['class', 'meeting-item-col meeting-join', 4, 'ngIf', 'ngIfElse'],
-            ['login', ''],
+            ['class', 'meeting-item-col meeting-join', 4, 'ngIf'],
             [2, 'margin-right', '2px'],
             [1, 'meeting-item-col', 'meeting-bereaved'],
             [4, 'ngIf'],
             [1, 'meeting-item-col', 'meeting-join'],
-            [1, 'join-button', 3, 'user', 'meeting', 'join'],
-            [1, 'join-button', 3, 'click']
+            [1, 'join-button', 3, 'user', 'meeting', 'join']
           ],
           template: function MeetingListRowComponent_Template(rf, ctx) {
             if (rf & 1) {
@@ -4805,20 +4616,9 @@
                 'div',
                 11
               );
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
-                20,
-                MeetingListRowComponent_ng_template_20_Template,
-                1,
-                0,
-                'ng-template',
-                null,
-                12,
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplateRefExtractor']
-              );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
             }
             if (rf & 2) {
-              const _r83 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](21);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'routerLink',
@@ -4835,7 +4635,7 @@
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
                 ' ',
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipeBind2'](12, 9, ctx.meeting.date, 'dd.MM.yyyy'),
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpipeBind2'](12, 8, ctx.meeting.date, 'dd.MM.yyyy'),
                 ' '
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](5);
@@ -4848,7 +4648,7 @@
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'ngIf',
                 ctx.participationsService.isUserHaveAllDetails(ctx.user)
-              )('ngIfElse', _r83);
+              );
             }
           },
           directives: [
@@ -5294,19 +5094,22 @@
         /* harmony import */ var _meeting_join_button_meeting_join_button_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
           /*! ../../meeting-join-button/meeting-join-button.module */ './src/app/shared/components/meeting-join-button/meeting-join-button.module.ts'
         );
-        /* harmony import */ var _list_list_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+        /* harmony import */ var _join_button_join_button_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+          /*! ../../join-button/join-button.module */ './src/app/shared/components/join-button/join-button.module.ts'
+        );
+        /* harmony import */ var _list_list_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
           /*! ../../list/list.module */ './src/app/shared/components/list/list.module.ts'
         );
-        /* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+        /* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
           /*! @angular/cdk/scrolling */ './node_modules/@angular/cdk/__ivy_ngcc__/fesm2015/scrolling.js'
         );
-        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
           /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
         );
-        /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+        /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
           /*! @angular/router */ './node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js'
         );
-        /* harmony import */ var _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+        /* harmony import */ var _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
           /*! ../../checkbox/checkbox.module */ './src/app/shared/components/checkbox/checkbox.module.ts'
         );
 
@@ -5325,11 +5128,12 @@
           imports: [
             [
               _meeting_join_button_meeting_join_button_module__WEBPACK_IMPORTED_MODULE_3__['MeetingJoinButtonModule'],
-              _list_list_module__WEBPACK_IMPORTED_MODULE_4__['ListModule'],
-              _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__['ScrollingModule'],
-              _angular_common__WEBPACK_IMPORTED_MODULE_6__['CommonModule'],
-              _angular_router__WEBPACK_IMPORTED_MODULE_7__['RouterModule'],
-              _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_8__['CheckboxModule']
+              _join_button_join_button_module__WEBPACK_IMPORTED_MODULE_4__['JoinButtonModule'],
+              _list_list_module__WEBPACK_IMPORTED_MODULE_5__['ListModule'],
+              _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_6__['ScrollingModule'],
+              _angular_common__WEBPACK_IMPORTED_MODULE_7__['CommonModule'],
+              _angular_router__WEBPACK_IMPORTED_MODULE_8__['RouterModule'],
+              _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_9__['CheckboxModule']
             ]
           ]
         });
@@ -5342,11 +5146,12 @@
               ],
               imports: [
                 _meeting_join_button_meeting_join_button_module__WEBPACK_IMPORTED_MODULE_3__['MeetingJoinButtonModule'],
-                _list_list_module__WEBPACK_IMPORTED_MODULE_4__['ListModule'],
-                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__['ScrollingModule'],
-                _angular_common__WEBPACK_IMPORTED_MODULE_6__['CommonModule'],
-                _angular_router__WEBPACK_IMPORTED_MODULE_7__['RouterModule'],
-                _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_8__['CheckboxModule']
+                _join_button_join_button_module__WEBPACK_IMPORTED_MODULE_4__['JoinButtonModule'],
+                _list_list_module__WEBPACK_IMPORTED_MODULE_5__['ListModule'],
+                _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_6__['ScrollingModule'],
+                _angular_common__WEBPACK_IMPORTED_MODULE_7__['CommonModule'],
+                _angular_router__WEBPACK_IMPORTED_MODULE_8__['RouterModule'],
+                _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_9__['CheckboxModule']
               ],
               exports: [
                 _meetings_list_component__WEBPACK_IMPORTED_MODULE_1__['MeetingsListComponent'],
@@ -5366,11 +5171,12 @@
                       _meeting_join_button_meeting_join_button_module__WEBPACK_IMPORTED_MODULE_3__[
                         'MeetingJoinButtonModule'
                       ],
-                      _list_list_module__WEBPACK_IMPORTED_MODULE_4__['ListModule'],
-                      _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__['ScrollingModule'],
-                      _angular_common__WEBPACK_IMPORTED_MODULE_6__['CommonModule'],
-                      _angular_router__WEBPACK_IMPORTED_MODULE_7__['RouterModule'],
-                      _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_8__['CheckboxModule']
+                      _join_button_join_button_module__WEBPACK_IMPORTED_MODULE_4__['JoinButtonModule'],
+                      _list_list_module__WEBPACK_IMPORTED_MODULE_5__['ListModule'],
+                      _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_6__['ScrollingModule'],
+                      _angular_common__WEBPACK_IMPORTED_MODULE_7__['CommonModule'],
+                      _angular_router__WEBPACK_IMPORTED_MODULE_8__['RouterModule'],
+                      _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_9__['CheckboxModule']
                     ],
                     declarations: api,
                     exports: api

@@ -26,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { EmailComponent } from './email/email/email.component';
+import { SendEmailComponent } from './send-email/send-email/send-email.component';
 
 //import { MapModule } from './map/map.module';
 //import { MapComponent } from './map/map.component';
@@ -34,7 +35,7 @@ import { EmailComponent } from './email/email/email.component';
 registerLocaleData(localeHe);
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, EmailComponent],
+  declarations: [AppComponent, HomePageComponent, EmailComponent, SendEmailComponent],
   imports: [
     ShellModule,
     // AngularFireModule.initializeApp(firebaseConfig),

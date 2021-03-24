@@ -1,6 +1,640 @@
 (window['webpackJsonp'] = window['webpackJsonp'] || []).push([
   ['default~admin-bereaveds-page-admin-bereaveds-page-module~admin-users-page-admin-users-page-module'],
   {
+    /***/ './src/app/shared/components/editable-text/editable-text.component.ts':
+      /*!****************************************************************************!*\
+  !*** ./src/app/shared/components/editable-text/editable-text.component.ts ***!
+  \****************************************************************************/
+      /*! exports provided: EditableTextComponent */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'EditableTextComponent', function() {
+          return EditableTextComponent;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
+        );
+        /* harmony import */ var _places_select_places_select_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+          /*! ../places-select/places-select.component */ './src/app/shared/components/places-select/places-select.component.ts'
+        );
+
+        function EditableTextComponent_div_0_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'span', 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r322 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
+              ' ',
+              ctx_r322.value || '\u05D0\u05D9\u05DF',
+              ' '
+            );
+          }
+        }
+        function EditableTextComponent_div_1_input_2_Template(rf, ctx) {
+          if (rf & 1) {
+            const _r329 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'input', 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'input',
+              function EditableTextComponent_div_1_input_2_Template_input_input_0_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r329);
+                const ctx_r328 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                return (ctx_r328.newValue = $event.target.value);
+              }
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r324 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx_r324.value);
+          }
+        }
+        function EditableTextComponent_div_1_input_3_Template(rf, ctx) {
+          if (rf & 1) {
+            const _r331 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'input', 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'input',
+              function EditableTextComponent_div_1_input_3_Template_input_input_0_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r331);
+                const ctx_r330 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                return (ctx_r330.newValue = $event.target.value);
+              }
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r325 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx_r325.value);
+          }
+        }
+        function EditableTextComponent_div_1_textarea_4_Template(rf, ctx) {
+          if (rf & 1) {
+            const _r333 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'textarea', 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'input',
+              function EditableTextComponent_div_1_textarea_4_Template_textarea_input_0_listener($event) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r333);
+                const ctx_r332 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                return (ctx_r332.newValue = $event.target.value);
+              }
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r326 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx_r326.value);
+          }
+        }
+        const _c0 = function() {
+          return ['(cities)'];
+        };
+        function EditableTextComponent_div_1_app_places_select_5_Template(rf, ctx) {
+          if (rf & 1) {
+            const _r335 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'app-places-select', 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+              'change',
+              function EditableTextComponent_div_1_app_places_select_5_Template_app_places_select_change_0_listener(
+                $event
+              ) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r335);
+                const ctx_r334 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                return (ctx_r334.newValue = $event);
+              }
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r327 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
+              'types',
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction0'](3, _c0)
+            )('formattedAddress', ctx_r327.value)(
+              'placeholder',
+              '\u05DE\u05E7\u05D5\u05DD \u05DE\u05D2\u05D5\u05E8\u05D9\u05DD'
+            );
+          }
+        }
+        function EditableTextComponent_div_1_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerStart'](1, 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              2,
+              EditableTextComponent_div_1_input_2_Template,
+              1,
+              1,
+              'input',
+              6
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              3,
+              EditableTextComponent_div_1_input_3_Template,
+              1,
+              1,
+              'input',
+              7
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              4,
+              EditableTextComponent_div_1_textarea_4_Template,
+              1,
+              1,
+              'textarea',
+              8
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+              5,
+              EditableTextComponent_div_1_app_places_select_5_Template,
+              1,
+              4,
+              'app-places-select',
+              9
+            );
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementContainerEnd']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
+          }
+          if (rf & 2) {
+            const ctx_r323 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngSwitch', ctx_r323.type);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngSwitchCase', 'text');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngSwitchCase', 'date');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngSwitchCase', 'textarea');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngSwitchCase', 'cities');
+          }
+        }
+        class EditableTextComponent {
+          constructor(elementRef) {
+            this.elementRef = elementRef;
+            this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
+            this.editable = false;
+          }
+          set value(value) {
+            this._value = value;
+            this.newValue = this.value;
+          }
+          get value() {
+            return this._value;
+          }
+          clickout(event) {
+            if (this.elementRef.nativeElement.contains(event.target)) {
+              this.editable = true;
+            } else {
+              if (this.editable) {
+                this.editable = false;
+                if (!this.newValue) {
+                  this.valueChange.emit(null);
+                } else {
+                  this.valueChange.emit(this.type === 'date' ? Date.parse(this.newValue) : this.newValue);
+                }
+              }
+            }
+          }
+        }
+        EditableTextComponent.ɵfac = function EditableTextComponent_Factory(t) {
+          return new (t || EditableTextComponent)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdirectiveInject'](
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ElementRef']
+            )
+          );
+        };
+        EditableTextComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
+          type: EditableTextComponent,
+          selectors: [['app-editable-text']],
+          hostBindings: function EditableTextComponent_HostBindings(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
+                'click',
+                function EditableTextComponent_click_HostBindingHandler($event) {
+                  return ctx.clickout($event);
+                },
+                false,
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵresolveDocument']
+              );
+            }
+          },
+          inputs: { value: 'value', type: 'type' },
+          outputs: { valueChange: 'valueChange' },
+          decls: 2,
+          vars: 2,
+          consts: [
+            ['class', 'value-container', 4, 'ngIf'],
+            ['class', 'input-container', 4, 'ngIf'],
+            [1, 'value-container'],
+            [1, 'value'],
+            [1, 'input-container'],
+            [3, 'ngSwitch'],
+            ['type', 'text', 3, 'value', 'input', 4, 'ngSwitchCase'],
+            ['type', 'date', 3, 'value', 'input', 4, 'ngSwitchCase'],
+            ['class', 'form-field', 3, 'value', 'input', 4, 'ngSwitchCase'],
+            [3, 'types', 'formattedAddress', 'placeholder', 'change', 4, 'ngSwitchCase'],
+            ['type', 'text', 3, 'value', 'input'],
+            ['type', 'date', 3, 'value', 'input'],
+            [1, 'form-field', 3, 'value', 'input'],
+            [3, 'types', 'formattedAddress', 'placeholder', 'change']
+          ],
+          template: function EditableTextComponent_Template(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+                0,
+                EditableTextComponent_div_0_Template,
+                3,
+                1,
+                'div',
+                0
+              );
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtemplate'](
+                1,
+                EditableTextComponent_div_1_Template,
+                6,
+                5,
+                'div',
+                1
+              );
+            }
+            if (rf & 2) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', !ctx.editable);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.editable);
+            }
+          },
+          directives: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__['NgIf'],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__['NgSwitch'],
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__['NgSwitchCase'],
+            _places_select_places_select_component__WEBPACK_IMPORTED_MODULE_2__['PlacesSelectComponent']
+          ],
+          styles: [
+            '\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL2VkaXRhYmxlLXRleHQvZWRpdGFibGUtdGV4dC5jb21wb25lbnQuc2NzcyJ9 */'
+          ],
+          changeDetection: 0
+        });
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            EditableTextComponent,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
+                args: [
+                  {
+                    selector: 'app-editable-text',
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ChangeDetectionStrategy'].OnPush,
+                    templateUrl: './editable-text.component.html',
+                    styleUrls: ['./editable-text.component.scss']
+                  }
+                ]
+              }
+            ],
+            function() {
+              return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ElementRef'] }];
+            },
+            {
+              value: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              type: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              valueChange: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
+                }
+              ],
+              clickout: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['HostListener'],
+                  args: ['document:click', ['$event']]
+                }
+              ]
+            }
+          );
+        })();
+
+        /***/
+      },
+
+    /***/ './src/app/shared/components/editable-text/editable-text.module.ts':
+      /*!*************************************************************************!*\
+  !*** ./src/app/shared/components/editable-text/editable-text.module.ts ***!
+  \*************************************************************************/
+      /*! exports provided: EditableTextModule */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'EditableTextModule', function() {
+          return EditableTextModule;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @angular/common */ './node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js'
+        );
+        /* harmony import */ var _places_select_places_select_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+          /*! ../places-select/places-select.module */ './src/app/shared/components/places-select/places-select.module.ts'
+        );
+        /* harmony import */ var _editable_text_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+          /*! ./editable-text.component */ './src/app/shared/components/editable-text/editable-text.component.ts'
+        );
+
+        class EditableTextModule {}
+        EditableTextModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
+          type: EditableTextModule
+        });
+        EditableTextModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
+          factory: function EditableTextModule_Factory(t) {
+            return new (t || EditableTextModule)();
+          },
+          imports: [
+            [
+              _angular_common__WEBPACK_IMPORTED_MODULE_1__['CommonModule'],
+              _places_select_places_select_module__WEBPACK_IMPORTED_MODULE_2__['PlacesSelectModule']
+            ]
+          ]
+        });
+        (function() {
+          (typeof ngJitMode === 'undefined' || ngJitMode) &&
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](EditableTextModule, {
+              declarations: [_editable_text_component__WEBPACK_IMPORTED_MODULE_3__['EditableTextComponent']],
+              imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__['CommonModule'],
+                _places_select_places_select_module__WEBPACK_IMPORTED_MODULE_2__['PlacesSelectModule']
+              ],
+              exports: [_editable_text_component__WEBPACK_IMPORTED_MODULE_3__['EditableTextComponent']]
+            });
+        })();
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            EditableTextModule,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
+                args: [
+                  {
+                    declarations: [_editable_text_component__WEBPACK_IMPORTED_MODULE_3__['EditableTextComponent']],
+                    imports: [
+                      _angular_common__WEBPACK_IMPORTED_MODULE_1__['CommonModule'],
+                      _places_select_places_select_module__WEBPACK_IMPORTED_MODULE_2__['PlacesSelectModule']
+                    ],
+                    exports: [_editable_text_component__WEBPACK_IMPORTED_MODULE_3__['EditableTextComponent']]
+                  }
+                ]
+              }
+            ],
+            null,
+            null
+          );
+        })();
+
+        /***/
+      },
+
+    /***/ './src/app/shared/components/places-select/places-select.component.ts':
+      /*!****************************************************************************!*\
+  !*** ./src/app/shared/components/places-select/places-select.component.ts ***!
+  \****************************************************************************/
+      /*! exports provided: PlacesSelectComponent */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'PlacesSelectComponent', function() {
+          return PlacesSelectComponent;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @agm/core */ './node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js'
+        );
+        /// <reference types="@types/googlemaps" />
+        /// <reference types="@types/googlemaps" />
+
+        const _c0 = ['palcesInput'];
+        class PlacesSelectComponent {
+          constructor(mapsAPILoader) {
+            this.mapsAPILoader = mapsAPILoader;
+            this.formattedAddress = '';
+            this.change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
+          }
+          ngAfterViewInit() {
+            this.getPlaceAutocomplete();
+          }
+          getPlaceAutocomplete() {
+            this.mapsAPILoader.load().then(() => {
+              const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement, {
+                //componentRestrictions: { country: ['IL', 'PS'] },
+                //  types: this.types.slice()
+              });
+              google.maps.event.addListener(autocomplete, 'place_changed', () => {
+                const place = autocomplete.getPlace();
+                const parsedAddress = {
+                  formattedAddress: place.formatted_address.replace(', ישראל', ''),
+                  latitude: place.geometry.location.lat(),
+                  longitude: place.geometry.location.lng()
+                };
+                this.change.emit(parsedAddress);
+              });
+            });
+          }
+        }
+        PlacesSelectComponent.ɵfac = function PlacesSelectComponent_Factory(t) {
+          return new (t || PlacesSelectComponent)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdirectiveInject'](
+              _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader']
+            )
+          );
+        };
+        PlacesSelectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
+          type: PlacesSelectComponent,
+          selectors: [['app-places-select']],
+          viewQuery: function PlacesSelectComponent_Query(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵviewQuery'](_c0, true);
+            }
+            if (rf & 2) {
+              var _t;
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵqueryRefresh'](
+                (_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵloadQuery']())
+              ) && (ctx.addresstext = _t.first);
+            }
+          },
+          inputs: {
+            formattedAddress: 'formattedAddress',
+            types: 'types',
+            placeholder: 'placeholder',
+            invalid: 'invalid'
+          },
+          outputs: { change: 'change' },
+          decls: 2,
+          vars: 4,
+          consts: [
+            [
+              'type',
+              'text',
+              'autocorrect',
+              'off',
+              'autocapitalize',
+              'off',
+              'spellcheck',
+              'off',
+              1,
+              'form-field',
+              3,
+              'value',
+              'placeholder'
+            ],
+            ['palcesInput', '']
+          ],
+          template: function PlacesSelectComponent_Template(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'input', 0, 1);
+            }
+            if (rf & 2) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵclassProp']('invalid', ctx.invalid);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx.formattedAddress)(
+                'placeholder',
+                ctx.placeholder
+              );
+            }
+          },
+          styles: [
+            '\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BsYWNlcy1zZWxlY3QvcGxhY2VzLXNlbGVjdC5jb21wb25lbnQuc2NzcyJ9 */'
+          ]
+        });
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectComponent,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
+                args: [
+                  {
+                    selector: 'app-places-select',
+                    templateUrl: './places-select.component.html',
+                    styleUrls: ['./places-select.component.scss']
+                  }
+                ]
+              }
+            ],
+            function() {
+              return [{ type: _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader'] }];
+            },
+            {
+              formattedAddress: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              types: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              placeholder: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              invalid: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              change: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
+                }
+              ],
+              addresstext: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ViewChild'],
+                  args: ['palcesInput']
+                }
+              ]
+            }
+          );
+        })();
+
+        /***/
+      },
+
+    /***/ './src/app/shared/components/places-select/places-select.module.ts':
+      /*!*************************************************************************!*\
+  !*** ./src/app/shared/components/places-select/places-select.module.ts ***!
+  \*************************************************************************/
+      /*! exports provided: PlacesSelectModule */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'PlacesSelectModule', function() {
+          return PlacesSelectModule;
+        });
+        /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */ './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */ var _places_select_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! ./places-select.component */ './src/app/shared/components/places-select/places-select.component.ts'
+        );
+
+        class PlacesSelectModule {}
+        PlacesSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
+          type: PlacesSelectModule
+        });
+        PlacesSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
+          factory: function PlacesSelectModule_Factory(t) {
+            return new (t || PlacesSelectModule)();
+          }
+        });
+        (function() {
+          (typeof ngJitMode === 'undefined' || ngJitMode) &&
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](PlacesSelectModule, {
+              declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+              exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+            });
+        })();
+        /*@__PURE__*/ (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectModule,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
+                args: [
+                  {
+                    declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+                    exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+                  }
+                ]
+              }
+            ],
+            null,
+            null
+          );
+        })();
+
+        /***/
+      },
+
     /***/ './src/app/shared/components/select/select.component.ts':
       /*!**************************************************************!*\
   !*** ./src/app/shared/components/select/select.component.ts ***!
@@ -26,16 +660,16 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const v_r275 = ctx.$implicit;
-            const ctx_r274 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            const v_r268 = ctx.$implicit;
+            const ctx_r267 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
               'title',
-              ctx_r274.optionsMap[v_r275].details || ''
+              ctx_r267.optionsMap[v_r268].details || ''
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](
               ' ',
-              ctx_r274.optionsMap[v_r275].label,
+              ctx_r267.optionsMap[v_r268].label,
               ' '
             );
           }
@@ -52,8 +686,8 @@
             );
           }
           if (rf & 2) {
-            const ctx_r269 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r269.values);
+            const ctx_r262 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r262.values);
           }
         }
         function SelectComponent_ng_template_4_Template(rf, ctx) {
@@ -63,22 +697,22 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r271 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r264 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r271.placeholder);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate'](ctx_r264.placeholder);
           }
         }
         function SelectComponent_div_6_Template(rf, ctx) {
           if (rf & 1) {
-            const _r277 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            const _r270 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 10);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](1, 'span', 11);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function SelectComponent_div_6_Template_span_click_1_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r277);
-                const ctx_r276 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
-                return ctx_r276.valueChange.emit(null);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r270);
+                const ctx_r269 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+                return ctx_r269.valueChange.emit(null);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](2, 'x');
@@ -89,30 +723,30 @@
         }
         function SelectComponent_div_7_div_1_Template(rf, ctx) {
           if (rf & 1) {
-            const _r281 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
+            const _r274 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵgetCurrentView']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementStart'](0, 'div', 15);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵlistener'](
               'click',
               function SelectComponent_div_7_div_1_Template_div_click_0_listener() {
-                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r281);
-                const option_r279 = ctx.$implicit;
-                const ctx_r280 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
-                return ctx_r280.onSelectOption(option_r279.value);
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵrestoreView'](_r274);
+                const option_r272 = ctx.$implicit;
+                const ctx_r273 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+                return ctx_r273.onSelectOption(option_r272.value);
               }
             );
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtext'](1);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const option_r279 = ctx.$implicit;
-            const ctx_r278 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
+            const option_r272 = ctx.$implicit;
+            const ctx_r271 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext'](2);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵclassProp'](
               'active',
-              ctx_r278.selectedMap[option_r279.value]
+              ctx_r271.selectedMap[option_r272.value]
             );
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('title', option_r279.details || '');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('title', option_r272.details || '');
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', option_r279.label, ' ');
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵtextInterpolate1'](' ', option_r272.label, ' ');
           }
         }
         function SelectComponent_div_7_Template(rf, ctx) {
@@ -129,9 +763,9 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
           }
           if (rf & 2) {
-            const ctx_r273 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
+            const ctx_r266 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵnextContext']();
             _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r273.options);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngForOf', ctx_r266.options);
           }
         }
         const _c0 = function(a0, a1) {
@@ -293,13 +927,13 @@
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelementEnd']();
             }
             if (rf & 2) {
-              const _r270 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](5);
+              const _r263 = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵreference'](5);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty'](
                 'ngClass',
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵpureFunction2'](5, _c0, ctx.readonly, ctx.editable)
               );
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.values.length)('ngIfElse', _r270);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.values.length)('ngIfElse', _r263);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](3);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('ngIf', ctx.editable);
               _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵadvance'](1);

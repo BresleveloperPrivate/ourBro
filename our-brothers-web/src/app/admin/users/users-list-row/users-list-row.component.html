@@ -16,6 +16,10 @@
     </div>
     <div class="col col-name">
       {{ user.profile?.firstName }}
+
+
+      <img class="star-image" *ngIf="(currentUser.registered+2)>d"
+        src="../../../../assets/img/iconfinder_star_2561394.png" />
     </div>
     <div class="col col-name">
       {{ user.profile?.lastName }}
@@ -36,6 +40,21 @@
         <div class="phone-icon"></div>
       </div>
     </div>
+
+    <div class="col col-guidance">
+      <div class="bereaved-otherLang" *ngIf="user?.lastSignInDate">
+        <div class="otherLang">
+          {{ normalDAte}}
+        </div>
+      </div>
+    </div>
+    <div class="col col-guidance">
+      <div class="bereaved-otherLang" *ngIf="user?.role">
+        <div class="otherLang">
+          {{ user.role}}
+        </div>
+      </div>
+    </div>
     <app-join-button class="join-place"></app-join-button>
   </div>
   <div class="expanded-row" *ngIf="expanded">
@@ -50,7 +69,9 @@
         גיל:
       </div>
       <div>
-        {{ user.profile?.birthDay ? (user.profile.birthDay | seniority) : 'אין' }}
+        <!-- {{ user.profile?.birthDay ? (user.profile.birthDay | seniority) : 'אין' }} -->
+        <app-editable-text [value]="user.profile?.birthDay ? (user.profile.birthDay | seniority) : ''"
+          (valueChange)="userBirthDate.emit($event)" [type]="'date'"></app-editable-text>
       </div>
     </div>
     <div class="expanded-col col-dates">

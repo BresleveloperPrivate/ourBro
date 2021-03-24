@@ -81,6 +81,299 @@ function _createClass(Constructor, protoProps, staticProps) {
   ['tell-page-tell-page-module'],
   {
     /***/
+    './src/app/shared/components/places-select/places-select.component.ts':
+      /*!****************************************************************************!*\
+    !*** ./src/app/shared/components/places-select/places-select.component.ts ***!
+    \****************************************************************************/
+
+      /*! exports provided: PlacesSelectComponent */
+
+      /***/
+      function srcAppSharedComponentsPlacesSelectPlacesSelectComponentTs(
+        module,
+        __webpack_exports__,
+        __webpack_require__
+      ) {
+        'use strict';
+
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */
+
+        __webpack_require__.d(__webpack_exports__, 'PlacesSelectComponent', function() {
+          return PlacesSelectComponent;
+        });
+        /* harmony import */
+
+        var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */
+          './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */
+
+        var _agm_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! @agm/core */
+          './node_modules/@agm/core/__ivy_ngcc__/fesm2015/agm-core.js'
+        ); /// <reference types="@types/googlemaps" />
+        /// <reference types="@types/googlemaps" />
+
+        var _c0 = ['palcesInput'];
+
+        var PlacesSelectComponent = /*#__PURE__*/ (function() {
+          function PlacesSelectComponent(mapsAPILoader) {
+            _classCallCheck(this, PlacesSelectComponent);
+
+            this.mapsAPILoader = mapsAPILoader;
+            this.formattedAddress = '';
+            this.change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__['EventEmitter']();
+          }
+
+          _createClass(PlacesSelectComponent, [
+            {
+              key: 'ngAfterViewInit',
+              value: function ngAfterViewInit() {
+                this.getPlaceAutocomplete();
+              }
+            },
+            {
+              key: 'getPlaceAutocomplete',
+              value: function getPlaceAutocomplete() {
+                var _this = this;
+
+                this.mapsAPILoader.load().then(function() {
+                  var autocomplete = new google.maps.places.Autocomplete(_this.addresstext.nativeElement, {
+                    //componentRestrictions: { country: ['IL', 'PS'] },
+                    //  types: this.types.slice()
+                  });
+                  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    var parsedAddress = {
+                      formattedAddress: place.formatted_address.replace(', ישראל', ''),
+                      latitude: place.geometry.location.lat(),
+                      longitude: place.geometry.location.lng()
+                    };
+
+                    _this.change.emit(parsedAddress);
+                  });
+                });
+              }
+            }
+          ]);
+
+          return PlacesSelectComponent;
+        })();
+
+        PlacesSelectComponent.ɵfac = function PlacesSelectComponent_Factory(t) {
+          return new (t || PlacesSelectComponent)(
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdirectiveInject'](
+              _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader']
+            )
+          );
+        };
+
+        PlacesSelectComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineComponent']({
+          type: PlacesSelectComponent,
+          selectors: [['app-places-select']],
+          viewQuery: function PlacesSelectComponent_Query(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵviewQuery'](_c0, true);
+            }
+
+            if (rf & 2) {
+              var _t;
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵqueryRefresh'](
+                (_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵloadQuery']())
+              ) && (ctx.addresstext = _t.first);
+            }
+          },
+          inputs: {
+            formattedAddress: 'formattedAddress',
+            types: 'types',
+            placeholder: 'placeholder',
+            invalid: 'invalid'
+          },
+          outputs: {
+            change: 'change'
+          },
+          decls: 2,
+          vars: 4,
+          consts: [
+            [
+              'type',
+              'text',
+              'autocorrect',
+              'off',
+              'autocapitalize',
+              'off',
+              'spellcheck',
+              'off',
+              1,
+              'form-field',
+              3,
+              'value',
+              'placeholder'
+            ],
+            ['palcesInput', '']
+          ],
+          template: function PlacesSelectComponent_Template(rf, ctx) {
+            if (rf & 1) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵelement'](0, 'input', 0, 1);
+            }
+
+            if (rf & 2) {
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵclassProp']('invalid', ctx.invalid);
+
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵproperty']('value', ctx.formattedAddress)(
+                'placeholder',
+                ctx.placeholder
+              );
+            }
+          },
+          styles: [
+            '\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3BsYWNlcy1zZWxlY3QvcGxhY2VzLXNlbGVjdC5jb21wb25lbnQuc2NzcyJ9 */'
+          ]
+        });
+        /*@__PURE__*/
+
+        (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectComponent,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Component'],
+                args: [
+                  {
+                    selector: 'app-places-select',
+                    templateUrl: './places-select.component.html',
+                    styleUrls: ['./places-select.component.scss']
+                  }
+                ]
+              }
+            ],
+            function() {
+              return [
+                {
+                  type: _agm_core__WEBPACK_IMPORTED_MODULE_1__['MapsAPILoader']
+                }
+              ];
+            },
+            {
+              formattedAddress: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              types: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              placeholder: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              invalid: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Input']
+                }
+              ],
+              change: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['Output']
+                }
+              ],
+              addresstext: [
+                {
+                  type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['ViewChild'],
+                  args: ['palcesInput']
+                }
+              ]
+            }
+          );
+        })();
+        /***/
+      },
+
+    /***/
+    './src/app/shared/components/places-select/places-select.module.ts':
+      /*!*************************************************************************!*\
+    !*** ./src/app/shared/components/places-select/places-select.module.ts ***!
+    \*************************************************************************/
+
+      /*! exports provided: PlacesSelectModule */
+
+      /***/
+      function srcAppSharedComponentsPlacesSelectPlacesSelectModuleTs(
+        module,
+        __webpack_exports__,
+        __webpack_require__
+      ) {
+        'use strict';
+
+        __webpack_require__.r(__webpack_exports__);
+        /* harmony export (binding) */
+
+        __webpack_require__.d(__webpack_exports__, 'PlacesSelectModule', function() {
+          return PlacesSelectModule;
+        });
+        /* harmony import */
+
+        var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+          /*! @angular/core */
+          './node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js'
+        );
+        /* harmony import */
+
+        var _places_select_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+          /*! ./places-select.component */
+          './src/app/shared/components/places-select/places-select.component.ts'
+        );
+
+        var PlacesSelectModule = function PlacesSelectModule() {
+          _classCallCheck(this, PlacesSelectModule);
+        };
+
+        PlacesSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineNgModule']({
+          type: PlacesSelectModule
+        });
+        PlacesSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵdefineInjector']({
+          factory: function PlacesSelectModule_Factory(t) {
+            return new (t || PlacesSelectModule)();
+          }
+        });
+
+        (function() {
+          (typeof ngJitMode === 'undefined' || ngJitMode) &&
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵɵsetNgModuleScope'](PlacesSelectModule, {
+              declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+              exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+            });
+        })();
+        /*@__PURE__*/
+
+        (function() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__['ɵsetClassMetadata'](
+            PlacesSelectModule,
+            [
+              {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_0__['NgModule'],
+                args: [
+                  {
+                    declarations: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']],
+                    exports: [_places_select_component__WEBPACK_IMPORTED_MODULE_1__['PlacesSelectComponent']]
+                  }
+                ]
+              }
+            ],
+            null,
+            null
+          );
+        })();
+        /***/
+      },
+
+    /***/
     './src/app/tell/bereaved-guidance-form/bereaved-guidance-form.component.ts':
       /*!*********************************************************************************!*\
     !*** ./src/app/tell/bereaved-guidance-form/bereaved-guidance-form.component.ts ***!
@@ -135,11 +428,11 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'onGuidanceChange',
               value: function onGuidanceChange(id, value) {
-                var _this = this;
+                var _this2 = this;
 
                 this.selected[id] = value;
                 this.notIntereseted = !Object.keys(this.selected).filter(function(id) {
-                  return !!_this.selected[id];
+                  return !!_this2.selected[id];
                 }).length;
               }
             },
@@ -156,10 +449,10 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'onSubmit',
               value: function onSubmit() {
-                var _this2 = this;
+                var _this3 = this;
 
                 var selectedIds = Object.keys(this.selected).filter(function(id) {
-                  return !!_this2.selected[id];
+                  return !!_this3.selected[id];
                 });
                 this.submit.emit({
                   answered: true,
@@ -577,7 +870,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'ngOnInit',
               value: function ngOnInit() {
-                var _this3 = this;
+                var _this4 = this;
 
                 var profile = this.user.profile || {};
 
@@ -622,7 +915,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                   agree: [false, _angular_forms__WEBPACK_IMPORTED_MODULE_1__['Validators'].requiredTrue]
                 });
                 this.form.valueChanges.subscribe(function() {
-                  _this3.formInvalid = false;
+                  _this4.formInvalid = false;
                 });
               }
             },
@@ -1439,7 +1732,8 @@ function _createClass(Constructor, protoProps, staticProps) {
         }
 
         var TellPageComponent = /*#__PURE__*/ (function() {
-          function TellPageComponent(router, authService, participationsService, toastr, _userService, dataService) { // public enrollmentService: EnrollmentService,
+          function TellPageComponent(router, authService, participationsService, toastr, _userService, dataService) {
+            // public enrollmentService: EnrollmentService,
             _classCallCheck(this, TellPageComponent);
 
             this.router = router;
@@ -1461,10 +1755,10 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'ngOnInit',
               value: function ngOnInit() {
-                var _this4 = this;
+                var _this5 = this;
 
                 this.authService.firebaseUser.subscribe(function(firebaseUser) {
-                  return (_this4.firebaseUser = firebaseUser);
+                  return (_this5.firebaseUser = firebaseUser);
                 });
                 this.subscriptions.push(
                   Object(rxjs__WEBPACK_IMPORTED_MODULE_1__['combineLatest'])(
@@ -1483,12 +1777,12 @@ function _createClass(Constructor, protoProps, staticProps) {
                       currentStep = _ref2[1];
 
                     console.log('tel page firebase subscribe user ', user);
-                    _this4.user = user;
+                    _this5.user = user;
                     console.log('TellPageComponent firebase cb', user);
 
-                    _this4._userService.setFirebaseTellUser(user);
+                    _this5._userService.setFirebaseTellUser(user);
 
-                    _this4.currentStep = currentStep; // Auto navigations after the first step
+                    _this5.currentStep = currentStep; // Auto navigations after the first step
 
                     if (currentStep > 0) {
                       if (user) {
@@ -1497,9 +1791,9 @@ function _createClass(Constructor, protoProps, staticProps) {
                           user.role !== models__WEBPACK_IMPORTED_MODULE_3__['UserRole'].bereaved &&
                           !user.isAdmin
                         ) {
-                          _this4.router.navigate(['/home']);
+                          _this5.router.navigate(['/home']);
                         } else if (user.role !== models__WEBPACK_IMPORTED_MODULE_3__['UserRole'].bereaved) {
-                          _this4.dataService.setUserRole(
+                          _this5.dataService.setUserRole(
                             user,
                             models__WEBPACK_IMPORTED_MODULE_3__['UserRole'].bereaved
                           );
@@ -1507,28 +1801,28 @@ function _createClass(Constructor, protoProps, staticProps) {
                       }
 
                       if (!user) {
-                        _this4.currentStep$.next(1);
+                        _this5.currentStep$.next(1);
 
-                        _this4.authService.requestToLogin();
-                      } else if (!_this4.participationsService.isBereavedHaveProfileDetails(user)) {
-                        _this4.currentStep$.next(2);
-                      } else if (!_this4.participationsService.isBereavedHaveSlainDetails(user)) {
-                        _this4.currentStep$.next(3);
-                      } else if (!_this4.participationsService.isBereavedAnsweredTrainingMeeting(user)) {
-                        _this4.currentStep$.next(4);
+                        _this5.authService.requestToLogin();
+                      } else if (!_this5.participationsService.isBereavedHaveProfileDetails(user)) {
+                        _this5.currentStep$.next(2);
+                      } else if (!_this5.participationsService.isBereavedHaveSlainDetails(user)) {
+                        _this5.currentStep$.next(3);
+                      } else if (!_this5.participationsService.isBereavedAnsweredTrainingMeeting(user)) {
+                        _this5.currentStep$.next(4);
                       } else {
-                        _this4.currentStep$.next(5);
+                        _this5.currentStep$.next(5);
                       }
                     }
                   })
                 );
                 this.subscriptions.push(
                   this.dataService.getMeetings().subscribe(function(meetings) {
-                    _this4.meetings = meetings;
+                    _this5.meetings = meetings;
                   })
                 );
                 setTimeout(function() {
-                  _this4.currentStep$.next(1);
+                  _this5.currentStep$.next(1);
                 });
               }
             },
@@ -1538,7 +1832,8 @@ function _createClass(Constructor, protoProps, staticProps) {
                 this.dataService.setUserProfile(this.user, profileForm); //this.slain=slain;
                 //this.expended = true;
                 //this.a=false;
-              }
+              } // public onSubmit() {
+              // }
             },
             {
               key: 'onSlainsSubmit',
@@ -1569,23 +1864,23 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'onJoinMeeting',
               value: function onJoinMeeting(meeting) {
-                var _this5 = this;
+                var _this6 = this;
 
                 if (window.confirm('האם ברצונך להשתבץ למפגש?')) {
                   if (this.user.role === models__WEBPACK_IMPORTED_MODULE_3__['UserRole'].bereaved) {
                     this.dataService.bereavedJoinMeeting(this.user, meeting).subscribe(
                       function() {
-                        _this5.toastr.success('שובצת בהצלחה!');
+                        _this6.toastr.success('שובצת בהצלחה!');
 
-                        _this5.router.navigate([
+                        _this6.router.navigate([
                           'meetings/'
-                            .concat(_this5.year, '/')
+                            .concat(_this6.year, '/')
                             .concat(meeting.hostId, '/')
                             .concat(meeting.id)
                         ]);
                       },
                       function() {
-                        _this5.toastr.error('שגיאה - לא ניתן להשתבץ למפגש. נא ליצור קשר.');
+                        _this6.toastr.error('שגיאה - לא ניתן להשתבץ למפגש. נא ליצור קשר.');
                       }
                     );
                   }
@@ -2191,11 +2486,11 @@ function _createClass(Constructor, protoProps, staticProps) {
             {
               key: 'ngOnInit',
               value: function ngOnInit() {
-                var _this6 = this;
+                var _this7 = this;
 
                 console.log('SlainFormComponent ngOnInit');
                 this.userService.firebaseTellUser.subscribe(function(u) {
-                  _this6.user = u;
+                  _this7.user = u;
                   console.log('SlainFormComponent recieved firebaseTellUser.subscribe', u);
                   var slain = {};
                   var story = '';
@@ -2211,14 +2506,14 @@ function _createClass(Constructor, protoProps, staticProps) {
                     story = u.bereavedProfile.story;
                   }
 
-                  _this6.initiateFrom(slain, story);
+                  _this7.initiateFrom(slain, story);
                 });
               }
             },
             {
               key: 'initiateFrom',
               value: function initiateFrom(slain, story) {
-                var _this7 = this;
+                var _this8 = this;
 
                 var ddate = slain.deathDate ? new Date(slain.deathDate).toISOString().split('T')[0] : '';
                 this.form = this.fb.group({
@@ -2248,7 +2543,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                   ]
                 });
                 this.form.valueChanges.subscribe(function() {
-                  _this7.formInvalid = false;
+                  _this8.formInvalid = false;
                 });
               }
             },

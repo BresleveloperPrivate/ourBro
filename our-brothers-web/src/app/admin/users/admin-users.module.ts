@@ -8,12 +8,17 @@ import { ListModule } from '../../shared/components/list/list.module';
 import { FreeTextFilterModule } from '../../shared/components/free-text-filter/free-text-filter.module';
 import { SortUsersPipe } from './sort-users/sort-users.pipe';
 import { JoinButtonModule } from '../../shared/components/join-button/join-button.module';
+import { EditableTextModule } from 'src/app/shared/components/editable-text/editable-text.module';
 
 const api = [UsersListRowComponent, UsersListComponent];
 
 @NgModule({
-  imports: [SelectModule, CommonModule, PipesModule, ListModule, FreeTextFilterModule, JoinButtonModule],
+
+  imports: [SelectModule,
+    CommonModule, PipesModule,
+    ListModule, FreeTextFilterModule,
+    EditableTextModule, JoinButtonModule],
   declarations: [api, SortUsersPipe],
   exports: api
 })
-export class AdminUsersModule {}
+export class AdminUsersModule { }

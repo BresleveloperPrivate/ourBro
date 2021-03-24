@@ -1,3 +1,4 @@
+import { UpdateUserBirthDate } from './../../../shared/services/data.service';
 import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { User } from 'models';
@@ -17,9 +18,11 @@ export class UsersListComponent {
 
   @Output() volunteering = new EventEmitter<VolunteeringUser>();
   @Output() deleting = new EventEmitter<User>();
+  @Output() userBirthDate = new EventEmitter<UpdateUserBirthDate>();
 
   sortedColumn: SortedColumn = {
     column: 'name',
     direction: 'asc'
   };
+
 }

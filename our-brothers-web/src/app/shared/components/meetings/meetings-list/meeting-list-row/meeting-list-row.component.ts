@@ -23,8 +23,6 @@ export class MeetingListRowComponent {
   constructor(public participationsService: ParticipationsService, public authService: AuthService) {}
 
   onLogin() {
-    console.log('5555555555566666');
-
     this.authService.requestToLogin('Login');
   }
 }

@@ -4,13 +4,14 @@ import { SortedColumn } from '../../../shared/components/list/list-header/list-h
 
 const getFirstName = (user: User) => (user.profile ? user.profile.firstName : '');
 const getLastName = (user: User) => (user.profile ? user.profile.lastName : '');
-//const getAge = (user: User) => (user.profile ? user.profile.birthDay : '')
+const getActive = (user: User) => (user ? user.lastSignInDate : '')
 //const getEmail = (user: User) => (user.profile ? user.profile.email : '');
 //const getPhoneNumber = (user: User) => (user.profile ? user.profile.phoneNumber : '');
 
 const valueGetter = {
   firstName: getFirstName,
-  lastName: getLastName
+  lastName: getLastName,
+  active: getActive
   // email: getEmail,
   // phoneNumber: getPhoneNumber
 };

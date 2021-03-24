@@ -27,12 +27,13 @@ export class MeetingsListComponent implements OnChanges {
     direction: 'asc'
   };
 
-  constructor(public participationsService: ParticipationsService) {}
+  constructor(public participationsService: ParticipationsService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.meetings || changes.user) {
       this.isUserHaveAllDetails = this.participationsService.isUserHaveAllDetails(this.user);
       this.meetings = this.meetings || [];
+      this.showFullMeetings = true;
       this.filter();
       this.sort();
     }

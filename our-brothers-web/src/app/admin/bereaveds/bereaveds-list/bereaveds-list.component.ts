@@ -1,3 +1,4 @@
+import { MenuItem } from './../../../shell/header/models';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from 'models';
 import { MEMORIAL_YEAR } from '../../../shared/constants';
@@ -40,4 +41,10 @@ export class BereavedsListComponent {
     column: 'name',
     direction: 'asc'
   };
+  
+
+
+    
+    
+
 }

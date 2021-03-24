@@ -8,7 +8,9 @@ const getLastName = (user: User, year: number) => (user.profile ? user.profile.l
 const getAddress = (user: User, year: number) => user?.profile?.address?.latitude || Number.MIN_VALUE;
 const getAge = (user: User, year: number) => user.profile?.birthDay || Number.MAX_VALUE;
 const getSeniority = (user: User, year: number) => user.bereavedProfile?.slains?.[0]?.deathDate || Number.MAX_VALUE;
-const getGuidance = (user: User, year: number) => user.bereavedParticipation?.[year]?.guidance?.general || '';
+const getActive = (user: User, year: number) => user.lastSignInDate||Number.MAX_VALUE;
+
+//const getGuidance = (user: User, year: number) => user.bereavedParticipation?.[year]?.guidance?.general || '';
 const getStatus = (user: User, year: number) => user.bereavedParticipation?.[year]?.status || '';
 const getMeetings = (user: User, year: number) => user.bereavedParticipation?.[year]?.meetings?.length || 0;
 
@@ -18,7 +20,7 @@ const valueGetter = {
   address: getAddress,
   age: getAge,
   seniority: getSeniority,
-  guidance: getGuidance,
+  active: getActive,
   status: getStatus,
   meetings: getMeetings
 };

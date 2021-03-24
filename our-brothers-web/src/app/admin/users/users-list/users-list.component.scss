@@ -28,4 +28,9 @@
     text-align: center;
     color: #818181;
   }
+  .empty{
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 30px;
+  }
 }

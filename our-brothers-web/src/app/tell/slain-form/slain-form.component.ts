@@ -32,13 +32,13 @@ export class SlainFormComponent implements OnInit {
   formInvalid = false;
   maxDate = new Date().toISOString().split('T')[0];
 
-  constructor(private fb: FormBuilder, 
-              private utilsService: UtilsService, 
-              private userService: UserService, 
-              private router: Router) {}
+  constructor(private fb: FormBuilder,
+    private utilsService: UtilsService,
+    private userService: UserService,
+    private router: Router) { }
 
 
-  ngOnInit(){
+  ngOnInit() {
     console.log("SlainFormComponent ngOnInit");
 
 
@@ -48,11 +48,11 @@ export class SlainFormComponent implements OnInit {
 
       let slain = {}
       let story = ''
-      if (  u && 
-            u.bereavedProfile && 
-            u.bereavedProfile.slains && 
-            u.bereavedProfile.slains.length && 
-            u.bereavedProfile.slains.length > 0
+      if (u &&
+        u.bereavedProfile &&
+        u.bereavedProfile.slains &&
+        u.bereavedProfile.slains.length &&
+        u.bereavedProfile.slains.length > 0
       ) {
         slain = u.bereavedProfile.slains[0]
         story = u.bereavedProfile.story
@@ -104,9 +104,10 @@ export class SlainFormComponent implements OnInit {
         firstName: this.firstName.value.trim(),
         lastName: this.lastName.value.trim(),
         deathDate: new Date(this.deathDate.value).getTime(),
+
+
         story: this.story.value.trim()
       };
-
       this.submit.emit(parsedForm);
     } else {
       this.formInvalid = true;
