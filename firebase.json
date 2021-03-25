@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "good",
+    "target": "work",
     "public": "our-brothers-web/public",
     "ignore": [
       "firebase.json",
