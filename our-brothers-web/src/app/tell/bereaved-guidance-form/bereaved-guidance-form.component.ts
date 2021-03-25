@@ -18,7 +18,7 @@ export class BereavedGuidanceFormComponent {
   @Output()
   public submit = new EventEmitter<BereavedGuidance>();
 
-  constructor() {}
+  constructor() { }
 
   onGuidanceChange(id: BereavedGuidanceGeneral, value: boolean) {
     this.selected[id] = value;
@@ -38,7 +38,7 @@ export class BereavedGuidanceFormComponent {
     const selectedIds = Object.keys(this.selected).filter(id => !!this.selected[id]) as BereavedGuidanceGeneral[];
 
     this.submit.emit({
-      answered: true,
+      // answered: true,
       general: selectedIds.length ? selectedIds : null
     });
   }

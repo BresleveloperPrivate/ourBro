@@ -147,7 +147,7 @@ export enum BereavedStatus {
 }
 
 export interface BereavedGuidance {
-  answered: boolean;
+  //answered: boolean;
   general: BereavedGuidanceGeneral[];
 }
 

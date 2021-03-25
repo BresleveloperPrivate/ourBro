@@ -87,7 +87,7 @@ export class ParticipationsService {
 
     return (
       !meeting.bereaved &&
-      this.isBereavedHaveAllDetails(user) &&
+      //this.isBereavedHaveAllDetails(user) &&
       this.isBereavedHaveSlainDetails(user)
       //&&
       // this.isBereavedAnsweredTrainingMeeting(user)
@@ -111,9 +111,10 @@ export class ParticipationsService {
       return false;
     }
 
-    if (user.role === UserRole.bereaved) {
-      return this.isBereavedHaveAllDetails(user);
-    } else {
+    // if (user.role === UserRole.bereaved) {
+    //   return this.isBereavedHaveAllDetails(user);
+    // } 
+    else {
       return this.isParticipateHaveAllDetails(user);
     }
   }
@@ -127,18 +128,18 @@ export class ParticipationsService {
     return false;
   }
 
-  isBereavedHaveAllDetails(user: User): boolean {
-    if (!user) {
-      return false;
-    }
+  // isBereavedHaveAllDetails(user: User): boolean {
+  //   if (!user) {
+  //     return false;
+  //   }
 
-    return (
-      this.isBereavedHaveProfileDetails(user) &&
-      this.isBereavedHaveSlainDetails(user)
-      //&&
-      //this.isBereavedAnsweredTrainingMeeting(user)
-    );
-  }
+  //   return (
+  //     this.isBereavedHaveProfileDetails(user) &&
+  //     this.isBereavedHaveSlainDetails(user)
+  //     //&&
+  //     //this.isBereavedAnsweredTrainingMeeting(user)
+  //   );
+  // }
 
   isBereavedHaveProfileDetails(user: User) {
     if (user?.profile) {

@@ -20,7 +20,7 @@ export class MeetingListRowComponent {
   public year = MEMORIAL_YEAR;
   public sideMenuOpen = false;
 
-  constructor(public participationsService: ParticipationsService, public authService: AuthService) {}
+  constructor(public participationsService: ParticipationsService, public authService: AuthService) { }
 
   onLogin() {
     this.authService.requestToLogin('Login');

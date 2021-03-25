@@ -41,8 +41,8 @@
 
 
 
-  <!-- ; else login -->
-  <div class="meeting-item-col meeting-join" *ngIf="participationsService.isUserHaveAllDetails(user)">
+  <!--; else login  -->
+  <div class="meeting-item-col meeting-join" *ngIf="participationsService?.isUserHaveAllDetails(user) ">
     <app-meeting-join-button class="join-button" [user]="user" [meeting]="meeting" (join)="joinMeeting.emit(meeting)">
     </app-meeting-join-button>
   </div>
