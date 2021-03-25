@@ -15,6 +15,10 @@ import {
   UpdateBereavedGuidance,
   UpdateBereavedNotes,
   UpdateBereavedEmail,
+  // UpdateBereavedName,
+  // UpdateBereavedSlain,
+  // UpdateBereavedSlainDate,
+  UpdateBereavedPhone,
   UpdateUserAddress,
   UpdateUserBirthDate,
   BereavedVolunteer
@@ -208,6 +212,30 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
       this.dataService.setBereavedEmail(bereaved, email);
     }
   }
+  bereavedPhone({ bereaved, phone }: UpdateBereavedPhone) {
+    if (bereaved) {
+      this.dataService.setBereavedPhone(bereaved, phone);
+    }
+  }
+
+  // bereavedName({ bereaved, firstName ,lastName }: UpdateBereavedName) {
+  //   if (bereaved) {
+  //     this.dataService.setBereavedPhone(bereaved, firstName,lastName);
+  //   }
+  // }
+  // bereavedSlain({ bereaved, slainFirstName,slainLastName  }: UpdateBereavedSlain) {
+  //   if (bereaved) {
+  //     this.dataService.setBereavedPhone(bereaved, slainFirstName,slainLastName);
+  //   }
+  // }
+  // bereavedSlainDate({ bereaved,slainDeathDate  }: UpdateBereavedPhone) {
+  //   if (bereaved) {
+  //     this.dataService.setBereavedPhone(bereaved, slainDeathDate);
+  //   }
+  // }
+
+  // 
+
 
   bereavedAddress({ user, address }: UpdateUserAddress) {
     if (user) {

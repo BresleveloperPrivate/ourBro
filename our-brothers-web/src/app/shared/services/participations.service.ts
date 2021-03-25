@@ -39,7 +39,9 @@ export class ParticipationsService {
   }
 
   isBereavedParticipatingMeeting(user: User, meeting: Meeting, year = MEMORIAL_YEAR): boolean {
+    // return user?.bereavedParticipation?.[year]?.meetings?.some(isUserPresentInMeeting(meeting));
     return user?.bereavedParticipation?.[year]?.meetings?.some(isUserPresentInMeeting(meeting));
+
   }
 
   isHostParticipatingMeeting(user: User, meeting: Meeting): boolean {
@@ -86,8 +88,9 @@ export class ParticipationsService {
     return (
       !meeting.bereaved &&
       this.isBereavedHaveAllDetails(user) &&
-      this.isBereavedHaveSlainDetails(user) &&
-      this.isBereavedAnsweredTrainingMeeting(user)
+      this.isBereavedHaveSlainDetails(user)
+      //&&
+      // this.isBereavedAnsweredTrainingMeeting(user)
     );
   }
 
@@ -96,9 +99,9 @@ export class ParticipationsService {
       return false;
     }
 
-    if (this.isParticipateParticipatingMeeting(user, meeting, year)) {
-      return false;
-    }
+    // if (this.isParticipateParticipatingMeeting(user, meeting, year)) {
+    //   return false;
+    // }
 
     return !meeting.invited && meeting.count <= meeting.capacity && this.isParticipateHaveAllDetails(user);
   }
@@ -131,8 +134,9 @@ export class ParticipationsService {
 
     return (
       this.isBereavedHaveProfileDetails(user) &&
-      this.isBereavedHaveSlainDetails(user) &&
-      this.isBereavedAnsweredTrainingMeeting(user)
+      this.isBereavedHaveSlainDetails(user)
+      //&&
+      //this.isBereavedAnsweredTrainingMeeting(user)
     );
   }
 
@@ -149,7 +153,7 @@ export class ParticipationsService {
     return !!user?.bereavedProfile;
   }
 
-  isBereavedAnsweredTrainingMeeting(user: User, year = MEMORIAL_YEAR): boolean {
-    return user?.bereavedParticipation?.[year]?.guidance?.answered;
-  }
+  // isBereavedAnsweredTrainingMeeting(user: User, year = MEMORIAL_YEAR): boolean {
+  //   return user?.bereavedParticipation?.[year]?.guidance?.answered;
+  // }
 }

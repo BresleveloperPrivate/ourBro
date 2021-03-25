@@ -8,12 +8,17 @@ import {
   VolunteeringUser,
   UpdateBereavedNotes,
   UpdateBereavedEmail,
+  // UpdateBereavedName,
+  // UpdateBereavedSlain,
+  // UpdateBereavedSlainDate,
+  UpdateBereavedPhone,
   UpdateUserAddress,
   UpdateBereavedGuidance,
   UpdateUserBirthDate,
   BereavedVolunteer
 } from '../../../shared/services/data.service';
 import { SortedColumn } from '../../../shared/components/list/list-header/list-header.types';
+
 
 @Component({
   selector: 'app-bereaveds-list',
@@ -33,7 +38,11 @@ export class BereavedsListComponent {
   @Output() bereavedGuidance = new EventEmitter<UpdateBereavedGuidance>();
   @Output() bereavedBirthDate = new EventEmitter<UpdateUserBirthDate>();
   @Output() bereavedNotes = new EventEmitter<UpdateBereavedNotes>();
-  @Output() bereavedemail = new EventEmitter<UpdateBereavedEmail>();
+  @Output() bereavedEmail = new EventEmitter<UpdateBereavedEmail>();
+  // @Output() bereavedName = new EventEmitter<UpdateBereavedName>();
+  // @Output() bereavedSlain = new EventEmitter<UpdateBereavedSlain>();
+  // @Output() bereavedSlainDate = new EventEmitter<UpdateBereavedSlainDate>();
+  @Output() bereavedPhone = new EventEmitter<UpdateBereavedPhone>();
   @Output() bereavedAddress = new EventEmitter<UpdateUserAddress>();
   @Output() bereavedVolunteer = new EventEmitter<BereavedVolunteer>();
   @Output() removeVolunteer = new EventEmitter<User>();

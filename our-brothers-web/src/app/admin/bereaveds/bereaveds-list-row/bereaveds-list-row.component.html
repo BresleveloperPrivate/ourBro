@@ -19,8 +19,9 @@
         <div class="collapse-icon"></div>
       </button>
     </div>
-    <div class="col col-name">
-      {{ bereaved.profile?.firstName + ' ' + bereaved.profile?.lastName }}
+    <div class="col col-name to-edit">
+      <app-editable-text [value]="bereaved.profile?.firstName + ' ' + bereaved.profile?.lastName"
+        (valueChange)="bereavedName.emit($event)" [type]="'textarea'"></app-editable-text>
 
       <!-- <img class="star-image" *ngIf="(currentUser.registered+2)>d"
         src="../../../../assets/img/iconfinder_star_2561394.png" /> -->
@@ -28,19 +29,22 @@
     </div>
     <div class="col col-communications">
       <div class="bereaved-phone" *ngIf="bereaved.profile?.phoneNumber">
-        <div class="phone-number">
-          {{ bereaved.profile.phoneNumber | phone }}
+        <div class="phone-number to-edit">
+          <app-editable-text [value]="bereaved?.profile?.phoneNumber|phone" (valueChange)="bereavedPhone.emit($event)"
+            [type]="'textarea'"></app-editable-text>
         </div>
         <div class="phone-icon"></div>
       </div>
       <div class="bereaved-email" *ngIf="bereaved.profile?.email">
-        <div class="email-address">
-          <app-editable-text [value]="bereaved?.profile?.email||''"
-          (valueChange)="bereavedemail.emit($event)" [type]="'textarea'"></app-editable-text>
+        <div class="email-address to-edit">
+          <app-editable-text [value]="bereaved?.profile?.email" (valueChange)="bereavedEmail.emit($event)"
+            [type]="'textarea'"></app-editable-text>
         </div>
         <div class="email-icon"></div>
       </div>
     </div>
+
+
     <div class="col col-address to-edit">
       <app-editable-text [value]="bereaved?.profile?.address?.formattedAddress || ''"
         (valueChange)="bereavedAddress.emit($event)" [type]="'cities'"></app-editable-text>
@@ -144,10 +148,14 @@
       <div class="content">
         <div *ngFor="let slain of bereaved.bereavedProfile?.slains">
           <div>
-            <span>{{ slain.firstName + ' ' + slain.lastName + ' ז"ל' }}</span>
+
+            <app-editable-text [value]=" slain.firstName + ' ' + slain.lastName +' זל' "
+              (valueChange)="bereavedSlain.emit($event)" [type]="'textarea'"></app-editable-text>
           </div>
           <div>
             <span>{{ slain.deathDate | date: 'dd.MM.yyyy' }}</span>
+            <app-editable-text [value]=" slain.deathDate | date: 'dd.MM.yyyy'"
+              (valueChange)="bereavedSlainDate.emit($event)" [type]="'date'"></app-editable-text>
           </div>
         </div>
       </div>

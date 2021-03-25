@@ -38,9 +38,15 @@
       (bereavedGuidance)="bereavedGuidance.emit({ bereaved: bereaved, guidance: $event })"
       (bereavedBirthDate)="bereavedBirthDate.emit({ user: bereaved, birthDate: $event })"
       (bereavedNotes)="bereavedNotes.emit({ bereaved: bereaved, notes: $event })"
-      (bereavedemail)="bereavedemail.emit({ bereaved: bereaved, email: $event })"
+      (bereavedEmail)="bereavedEmail.emit({ bereaved: bereaved, email: $event })"
+   
+      (bereavedPhone)="bereavedPhone.emit({ bereaved: bereaved, phone: $event })"
+     
       (bereavedAddress)="bereavedAddress.emit({ user: bereaved, address: $event })"
       (bereavedVolunteer)="bereavedVolunteer.emit({ user: currentUser, bereaved: bereaved })"
       (removeVolunteer)="removeVolunteer.emit(bereaved)"></app-bereaveds-list-row>
   </div>
 </div>
+<!-- (bereavedSlainDate)="bereavedSlainDate.emit({ bereaved: bereaved, phone: $event })" -->
+<!-- (bereavedName)="bereavedName.emit({ bereaved: bereaved, email: $event })" -->
+<!-- (bereavedSlain)="bereavedSlain.emit({ bereaved: bereaved, email: $event })" -->

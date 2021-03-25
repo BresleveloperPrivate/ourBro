@@ -22,9 +22,11 @@ export class BereavedsListRowComponent {
   //@Output() bereavedlang=new EventEmitter<UserProfile>();
   @Output() bereavedBirthDate = new EventEmitter<number>();
   @Output() bereavedNotes = new EventEmitter<string>();
-  @Output() bereavedemail = new EventEmitter<string>();
-
-  
+  @Output() bereavedEmail = new EventEmitter<string>();
+  @Output() bereavedName = new EventEmitter<string>();
+  @Output() bereavedSlain = new EventEmitter<string>();
+  @Output() bereavedSlainDate = new EventEmitter<string>();
+  @Output()bereavedPhone=new EventEmitter<number>();
   @Output() bereavedAddress = new EventEmitter<Address>();
   @Output() bereavedVolunteer = new EventEmitter<void>();
   @Output() removeVolunteer = new EventEmitter<void>();

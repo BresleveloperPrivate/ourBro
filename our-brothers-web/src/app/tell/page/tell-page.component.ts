@@ -84,9 +84,11 @@ export class TellPageComponent implements OnInit, OnDestroy {
             this.currentStep$.next(2);
           } else if (!this.participationsService.isBereavedHaveSlainDetails(user)) {
             this.currentStep$.next(3);
-          } else if (!this.participationsService.isBereavedAnsweredTrainingMeeting(user)) {
-            this.currentStep$.next(4);
-          } else {
+          } 
+          // else if (!this.participationsService.isBereavedAnsweredTrainingMeeting(user)) {
+          //   this.currentStep$.next(4);
+          // } 
+          else {
             this.currentStep$.next(5);
           }
         }
