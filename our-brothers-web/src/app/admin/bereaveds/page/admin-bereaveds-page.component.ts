@@ -15,7 +15,9 @@ import {
   UpdateBereavedGuidance,
   UpdateBereavedNotes,
   UpdateBereavedEmail,
-  // UpdateBereavedName,
+  UpdateBereavedStory,
+  UpdateBereavedNamef,
+  UpdateBereavedNamel,
   UpdateBereavedSlainl,
   UpdateBereavedSlainf,
   UpdateBereavedSlainDate,
@@ -45,9 +47,10 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
   year = MEMORIAL_YEAR;
   error = '';
   loading = true;
-
   selectedMeeting$ = new Subject<Meeting>();
   selectingBereaved: User;
+  // public minDate = MIN_DATE.toISOString().split('T')[0];
+  // public maxDate = MAX_DATE.toISOString().split('T')[0];
 
   private subscriptions: Subscription[] = [];
   only2021: boolean
@@ -212,6 +215,10 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     if (bereaved) {
       this.dataService.setBereavedEmail(bereaved, email);
     }
+  } bereavedStory({ bereaved, story }: UpdateBereavedStory) {
+    if (bereaved) {
+      this.dataService.setBereavedStory(bereaved, story);
+    }
   }
   bereavedPhone({ bereaved, phone }: UpdateBereavedPhone) {
     if (bereaved) {
@@ -219,11 +226,16 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     }
   }
 
-  // bereavedName({ bereaved, firstName ,lastName }: UpdateBereavedName) {
-  //   if (bereaved) {
-  //     this.dataService.setBereavedPhone(bereaved, firstName,lastName);
-  //   }
-  // }
+  bereavedNamel({ bereaved, lastName }: UpdateBereavedNamel) {
+    if (bereaved) {
+      this.dataService.setBereavedNamel(bereaved, lastName);
+    }
+  }
+  bereavedNamef({ bereaved, firstName }: UpdateBereavedNamef) {
+    if (bereaved) {
+      this.dataService.setBereavedNamef(bereaved, firstName);
+    }
+  }
   bereavedSlainl({ bereaved, slainLastName }: UpdateBereavedSlainl) {
     if (bereaved) {
       this.dataService.setBereavedSlainl(bereaved, slainLastName);
@@ -272,11 +284,16 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     //let data = this.bereaveds;
 
     let MasterArr = [
-      ['first name', 'last name', 'phone', 'email', 'lastSignInDate', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
+      ['first name', 'last name', 'phone', 'email', 'last enter', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
+      console.log('bbbbbbbbbbbb', b.lastSignInDate);
 
+      // let e = new Date(b?.lastSignInDate).toISOString().split('T')[0] || '';
+      //enter=new Date(this.currentUser?.lastSignInDate).toISOString().split('T')[0];
+
+      //new Date(b?.lastSignInDate).toISOString().split('T')[0];
       if (this.only2021 && this.only2021 === true) {
         if (!b.lastSignInDate || b.lastSignInDate < 1609459200000) {
 
@@ -287,11 +304,12 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
 
       let a = [];
       if (b.profile) {
+        //let e = new Date(b?.lastSignInDate).toISOString().split('T')[0];
         a.push(b.profile.firstName);
         a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
         a.push(b.profile.email);
-        // a.push(new Date(b.lastSignInDate).toISOString().split('T')[0]);
+        // a.push(e);
         a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
 
         if (b.bereavedProfile && b.bereavedProfile.slains) {

@@ -39,10 +39,13 @@
       (bereavedBirthDate)="bereavedBirthDate.emit({ user: bereaved, birthDate: $event })"
       (bereavedNotes)="bereavedNotes.emit({ bereaved: bereaved, notes: $event })"
       (bereavedEmail)="bereavedEmail.emit({ bereaved: bereaved, email: $event })"
+      (bereavedStory)="bereavedStory.emit({ bereaved: bereaved, story: $event })"
       (bereavedPhone)="bereavedPhone.emit({ bereaved: bereaved, phone: $event })"
       (bereavedAddress)="bereavedAddress.emit({ user: bereaved, address: $event })"
       (bereavedVolunteer)="bereavedVolunteer.emit({ user: currentUser, bereaved: bereaved })"
       (removeVolunteer)="removeVolunteer.emit(bereaved)"
+      (bereavedNamef)="bereavedNamef.emit({ bereaved: bereaved, firstName: $event})"
+      (bereavedNamel)="bereavedNamel.emit({ bereaved: bereaved, lastName: $event})"
       (bereavedSlainDate)="bereavedSlainDate.emit({ bereaved: bereaved, bereavedSlainDate: $event })"
       (bereavedSlainl)="bereavedSlainl.emit({ bereaved: bereaved, slainLastName: $event })"
       (bereavedSlainf)="bereavedSlainf.emit({ bereaved: bereaved, slainFirstName: $event })">

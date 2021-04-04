@@ -143,7 +143,17 @@ export interface ParticipateParticipationMeeting
 export enum BereavedStatus {
   done = 'done',
   inactive = 'inactive',
-  waiting = 'waiting'
+  waiting = 'waiting',
+  embed = 'embed',
+  notEmbed = 'notEmbed',
+  hostNoConnect = 'hostNoConnect',
+  hostingHimself = 'hostingHimself',
+  notParticipate = 'notParticipate',
+  other = 'other'
+
+
+
+
 }
 
 export interface BereavedGuidance {

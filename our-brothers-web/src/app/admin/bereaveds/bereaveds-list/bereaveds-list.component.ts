@@ -8,7 +8,9 @@ import {
   VolunteeringUser,
   UpdateBereavedNotes,
   UpdateBereavedEmail,
-  // UpdateBereavedName,
+  UpdateBereavedStory,
+  UpdateBereavedNamel,
+  UpdateBereavedNamef,
   UpdateBereavedSlainl,
   UpdateBereavedSlainf,
   UpdateBereavedSlainDate,
@@ -40,7 +42,9 @@ export class BereavedsListComponent {
   @Output() bereavedBirthDate = new EventEmitter<UpdateUserBirthDate>();
   @Output() bereavedNotes = new EventEmitter<UpdateBereavedNotes>();
   @Output() bereavedEmail = new EventEmitter<UpdateBereavedEmail>();
-  // @Output() bereavedName = new EventEmitter<UpdateBereavedName>();
+  @Output() bereavedStory = new EventEmitter<UpdateBereavedStory>();
+  @Output() bereavedNamel = new EventEmitter<UpdateBereavedNamel>();
+  @Output() bereavedNamef = new EventEmitter<UpdateBereavedNamef>();
   @Output() bereavedSlainl = new EventEmitter<UpdateBereavedSlainl>();
   @Output() bereavedSlainf = new EventEmitter<UpdateBereavedSlainf>();
   @Output() bereavedSlainDate = new EventEmitter<UpdateBereavedSlainDate>();

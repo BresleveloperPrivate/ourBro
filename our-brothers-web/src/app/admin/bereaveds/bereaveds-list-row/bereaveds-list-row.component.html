@@ -20,25 +20,25 @@
       </button>
     </div>
     <div class="col col-name to-edit">
-      <app-editable-text [value]="bereaved.profile?.firstName + ' ' + bereaved.profile?.lastName"
-        (valueChange)="bereavedName.emit($event)" [type]="'textarea'"></app-editable-text>
-
-      <!-- <img class="star-image" *ngIf="(currentUser.registered+2)>d"
-        src="../../../../assets/img/iconfinder_star_2561394.png" /> -->
+      <app-editable-text [value]="bereaved.profile?.firstName " (valueChange)="bereavedNamef.emit($event)"
+        [type]="'text'"></app-editable-text>
+      <app-editable-text [value]=" bereaved.profile?.lastName" (valueChange)="bereavedNamel.emit($event)"
+        [type]="'text'"></app-editable-text>
+      <img class="star-image" *ngIf="sigh>d" src="../../../../assets/img/iconfinder_star_2561394.png" />
 
     </div>
     <div class="col col-communications">
       <div class="bereaved-phone" *ngIf="bereaved.profile?.phoneNumber">
         <div class="phone-number to-edit">
           <app-editable-text [value]="bereaved?.profile?.phoneNumber|phone" (valueChange)="bereavedPhone.emit($event)"
-            [type]="'textarea'"></app-editable-text>
+            [type]="'text'"></app-editable-text>
         </div>
         <div class="phone-icon"></div>
       </div>
       <div class="bereaved-email" *ngIf="bereaved.profile?.email">
         <div class="email-address to-edit">
           <app-editable-text [value]="bereaved?.profile?.email" (valueChange)="bereavedEmail.emit($event)"
-            [type]="'textarea'"></app-editable-text>
+            [type]="'text'"></app-editable-text>
         </div>
         <div class="email-icon"></div>
       </div>
@@ -148,12 +148,12 @@
       <div class="content">
         <div *ngFor="let slain of bereaved.bereavedProfile?.slains">
           <div class="to-edit">
-            <app-editable-text [value]=" slain.firstName  " (valueChange)="bereavedSlainf.emit($event)"
-              [type]="'textarea'"></app-editable-text>
+            <app-editable-text [value]=" slain.firstName  " (valueChange)="bereavedSlainf.emit($event)" [type]="'text'">
+            </app-editable-text>
           </div>
           <div class="to-edit">
-            <app-editable-text [value]=" slain.lastName  " (valueChange)="bereavedSlainl.emit($event)"
-              [type]="'textarea'"></app-editable-text>
+            <app-editable-text [value]=" slain.lastName  " (valueChange)="bereavedSlainl.emit($event)" [type]="'text'">
+            </app-editable-text>
           </div>
           <div class="to-edit">
             <!-- <span>{{ slain.deathDate | date: 'dd.MM.yyyy' }}</span> -->
@@ -169,7 +169,12 @@
       </div>
       <div class="content">
         <div class="scroll-container">
-          {{ bereaved.bereavedProfile?.story }}
+          <div class="to-edit">
+            <!-- <span>{{ slain.deathDate | date: 'dd.MM.yyyy' }}</span> -->
+            <app-editable-text [value]=" bereaved.bereavedProfile?.story " (valueChange)="bereavedStory.emit($event)"
+              [type]="'textarea'"></app-editable-text>
+          </div>
+          <!-- {{ bereaved.bereavedProfile?.story }} -->
         </div>
       </div>
     </div>

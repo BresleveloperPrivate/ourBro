@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "app",
+    "target": "bbb",
     "public": "our-brothers-web/public",
     "ignore": [
       "firebase.json",
