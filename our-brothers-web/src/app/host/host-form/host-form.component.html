@@ -32,6 +32,7 @@
         [formattedAddress]="address.value?.formattedAddress"
         [types]="['address']"
         [placeholder]="'כתובת'"
+        iconUrl="assets/img/host_location.svg"
         (change)="address.patchValue($event)"
         [invalid]="!address.valid && address.touched"
       ></app-places-select>
@@ -41,7 +42,6 @@
         class="input"
         label="הערות לכתובת (קומה,כניסה):"
         controlName="notes"
-        iconUrl="assets/img/host_location.svg"
         [textarea]="true"
         [formGroup]="address"
       ></app-host-input-text>

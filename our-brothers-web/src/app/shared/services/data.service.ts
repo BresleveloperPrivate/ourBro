@@ -69,18 +69,25 @@ export interface UpdateBereavedEmail {
 }
 
 
-export interface UpdatebereavedName {
+export interface UpdateBereavedName {
   bereaved: User;
   firstName: UserProfile;
   lastName: UserProfile;
 }
-export interface UpdatebereavedSlain {
+export interface UpdateBereavedSlainl {
   bereaved: User;
-  slainFirstName: Slain;
+
   slainLastName: Slain;
 
 }
-export interface bereavedSlainDate {
+export interface UpdateBereavedSlainf {
+  bereaved: User;
+  slainFirstName: Slain;
+
+}
+
+
+export interface UpdateBereavedSlainDate {
   bereaved: User;
   bereavedSlainDate: Slain;
 }
@@ -460,25 +467,67 @@ export class DataService {
 
 
 
-  
-  // public setbereavedSlainDate(bereaved: User, bereavedSlainDate: Slain) {
-  //   const telemetry = { userId: bereaved.id, bereavedSlainDate, };
+  public setBereavedSlainf(bereaved: User, bereavedSlainf: Slain) {
+    const telemetry = { userId: bereaved.id, bereavedSlainf, };
 
-  //   this.analyticsService.logEvent('setBereavedEmail', telemetry);
-  //   return from(
-  //     this.angularFireDatabase.object<UserProfile>(`users/${bereaved.id}/bereavedProfile/slains/0/deathDate`).set(bereavedSlainDate)
-  //   ).pipe(
-  //     tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
-  //     catchError(error => {
-  //       this.analyticsService.logEvent('SetBereavedEmailFailed', {
-  //         ...telemetry,
-  //         error
-  //       });
-  //       console.error(error);
-  //       return throwError(error);
-  //     })
-  //   );
-  // }
+    this.analyticsService.logEvent('setBereavedEmail', telemetry);
+    return from(
+      this.angularFireDatabase.object<Slain>(`users/${bereaved.id}/bereavedProfile/slains/0/firstName`).set(bereavedSlainf)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedEmailFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+
+
+
+
+  public setBereavedSlainl(bereaved: User, bereavedSlainl: Slain) {
+    const telemetry = { userId: bereaved.id, bereavedSlainl, };
+
+    this.analyticsService.logEvent('setBereavedEmail', telemetry);
+    return from(
+      this.angularFireDatabase.object<Slain>(`users/${bereaved.id}/bereavedProfile/slains/0/lastName`).set(bereavedSlainl)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedEmailFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
+
+
+  public setBereavedSlainDate(bereaved: User, bereavedSlainDate: Slain) {
+    const telemetry = { userId: bereaved.id, bereavedSlainDate, };
+
+    this.analyticsService.logEvent('setBereavedEmail', telemetry);
+    return from(
+      this.angularFireDatabase.object<Slain>(`users/${bereaved.id}/bereavedProfile/slains/0/deathDate`).set(bereavedSlainDate)
+    ).pipe(
+      tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
+      catchError(error => {
+        this.analyticsService.logEvent('SetBereavedEmailFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+  }
 
 
   public setBereavedPhone(bereaved: User, email: UserProfile) {
@@ -580,7 +629,7 @@ export class DataService {
 
 
 
-  
+
 
   public getBereaveds(year = MEMORIAL_YEAR): Observable<User[]> {
     const telemetry = { year };

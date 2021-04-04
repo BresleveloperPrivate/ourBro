@@ -147,13 +147,16 @@
       </div>
       <div class="content">
         <div *ngFor="let slain of bereaved.bereavedProfile?.slains">
-          <div>
-
-            <app-editable-text [value]=" slain.firstName + ' ' + slain.lastName +' זל' "
-              (valueChange)="bereavedSlain.emit($event)" [type]="'textarea'"></app-editable-text>
+          <div class="to-edit">
+            <app-editable-text [value]=" slain.firstName  " (valueChange)="bereavedSlainf.emit($event)"
+              [type]="'textarea'"></app-editable-text>
           </div>
-          <div>
-            <span>{{ slain.deathDate | date: 'dd.MM.yyyy' }}</span>
+          <div class="to-edit">
+            <app-editable-text [value]=" slain.lastName  " (valueChange)="bereavedSlainl.emit($event)"
+              [type]="'textarea'"></app-editable-text>
+          </div>
+          <div class="to-edit">
+            <!-- <span>{{ slain.deathDate | date: 'dd.MM.yyyy' }}</span> -->
             <app-editable-text [value]=" slain.deathDate | date: 'dd.MM.yyyy'"
               (valueChange)="bereavedSlainDate.emit($event)" [type]="'date'"></app-editable-text>
           </div>

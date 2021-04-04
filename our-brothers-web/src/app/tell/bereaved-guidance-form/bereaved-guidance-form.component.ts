@@ -13,7 +13,9 @@ type GuidanceMap = {
 export class BereavedGuidanceFormComponent {
   public options: GuidanceOption[] = guidanceOptions;
   public selected: GuidanceMap = { ...initSelected };
-  public notIntereseted = true;
+  // public notIntereseted = true;
+  public notIntereseted;
+
 
   @Output()
   public submit = new EventEmitter<BereavedGuidance>();

@@ -16,8 +16,9 @@ import {
   UpdateBereavedNotes,
   UpdateBereavedEmail,
   // UpdateBereavedName,
-  // UpdateBereavedSlain,
-  // UpdateBereavedSlainDate,
+  UpdateBereavedSlainl,
+  UpdateBereavedSlainf,
+  UpdateBereavedSlainDate,
   UpdateBereavedPhone,
   UpdateUserAddress,
   UpdateUserBirthDate,
@@ -223,18 +224,24 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
   //     this.dataService.setBereavedPhone(bereaved, firstName,lastName);
   //   }
   // }
-  // bereavedSlain({ bereaved, slainFirstName,slainLastName  }: UpdateBereavedSlain) {
-  //   if (bereaved) {
-  //     this.dataService.setBereavedPhone(bereaved, slainFirstName,slainLastName);
-  //   }
-  // }
-  // bereavedSlainDate({ bereaved,slainDeathDate  }: UpdateBereavedPhone) {
-  //   if (bereaved) {
-  //     this.dataService.setBereavedPhone(bereaved, slainDeathDate);
-  //   }
-  // }
+  bereavedSlainl({ bereaved, slainLastName }: UpdateBereavedSlainl) {
+    if (bereaved) {
+      this.dataService.setBereavedSlainl(bereaved, slainLastName);
+    }
+  }
+  bereavedSlainf({ bereaved, slainFirstName }: UpdateBereavedSlainf) {
+    if (bereaved) {
+      this.dataService.setBereavedSlainf(bereaved, slainFirstName);
+    }
+  }
 
-  // 
+  bereavedSlainDate({ bereaved, bereavedSlainDate }: UpdateBereavedSlainDate) {
+    if (bereaved) {
+      this.dataService.setBereavedSlainDate(bereaved, bereavedSlainDate);
+    }
+  }
+
+
 
 
   bereavedAddress({ user, address }: UpdateUserAddress) {
@@ -265,7 +272,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     //let data = this.bereaveds;
 
     let MasterArr = [
-      ['first name', 'last name', 'phone', 'email', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
+      ['first name', 'last name', 'phone', 'email', 'lastSignInDate', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
@@ -284,6 +291,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
         a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
         a.push(b.profile.email);
+        // a.push(new Date(b.lastSignInDate).toISOString().split('T')[0]);
         a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
 
         if (b.bereavedProfile && b.bereavedProfile.slains) {
