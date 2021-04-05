@@ -17,6 +17,7 @@ import { MeetingJoinButtonModule } from '../../shared/components/meeting-join-bu
 import { RemoveButtonModule } from 'src/app/shared/components/remove-button/remove-button.module';
 import { SortBereavedsPipe } from './sort-bereaveds/sort-bereaveds.pipe';
 import { EditableTextModule } from 'src/app/shared/components/editable-text/editable-text.module';
+import { SelectLanguagesComponent } from './select-bereaveds-languages/select-languages/select-languages.component';
 
 const api = [
   SelectBereavedStatusComponent,
@@ -40,7 +41,7 @@ const api = [
     MeetingJoinButtonModule,
     RemoveButtonModule
   ],
-  declarations: [api, SortBereavedsPipe],
+  declarations: [api, SortBereavedsPipe, SelectLanguagesComponent],
   exports: api
 })
 export class AdminBereavedsModule {}

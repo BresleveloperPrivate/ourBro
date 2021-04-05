@@ -7,6 +7,8 @@ import { BereavedStatusOption } from './select-bereaved-status.types';
   templateUrl: './select-bereaved-status.component.html'
 })
 export class SelectBereavedStatusComponent {
+  @Input() placeholder: string = 'סטטוס '
+
   @Input() value: BereavedStatus;
   @Output() valueChange = new EventEmitter<BereavedStatus>();
 

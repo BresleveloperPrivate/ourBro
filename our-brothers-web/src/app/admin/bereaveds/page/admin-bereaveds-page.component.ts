@@ -4,7 +4,7 @@ import { Subject, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
-import { User, Meeting } from 'models';
+import { User, Meeting, BaseParticipation } from 'models';
 import { MEMORIAL_YEAR } from '../../../shared/constants';
 import { AuthService } from '../../../shared/services/auth.service';
 import {
@@ -288,7 +288,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
-      console.log('bbbbbbbbbbbb', b.lastSignInDate);
+      // console.log('bbbbbbbbbbbb', b.lastSignInDate);
 
       // let e = new Date(b?.lastSignInDate).toISOString().split('T')[0] || '';
       //enter=new Date(this.currentUser?.lastSignInDate).toISOString().split('T')[0];
@@ -304,12 +304,15 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
 
       let a = [];
       if (b.profile) {
-        //let e = new Date(b?.lastSignInDate).toISOString().split('T')[0];
+        // var e = new Date(b?.lastSignInDate)
+        // var s=undefined
         a.push(b.profile.firstName);
         a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
+
         a.push(b.profile.email);
-        // a.push(e);
+
+        a.push(new Date(b.lastSignInDate));
         a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
 
         if (b.bereavedProfile && b.bereavedProfile.slains) {
@@ -369,7 +372,7 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     //let data = this.bereaveds;
     this.only2021 = true;
     let MasterArr = [
-      ['first name', 'last name', 'phone', 'email', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
+      ['first name', 'last name', 'phone', 'email', ' last enter', 'bareved host', 'status ', 'city', 'yearsLost', 'age', 'languages', 'fallenDetails', 'myStory']
     ];
     for (let i = 0; i < this.bereaveds.length; i++) {
       let b = this.bereaveds[i];
@@ -384,10 +387,29 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
 
       let a = [];
       if (b.profile) {
+
+
         a.push(b.profile.firstName);
         a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
         a.push(b.profile.email);
+        a.push(new Date(b.lastSignInDate));
+        if (b?.bereavedParticipation && b.bereavedParticipation[this.year]) {
+          // a.push(b?.bereavedParticipation[this.year]?.meetings);
+          // console.log(b?.bereavedParticipation[this.year]?.meetings);
+          a.push('yes')
+        }
+        else {
+          a.push('no')
+        }
+        if (b?.bereavedParticipation && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].meetings) {
+          a.push(b.bereavedParticipation[this.year].status);
+          // console.log(b?.bereavedParticipation[this.year]?.meetings);
+        }
+        else {
+          a.push('')
+        }
+
         a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
 
         if (b.bereavedProfile && b.bereavedProfile.slains) {
@@ -399,6 +421,8 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
             ax.push(this.agePipe.transform(sx.deathDate));
             ax.push(this.agePipe.transform(b.profile.birthDay));
             ax.push(b.profile.otherLang ? b.profile.otherLang : '');
+            //  ax.push(b.bereavedParticipation)
+
             let sDetails = sx.firstName + ' ' + sx.lastName + ' ז"ל' + '  ---  ' + this.agePipe.transform(sx.deathDate);
             ax.push(sDetails);
             ax.push(b.bereavedProfile && b.bereavedProfile.story ? b.bereavedProfile.story : '');
@@ -411,6 +435,8 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
           a.push('');
           a.push('');
           a.push('');
+          a.push('');
+
         }
       }
     }

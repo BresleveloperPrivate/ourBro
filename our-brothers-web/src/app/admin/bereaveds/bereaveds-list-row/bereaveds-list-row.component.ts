@@ -34,25 +34,28 @@ export class BereavedsListRowComponent {
   @Output() bereavedVolunteer = new EventEmitter<void>();
   @Output() removeVolunteer = new EventEmitter<void>();
   public normalDAte;
-  // public sigh = 1917537397938;
-  //
-  public sigh;
+  public d = new Date();
+  expanded = false;
+  year = MEMORIAL_YEAR;
+  public sigh = new Date(this.currentUser?.registered);
+
+
+
 
   ngOnInit(): void {
     this.normalDAte = new Date(this.bereaved.lastSignInDate).toISOString().split('T')[0];
-    this.sigh = this.currentUser?.registered;
-    let t = this.currentUser?.registered;
+    this.sigh.setDate(this.sigh.getDate() + 2);
 
-    console.log('dddddd', this.d);
-    console.log('ssssss', (this.sigh));
-    console.log('ttttttt', t);
+    console.log('sigh', this.sigh);
+    console.log('d', this.d);
+
+
+
 
   }
-  public d = new Date().getTime();
-  expanded = false;
-  year = MEMORIAL_YEAR;
 
   constructor(public participationsService: ParticipationsService) {
+
 
 
 

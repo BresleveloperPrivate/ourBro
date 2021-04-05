@@ -5,10 +5,11 @@
   <app-list-column title="מקום מגורים" field="address"></app-list-column>
   <app-list-column title="ותק בשכול" field="seniority" class="col-seniority"></app-list-column>
 
-  <app-list-column class="drop-down-menu col-status" title="סטטוס" field="status"></app-list-column>
-
-  <app-list-column class="drop-down-menu col-status" title="מרצה בשפות" field="languages">
-  </app-list-column>
+  <!-- <app-list-column class="drop-down-menu col-status" title="סטטוס" field="status"></app-list-column> -->
+  <app-select-bereaved-status></app-select-bereaved-status>
+  <!-- <app-list-column class="drop-down-menu col-status" title="מרצה בשפות" field="languages">
+  </app-list-column> -->
+  <app-select-languages placeholder="מרצה בשפות"></app-select-languages>
   <app-list-column title="פעיל-לא פעיל" field="active" class="col-seniority"></app-list-column>
 
   <!-- <app-list-column title="שיבוץ" field="meetings"></app-list-column> -->

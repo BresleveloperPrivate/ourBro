@@ -30,6 +30,7 @@ import { SortedColumn } from '../../../shared/components/list/list-header/list-h
   styleUrls: ['./bereaveds-list.component.scss']
 })
 export class BereavedsListComponent {
+
   @Input() currentUser: User;
   @Input() bereaveds: User[];
   @Input() filteredBereaveds: Set<string>;
@@ -52,6 +53,7 @@ export class BereavedsListComponent {
   @Output() bereavedAddress = new EventEmitter<UpdateUserAddress>();
   @Output() bereavedVolunteer = new EventEmitter<BereavedVolunteer>();
   @Output() removeVolunteer = new EventEmitter<User>();
+
 
   year = MEMORIAL_YEAR;
   sortedColumn: SortedColumn = {

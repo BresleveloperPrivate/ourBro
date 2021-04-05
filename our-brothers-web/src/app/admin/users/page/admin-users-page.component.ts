@@ -37,7 +37,6 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    console.log('hoiiiiii');
     this.subscriptions.push(
       this.authService.user.subscribe(currentUser => (this.currentUser = currentUser)),
       this.dataService.getUsers().subscribe(

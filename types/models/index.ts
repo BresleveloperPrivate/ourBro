@@ -140,7 +140,8 @@ export interface ParticipateParticipationMeeting
   accompanies: number;
 }
 
-export enum BereavedStatus {
+export enum 
+BereavedStatus {
   done = 'done',
   inactive = 'inactive',
   waiting = 'waiting',
@@ -150,10 +151,15 @@ export enum BereavedStatus {
   hostingHimself = 'hostingHimself',
   notParticipate = 'notParticipate',
   other = 'other'
+}
 
-
-
-
+export enum BereavedLanguage{
+  english='english',
+  spanish='spanish',
+  franch='franch',
+  arabic='arabic',
+  rusian='rusian',
+  other='other',
 }
 
 export interface BereavedGuidance {

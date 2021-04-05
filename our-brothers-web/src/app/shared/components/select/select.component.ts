@@ -89,7 +89,7 @@ export class SelectComponent {
   editable: boolean = false;
   open: boolean = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef) { }
 
   onSelectOption(value: string) {
     if (!this.multiple) {
