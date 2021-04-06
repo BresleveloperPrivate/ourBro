@@ -1,7 +1,7 @@
 
 import { Component, OnInit, OnDestroy, Renderer2, Inject } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { take, map } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 import { User, Meeting, BaseParticipation } from 'models';
@@ -383,34 +383,35 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
           continue;
         }
       }
-
-
       let a = [];
       if (b.profile) {
-
 
         a.push(b.profile.firstName);
         a.push(b.profile.lastName);
         a.push(b.profile.phoneNumber);
         a.push(b.profile.email);
         a.push(new Date(b.lastSignInDate));
-        if (b?.bereavedParticipation && b.bereavedParticipation[this.year]) {
-          // a.push(b?.bereavedParticipation[this.year]?.meetings);
-          // console.log(b?.bereavedParticipation[this.year]?.meetings);
-          a.push('yes')
+        if (b?.bereavedParticipation && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year]) {
+          let z = b.bereavedParticipation[this.year].meetings?.length;
+          let e = '';
+          let j: number
+          for (j = 0; j < z; j++) {
+            if (b.bereavedParticipation[this.year].meetings[j].title)
+              e = e + (b.bereavedParticipation[this.year].meetings[j].title) + ',';
+          }
+          a.push(e)
+
         }
         else {
-          a.push('no')
+          a.push('')
         }
-        if (b?.bereavedParticipation && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].meetings) {
+        if (b?.bereavedParticipation && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].status) {
           a.push(b.bereavedParticipation[this.year].status);
           // console.log(b?.bereavedParticipation[this.year]?.meetings);
         }
         else {
           a.push('')
         }
-
-        a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
 
         if (b.bereavedProfile && b.bereavedProfile.slains) {
           let sls = b.bereavedProfile.slains;
