@@ -33,7 +33,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ../types/models/index.ts ***!
     \********************************/
 
-  /*! exports provided: MeetingAudience, UserRole, BereavedStatus, BereavedGuidanceGeneral, guidanceOptions */
+  /*! exports provided: MeetingAudience, UserRole, BereavedStatus, BereavedLanguage, BereavedGuidanceGeneral, guidanceOptions */
 
   /***/
   function typesModelsIndexTs(module, __webpack_exports__, __webpack_require__) {
@@ -57,6 +57,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "BereavedStatus", function () {
       return BereavedStatus;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BereavedLanguage", function () {
+      return BereavedLanguage;
     });
     /* harmony export (binding) */
 
@@ -98,7 +104,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       BereavedStatus["done"] = "done";
       BereavedStatus["inactive"] = "inactive";
       BereavedStatus["waiting"] = "waiting";
+      BereavedStatus["embed"] = "embed";
+      BereavedStatus["notEmbed"] = "notEmbed";
+      BereavedStatus["hostNoConnect"] = "hostNoConnect";
+      BereavedStatus["hostingHimself"] = "hostingHimself";
+      BereavedStatus["notParticipate"] = "notParticipate";
+      BereavedStatus["other"] = "other";
     })(BereavedStatus || (BereavedStatus = {}));
+
+    var BereavedLanguage;
+
+    (function (BereavedLanguage) {
+      BereavedLanguage["english"] = "english";
+      BereavedLanguage["spanish"] = "spanish";
+      BereavedLanguage["franch"] = "franch";
+      BereavedLanguage["arabic"] = "arabic";
+      BereavedLanguage["rusian"] = "rusian";
+      BereavedLanguage["other"] = "other";
+    })(BereavedLanguage || (BereavedLanguage = {}));
 
     var BereavedGuidanceGeneral;
 
@@ -567,9 +590,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r418 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+        var ctx_r427 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("mode", ctx_r418.loginMode);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("mode", ctx_r427.loginMode);
       }
     }
 
@@ -583,11 +606,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r417 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r426 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r417.loginMode && !ctx_r417.user);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r426.loginMode && !ctx_r426.user);
       }
     }
 
@@ -2518,11 +2541,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var doc_r438 = ctx.$implicit;
+        var doc_r447 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", doc_r438.field, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", doc_r447.field, " ");
       }
     }
 
@@ -5913,36 +5936,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             console.error(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
           }));
-        } // public bereavedName(bereaved: User, firstName: UserProfile,) {
-        //   const telemetry = { userId: bereaved.id, firstName};
-        //   this.analyticsService.logEvent('setBereavedEmail', telemetry);
-        //   return from(
-        //     this.angularFireDatabase.object<UserProfile>(`users/${bereaved.id}/profile/firstName`)
-        //     .set(firstName)
-        //   ).pipe(
-        //     tap(() => this.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry)),
-        //     catchError(error => {
-        //       this.analyticsService.logEvent('SetBereavedEmailFailed', {
-        //         ...telemetry,
-        //         error
-        //       });
-        //       console.error(error);
-        //       return throwError(error);
-        //     })
-        //   );
-        // }
-
+        }
       }, {
-        key: "setBereavedSlainf",
-        value: function setBereavedSlainf(bereaved, bereavedSlainf) {
+        key: "setBereavedStory",
+        value: function setBereavedStory(bereaved, story) {
           var _this38 = this;
 
           var telemetry = {
             userId: bereaved.id,
-            bereavedSlainf: bereavedSlainf
+            story: story
           };
           this.analyticsService.logEvent('setBereavedEmail', telemetry);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/firstName")).set(bereavedSlainf)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/story")).set(story)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
             return _this38.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
             _this38.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
@@ -5954,16 +5959,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         }
       }, {
-        key: "setBereavedSlainl",
-        value: function setBereavedSlainl(bereaved, bereavedSlainl) {
+        key: "setBereavedNamef",
+        value: function setBereavedNamef(bereaved, firstName) {
           var _this39 = this;
 
           var telemetry = {
             userId: bereaved.id,
-            bereavedSlainl: bereavedSlainl
+            firstName: firstName
           };
           this.analyticsService.logEvent('setBereavedEmail', telemetry);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/lastName")).set(bereavedSlainl)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/profile/firstName")).set(firstName)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
             return _this39.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
             _this39.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
@@ -5975,16 +5980,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         }
       }, {
-        key: "setBereavedSlainDate",
-        value: function setBereavedSlainDate(bereaved, bereavedSlainDate) {
+        key: "setBereavedNamel",
+        value: function setBereavedNamel(bereaved, lastName) {
           var _this40 = this;
 
           var telemetry = {
             userId: bereaved.id,
-            bereavedSlainDate: bereavedSlainDate
+            lastName: lastName
           };
           this.analyticsService.logEvent('setBereavedEmail', telemetry);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/deathDate")).set(bereavedSlainDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/profile/lastName")).set(lastName)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
             return _this40.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
             _this40.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
@@ -5996,9 +6001,72 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }));
         }
       }, {
+        key: "setBereavedSlainf",
+        value: function setBereavedSlainf(bereaved, bereavedSlainf) {
+          var _this41 = this;
+
+          var telemetry = {
+            userId: bereaved.id,
+            bereavedSlainf: bereavedSlainf
+          };
+          this.analyticsService.logEvent('setBereavedEmail', telemetry);
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/firstName")).set(bereavedSlainf)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+            return _this41.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            _this41.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
+              error: error
+            }));
+
+            console.error(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
+          }));
+        }
+      }, {
+        key: "setBereavedSlainl",
+        value: function setBereavedSlainl(bereaved, bereavedSlainl) {
+          var _this42 = this;
+
+          var telemetry = {
+            userId: bereaved.id,
+            bereavedSlainl: bereavedSlainl
+          };
+          this.analyticsService.logEvent('setBereavedEmail', telemetry);
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/lastName")).set(bereavedSlainl)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+            return _this42.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            _this42.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
+              error: error
+            }));
+
+            console.error(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
+          }));
+        }
+      }, {
+        key: "setBereavedSlainDate",
+        value: function setBereavedSlainDate(bereaved, bereavedSlainDate) {
+          var _this43 = this;
+
+          var telemetry = {
+            userId: bereaved.id,
+            bereavedSlainDate: bereavedSlainDate
+          };
+          this.analyticsService.logEvent('setBereavedEmail', telemetry);
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile/slains/0/deathDate")).set(bereavedSlainDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
+            return _this43.analyticsService.logEvent('SetBereavedEmailSuccess', telemetry);
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            _this43.analyticsService.logEvent('SetBereavedEmailFailed', Object.assign(Object.assign({}, telemetry), {
+              error: error
+            }));
+
+            console.error(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
+          }));
+        }
+      }, {
         key: "setBereavedPhone",
         value: function setBereavedPhone(bereaved, email) {
-          var _this41 = this;
+          var _this44 = this;
 
           var telemetry = {
             userId: bereaved.id,
@@ -6006,9 +6074,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('setBereavedPhone', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/profile/phoneNumber")).set(email)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this41.analyticsService.logEvent('setBereavedPhoneSuccess', telemetry);
+            return _this44.analyticsService.logEvent('setBereavedPhoneSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this41.analyticsService.logEvent('setBereavedPhoneFailed', Object.assign(Object.assign({}, telemetry), {
+            _this44.analyticsService.logEvent('setBereavedPhoneFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6019,7 +6087,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setUserAddress",
         value: function setUserAddress(user, address) {
-          var _this42 = this;
+          var _this45 = this;
 
           var telemetry = {
             userId: user.id,
@@ -6027,9 +6095,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('setUserAddress', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(user.id, "/profile/address")).set(address)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this42.analyticsService.logEvent('setUserAddressSuccess', telemetry);
+            return _this45.analyticsService.logEvent('setUserAddressSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this42.analyticsService.logEvent('setUserAddressFailed', Object.assign(Object.assign({}, telemetry), {
+            _this45.analyticsService.logEvent('setUserAddressFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6040,7 +6108,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setUserBirthDate",
         value: function setUserBirthDate(user, birthDate) {
-          var _this43 = this;
+          var _this46 = this;
 
           var telemetry = {
             userId: user.id,
@@ -6048,9 +6116,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('setUserBirthDate', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(user.id, "/profile/birthDay")).set(birthDate)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this43.analyticsService.logEvent('setUserBirthDateSuccess', telemetry);
+            return _this46.analyticsService.logEvent('setUserBirthDateSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this43.analyticsService.logEvent('setUserBirthDateFailed', Object.assign(Object.assign({}, telemetry), {
+            _this46.analyticsService.logEvent('setUserBirthDateFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6061,17 +6129,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setBereavedProfile",
         value: function setBereavedProfile(bereaved, bereavedProfile) {
-          var _this44 = this;
+          var _this47 = this;
 
           this.analyticsService.logEvent('SetBereavedProfile', {
             userId: bereaved.id
           });
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedProfile")).set(bereavedProfile)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this44.analyticsService.logEvent('SetBereavedProfileSuccess', {
+            return _this47.analyticsService.logEvent('SetBereavedProfileSuccess', {
               userId: bereaved.id
             });
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this44.analyticsService.logEvent('SetBereavedProfileFailed', {
+            _this47.analyticsService.logEvent('SetBereavedProfileFailed', {
               userId: bereaved.id
             });
 
@@ -6082,7 +6150,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setBereavedGuidance",
         value: function setBereavedGuidance(bereaved, guidance) {
-          var _this45 = this;
+          var _this48 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6092,9 +6160,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('SetBereavedGuidance', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("users/".concat(bereaved.id, "/bereavedParticipation/").concat(year, "/guidance")).set(guidance)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this45.analyticsService.logEvent('SetBereavedGuidanceSuccess', telemetry);
+            return _this48.analyticsService.logEvent('SetBereavedGuidanceSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this45.analyticsService.logEvent('SetBereavedGuidanceFailed', Object.assign(Object.assign({}, telemetry), {
+            _this48.analyticsService.logEvent('SetBereavedGuidanceFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6105,7 +6173,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getBereaveds",
         value: function getBereaveds() {
-          var _this46 = this;
+          var _this49 = this;
 
           var year = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6123,16 +6191,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }).filter(function (user) {
               return !!user.profile;
             }).map(function (user) {
-              _this46.parseBereavedParticipation(user, year);
+              _this49.parseBereavedParticipation(user, year);
 
               return user;
             });
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (bereaveds) {
-            return _this46.analyticsService.logEvent('GetBereavedsSuccess', Object.assign(Object.assign({}, telemetry), {
+            return _this49.analyticsService.logEvent('GetBereavedsSuccess', Object.assign(Object.assign({}, telemetry), {
               count: bereaveds.length
             }));
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this46.analyticsService.logEvent('GetBereavedsFailed', Object.assign(Object.assign({}, telemetry), {
+            _this49.analyticsService.logEvent('GetBereavedsFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6143,7 +6211,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getUsers",
         value: function getUsers() {
-          var _this47 = this;
+          var _this50 = this;
 
           var telemetry = {};
           this.analyticsService.logEvent('GetUsers');
@@ -6157,11 +6225,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return !!user.profile;
             });
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (users) {
-            return _this47.analyticsService.logEvent('GetUsersSuccess', Object.assign(Object.assign({}, telemetry), {
+            return _this50.analyticsService.logEvent('GetUsersSuccess', Object.assign(Object.assign({}, telemetry), {
               count: users.length
             }));
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this47.analyticsService.logEvent('GetUsersFailed');
+            _this50.analyticsService.logEvent('GetUsersFailed');
 
             console.error(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
@@ -6170,7 +6238,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getMeeting",
         value: function getMeeting(hostId, meetingId) {
-          var _this48 = this;
+          var _this51 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6180,14 +6248,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('GetMeeting', telemetry);
           return this.angularFireDatabase.object("events/".concat(year, "/").concat(hostId, "/").concat(meetingId)).snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this48.analyticsService.logEvent('GetMeetingSuccess', telemetry);
+            return _this51.analyticsService.logEvent('GetMeetingSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (meetingSnapshot) {
             return Object.assign(Object.assign({}, meetingSnapshot.payload.val()), {
               hostId: hostId,
               id: meetingSnapshot.key
             });
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this48.analyticsService.logEvent('GetMeetingFailed', telemetry);
+            _this51.analyticsService.logEvent('GetMeetingFailed', telemetry);
 
             console.error(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
@@ -6196,7 +6264,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getMeetingParticipates",
         value: function getMeetingParticipates(hostId, meetingId) {
-          var _this49 = this;
+          var _this52 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6206,7 +6274,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('GetMeetingParticipates', telemetry);
           return this.angularFireDatabase.list("eventsParticipates/".concat(year, "/").concat(hostId, "/").concat(meetingId)).snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this49.analyticsService.logEvent('getMeetingParticipatesSuccess', telemetry);
+            return _this52.analyticsService.logEvent('getMeetingParticipatesSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (participates) {
             return participates.map(function (participate) {
               return Object.assign({
@@ -6214,7 +6282,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }, participate.payload.val());
             });
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this49.analyticsService.logEvent('getMeetingParticipatesFailed', telemetry);
+            _this52.analyticsService.logEvent('getMeetingParticipatesFailed', telemetry);
 
             console.log(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
@@ -6223,7 +6291,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getMeetings",
         value: function getMeetings() {
-          var _this50 = this;
+          var _this53 = this;
 
           var year = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6231,7 +6299,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('GetMeetings', telemetry);
           return this.angularFireDatabase.list("events/".concat(year)).snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this50.analyticsService.logEvent('GetMeetingsSuccess', telemetry);
+            return _this53.analyticsService.logEvent('GetMeetingsSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (meetingsSnapshot) {
             var meetings = [];
 
@@ -6243,7 +6311,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 var hostMeetingsSnapshot = _step.value;
                 var hostId = hostMeetingsSnapshot.key;
 
-                var hostMeetings = _this50.firebaseMapToArray(hostMeetingsSnapshot.payload.val(), {
+                var hostMeetings = _this53.firebaseMapToArray(hostMeetingsSnapshot.payload.val(), {
                   hostId: hostId
                 });
 
@@ -6257,7 +6325,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             return meetings;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this50.analyticsService.logEvent('GetMeetingsFailed', telemetry);
+            _this53.analyticsService.logEvent('GetMeetingsFailed', telemetry);
 
             console.log(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
@@ -6266,12 +6334,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAllMeetings",
         value: function getAllMeetings() {
-          var _this51 = this;
+          var _this54 = this;
 
           var telemetry = {};
           this.analyticsService.logEvent('GetAllMeetings', telemetry);
           return this.angularFireDatabase.list("events").snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this51.analyticsService.logEvent('GetAllMeetingsSuccess', telemetry);
+            return _this54.analyticsService.logEvent('GetAllMeetingsSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (meetingsSnapshot) {
             var meetings = [];
 
@@ -6282,7 +6350,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
                 var yearlyMeetingsSnapshot = _step2.value;
 
-                var yearlyMeetings = _this51.firebaseMapToArray(yearlyMeetingsSnapshot.payload.val());
+                var yearlyMeetings = _this54.firebaseMapToArray(yearlyMeetingsSnapshot.payload.val());
 
                 var _iterator3 = _createForOfIteratorHelper(yearlyMeetings),
                     _step3;
@@ -6293,7 +6361,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     var hostId = hostMeetingsMap.id;
                     delete hostMeetingsMap.id;
 
-                    var hostMeetings = _this51.firebaseMapToArray(hostMeetingsMap, {
+                    var hostMeetings = _this54.firebaseMapToArray(hostMeetingsMap, {
                       hostId: hostId
                     });
 
@@ -6313,7 +6381,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             return meetings;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this51.analyticsService.logEvent('GetAllMeetingsFailed', telemetry);
+            _this54.analyticsService.logEvent('GetAllMeetingsFailed', telemetry);
 
             console.log(error);
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(error);
@@ -6332,7 +6400,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bereavedJoinMeeting",
         value: function bereavedJoinMeeting(bereaved, meeting) {
-          var _this52 = this;
+          var _this55 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6347,7 +6415,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 bereaved = _ref19[0],
                 meeting = _ref19[1];
 
-            if (!_this52.participationsService.isBereavedCanParticipatingMeeting(bereaved, meeting)) {
+            if (!_this55.participationsService.isBereavedCanParticipatingMeeting(bereaved, meeting)) {
               throw new Error("Bereaved can't participate meeting.");
             }
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (_ref20) {
@@ -6363,13 +6431,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               phoneNumber: b.profile.phoneNumber,
               slains: b.bereavedProfile.slains
             };
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(_this52.angularFireDatabase.object("events/".concat(year, "/").concat(m.hostId, "/").concat(m.id, "/bereaved")).set(meetingBereaved));
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(_this55.angularFireDatabase.object("events/".concat(year, "/").concat(m.hostId, "/").concat(m.id, "/bereaved")).set(meetingBereaved));
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this52.analyticsService.logEvent('BereavedJoinMeetingSuccess', telemetry);
+            return _this55.analyticsService.logEvent('BereavedJoinMeetingSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
             return true;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this52.analyticsService.logEvent('BereavedJoinMeetingFailed', Object.assign(Object.assign({}, telemetry), {
+            _this55.analyticsService.logEvent('BereavedJoinMeetingFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6380,7 +6448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "participateJoinMeeting",
         value: function participateJoinMeeting(participate, meeting, accompanies) {
-          var _this53 = this;
+          var _this56 = this;
 
           var year = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6395,7 +6463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 p = _ref23[0],
                 m = _ref23[1];
 
-            if (!_this53.participationsService.isParticipateCanParticipatingMeeting(p, m)) {
+            if (!_this56.participationsService.isParticipateCanParticipatingMeeting(p, m)) {
               throw new Error("Participate can't participate meeting.");
             }
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (_ref24) {
@@ -6410,13 +6478,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               phoneNumber: p.profile.phoneNumber,
               accompanies: accompanies
             };
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(_this53.angularFireDatabase.object("eventsParticipates/".concat(year, "/").concat(m.hostId, "/").concat(m.id, "/").concat(p.id)).set(meetingParticipate));
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(_this56.angularFireDatabase.object("eventsParticipates/".concat(year, "/").concat(m.hostId, "/").concat(m.id, "/").concat(p.id)).set(meetingParticipate));
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this53.analyticsService.logEvent('ParticipateJoinMeetingSuccess', telemetry);
+            return _this56.analyticsService.logEvent('ParticipateJoinMeetingSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
             return true;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this53.analyticsService.logEvent('ParticipateJoinMeetingFailed', Object.assign(Object.assign({}, telemetry), {
+            _this56.analyticsService.logEvent('ParticipateJoinMeetingFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6427,7 +6495,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "participateLeaveMeeting",
         value: function participateLeaveMeeting(user, meeting) {
-          var _this54 = this;
+          var _this57 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6438,11 +6506,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('ParticipateLeaveMeeting', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("eventsParticipates/".concat(year, "/").concat(meeting.hostId, "/").concat(meeting.id, "/").concat(user.id)).remove()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this54.analyticsService.logEvent('ParticipateLeaveMeetingSuccess', telemetry);
+            return _this57.analyticsService.logEvent('ParticipateLeaveMeetingSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
             return true;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this54.analyticsService.logEvent('ParticipateLeaveMeetingFailed', Object.assign(Object.assign({}, telemetry), {
+            _this57.analyticsService.logEvent('ParticipateLeaveMeetingFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6453,7 +6521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bereavedLeaveMeeting",
         value: function bereavedLeaveMeeting(bereaved, meeting) {
-          var _this55 = this;
+          var _this58 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_3__["MEMORIAL_YEAR"];
           var telemetry = {
@@ -6464,11 +6532,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('BereavedLeaveMeeting', telemetry);
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["from"])(this.angularFireDatabase.object("events/".concat(year, "/").concat(meeting.hostId, "/").concat(meeting.id, "/bereaved")).remove()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-            return _this55.analyticsService.logEvent('BereavedLeaveMeetingSuccess', telemetry);
+            return _this58.analyticsService.logEvent('BereavedLeaveMeetingSuccess', telemetry);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
             return true;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-            _this55.analyticsService.logEvent('BereavedLeaveMeetingFailed', Object.assign(Object.assign({}, telemetry), {
+            _this58.analyticsService.logEvent('BereavedLeaveMeetingFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6479,7 +6547,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "postContact",
         value: function postContact(contactForm, user) {
-          var _this56 = this;
+          var _this59 = this;
 
           contactForm.date = new Date().getTime();
           var telemetry = {
@@ -6487,9 +6555,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           this.analyticsService.logEvent('PostContact', telemetry);
           return this.angularFireDatabase.list("contacts/".concat(user ? user.id : 'anonymous')).push(contactForm).then(function (result) {
-            _this56.analyticsService.logEvent('PostContactSuccess', telemetry);
+            _this59.analyticsService.logEvent('PostContactSuccess', telemetry);
           }, function (error) {
-            _this56.analyticsService.logEvent('PostContactFailed', Object.assign(Object.assign({}, telemetry), {
+            _this59.analyticsService.logEvent('PostContactFailed', Object.assign(Object.assign({}, telemetry), {
               error: error
             }));
 
@@ -6698,21 +6766,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(HttpService, [{
         key: "deleteUser",
         value: function deleteUser(user) {
-          var _this57 = this;
+          var _this60 = this;
 
           var telemetry = {
             userId: user.id
           };
           this.analyticsService.logEvent('DeleteUser', telemetry);
           return this.angularFireAuth.idToken.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (idToken) {
-            return _this57.httpClient["delete"]("https://europe-west1-our-brothers.cloudfunctions.net/api/user/".concat(user.id), {
+            return _this60.httpClient["delete"]("https://europe-west1-our-brothers.cloudfunctions.net/api/user/".concat(user.id), {
               headers: {
                 Authorization: "Bearer ".concat(idToken)
               }
             }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () {
-              return _this57.analyticsService.logEvent('DeleteUserSuccess', telemetry);
+              return _this60.analyticsService.logEvent('DeleteUserSuccess', telemetry);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
-              _this57.analyticsService.logEvent('DeleteUserFailed', Object.assign(Object.assign({}, telemetry), {
+              _this60.analyticsService.logEvent('DeleteUserFailed', Object.assign(Object.assign({}, telemetry), {
                 error: error
               }));
 
@@ -7212,7 +7280,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "filteringBereaveds",
         value: function filteringBereaveds(bereaveds, query) {
-          var _this58 = this;
+          var _this61 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_1__["MEMORIAL_YEAR"];
 
@@ -7255,7 +7323,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   return true;
                 }
 
-                var parsedNumber = (_d = phoneNumber) === null || _d === void 0 ? void 0 : _d.replace("^+".concat(_this58.ISRAEL_PHONE_PREFIX), '0');
+                var parsedNumber = (_d = phoneNumber) === null || _d === void 0 ? void 0 : _d.replace("^+".concat(_this61.ISRAEL_PHONE_PREFIX), '0');
 
                 if ((_e = parsedNumber) === null || _e === void 0 ? void 0 : _e.includes(keyword)) {
                   return true;
@@ -7293,7 +7361,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "filteringUsers",
         value: function filteringUsers(users, query) {
-          var _this59 = this;
+          var _this62 = this;
 
           var year = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_1__["MEMORIAL_YEAR"];
 
@@ -7331,7 +7399,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   return true;
                 }
 
-                var parsedNumber = (_b = phoneNumber) === null || _b === void 0 ? void 0 : _b.replace("^+".concat(_this59.ISRAEL_PHONE_PREFIX), '0');
+                var parsedNumber = (_b = phoneNumber) === null || _b === void 0 ? void 0 : _b.replace("^+".concat(_this62.ISRAEL_PHONE_PREFIX), '0');
 
                 if ((_c = parsedNumber) === null || _c === void 0 ? void 0 : _c.includes(keyword)) {
                   return true;
@@ -7897,26 +7965,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var menu_r431 = ctx.$implicit;
+        var menu_r440 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("menu", menu_r431);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("menu", menu_r440);
       }
     }
 
     function HeaderComponent_button_11_Template(rf, ctx) {
       if (rf & 1) {
-        var _r433 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r442 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 13);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_button_11_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r433);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r442);
 
-          var ctx_r432 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r441 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r432.onLogin();
+          return ctx_r441.onLogin();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u05D4\u05EA\u05D7\u05D1\u05E8 ");
@@ -7925,24 +7993,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r429 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r438 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r429.loading);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r438.loading);
       }
     }
 
     function HeaderComponent_button_12_Template(rf, ctx) {
       if (rf & 1) {
-        var _r435 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r444 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 13);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_button_12_Template_button_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r435);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r444);
 
-          var ctx_r434 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r443 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r434.onLogout();
+          return ctx_r443.onLogout();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " \u05D4\u05EA\u05E0\u05EA\u05E7 ");
@@ -7951,9 +8019,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r430 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r439 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r430.loading);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r439.loading);
       }
     }
 
@@ -7976,12 +8044,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this60 = this;
+          var _this63 = this;
 
           this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (event) {
             return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"];
           })).subscribe(function () {
-            _this60.sideMenuOpen = false;
+            _this63.sideMenuOpen = false;
           });
         }
       }, {
@@ -8382,13 +8450,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r419 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r428 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", ctx_r419.menu.route);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", ctx_r428.menu.route);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r419.menu.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r428.menu.title);
       }
     }
 
@@ -8402,13 +8470,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var subMenu_r423 = ctx.$implicit;
+        var subMenu_r432 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", subMenu_r423.route)("routerLinkActive", "active");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", subMenu_r432.route)("routerLinkActive", "active");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subMenu_r423.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](subMenu_r432.title);
       }
     }
 
@@ -8426,11 +8494,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r421 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+        var ctx_r430 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r421.menu.subMenues);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r430.menu.subMenues);
       }
     }
 
@@ -8443,32 +8511,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function MenuItemComponent_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r425 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r434 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mouseenter", function MenuItemComponent_div_1_Template_div_mouseenter_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r425);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r434);
 
-          var ctx_r424 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r433 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r424.active = true;
+          return ctx_r433.active = true;
         })("mouseleave", function MenuItemComponent_div_1_Template_div_mouseleave_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r425);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r434);
 
-          var ctx_r426 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r435 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r426.active = false;
+          return ctx_r435.active = false;
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MenuItemComponent_div_1_Template_div_click_1_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r425);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r434);
 
-          var ctx_r427 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r436 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r427.active = !ctx_r427.active;
+          return ctx_r436.active = !ctx_r436.active;
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 5);
@@ -8487,19 +8555,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       if (rf & 2) {
-        var ctx_r420 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r429 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r420.menu.title, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r429.menu.title, " ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](3, _c0, ctx_r420.active, !ctx_r420.active));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](3, _c0, ctx_r429.active, !ctx_r429.active));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r420.active);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r429.active);
       }
     }
 
