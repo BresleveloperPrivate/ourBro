@@ -26,11 +26,13 @@
     </div>
     <div class="col col-communications">
       <div class="user-email" *ngIf="user.profile?.email">
-        <div class="email-address">
-          {{ user.profile?.email }}
+          <div class="email-address to-edit">
+            <app-editable-text [value]="user?.profile?.email" (valueChange)="userEmail.emit($event)"
+                [type]="'text'">
+              </app-editable-text>
+          </div>
         </div>
         <div class="email-icon"></div>
-      </div>
     </div>
     <div class="col col-communications">
       <div class="user-phone" *ngIf="user.profile?.phoneNumber">

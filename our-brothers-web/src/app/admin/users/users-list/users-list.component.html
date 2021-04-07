@@ -27,7 +27,9 @@
     <app-users-list-row [class.hidden]="!filteredUsers.has(user.id)" [currentUser]="currentUser" [user]="user"
       (deleting)="deleting.emit(user)" (volunteering)="volunteering.emit({ user: user, isVolunteer: $event })"
       (userBirthDate)="userBirthDate.emit({ user: user, birthDate: $event })"
-      (userdPhone)="userdPhone.emit({ user: user, phone: $event })">
+      (userPhone)="userPhone.emit({ user: user, phone: $event })" 
+      (userEmail)="userEmail.emit({ user: user, email: $event })"
+      >
 
     </app-users-list-row>
   </div>

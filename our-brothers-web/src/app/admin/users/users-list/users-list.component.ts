@@ -4,7 +4,8 @@ import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from 
 import { User } from 'models';
 import { SortedColumn } from '../../../shared/components/list/list-header/list-header.types';
 
-import { VolunteeringUser, UpdateUserPhone, } from '../../../shared/services/data.service';
+
+import { VolunteeringUser, UpdateUserPhone,UpdateUserEmail } from '../../../shared/services/data.service';
 
 @Component({
   selector: 'app-users-list',
@@ -16,7 +17,8 @@ export class UsersListComponent {
   @Input() currentUser: User;
   @Input() users: User[];
   @Input() filteredUsers: Set<string>;
-  @Output() userdPhone = new EventEmitter<UpdateUserPhone>();
+  @Output() userPhone = new EventEmitter<UpdateUserPhone>();
+  @Output() userEmail = new EventEmitter<UpdateUserEmail>();
 
   @Output() volunteering = new EventEmitter<VolunteeringUser>();
   @Output() deleting = new EventEmitter<User>();

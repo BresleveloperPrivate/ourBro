@@ -35,9 +35,8 @@
       <ng-template #userList>
         <app-users-list  [filteredUsers]="filteredUsersIds"
           [currentUser]="currentUser" [users]="users" (deleting)="deleting($event)"
-          (volunteering)="volunteering($event)">
-         (userPhone)="userPhone($event)"
-        
+          (volunteering)="volunteering($event)"
+         (userPhone)="userPhone($event)" (userEmail)="userEmail($event)">
         </app-users-list>
       </ng-template>
     </div>

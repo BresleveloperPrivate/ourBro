@@ -113,6 +113,11 @@ export interface UpdateUserPhone {
   user: User;
   phone: UserProfile;
 }
+
+export interface UpdateUserEmail {
+  user: User;
+  email: UserProfile;
+}
 ////////////
 
 
