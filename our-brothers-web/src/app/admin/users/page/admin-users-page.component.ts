@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { User, Meeting } from 'models';
 import { UtilsService } from '../../../shared/services/utils.service';
-import { DataService, VolunteeringUser } from '../../../shared/services/data.service';
+import { DataService, VolunteeringUser, UpdateUserPhone } from '../../../shared/services/data.service';
 import { AuthService } from '../../../shared/services/auth.service';
 import { HttpService } from '../../../shared/services/http.service';
 
@@ -54,7 +54,11 @@ export class AdminUsersPageComponent implements OnInit, OnDestroy {
       )
     );
   }
-
+  userdPhone({ user, phone }: UpdateUserPhone) {
+    if (user) {
+      this.dataService.setBereavedPhone(user, phone);
+    }
+  }
 
   bereavedBirthDate({ user, birthDate }: UpdateUserBirthDate) {
     if (user) {

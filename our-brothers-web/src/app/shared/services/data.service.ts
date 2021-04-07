@@ -106,6 +106,23 @@ export interface UpdateBereavedPhone {
   phone: UserProfile;
 }
 
+////////////
+
+
+export interface UpdateUserPhone {
+  user: User;
+  phone: UserProfile;
+}
+////////////
+
+
+
+
+
+
+
+
+
 
 export interface UpdateUserAddress {
   user: User;

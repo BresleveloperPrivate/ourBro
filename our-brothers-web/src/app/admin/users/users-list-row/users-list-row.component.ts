@@ -10,6 +10,7 @@ import { User } from 'models';
 export class UsersListRowComponent {
   @Input() currentUser: User;
   @Input() user: User;
+  @Output() userPhone = new EventEmitter<string>();
 
   @Output() userBirthDate = new EventEmitter<number>();
   @Output() deleting = new EventEmitter<void>();

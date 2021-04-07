@@ -34,8 +34,12 @@
     </div>
     <div class="col col-communications">
       <div class="user-phone" *ngIf="user.profile?.phoneNumber">
-        <div class="phone-number">
+        <!-- <div class="phone-number">
           {{ user.profile.phoneNumber | phone }}
+        </div> -->
+        <div class="phone-number to-edit">
+          <app-editable-text [value]="user?.profile?.phoneNumber|phone" (valueChange)="userPhone.emit($event)"
+            [type]="'text'"></app-editable-text>
         </div>
         <div class="phone-icon"></div>
       </div>

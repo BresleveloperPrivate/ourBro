@@ -1215,7 +1215,7 @@ class AdminBereavedsPageComponent {
         //ExcellentExport.convert(options, [sheet], true);
     }
     barevedToExcel() {
-        var _a, _b;
+        var _a, _b, _c;
         //let data = this.bereaveds;
         this.only2021 = true;
         let MasterArr = [
@@ -1235,22 +1235,26 @@ class AdminBereavedsPageComponent {
                 a.push(b.profile.phoneNumber);
                 a.push(b.profile.email);
                 a.push(new Date(b.lastSignInDate));
-                if (((_a = b) === null || _a === void 0 ? void 0 : _a.bereavedParticipation) && b.bereavedParticipation[this.year]) {
-                    // a.push(b?.bereavedParticipation[this.year]?.meetings);
-                    // console.log(b?.bereavedParticipation[this.year]?.meetings);
-                    a.push('yes');
+                if (((_a = b) === null || _a === void 0 ? void 0 : _a.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year]) {
+                    let z = (_b = b.bereavedParticipation[this.year].meetings) === null || _b === void 0 ? void 0 : _b.length;
+                    let e = '';
+                    let j;
+                    for (j = 0; j < z; j++) {
+                        if (b.bereavedParticipation[this.year].meetings[j].title)
+                            e = e + (b.bereavedParticipation[this.year].meetings[j].title) + ',';
+                    }
+                    a.push(e);
                 }
                 else {
-                    a.push('no');
+                    a.push('');
                 }
-                if (((_b = b) === null || _b === void 0 ? void 0 : _b.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].meetings) {
+                if (((_c = b) === null || _c === void 0 ? void 0 : _c.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].status) {
                     a.push(b.bereavedParticipation[this.year].status);
                     // console.log(b?.bereavedParticipation[this.year]?.meetings);
                 }
                 else {
                     a.push('');
                 }
-                a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
                 if (b.bereavedProfile && b.bereavedProfile.slains) {
                     let sls = b.bereavedProfile.slains;
                     let ax = [...a];

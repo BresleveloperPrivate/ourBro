@@ -2700,7 +2700,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "barevedToExcel",
         value: function barevedToExcel() {
-          var _a, _b; //let data = this.bereaveds;
+          var _a, _b, _c; //let data = this.bereaveds;
 
 
           this.only2021 = true;
@@ -2724,21 +2724,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               a.push(b.profile.email);
               a.push(new Date(b.lastSignInDate));
 
-              if (((_a = b) === null || _a === void 0 ? void 0 : _a.bereavedParticipation) && b.bereavedParticipation[this.year]) {
-                // a.push(b?.bereavedParticipation[this.year]?.meetings);
-                // console.log(b?.bereavedParticipation[this.year]?.meetings);
-                a.push('yes');
-              } else {
-                a.push('no');
-              }
+              if (((_a = b) === null || _a === void 0 ? void 0 : _a.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year]) {
+                var z = (_b = b.bereavedParticipation[this.year].meetings) === null || _b === void 0 ? void 0 : _b.length;
+                var e = '';
+                var j = void 0;
 
-              if (((_b = b) === null || _b === void 0 ? void 0 : _b.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].meetings) {
-                a.push(b.bereavedParticipation[this.year].status); // console.log(b?.bereavedParticipation[this.year]?.meetings);
+                for (j = 0; j < z; j++) {
+                  if (b.bereavedParticipation[this.year].meetings[j].title) e = e + b.bereavedParticipation[this.year].meetings[j].title + ',';
+                }
+
+                a.push(e);
               } else {
                 a.push('');
               }
 
-              a.push(b.profile.address && b.profile.address.formattedAddress ? b.profile.address.formattedAddress : '');
+              if (((_c = b) === null || _c === void 0 ? void 0 : _c.bereavedParticipation) && b.bereavedParticipation[this.year] && b.bereavedParticipation[this.year].status) {
+                a.push(b.bereavedParticipation[this.year].status); // console.log(b?.bereavedParticipation[this.year]?.meetings);
+              } else {
+                a.push('');
+              }
 
               if (b.bereavedProfile && b.bereavedProfile.slains) {
                 var sls = b.bereavedProfile.slains;
