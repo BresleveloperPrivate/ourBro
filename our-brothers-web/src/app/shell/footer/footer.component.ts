@@ -1,3 +1,5 @@
+import { DataService } from './../../shared/services/data.service';
+import { formatDate } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { User } from 'models';
 import { environment } from '../../../environments/environment';
@@ -13,6 +15,10 @@ export class FooterComponent {
 
   public version: string = environment.versions.version;
   public revision: string = environment.versions.revision;
+  constructor(public participationsService: ParticipationsService) { }
 
-  constructor(public participationsService: ParticipationsService) {}
+
+
+
+
 }

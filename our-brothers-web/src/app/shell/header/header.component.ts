@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   public sideMenuOpen = false;
   public menues: MenuItem[];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnChanges(): void {
     this.menues = this.initMenues();
@@ -54,10 +54,10 @@ export class HeaderComponent implements OnInit, OnChanges {
         subMenues: [
           // { route: 'meetings', title: 'מפגשים' },
           { route: 'map', title: 'מפת מפגשים' },
-          { route: 'tell', title: 'אני רוצה לספר' },
-          { route: 'host', title: 'אני רוצה לארח' },
+          { route: 'contact', title: 'אני רוצה לספר' },
+          { route: 'contact', title: 'אני רוצה לארח' },
           // { route: 'participate', title: 'אני רוצה להשתתף' }
-          { route: 'home', title: 'אני רוצה להשתתף' }
+          { route: 'contact', title: 'אני רוצה להשתתף' }
           //  שינו רק בגלל בקורונה שנה הבאה להחזיר שורהקודצת ולמחוק אותה
         ]
       },

@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
   public src1$: any;
   public src2$: any;
 
-  constructor(private authService: AuthService, private dataService: DataService, private toastr: ToastrService) {}
+  constructor(private authService: AuthService, private dataService: DataService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.authService.user.subscribe(user => {
@@ -66,5 +66,11 @@ export class HomePageComponent implements OnInit {
       .then(() => this.toastr.success('שליחת הודעה בוצעה בהצלחה'))
       .catch(() => this.toastr.error('שליחת הודעה נכשלה'))
       .finally(() => (this.postingContact = false));
+  }
+
+  endregistarted() {
+    alert("ההרשמה נסגרה ")
+    console.log("sxdfvghjkjhgf");
+    
   }
 }
