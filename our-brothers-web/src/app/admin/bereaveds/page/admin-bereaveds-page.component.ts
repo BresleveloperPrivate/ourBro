@@ -41,9 +41,12 @@ import { SeniorityPipe } from '../../../shared/pipes/seniority.pipe';
 export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
   currentUser: User;
   bereaveds: User[];
+  hosts: User[];
   noBerevedMeetings: Meeting[];
   filter: string = '';
   filteredBereavedsIds: Set<string>;
+  filteredHostsIds: Set<string>;
+
   year = MEMORIAL_YEAR;
   error = '';
   loading = true;
@@ -87,6 +90,30 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
       })
     );
 
+    this.subscriptions.push(
+      this.authService.user.subscribe(currentUser => {
+        this.currentUser = currentUser;
+      }),
+      this.dataService.getHosts().subscribe(
+        hosts => {
+          this.loading = false;
+          this.hosts = hosts;
+          this.filterBereaveds();
+        },
+        error => {
+          this.loading = false;
+          this.error = error.toString();
+        }
+      ),
+      this.dataService.getNoBerevedMeetings().subscribe(noBerevedMeetings => {
+        this.noBerevedMeetings = noBerevedMeetings;
+      })
+    );
+
+
+
+
+
     const s = this.renderer2.createElement('script');
     s.type = 'text/javascript';
     s.src = 'https://cdn.jsdelivr.net/npm/excellentexport@3.4.3/dist/excellentexport.min.js';
@@ -98,6 +125,16 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     const filteredBereavedsIds = this.utilsService.filteringBereaveds(this.bereaveds, this.filter).map(({ id }) => id);
     this.filteredBereavedsIds = new Set(filteredBereavedsIds);
   }
+
+
+
+  filterHosts() {
+    const filteredHostsIds = this.utilsService.filteringUsers(this.hosts, this.filter).map(({ id }) => id);
+    this.filteredHostsIds = new Set(filteredHostsIds);
+  }
+
+
+
 
   joinBereved(bereaved: User) {
     console.log('vbhnjkm,l', bereaved);
@@ -467,4 +504,9 @@ export class AdminBereavedsPageComponent implements OnInit, OnDestroy {
     window['ExcellentExport'].convert(options, [sheet], true);
     //ExcellentExport.convert(options, [sheet], true);
   }
+
+
+
+
+
 }

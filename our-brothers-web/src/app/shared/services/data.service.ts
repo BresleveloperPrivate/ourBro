@@ -734,6 +734,66 @@ export class DataService {
       );
   }
 
+
+
+
+
+/////////
+
+
+
+public getHosts(year = MEMORIAL_YEAR): Observable<User[]> {
+  const telemetry = { year };
+
+  this.analyticsService.logEvent('GetHosts', telemetry);
+  return this.angularFireDatabase
+    .list<User>(`users`, ref => ref.orderByChild('role').equalTo(UserRole.host))
+    .snapshotChanges(['child_changed', 'child_removed']) // TODO: Workaround for loop
+    .pipe(
+      map(usersSnapshot =>
+        usersSnapshot
+          .map(userSnapshot => ({
+            id: userSnapshot.key,
+            ...userSnapshot.payload.val()
+          }))
+          .filter(user => !!user.profile)
+          .map(user => {
+            this.parseHostParticipation(user, year);
+            return user;
+          })
+      ),
+      tap(hosts =>
+        this.analyticsService.logEvent('GetBereavedsSuccess', {
+          ...telemetry,
+          count: hosts.length
+        })
+      ),
+      catchError(error => {
+        this.analyticsService.logEvent('GetBereavedsFailed', {
+          ...telemetry,
+          error
+        });
+        console.error(error);
+        return throwError(error);
+      })
+    );
+}
+//////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   public getUsers(): Observable<User[]> {
     const telemetry = {};
 
